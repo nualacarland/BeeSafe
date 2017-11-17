@@ -1,0 +1,74 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+      <ion-toolbar>
+          <button ion-button menuToggle left>
+            <ion-icon  name="menu"></ion-icon>
+          </button>
+          <ion-title >
+          </ion-title>
+        
+        </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+      <ion-row>
+          <ion-col col-6>
+              <ion-card tappable (click)="gotoHelpNowPage()" class="HelpBtn" > 
+              Help Right Now
+             <br>
+             <br>
+             <br>
+             <br>
+             <ion-icon class="HelpNow" name="call"></ion-icon>
+              </ion-card>
+         
+          </ion-col>
+
+          <ion-col col-6 style="height:200px; background-color:white;">
+              <ion-card tappable (click)="gotoBeeSafePlanPage()" class="PlanBtn"> 
+                  Bee Safe Plan
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <ion-icon name="call"></ion-icon>
+                   </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6 style="height:200px; background-color:white;">
+                <ion-card tappable (click)="gotoScrapbookPage()" class="ScrapbookBtn"> 
+                    Scrapbook 
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                        <ion-icon name="ios-book"></ion-icon>
+                     </ion-card>
+            </ion-col>
+            <ion-col col-6 style="height:200px; background-color:white;">
+                <ion-card class="CreatePlanBtn" tappable (click)="gotoCreateBeesafePlanPage()" class="CreatePlanBtn"> 
+                   
+                   Creating My Bee Safe Plan
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <ion-icon name="call"></ion-icon>
+                     </ion-card>
+            </ion-col>
+          </ion-row>
+  </ion-grid>
+  
+
+
+</ion-content>

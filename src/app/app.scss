@@ -6,11 +6,51 @@
 // Put style rules here that you want to apply globally. These
 // styles are for the entire app and not just one component.
 // Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
+// to import other Sass files to be included in the output ../assets/
 //
 // Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
+// default Sass variables, belong in "theme/variables.s../assets/.
 //
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.toolbar-background {
+    background-color: #FAF4EA;
+}
+
+@font-face{
+    font-family:"Avenir Rounded Bold";
+    src:url("../assets/fonts/39302265d02d3453e76e410490523c5c.eot");
+    src:url("../assets/fonts/39302265d02d3453e76e410490523c5c.eot?#iefix") format("embedded-opentype"), 
+    url("../assets/fonts/39302265d02d3453e76e410490523c5c.woff2") format("woff2"), 
+    url("../assets/fonts/39302265d02d3453e76e410490523c5c.woff") format("woff"), 
+    url("../assets/fonts/39302265d02d3453e76e410490523c5c.ttf") format("truetype"), 
+    url("../assets/fonts/39302265d02d3453e76e410490523c5c.svg#Avenir Next Rounded W01 Bold") format("svg");
+}
+@font-face{
+    font-family:"Avenir Rounded Med";
+    src:url("../assets/fonts/0ebd0f0fd5bd2e93381bab865f02db47.eot");
+    src:url("../assets/fonts/0ebd0f0fd5bd2e93381bab865f02db47.eot?#iefix") format("embedded-opentype"),
+     url("../assets/fonts/0ebd0f0fd5bd2e93381bab865f02db47.woff2") format("woff2"),
+      url("../assets/fonts/0ebd0f0fd5bd2e93381bab865f02db47.woff") format("woff"),
+       url("../assets/fonts/0ebd0f0fd5bd2e93381bab865f02db47.ttf") format("truetype"),
+        url("../assets/fonts/0ebd0f0fd5bd2e93381bab865f02db47.svg#Avenir Next Rounded W01 Med") format("svg");
+    }
+@font-face{
+    font-family:"Avenir Rounded Demi";
+    src:url("../assets/fonts/c39dc1716db69a2e7a43326eab745330.eot");
+    src:url("../assets/fonts/c39dc1716db69a2e7a43326eab745330.eot?#iefix") format("embedded-opentype"),
+     url("../assets/fonts/c39dc1716db69a2e7a43326eab745330.woff2") format("woff2"),
+      url("../assets/fonts/c39dc1716db69a2e7a43326eab745330.woff") format("woff"),
+       url("../assets/fonts/c39dc1716db69a2e7a43326eab745330.ttf") format("truetype"),
+        url("../assets/fonts/c39dc1716db69a2e7a43326eab745330.svg#Avenir Next Rounded W01 Demi") format("svg");
+    }
+@font-face{
+    font-family:"Avenir Rounded Reg";
+    src:url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.eot");
+    src:url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.eot?#iefix") format("embedded-opentype"),
+     url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.woff2") format("woff2"), 
+     url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.woff") format("woff"),
+      url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.ttf") format("truetype"),
+       url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.svg#Avenir Next Rounded W01 Reg") format("svg");
+    }
