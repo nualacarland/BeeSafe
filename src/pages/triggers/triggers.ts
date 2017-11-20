@@ -22,4 +22,7 @@ export class TriggersPage {
     console.log('ionViewDidLoad TriggersPage');
   }
 
+  gotoAddTriggerPage() {
+    this.navCtrl.push('AddTriggerPage');
+  }
 }

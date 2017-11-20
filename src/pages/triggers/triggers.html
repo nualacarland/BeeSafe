@@ -22,5 +22,68 @@
 
 
 <ion-content padding>
+    <ion-row>
+        <div class="triggers-info">
+            <p id="text-line">My Triggers 
+                </p>
+                
+        </div>
+        <ion-icon name="ios-information-circle-outline" id="info-icon" style="color:#559ad1; height:20px; width:20px; font-weight:bold;" tappable (click)="openModal()">
+          </ion-icon>
+        
+          <div id="add">
+      <button ion-button id="add-trigger-btn" (click)="gotoAddTriggerPage()">+ Add Trigger</button>
+      </div>
+
+      </ion-row>
+
+
+      <ion-list>
+
+        <ion-card>
+    <ion-item-sliding #item>
+    <ion-item id="trigger-list"> 
+    Arguing with Friends
+    </ion-item>
+    
+
+    <ion-item-options side="right">
+        <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+        <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+
+  <ion-card>
+    <ion-item-sliding #item>
+    <ion-item id="trigger-list">
+      Parents
+    </ion-item>
+
+    <ion-item-options side="right">
+        <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+        <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+   
+
+  <ion-card>
+    <ion-item-sliding #item>
+        <ion-item id="trigger-list">
+        Schoolwork
+        </ion-item>
+    
+        <ion-item-options side="right">
+            <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+            <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+        </ion-item-options>
+        </ion-item-sliding>
+      </ion-card>
+      
+        </ion-list>
+
+
+
 
 </ion-content>
