@@ -26,6 +26,15 @@ export class LoginPage {
   gotoLazyPage(){
     this.navCtrl.push('DashboardPage');
   }
+
+  gotoForgotPage(){
+    this.navCtrl.push('ForgotPage');
+  }
+
+  gotoRegisterPage() {
+    this.navCtrl.push('RegisterPage');
+  }
+
   ionViewWillAppear(){
 
 

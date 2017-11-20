@@ -13,43 +13,51 @@
    Please enter your 4-digit pin
   </p>
  
-<ion-grid>
+  <ion-row>
+      <ion-col col-3>
+          <ion-item no-lines id="input-1" >
+          <ion-input type="password" style="background-color:#FAF4EA; "></ion-input>
+          </ion-item>
+        </ion-col>
+
+         
+        <ion-col col-3>
+          <ion-item no-lines id="input-2" >
+          <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+          </ion-item>
+        </ion-col>
+        
+        <ion-col col-3>
+          <ion-item no-lines id="input-3" >
+          <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+          </ion-item>
+        </ion-col>
   
-  <ion-col col-3>
-  <ion-item id="input-1" >
-  <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
-  </ion-item>
-  </ion-col>
- 
-<ion-col col-6>
-  <ion-item id="input-2" >
-  <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
-  </ion-item>
-</ion-col>
+        
+        <ion-col col-3 >
+          <ion-item no-lines id="input-4" >
+          <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+          </ion-item>
+        </ion-col>
 
-<ion-col col-9>
-  <ion-item id="input-3" >
-  <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
-  </ion-item>
-</ion-col>
+          <div id="login">
+          <button ion-button color="primary" (click)="gotoLazyPage()" id="login-btn">LOGIN</button>
+          </div>
+        
+          <div id="forgot">
+          <button id="Forgot-line"(click)="gotoForgotPage()">
+          Forgot Password?
+          </button>
+          </div>
 
-<ion-col col-12>
-  <ion-item id="input-4" >
-  <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
-  </ion-item>
-</ion-col>
-</ion-grid>
-            
+  </ion-row>
+  
 
-  <div id="login">
-  <button ion-button color="primary" (click)="gotoLazyPage()" id="login-btn">LOGIN</button>
-  </div>
+  <div id="Create">
+    <button ion-button  (click)="gotoRegisterPage()" id="create-btn">Or, Create Account</button>
+    </div>
 
-  <div id="forgot">
-  <p id="Forgot-line">
-  Forgot Password?
-  </p>
-  </div>
+  
 
     
 </ion-content>

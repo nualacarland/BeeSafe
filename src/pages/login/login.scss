@@ -23,34 +23,43 @@ page-login {
         font-weight: 500;
         line-height: 18px;
         text-align: center;
+        background: transparent;
+
     }
     #forgot {
         padding-top:0px;
         padding-left:42px;
         padding-right:43px;
+        padding-bottom:130px;
 
     }
 
     #input-1 {
         height:60px;
-        width:60px;
+        width:80px;
         padding-top:0px;
-       
+        float: left;
+    
     }
     #input-2 {
         height:60px;
-        width:60px;
+        width:80px;
         padding-top:0px;
+        float: left;
+             
     }
     #input-3 {
         height:60px;
-        width:60px;
+        width:80px;
         padding-top:0px;
+        float: left;
+        
     }
     #input-4 {
         height:60px;
-        width:60px;
+        width:80px;
         padding-top:0px;
+        float: left;
     }
 
     #login-btn {
@@ -63,12 +72,31 @@ page-login {
 
     #login {
         padding-bottom:23px;
-        padding-top:110px;
+        padding-top:10px;
         padding-right:62px;
         padding-left:62px;
     }
    
-      
+    #create-btn {
+        height: 75px;
+        width: 100% !important;
+        background-color: #5B6275;
+
+        
+    }
+    #create {
+        display: block !important;
+        width:100% !important;
+        margin-left: auto;
+        margin-right: auto;
+     
+        padding-right:0px;
+        padding-left:0px;
+    }
+    
+   
+    
+
     }
     
 

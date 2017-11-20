@@ -1,3 +1,41 @@
 page-forgot {
 
+    #text-line {
+        height:24px;
+        width:390px;
+        color: #313745;
+        font-size:20px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        line-height: 24px;
+        text-align: center;
+        padding-right:42px;
+        padding-left:43px;
+        padding-top:29px;
+        padding-bottom:45px;
+    }
+
+   
+    #send-btn {
+        height:60px;
+        width: 250px;
+        border-radius: 2px;
+        background-color: #559AD1;
+     
+    }
+
+    #SendForgot {
+        padding-bottom:23px;
+        padding-top:26px;
+        padding-right:62px;
+        padding-left:62px;
+    }
+    input::placeholder {
+        height:19px;
+        font-size:15px;
+        line-height:19px;
+        padding-left:11px;
+        font-family: 'Avenir Rounded pro', Arial, sans-serif;
+    
+    }
+
 }

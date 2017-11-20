@@ -2,5 +2,7 @@
   "name": "BeeSafe",
   "app_id": "b5d47f72",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

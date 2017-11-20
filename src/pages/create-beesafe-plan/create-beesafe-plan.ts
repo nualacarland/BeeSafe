@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { PlanModalPage } from '../plan-modal/plan-modal';
 
 /**
  * Generated class for the CreateBeesafePlanPage page.
@@ -15,7 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CreateBeesafePlanPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -23,6 +25,18 @@ export class CreateBeesafePlanPage {
   }
   gotoHelpNowPage(){
     this.navCtrl.push('HelpNowPage');
+  }
+
+  gotoTriggersPage() {
+    this.navCtrl.push('TriggersPage');
+  }
+  gotoDistractionsPage() {
+    this.navCtrl.push('DistractionsPage');
+  }
+
+  openModal() {
+    let myModal = this.modalCtrl.create(PlanModalPage);
+    myModal.present();
   }
 
 }
