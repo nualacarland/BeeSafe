@@ -1,3 +1,127 @@
 page-help-now {
+    #nav-bar {
+        height:75px;
+        width: 425px;
+    }
+
+
+    #cancel {
+        height: 19px;
+        width: 73.45px;
+        color: #53A9ED;
+        font-size: 16px;
+        line-height: 19px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #text-line-2 {
+        height: 22px;
+        color: #313745;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 18px;   
+        padding-top: 49px;
+        margin-left: -3px;
+        margin-top:-13px;
+        align-content: center;
+        margin-right:52px;
+        margin-bottom: 26px;
+    }
+    #text-line {
+        height: 46px;
+        width: 293px;	
+        color: #313745;	
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size: 20px;	
+   	
+        line-height: 23px;
+        margin-top: 34px;
+        margin-right:43px;
+        margin-left: 39px;
+    }
+
+    #emergency-contacts {
+        height: 21px;
+        width: 297px;	
+        color: #F68B45;	
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 21px;	
+        line-height: 21px;
+        margin-top: 58px;
+        margin-left:40px;
+        margin-right:38px;
+    }
+
+    #other-contacts {
+        height: 21px;
+        width: 297px;	
+        color: #F68B45;	
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 21px;	
+        line-height: 21px;
+        margin-top: 189px;
+        margin-left:40px;
+        margin-right:38px;
+    }
+    #other-1 {
+        margin-top: 24px;
+        margin-left:40px;
+        margin-bottom: 16px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        height:24px;
+        color: #313745;
+        font-size:20px;
+        font-weight: 500;
+        line-height: 24px;
+
+
+    }
+    #other {
+        margin-top:16px;
+        margin-left:40px;
+        margin-bottom: 16px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        height:24px;
+        color: #313745;
+        font-size:20px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    #call-link-1 {
+      height: 23px;
+      color: #559AD1;
+      font-family: 'Avenir Rounded reg', Arial, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 23px;
+      float: right;
+      margin-top: -40px;
+      margin-right: 86px;
+    }
+    #call-link-2 {
+        height: 23px;
+        color: #559AD1;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 23px;
+        float: right;
+        margin-top: -40px;
+        margin-right: 120px;
+      }
+      #call-link-3 {
+        height: 23px;
+        color: #559AD1;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 23px;
+        float: right;
+        margin-top: -40px;
+        margin-right: 86px;
+      }
+
+      .back-button.show-back-button {
+        //   display: none;
+      }
 
 }

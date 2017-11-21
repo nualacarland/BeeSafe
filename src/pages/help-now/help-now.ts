@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+// import { CallNumber } from '@ionic-native/call-number';
+
 
 /**
  * Generated class for the HelpNowPage page.
@@ -17,9 +19,14 @@ export class HelpNowPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+  gotoDashboardPage() {
+    this.navCtrl.push('DashboardPage');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HelpNowPage');
   }
+
+
 
 }

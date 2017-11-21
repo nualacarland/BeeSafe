@@ -6,23 +6,30 @@
 -->
 <ion-header>
 
-    <ion-toolbar>
+    <ion-toolbar id="nav-bar">
         <button ion-button menuToggle left>
           <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>
+        <ion-title id="ion-title">
           Bee Safe Plan
         </ion-title>
         <ion-buttons end>
           <button ion-button (click)="gotoHelpNowPage()">
-            <ion-icon name="">Help</ion-icon>
+            <ion-icon id="help" name="">HELP</ion-icon>
           </button>
         </ion-buttons>
       </ion-toolbar>
 
 </ion-header>
 
-
 <ion-content padding>
+
+  <h1 id="text-line-1">How are you feeling?</h1>
+
+  <h1 id="feeling-option">Doing Well</h1>
+  <h1 id="feeling-option">Not so bad</h1>
+  <h1 id="feeling-option">Needing Support</h1>
+  <h1 id="feeling-option">Really Struggling</h1>
+  
 
 </ion-content>

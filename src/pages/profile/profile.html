@@ -4,25 +4,121 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
-
-    <ion-toolbar>
-        <button ion-button menuToggle left>
-          <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>
-          My Profile
-        </ion-title>
-        <ion-buttons end>
-          <button ion-button (click)="gotoHelpNowPage()">
-            <ion-icon name="">Help</ion-icon>
+  
+      <ion-toolbar id="nav-bar">
+          <button ion-button menuToggle left>
+            <ion-icon name="menu"></ion-icon>
           </button>
-        </ion-buttons>
-      </ion-toolbar>
-
-</ion-header>
-
+          <ion-title id="ion-title">
+            My Profile
+          </ion-title>
+          <ion-buttons end>
+            <button ion-button (click)="gotoHelpNowPage()">
+              <ion-icon id="help" name="">HELP</ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
+  
+  <p id="text-line"> Please enter your email address</p>
+  
+  <ion-item no-lines id="password" >
+  <ion-input type="password" style="background-color:#FAF4EA;" placeholder="Email Address"></ion-input>
+  </ion-item>
+  <ion-row>
+      <p id="text-line">Select your Avatar</p>
+      
+  </ion-row>
+  <ion-row>
+      <p id="text-line">Enter your 4-digit pin</p>
+          <ion-col col-3>
+              <ion-item no-lines id="input-1" >
+              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              </ion-item>
+          </ion-col>
+              
+          <ion-col col-3>
+              <ion-item no-lines id="input-2" >
+              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              </ion-item>
+          </ion-col>
+              
+          <ion-col col-3>
+              <ion-item no-lines id="input-3" >
+              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              </ion-item>
+          </ion-col>
+              
+          <ion-col col-3>
+              <ion-item no-lines id="input-4" >
+              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              </ion-item>
+          </ion-col>
+  </ion-row>
 
-</ion-content>
+  <ion-row>
+    <p id="text-line">Affirmations</p>
+
+      <ion-toggle  color="beesafeorange"></ion-toggle>
+  
+    
+  </ion-row>
+
+
+  <ion-row>
+    <div class="emergency-contacts">
+        <p id="text-line">Emergency Contacts  
+            <ion-icon name="ios-information-circle-outline" style="color:#559ad1; height:20px; width:20px; font-weight:bold;" tappable (click)="openModal()">
+            </ion-icon>
+            </p>
+    </div>
+  
+  </ion-row>
+  
+  
+  <p id="Contact-one">
+      EMERGENCY CONTACT ONE
+     </p>
+  
+  <ion-item no-lines id="contactName-1" >
+  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  </ion-item>
+  
+  <ion-item no-lines id="contactNumber-1" >
+  <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  </ion-item>
+  
+  <p id="Contact-two">
+      EMERGENCY CONTACT TWO
+     </p>
+  
+  <ion-item no-lines id="contactName-2" >
+  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  </ion-item>
+  
+  <ion-item no-lines id="contactNumber-2" >
+  <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  </ion-item>
+  
+  <p id="Contact-Three">
+      EMERGENCY CONTACT THREE
+     </p>
+  
+  <ion-item no-lines id="contactName-3" >
+  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  </ion-item>
+  
+  <ion-item no-lines id="contactNumber-3" >
+  <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  </ion-item>
+  
+  <div id="CreateAccount">
+      <button ion-button color="primary" (click)="presentToast()" id="create-btn">SAVE CHANGES</button>
+      </div>
+  
+    
+  </ion-content>

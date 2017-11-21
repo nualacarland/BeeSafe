@@ -69,3 +69,15 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+        border-width: 0 0 0.0px;
+    }
+
+
+    .back-button-icon-md{
+        display: none;
+    }
+    .back-button-icon-ios{
+        display: none;
+    }

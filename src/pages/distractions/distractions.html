@@ -6,22 +6,87 @@
 -->
 <ion-header>
 
-    <ion-toolbar>
-        <button ion-button menuToggle left>
-          <ion-icon name="menu"></ion-icon>
+    <ion-toolbar id="nav-bar">
+      <ion-buttons start>
+        <button ion-button (click)="gotoCreateBeeSafePlanPage()">
+          <ion-icon id="back" name="">Back</ion-icon>
         </button>
-        <ion-title>
+      </ion-buttons>
+        <ion-title id="ion-title">
           Distractions
         </ion-title>
         <ion-buttons end>
-          <button ion-button (click)="doClick()">
-            <ion-icon name="">Help</ion-icon>
+          <button ion-button (click)="gotoHelpNowPage()">
+            <ion-icon id="help"name="">Help</ion-icon>
           </button>
         </ion-buttons>
+  
       </ion-toolbar>
 </ion-header>
 
-
 <ion-content padding>
+    <ion-row>
+        <div class="triggers-info">
+            <p id="text-line">My Distraction <br/> Techniques
+                </p>
+                
+        </div>
+        <ion-icon name="ios-information-circle-outline" id="info-icon" style="color:#559ad1; height:20px; width:20px; font-weight:bold;" tappable (click)="openModal()">
+          </ion-icon>
+        
+          <div>
+      <button ion-button id="add" (click)="gotoAddDistractionPage()">+ Add New</button>
+      </div>
+
+      </ion-row>
+
+
+      <ion-list>
+
+        <ion-card id="ion-card-first">
+    <ion-item-sliding #item>
+    <ion-item id="trigger-list"> 
+    Math Studies
+    </ion-item>
+    
+
+    <ion-item-options side="right">
+        <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+        <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+
+  <ion-card id="ion-card">
+    <ion-item-sliding #item>
+    <ion-item id="trigger-list">
+      Listening to Music
+    </ion-item>
+
+    <ion-item-options side="right">
+        <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+        <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+   
+
+  <ion-card id="ion-card">
+    <ion-item-sliding #item>
+        <ion-item id="trigger-list">
+        Calling a Friend
+        </ion-item>
+    
+        <ion-item-options side="right">
+            <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+            <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+        </ion-item-options>
+        </ion-item-sliding>
+      </ion-card>
+      
+        </ion-list>
+
+
+
 
 </ion-content>

@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModalController, NavParams } from 'ionic-angular';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -44,6 +45,13 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    console.log(page);
+    if(page.component == 'HelpNowPage'){
+      this.nav.push(page.component);
+      this.nav.setBac
+    }else{
+      this.nav.setRoot(page.component);
+      
+    }
   }
 }

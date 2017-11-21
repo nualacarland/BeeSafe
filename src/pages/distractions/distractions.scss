@@ -1,3 +1,98 @@
 page-distractions {
+    #nav-bar {
+        height:75px;
+        width: 425px;
+    }
+    #ion-title {
+        height: 22px;
+        color: #313745;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-right: 76px;
+        margin-top: 37px;
+        margin-bottom:26px;
+        
+    }
+    #back {
+        height: 19px;
+        color:#53A9ED;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:16px;
+        margin-top:28px;
+        margin-left: 25px;
+        margin-bottom: 28px;
+
+
+    }
+    #help {
+        height:16px;
+        color: #F57D31;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 13px;
+        margin-right: 14px;
+        margin-top:46px;
+
+    }
+
+    #text-line {
+        height: 22px;
+        width: 100%;
+        color: #313745;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size:22px;
+        font-weight:500;
+        line-height: 22px;
+        margin-top:25px;
+        margin-left:24px;
+    }
+
+    #trigger-list {
+        padding-top:20px;
+        font-size:17px;
+     
+    }
+
+    #ios-information-circle-outline {
+   padding-top:20px;
+       
+    }
+
+    #info-icon {
+        margin-top: 28px;
+        margin-left:5px;
+        height: 25px;
+        width: 25px;
+        font-weight: bold;
+        padding-right: 62px;
+     
+    }
+    #ion-card-first {
+        margin-top:41px;
+    }
+    #ion-card {
+        margin-top:25px;
+    }
+   
+   
+      
+    #add {
+        height:47px;
+        width:140px;
+        border-radius: 4px;
+        background-color: #559AD1;
+        margin-left: 230px;
+        margin-top: -70px;
+        margin-right: 28px;
+
+
+    }
+
+   #Edit {
+    background-color:#D3D5DC;
+   }
+   #Delete {
+    background-color:#BBBDC5;
+   }
 
 }

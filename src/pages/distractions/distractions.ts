@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { DistractionsInfoModalPage } from '../distractions-info-modal/distractions-info-modal';
+
 
 /**
  * Generated class for the DistractionsPage page.
@@ -15,11 +18,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DistractionsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DistractionsPage');
+  }
+
+  openModal() {
+    let myModal = this.modalCtrl.create(DistractionsInfoModalPage);
+    myModal.present();
+  }
+  gotoHelpNowPage() {
+    this.navCtrl.push('HelpNowPage');
+  }
+  gotoCreateBeeSafePlanPage() {
+    this.navCtrl.push('CreateBeesafePlanPage');
+  }
+
+  gotoAddDistractionPage() {
+    this.navCtrl.push('AddDistractionPage');
+
   }
 
 }

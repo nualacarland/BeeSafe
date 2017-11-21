@@ -6,28 +6,34 @@ import { Toast } from '@ionic-native/toast';
 
 
 
+
 import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { EmergencyContactModalPage } from '../pages/emergency-contact-modal/emergency-contact-modal';
 import { PlanModalPage } from '../pages/plan-modal/plan-modal';
+import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/distractions-info-modal';
 
 @NgModule({
   declarations: [
     MyApp,
     EmergencyContactModalPage,
     PlanModalPage,
+    DistractionsInfoModalPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+        backButtonText: 'Back'
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     EmergencyContactModalPage,
     PlanModalPage,
+    DistractionsInfoModalPage,
   ],
   providers: [
     StatusBar,

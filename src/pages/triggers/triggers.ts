@@ -25,4 +25,11 @@ export class TriggersPage {
   gotoAddTriggerPage() {
     this.navCtrl.push('AddTriggerPage');
   }
+
+  gotoHelpNow() {
+    this.navCtrl.push('HelpNowPage');
+  }
+  gotoCreateMyBeeSafePlan() {
+    this.navCtrl.push('CreateBeesafePlanPage');
+  }
 }

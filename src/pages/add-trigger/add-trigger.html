@@ -4,24 +4,42 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!-- <ion-header>
 
-  <ion-navbar>
-    <ion-title>Triggers</ion-title>
+  <ion-navbar id="nav-bar">
+    <ion-title id="ion-title">Add Triggers</ion-title>
   </ion-navbar>
+  
 
-</ion-header>
+</ion-header> -->
 
+<ion-header>
+  
+      <ion-toolbar id="nav-bar">
+          <button ion-button menuToggle left>
+          </button>
+          <ion-title id="ion-title">
+           Add Trigger
+          </ion-title>
+          <ion-buttons end>
+            <button ion-button (click)="gotoTriggersPage()">
+              <ion-icon id="cancel" name="">Cancel</ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
-    <ion-row>
-        <div class="triggers-info">
-            <p id="text-line">My Triggers 
-                <ion-icon name="ios-information-circle-outline" style="color:#559ad1; height:20px; width:20px; font-weight:bold;" tappable (click)="openModal()">
-                </ion-icon>
-                </p>
-        </div>
-      
-      </ion-row>
+
+  <h1 id="text-line">Enter new trigger below</h1>
+
+<ion-item no-lines id="trigger-input">
+  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Enter your own trigger"></ion-input>
+</ion-item>
+
+<div >
+  <button ion-button color="primary" (click)="presentToast()" id="save-trigger">SAVE</button>
+</div>
+
 
 </ion-content>

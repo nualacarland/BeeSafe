@@ -1,4 +1,8 @@
 page-triggers {
+    #nav-bar {
+        height:75px;
+        width: 425px;
+    }
 
     #text-line {
         height: 22px;
@@ -14,6 +18,41 @@ page-triggers {
 
 
     }
+
+    #ion-title {
+        height:22px;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 27px;
+        margin-bottom:26px;
+    }
+
+    #help {
+        height: 16px;
+        color: #F57D31;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size:13px;
+        margin-top:46px;
+        margin-right: 14px;
+        margin-bottom: 13px;
+    }
+    #back {
+        height: 19px;
+        width: 73.45px;	
+        color: #53A9ED;	
+        font-family: Helvetica;	
+        font-size: 16px;	
+        line-height: 19px;
+        margin-top:28px;
+        margin-bottom: 28px;
+        margin-left:10px;
+
+    }
+
+
+
     #trigger-list {
         padding-top:20px;
         font-size:17px;

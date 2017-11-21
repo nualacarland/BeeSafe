@@ -12,6 +12,26 @@ page-create-beesafe-plan {
         margin-right:4px;
         padding-bottom:32px;
     }
+    
+    #ion-title {
+        height:22px;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 27px;
+        margin-bottom:26px;
+    }
+
+    #help {
+        height: 16px;
+        color: #F57D31;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size:13px;
+        margin-top:46px;
+        margin-right: 14px;
+        margin-bottom: 13px;
+    }
 
     .TriggersBtn {
         height: 210px;	
@@ -38,5 +58,9 @@ page-create-beesafe-plan {
         padding-bottom: 35px;
         padding-left: 5px;
         padding-right: 5px;
+    }
+    #nav-bar {
+        height:75px;
+        width: 425px;
     }
 }
