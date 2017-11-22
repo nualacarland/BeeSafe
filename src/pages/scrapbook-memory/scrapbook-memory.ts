@@ -26,4 +26,8 @@ export class ScrapbookMemoryPage {
     this.navCtrl.push('HelpNowPage');
   }
 
+  gotoEdit() {
+    this.navCtrl.push('AddEditScrapbookPage');
+  }
+
 }

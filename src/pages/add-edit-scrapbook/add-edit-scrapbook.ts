@@ -22,4 +22,6 @@ export class AddEditScrapbookPage {
     console.log('ionViewDidLoad AddEditScrapbookPage');
   }
 
+
+
 }
