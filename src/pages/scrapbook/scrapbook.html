@@ -6,23 +6,43 @@
 -->
 <ion-header>
 
-    <ion-toolbar id="nav-bar">
+    <ion-navbar id="nav-bar">
         <button ion-button menuToggle left>
           <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>
+        <ion-title id="ion-title">
           Scrapbook
         </ion-title>
         <ion-buttons end>
           <button ion-button (click)="gotoHelpNowPage()">
-            <ion-icon name="">Help</ion-icon>
+            <ion-icon id="help" name="">Help</ion-icon>
           </button>
         </ion-buttons>
-      </ion-toolbar>
+      </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+
+  <button ion-button (click)="gotoAddMemory()" id="memory-btn">ADD MEMORY</button>
+  <br/>
+  <br/>
+
+<!--Masonry Cards -->
+  <!-- <div class="pins">
+      <ion-card class="pin" *ngFor="let post of posts">
+        <img [src]=""/> 
+        <div *ngIf="post.description" class="post-description">
+          <small>{{ post.description }}</small>
+        </div>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/img/avatar/marty-avatar.png">
+          </ion-avatar>
+          <small>Memory Example</small>
+          <p><small>Category</small></p>
+        </ion-item>
+      </ion-card>
+    </div> -->
 
 </ion-content>

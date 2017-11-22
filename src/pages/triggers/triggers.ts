@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { TriggerModalPage } from '../trigger-modal/trigger-modal';
+
 
 /**
  * Generated class for the TriggersPage page.
@@ -15,15 +18,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TriggersPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TriggersPage');
   }
 
-  gotoAddTriggerPage() {
-    this.navCtrl.push('AddTriggerPage');
+  openModal() {
+    let myModal = this.modalCtrl.create(TriggerModalPage);
+    myModal.present();
   }
 
   gotoHelpNow() {
@@ -31,5 +35,9 @@ export class TriggersPage {
   }
   gotoCreateMyBeeSafePlan() {
     this.navCtrl.push('CreateBeesafePlanPage');
+  }
+ 
+  gotoAddPage() {
+    this.navCtrl.push('AddTriggerPage');
   }
 }

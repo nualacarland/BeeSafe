@@ -1,4 +1,4 @@
-page-plan-modal {
+page-trigger-modal {
 
     #text-line {
         height:24px;
@@ -13,10 +13,6 @@ page-plan-modal {
         padding-top:29px;
         padding-bottom:24px;
     }
-    #nav-bar {
-        height:75px;
-        width: 100%;
-    }
 
   
      #close-btn {
@@ -28,10 +24,14 @@ page-plan-modal {
     }
 
     #Close {
-        padding-bottom:23px;
+        padding-bottom:40px;
         padding-top:150px;
         padding-right:62px;
         padding-left:62px;
+    }
+    #nav-bar {
+        height:75px;
+        width: 100%;
     }
     
 

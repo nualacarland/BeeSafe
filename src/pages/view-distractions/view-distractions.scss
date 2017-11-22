@@ -1,7 +1,20 @@
-page-disclaimer {
+page-view-distractions {
+
     #nav-bar {
         height:75px;
         width: 100%;
+    }
+
+    #text-line {
+        height:22px;
+        font-size:17.5px;
+        font-family: 'Avenir Rounded', Arial, sans-serif;
+        font-weight: 500;
+        color: #313745;
+        margin-top:31px;
+        margin-left:25px;
+
+
     }
     #ion-title {
         height:22px;
@@ -22,18 +35,6 @@ page-disclaimer {
         margin-right: 14px;
         margin-bottom: 13px;
     }
+    
 
-    #text-line {
-        height: 22px;
-        font-family: 'Avenir Rounded', Arial, sans-serif;
-        font-weight:500;
-        font-size:17px;
-        line-height: 22px;
-        color: #313745;
-        margin-top: 31px;
-        margin-left: 27px;
-        margin-right: 41px;
-
-
-    }
 }

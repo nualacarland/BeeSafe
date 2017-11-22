@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ScrapbookDetailsPage page.
+ * Generated class for the ViewDistractionsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-scrapbook-details',
-  templateUrl: 'scrapbook-details.html',
+  selector: 'page-view-distractions',
+  templateUrl: 'view-distractions.html',
 })
-export class ScrapbookDetailsPage {
+export class ViewDistractionsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ScrapbookDetailsPage');
+    console.log('ionViewDidLoad ViewDistractionsPage');
   }
 
 }

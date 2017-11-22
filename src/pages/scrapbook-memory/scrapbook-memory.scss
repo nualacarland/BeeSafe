@@ -1,0 +1,45 @@
+page-scrapbook-memory {
+    #ion-title {
+        height: 22px;
+        color: #313745;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        float: right;
+        margin-right: 30px;
+        margin-top: 30px;
+        margin-bottom:26px;
+    }
+    #backbtn {
+        height: 19px;
+        color:#53A9ED;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:16px;
+        float:left;
+        margin-left:10px;
+        margin-top:28px;
+        margin-bottom: 28px;
+    }
+
+    #help {
+        height:16px;
+        color: #F57D31;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 13px;
+        margin-right: 14px;
+        margin-top:46px;
+    }
+    #nav-bar {
+        height:75px;
+        width: 100%;
+    }
+
+    #edit-btn {
+        background-color:#559AD1;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+    }
+    #delete-btn {
+        background-color:#559AD1;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+    }
+}

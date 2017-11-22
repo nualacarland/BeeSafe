@@ -31,6 +31,8 @@ export class MyApp {
       { title: 'Disclaimer', component: 'DisclaimerPage'}
     ];
 
+
+
   }
 
   initializeApp() {
@@ -48,7 +50,7 @@ export class MyApp {
     console.log(page);
     if(page.component == 'HelpNowPage'){
       this.nav.push(page.component);
-      this.nav.setBac
+      // this.nav.setBack
     }else{
       this.nav.setRoot(page.component);
       

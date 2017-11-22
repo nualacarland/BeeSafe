@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { EmergencyContactModalPage } from '../pages/emergency-contact-modal/emergency-contact-modal';
 import { PlanModalPage } from '../pages/plan-modal/plan-modal';
 import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/distractions-info-modal';
+import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/dist
     EmergencyContactModalPage,
     PlanModalPage,
     DistractionsInfoModalPage,
+    TriggerModalPage,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/dist
     EmergencyContactModalPage,
     PlanModalPage,
     DistractionsInfoModalPage,
+    TriggerModalPage,
   ],
   providers: [
     StatusBar,
