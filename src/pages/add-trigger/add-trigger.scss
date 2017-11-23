@@ -25,7 +25,7 @@ page-add-trigger {
         height: 22px;
         width: 270px;
         color: #313745;
-        font-family: 'Avenir Rounded Reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
         font-size: 23px;
         font-weight: 500;
         line-height: 22px;
@@ -54,5 +54,16 @@ page-add-trigger {
         margin-left:63px;
         margin-right: 62px;
 
+    }
+    input::placeholder {
+        height:19px;
+        font-size:18px;
+        line-height:19px;
+        padding-left:11px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        letter-spacing:0px;
+        padding-left:11px;
+        color: #000000; 
+    
     }
 }

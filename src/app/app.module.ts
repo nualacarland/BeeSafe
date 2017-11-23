@@ -42,7 +42,7 @@ import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
     StatusBar,
     SplashScreen,
     Toast,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler,}
   ]
 })
 export class AppModule {}

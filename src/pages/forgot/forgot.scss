@@ -1,11 +1,19 @@
 page-forgot {
 
+    #main-logo {
+        height: 179px;
+        width: 250px;
+        margin-top:19px;
+        margin-right:65px;
+        margin-left: 60px;
+    }
+
     #text-line {
         height:24px;
         width:390px;
         color: #313745;
         font-size:20px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
         line-height: 24px;
         text-align: center;
         padding-right:42px;
@@ -14,14 +22,27 @@ page-forgot {
         padding-bottom:45px;
     }
 
+    #input-box {
+        width:290px;
+        height:60px;
+        background-color: #FAFAE4;
+        padding-top:9px;
+        padding-right:22px;
+        padding-left:21px;
+        margin-top:18px;
+        margin-right:20px;
+        margin-left:20px;
+       
+    }
     #send-btn {
         height:60px;
         width: 250px;
         border-radius: 2px;
         background-color: #559AD1;
-     
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-weight: 500;
+        font-size: 21px;
     }
-
     #SendForgot {
         padding-bottom:23px;
         padding-top:26px;
@@ -30,10 +51,14 @@ page-forgot {
     }
     input::placeholder {
         height:19px;
-        font-size:15px;
+        font-size:18px;
         line-height:19px;
         padding-left:11px;
-        font-family: 'Avenir Rounded pro', Arial, sans-serif;
+        font-weight:500;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        letter-spacing:1px;
+        padding-left:2px;
+        color: #000000; 
     
     }
 

@@ -20,7 +20,7 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
+    this.pages = [  
       { title: 'Home', component: 'DashboardPage'},
       { title: 'Help Right Now', component: 'HelpNowPage' },
       { title: 'Bee Safe Plan', component: 'BeeSafePlanPage' },
@@ -31,10 +31,7 @@ export class MyApp {
       { title: 'Disclaimer', component: 'DisclaimerPage'}
     ];
 
-
-
   }
-
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -55,5 +52,7 @@ export class MyApp {
       this.nav.setRoot(page.component);
       
     }
+
+  
   }
 }

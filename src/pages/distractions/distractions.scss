@@ -67,11 +67,38 @@ page-distractions {
         padding-right: 62px;
      
     }
+
+
+
+    .label-ios {
+        font-size:17px;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
+        color: #313745;
+        padding-top:-21px;
+        padding-bottom:28px;
+    }
     #ion-card-first {
         margin-top:41px;
+        height: 65px;	
+        width: 335px;	
+        border-radius: 3px;	
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.1);
+        margin-bottom:25px;
     }
+
     #ion-card {
         margin-top:25px;
+    }
+
+    #ion-card {
+        height: 65px;	
+        width: 335px;	
+        border-radius: 3px;	
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.1);
+        margin-bottom:25px;
+         
     }
    
    
@@ -89,10 +116,23 @@ page-distractions {
     }
 
    #Edit {
-    background-color:#D3D5DC;
-   }
-   #Delete {
-    background-color:#BBBDC5;
-   }
+        height: 65px;
+        width:60px;
+        background-color:#D3D5DC;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size: 14px;
+        padding-bottom:16px;
+    
+    }
+    
+    #Delete {
+        height: 65px;
+        width:60px;
+        background-color:#BBBDC5;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size:14px;
+        padding-bottom:16px;
+    }
+
 
 }

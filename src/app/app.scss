@@ -57,13 +57,9 @@
        url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.svg#Avenir Next Rounded W01 Reg") format("svg");
     }
 
-
-
     input{
         background-color: #FAF4EA;
     }
-
-
 
     .pin-input-wrap{
         padding-left: 15px;
@@ -73,7 +69,50 @@
     .header-ios .toolbar-ios:last-child .toolbar-background-ios {
         border-width: 0 0 0.0px;
     }
+    #nav-bar-menu {
+        height:75px;
+        width: 100%;
+        background-color: #FFFFFF;
+    }
+    #avatar-img {
+        height: 55.56px;
+        width: 58.14px;
+        margin-top:27px;
+        margin-left:39px;
+    }
+    #ion-list {
+        padding-top:40px;
+        padding-left:16px;
+       
+    }
 
+    #ion-text {
+        font-size: 19px;
+        color: #5B6275;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;	
+        font-weight: 500;
+    }
+
+    #custom-nav-home{
+        font-size: 19px;
+        color: #5B6275;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;	
+        font-weight: 500;
+        padding-top: 40px;
+        padding-left: 16px;
+    }
+
+    .label-ios{
+        font-size: 19px;
+        color: #5B6275;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;	
+    }
+    #nav-img {
+        height: 28px;
+        width: 28px;
+        margin-right:-20px;
+     
+    }
 
     .back-button-icon-md{
         // display: none;

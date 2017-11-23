@@ -8,11 +8,12 @@ page-dashboard {
         height:75px;
         width: 100%;
     }
+
     .HelpBtn {
         height: 210px;	
         width: 160px;	
         color: #313745;	
-        font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+        font-family: 'Avenir Rounded med', Arial, sans-serif;	
         font-size: 16px;		
         line-height: 20px;
         text-align: center;
@@ -21,6 +22,7 @@ page-dashboard {
         padding-left: 5px;
         padding-right: 5px;
     }
+
     .HelpNow {
         height: 80px;
         width: 80px;
@@ -35,7 +37,7 @@ page-dashboard {
         height: 210px;	
         width: 160px;	
         color: #313745;	
-        font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+        font-family: 'Avenir Rounded med', Arial, sans-serif;	
         font-size: 16px;		
         line-height: 20px;
         text-align: center;
@@ -48,7 +50,7 @@ page-dashboard {
         height: 210px;	
         width: 160px;	
         color: #313745;	
-        font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+        font-family: 'Avenir Rounded med', Arial, sans-serif;	
         font-size: 16px;	
         line-height: 20px;
         text-align: center;
@@ -61,7 +63,7 @@ page-dashboard {
         height: 210px;	
         width: 160px;	
         color: #313745;	
-        font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+        font-family: 'Avenir Rounded med', Arial, sans-serif;	
         font-size: 16px;		
         line-height: 20px;
         text-align: center;
@@ -69,6 +71,26 @@ page-dashboard {
         padding-bottom: 35px;
         padding-left: 5px;
         padding-right: 5px;
+    }
+
+    /* Images */
+    #logo {
+        height: 61px;
+        width: 86px;
+        margin-top:4px;
+        margin-left:120px;
+        margin-right:144px;
+    }
+    #img {
+        height: 80px;
+        width: 80px;
+    }
+    #ion-img{
+       margin-top: -120px;
+       margin-bottom:38px;
+       margin-left: 35px;
+       margin-right:40px;
+     
     }
 
 }

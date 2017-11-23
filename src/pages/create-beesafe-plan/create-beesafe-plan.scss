@@ -1,7 +1,7 @@
 page-create-beesafe-plan {
     
     .bee-safe-plan {
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
         font-size: 17.5px;
         font-weight: 500;
         line-height:22px;
@@ -15,13 +15,14 @@ page-create-beesafe-plan {
     
     #ion-title {
         height:22px;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size: 18px;
-        font-weight: 500;
+        font-weight:700;
         text-align: center;
         margin-top: 27px;
         margin-bottom:26px;
     }
+
 
     #help {
         height: 16px;
@@ -37,7 +38,8 @@ page-create-beesafe-plan {
         height: 210px;	
         width: 160px;	
         color: #313745;	
-        font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
+        font-weight: 500;	
         font-size: 16px;		
         line-height: 20px;
         text-align: center;
@@ -50,7 +52,7 @@ page-create-beesafe-plan {
         height: 210px;	
         width: 160px;	
         color: #313745;	
-        font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+        font-family: 'Avenir Rounded med', Arial, sans-serif;	
         font-size: 16px;	
         line-height: 20px;
         text-align: center;
@@ -63,4 +65,23 @@ page-create-beesafe-plan {
         height:75px;
         width: 100%;
     }
+
+    #img {
+        height: 80px;
+        width: 80px;
+    }
+    #ion-img{
+       margin-top: -120px;
+       margin-bottom:38px;
+       margin-left: 35px;
+       margin-right:40px;
+     
+    }
+
+    #info-icon {
+     margin-left:10px;
+    }
+       
+    
 }
+
