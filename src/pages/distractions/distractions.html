@@ -33,16 +33,17 @@
 
       </ion-row>
 
-
       <ion-list>
 
-        <ion-card id="ion-card-first">
+    <ion-card id="ion-card-first">
     <ion-item-sliding #item>
     <ion-item id="trigger-list"> 
+      <div>
+      <ion-img id="ion-img" src=""></ion-img>
+      </div>
     Math Studies
     </ion-item>
     
-
     <ion-item-options side="right">
         <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
         <button ion-button id="Delete" (click)="unread(item)">Delete</button>
@@ -53,6 +54,9 @@
   <ion-card id="ion-card">
     <ion-item-sliding #item>
     <ion-item id="trigger-list">
+    <div>
+      <ion-img id="ion-img"src=""></ion-img>
+      </div>
       Listening to Music
     </ion-item>
 
@@ -67,6 +71,9 @@
   <ion-card id="ion-card">
     <ion-item-sliding #item>
         <ion-item id="trigger-list">
+            <div>
+                <ion-img id="ion-img" src=""></ion-img>
+                </div>
         Calling a Friend
         </ion-item>
     
