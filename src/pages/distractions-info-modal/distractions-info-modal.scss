@@ -3,7 +3,7 @@ page-distractions-info-modal {
         height:24px;
         width:390px;
         color: #313745;
-        font-size:20px;
+        font-size:19px;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         line-height: 24px;
         text-align: center;
@@ -12,16 +12,14 @@ page-distractions-info-modal {
         padding-top:29px;
         padding-bottom:24px;
     }
-
-  
      #close-btn {
         height:60px;
         width: 250px;
         border-radius: 2px;
         background-color: #559AD1;
-     
+        font-size: 21px;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
     }
-
     #Close {
         padding-bottom:23px;
         padding-top:150px;
@@ -31,7 +29,19 @@ page-distractions-info-modal {
     #nav-bar {
         height:75px;
         width: 100%;
-    
     }
+    #ion-title {
+        height: 22px;
+        color: #313745;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-right: 76px;
+        margin-top: 30px;
+        margin-bottom:26px;
+    }
+
+
+
 
 }

@@ -8,7 +8,7 @@ page-triggers {
         height: 22px;
         width: 139px;
         color: #313745;
-        font-family: 'Avenir Rounded med', Arial, sans-serif;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
         font-size:21px;
         font-weight: 500;
         line-height: 22px;
@@ -92,6 +92,12 @@ page-triggers {
         padding-right:10px;
        
        }
+       #plus {
+        font-weight: 900;
+        font-weight:bold;
+        margin-right: 5px;
+        padding-top:-6px;
+    }
       
     #add-trigger-btn {
         height:47px;

@@ -29,7 +29,7 @@ page-help-now {
         height: 46px;
         width: 293px;	
         color: #313745;	
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
         font-size: 20px;	
    	
         line-height: 23px;
@@ -66,7 +66,7 @@ page-help-now {
         margin-top: 24px;
         margin-left:40px;
         margin-bottom: 16px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
         height:24px;
         color: #313745;
         font-size:20px;
@@ -79,7 +79,7 @@ page-help-now {
         margin-top:16px;
         margin-left:40px;
         margin-bottom: 16px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
         height:24px;
         color: #313745;
         font-size:20px;
@@ -87,10 +87,18 @@ page-help-now {
         line-height: 24px;
     }
 
+    #opacity-img{
+        opacity: 0.5;
+        height: 293px;
+        width: 293px;
+        margin-left:194px;
+        margin-top:-110px;
+    }
+
     #call-link-1 {
       height: 23px;
       color: #559AD1;
-      font-family: 'Avenir Rounded reg', Arial, sans-serif;
+      font-family: 'Avenir Rounded demi', Arial, sans-serif;
       font-size: 19px;
       font-weight: 500;
       line-height: 23px;
@@ -101,7 +109,7 @@ page-help-now {
     #call-link-2 {
         height: 23px;
         color: #559AD1;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
@@ -112,7 +120,7 @@ page-help-now {
       #call-link-3 {
         height: 23px;
         color: #559AD1;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;

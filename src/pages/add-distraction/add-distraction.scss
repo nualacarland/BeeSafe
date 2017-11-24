@@ -11,9 +11,10 @@ page-add-distraction {
         font-weight: 500;
         line-height: 22px;
         text-align: center;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Med', Arial, sans-serif;
         margin-top: 25px;
     }
+
     #ion-title {
         
          color: #313745;
@@ -35,10 +36,10 @@ page-add-distraction {
         height: 36px;
         color: #313745;
         font-size: 15px;
-        font-weight:500;
+     
         line-height: 18px;
         text-align: center;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
         margin-left:53px;
         margin-right:52px;
         margin-top: 29px;
@@ -70,6 +71,7 @@ page-add-distraction {
         padding-left:22px;
         padding-top:16px;
         padding-bottom:15px;
+        color: #5B6275;
     }
     #save-distraction {
         height: 60px;
@@ -83,6 +85,23 @@ page-add-distraction {
         margin-left:63px;
         margin-right: 62px;
 
+    }
+
+    /* images */
+
+    #img-select {
+        height: 40px;
+        width: 40px;
+        margin-right:40px;
+    }
+
+    #img-select-1 {
+        height: 40px;
+        width: 40px;
+        margin-left:85px;
+        margin-right:40px;
+        margin-top: 19px;
+   
     }
 
  

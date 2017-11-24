@@ -24,7 +24,19 @@ page-plan-modal {
         width: 250px;
         border-radius: 2px;
         background-color: #559AD1;
-     
+        font-size: 21px;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
+    }
+
+    #ion-title {
+            height:22px;
+            font-family: 'Avenir Rounded reg', Arial, sans-serif;
+            font-size: 18px;
+            font-weight:700;
+            text-align: center;
+            margin-top: 27px;
+            margin-bottom:26px;
+        
     }
 
     #Close {

@@ -23,18 +23,41 @@
   </ion-header>
 
 <ion-content padding>
-  
-  <p id="text-line"> Please enter your email address</p>
-  
+
   <ion-item no-lines id="password" >
-  <ion-input type="password" style="background-color:#FAF4EA;" placeholder="Email Address"></ion-input>
+  <ion-input id="ion-input-1" type="password" style="background-color:#FAF4EA;" placeholder="Email address"></ion-input>
   </ion-item>
   <ion-row>
       <p id="text-line">Select your Avatar</p>
+
+      <ion-row>
+            
+        <ion-col col-2>
+            <ion-img id="ion-img-1" src=""> </ion-img>
+        </ion-col>
+        <ion-col col-2>
+            <ion-img id="ion-img" src=""> </ion-img>
+        </ion-col>
+    
+        <ion-col col-2>
+            <ion-img id="ion-img" src=""> </ion-img>
+        </ion-col >
+    
+        <ion-col col-2>
+            <ion-img id="ion-img" src=""> </ion-img>
+        </ion-col>
+        <ion-col col-2>
+                <ion-img id="ion-img" src=""> </ion-img>
+        </ion-col>
+        <ion-col col-2>
+            <ion-img id="ion-img" src=""> </ion-img>
+        </ion-col>
+        
+        </ion-row>
       
   </ion-row>
   <ion-row>
-      <p id="text-line">Enter your 4-digit pin</p>
+      <p id="text-line">Please enter your 4-digit pin</p>
           <ion-col col-3>
               <ion-item no-lines id="input-1" >
               <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
@@ -85,11 +108,11 @@
      </p>
   
   <ion-item no-lines id="contactName-1" >
-  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
   </ion-item>
   
   <ion-item no-lines id="contactNumber-1" >
-  <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
   </ion-item>
   
   <p id="Contact-two">
@@ -97,11 +120,11 @@
      </p>
   
   <ion-item no-lines id="contactName-2" >
-  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
   </ion-item>
   
   <ion-item no-lines id="contactNumber-2" >
-  <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
   </ion-item>
   
   <p id="Contact-Three">
@@ -109,15 +132,15 @@
      </p>
   
   <ion-item no-lines id="contactName-3" >
-  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
   </ion-item>
   
   <ion-item no-lines id="contactNumber-3" >
-  <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
   </ion-item>
   
-  <div id="CreateAccount">
-      <button ion-button color="primary" (click)="presentToast()" id="create-btn">SAVE CHANGES</button>
+  <div id="SaveChanges">
+      <button ion-button color="primary" (click)="presentToast()" id="save-btn">SAVE CHANGES</button>
       </div>
   
     
