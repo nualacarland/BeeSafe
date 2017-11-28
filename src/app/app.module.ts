@@ -3,8 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ModalController, NavParams } from 'ionic-angular';
 import { Toast } from '@ionic-native/toast';
-
-
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 
 import { MyApp } from './app.component';
@@ -42,6 +41,7 @@ import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
     StatusBar,
     SplashScreen,
     Toast,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler,}
   ]
 })

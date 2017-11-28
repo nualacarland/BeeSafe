@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModalController, NavParams } from 'ionic-angular';
-
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, private sqlite: SQLite) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -53,6 +53,26 @@ export class MyApp {
       
     }
 
-  
   }
+  
+databas() {
+this.sqlite.create({
+  name: 'data.db',
+  location: 'default'
+})
+  .then((db: SQLiteObject) => {
+
+
+    db.executeSql('create table danceMoves(name VARCHAR(32))', {})
+      .then(() => console.log('Executed SQL'))
+      .catch(e => console.log(e));
+
+
+  })
+  .catch(e => console.log(e));
+
 }
+
+
+}
+ 
