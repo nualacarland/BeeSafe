@@ -54,23 +54,23 @@ export class MyApp {
     }
 
   }
+
   
-database() {
-this.sqlite.create({
-  name: 'data.db',
-  location: 'default'
-})
-  .then((db: SQLiteObject) => {
+// database() {
+// this.sqlite.create({
+//   name: 'data.db',
+//   location: 'default'
+// })
+//   .then((db: SQLiteObject) => {
 
-    db.executeSql('create table danceMoves(name VARCHAR(32))', {})
-      .then(() => console.log('Executed SQL'))
-      .catch(e => console.log(e));
+//     db.executeSql('create table danceMoves(name VARCHAR(32))', {})
+//       .then(() => console.log('Executed SQL'))
+//       .catch(e => console.log(e));
 
-  })
-  .catch(e => console.log(e));
+//   })
+//   .catch(e => console.log(e));
 
-}
-
+// }
 
 }
  
