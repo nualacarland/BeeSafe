@@ -55,7 +55,6 @@ export class MyApp {
 
   }
 
-  
 // database() {
 // this.sqlite.create({
 //   name: 'data.db',

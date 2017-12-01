@@ -5,7 +5,6 @@ import { ModalController, NavParams } from 'ionic-angular';
 import { Toast } from '@ionic-native/toast';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
-
 import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';

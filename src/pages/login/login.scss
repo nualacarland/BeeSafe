@@ -3,15 +3,15 @@ page-login {
     #img-logo{
         height: 179px;
         width: 250px;
-        margin-left:60px;
-        margin-right:65px;
+        margin-left:45px;
+        margin-right:60px;
         margin-top:19px;
         margin-bottom:10px;
     }
 
     #text-line {
         height:24px;
-        width:390px;
+        width: 100%;
         color: #313745;
         font-size:20px;
         font-family: 'Avenir Rounded med', Arial, sans-serif;
@@ -22,11 +22,11 @@ page-login {
         padding-left:43px;
         padding-top:9px;
         padding-bottom:24px;
+
     }
 
     #Forgot-line {
         height: 18px;
-        width:290px;
         color: #5B6275;
         font-family: 'Avenir Rounded med', Arial, sans-serif;
         font-size: 14px;
@@ -41,6 +41,7 @@ page-login {
         padding-left:42px;
         padding-right:43px;
         padding-bottom:130px;
+
     }
 
     #input-1 {
@@ -68,6 +69,7 @@ page-login {
         width:80px;
         padding-top:0px;
         float: left;
+    
     }
 
     #login-btn {
@@ -79,42 +81,23 @@ page-login {
         font-weight: 500;
         font-size:21px;
         line-height: 25px;
-        padding-left: 76px;
-        padding-right: 76px;
-        padding-top: 18px;
-        padding-bottom: 17px;
+    
     }
-
-    // height: 25px;
-    // width: 98px;	
-    // color: #FFFFFF;	
-    // font-family: "Avenir Next Rounded Pro";	
-    // font-size: 21px;	
-    // font-weight: 500;	
-    // letter-spacing: 1px;	
-    // line-height: 25px;	
-    // text-align: center;
-
-
     #login {
         padding-bottom:23px;
         padding-top:10px;
         padding-right:62px;
         padding-left:62px;
+    
     }
    
     #create-btn {
         height: 75px;
-        width: 500px !important;
         background-color: #5B6275;
-        margin-left:-40px;
         font-size: 18px;
         font-family: 'Avenir Rounded', Arial, sans-serif;
         font-weight: 22px;
-        padding-right: 80px;
-        padding-left:43px;
-        margin-top: 42px;
-          
+          margin: 0;
     }
     
     #create {
@@ -124,11 +107,16 @@ page-login {
         margin-right: auto;
         padding-right:20px;
         padding-left:0px;
-       
     }
-    
    
-    
+    .footer-toolbar{
+        padding: 0 !important;
+        .toolbar-background{
+            background-color: transparent !important;
+            border: none !important;
+        }
+    }
+
 
     }
     

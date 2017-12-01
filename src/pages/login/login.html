@@ -9,13 +9,18 @@
 
 <ion-content padding>
 
-  <ion-img id="img-logo" src=""></ion-img>
- 
+  <ion-row>
+    <ion-col text-center> 
+        <ion-img id="img-logo" src=""></ion-img>
+    </ion-col>
+</ion-row>
 
+ 
   <p id="text-line">
    Please enter your 4-digit pin
   </p>
  
+  <ion-grid>
   <ion-row>
       <ion-col col-3>
           <ion-item no-lines id="input-1" >
@@ -42,25 +47,24 @@
           <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
           </ion-item>
         </ion-col>
-
-          <div id="login">
-          <button ion-button color="primary" (click)="gotoLazyPage()" id="login-btn">LOGIN</button>
-          </div>
-        
-          <div id="forgot">
-          <button id="Forgot-line"(click)="gotoForgotPage()">
-          Forgot Password?
-          </button>
-          </div>
-
   </ion-row>
   
+  <ion-row>
+    <ion-col text-center>
+            <button ion-button color="primary" (click)="gotoLazyPage()" id="login-btn">LOGIN</button>
+    </ion-col>
+  </ion-row>
 
-  <div id="Create">
-    <button ion-button  (click)="gotoRegisterPage()" id="create-btn">Or, Create an account</button>
-    </div>
-
-  
-
-    
+  <ion-row>
+    <ion-col text-center>
+        <button id="Forgot-line"(click)="gotoForgotPage()">Forgot Password?</button>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+ 
 </ion-content>
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <button ion-button full  (click)="gotoRegisterPage()" id="create-btn">Or, Create an account</button>
+  </ion-toolbar>
+</ion-footer>

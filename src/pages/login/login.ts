@@ -22,7 +22,6 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-
   gotoLazyPage(){
     this.navCtrl.push('DashboardPage');
   }
@@ -36,7 +35,6 @@ export class LoginPage {
   }
 
   ionViewWillAppear(){
-
 
     console.log('ionViewWillAppear LoginPage');
 
