@@ -4,7 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModalController, NavParams } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
 
+const DATABASE_FILE_NAME: string = "BeeSafe.db";
 
 @Component({
   templateUrl: 'app.html'
@@ -12,12 +14,16 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  private db: SQLiteObject;
+
   rootPage: any = 'LoginPage';
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, private sqlite: SQLite) {
     this.initializeApp();
+
+    this.createDatabaseFile();
 
     // used for an example of ngFor and navigation
     this.pages = [  
@@ -55,21 +61,37 @@ export class MyApp {
 
   }
 
-// database() {
-// this.sqlite.create({
-//   name: 'data.db',
-//   location: 'default'
-// })
-//   .then((db: SQLiteObject) => {
+ionViewDidLoad(){
+  this.createDatabaseFile();
+}
 
-//     db.executeSql('create table danceMoves(name VARCHAR(32))', {})
-//       .then(() => console.log('Executed SQL'))
-//       .catch(e => console.log(e));
+private createDatabaseFile(): void {
+  console.log('database created successfully!')
+  this.sqlite.create({
+    name: DATABASE_FILE_NAME,
+    location:'default',
+    
 
-//   })
-//   .catch(e => console.log(e));
+  })
 
-// }
+  .then((db: SQLiteObject) => {
+    console.log("database created");
+    this.db = db;
+    this.createTables();
+
+  })
+  .catch(e => console.log(e));
+
+}
+
+private createTables():  void {
+  this.db.executeSql("CREATE TABLE IF NOT EXISTS USERS ('user_ID' int(11) auto_increment, 'user_pin' int(80), 'user_emails' varchar(255), PRIMARY KEY ('user_ID')",{})
+  .then(() => {
+    console.log('Users table created!');
+
+  })
+  .catch(e => console.log(e));
+}
 
 }
  
