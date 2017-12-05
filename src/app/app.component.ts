@@ -6,6 +6,7 @@ import { ModalController, NavParams } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
 
+
 const DATABASE_FILE_NAME: string = "BeeSafe.db";
 
 @Component({
@@ -15,6 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   private db: SQLiteObject;
+
 
   rootPage: any = 'LoginPage';
 
@@ -92,6 +94,7 @@ private createTables():  void {
   })
   .catch(e => console.log(e));
 }
+
 
 }
  

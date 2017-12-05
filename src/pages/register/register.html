@@ -6,11 +6,12 @@
 -->
 
 <ion-content padding>
-
+    <form [formGroup]="userDetails" (ngSubmit)="createAccount()">
+        
 <p id="text-line"> Please enter your email address</p>
 
 <ion-item no-lines id="password" >
-<ion-input type="password" style="background-color:#FAF4EA;" placeholder="Email address"></ion-input>
+<ion-input type="text" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email address" errorMessage="Email Already Exists!"  ></ion-input>
 </ion-item>
 <ion-row>
     <p id="text-line">Select your Avatar</p>
@@ -45,25 +46,25 @@
     <p id="text-line">Please enter your 4-digit pin</p>
         <ion-col col-3>
             <ion-item no-lines id="input-1" >
-            <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+            <ion-input type="password" formControlName="pin1" maxlength="1" style="background-color:#FAF4EA;"></ion-input>
             </ion-item>
         </ion-col>
             
         <ion-col col-3>
             <ion-item no-lines id="input-2" >
-            <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+            <ion-input type="password" formControlName="pin2" maxlength="1" style="background-color:#FAF4EA;"></ion-input>
             </ion-item>
         </ion-col>
             
         <ion-col col-3>
             <ion-item no-lines id="input-3" >
-            <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+            <ion-input type="password" formControlName="pin3" maxlength="1" style="background-color:#FAF4EA;"></ion-input>
             </ion-item>
         </ion-col>
             
         <ion-col col-3>
             <ion-item no-lines id="input-4" >
-            <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+            <ion-input type="password" formControlName="pin4" maxlength="1" style="background-color:#FAF4EA;"></ion-input>
             </ion-item>
         </ion-col>
 </ion-row>
@@ -83,11 +84,11 @@
    </p>
 
 <ion-item no-lines id="contactName-1" >
-<ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+<ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact1Name"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="contactNumber-1" >
-<ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+<ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact1Tel"></ion-input>
 </ion-item>
 
 <p id="Contact-two">
@@ -95,11 +96,11 @@
    </p>
 
 <ion-item no-lines id="contactName-2" >
-<ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+<ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact2Name"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="contactNumber-2" >
-<ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+<ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact2Tel"></ion-input>
 </ion-item>
 
 <p id="Contact-Three">
@@ -107,16 +108,18 @@
    </p>
 
 <ion-item no-lines id="contactName-3" >
-<ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+<ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact3Name"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="contactNumber-3" >
-<ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+<ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact3Tel"></ion-input>
 </ion-item>
 
 <div id="CreateAccount">
-    <button ion-button color="primary" (click)="presentToast()" id="create-btn">CREATE ACCOUNT</button>
+    <button ion-button color="primary" type="submit" [disabled]="!userDetails.valid" id="create-btn">CREATE ACCOUNT</button>
     </div>
-
+</form>
   
+
+
 </ion-content>

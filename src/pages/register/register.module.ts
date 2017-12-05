@@ -12,7 +12,12 @@ import { ModalController, NavParams } from 'ionic-angular';
   ],
 })
 
-export class RegisterPageModule {}
+export class RegisterPageModule {
+
+
+
+}
+
 
 
   
