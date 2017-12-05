@@ -59,8 +59,7 @@ export class RegisterPage {
 
   createAccount(){
     console.log('What is in the form? ', this.userDetails.value);
-
-    // this.checkUser();
+    this.insertUser();
 
   }
   ionViewDidLoad() {
@@ -81,7 +80,7 @@ export class RegisterPage {
     //TODO: Do your check to see if the user exists via SQL if they do not insert them, then present your toast
 
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql("IF EXISTS (SELECT * FROM USERS WHERE user_email= user_email)" [
+    this.db.executeSql( "SELECT * FROM USERS WHERE user_email= ?" [
       this.userDetails.value.emailAddress]
     ).then((data) => {
       console.log(data);
@@ -92,7 +91,7 @@ export class RegisterPage {
 
       }else {
        this.insertUser()
-        this.presentToast()
+      this.presentToast()
       }
 
   }, (e) => {
