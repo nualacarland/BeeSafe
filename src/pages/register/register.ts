@@ -24,19 +24,6 @@ import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 export class RegisterPage {
   private db: SQLiteObject;
   
-  // private userDetails = {
-  //   emailAddress: '',
-  //   pin1: '',
-  //   pin2: '',
-  //   pin3: '',
-  //   pin4: '',
-  //   contact1Tel: '',
-  //   contact1Name: '',
-  //   contact2Tel: '',    
-  //   contact2Name: '',
-  //   contact3Tel: '',
-  //   contact3Name: '',
-  // }
   private userDetails : FormGroup;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private toastCtrl: ToastController,
@@ -73,8 +60,7 @@ export class RegisterPage {
   createAccount(){
     console.log('What is in the form? ', this.userDetails.value);
 
-    this.checkUser();
-
+    // this.checkUser();
 
   }
   ionViewDidLoad() {
@@ -84,7 +70,6 @@ export class RegisterPage {
   gotoDashboardPage() {
     this.navCtrl.push('DashboardPage');
   }
-
 
   openModal() {
     let myModal = this.modalCtrl.create(EmergencyContactModalPage);
@@ -96,16 +81,17 @@ export class RegisterPage {
     //TODO: Do your check to see if the user exists via SQL if they do not insert them, then present your toast
 
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-  
-    this.db.executeSql("SELECT * FROM USERS WHERE user_emails = ", [
+    this.db.executeSql("IF EXISTS (SELECT * FROM USERS WHERE user_email= user_email)" [
       this.userDetails.value.emailAddress]
     ).then((data) => {
       console.log(data);
 
       if(data.length > 0){
         //TODO: records have been found so user already exists
-      }else{
-        this.insertUser()
+        console.log("User Details already exist");
+
+      }else {
+       this.insertUser()
         this.presentToast()
       }
 
@@ -130,8 +116,7 @@ export class RegisterPage {
       console.log(data);
 
   }, (e) => {
-
-      console.log("Errot: " + JSON.stringify(e));
+      console.log("Error: " + JSON.stringify(e));
   });
   }
 

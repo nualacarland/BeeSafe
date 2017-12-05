@@ -11,12 +11,12 @@
 <p id="text-line"> Please enter your email address</p>
 
 <ion-item no-lines id="password" >
-<ion-input type="text" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email address" errorMessage="Email Already Exists!"  ></ion-input>
+<ion-input type="text" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email Address"></ion-input>
 </ion-item>
 <ion-row>
     <p id="text-line">Select your Avatar</p>
     
-<ion-row>
+<ion-row radio-group>
     
     <ion-col col-2>
         <ion-img id="ion-img-1" src=""> </ion-img>
@@ -36,10 +36,26 @@
          <ion-img id="ion-img" src=""> </ion-img>
     </ion-col>
     <ion-col col-2>
-        <ion-img id="ion-img" src=""> </ion-img>
+        <ion-img  id="ion-img" tappable src=""> </ion-img> 
     </ion-col>
 
+    <!-- <ion-row radio-group>
+
+         <ion-label><img id="ion-img" src="" /></ion-label>
+          <ion-radio value="friends" checked></ion-radio>
+  
+            <ion-label><img id="ion-img" src="" /></ion-label>
+          <ion-radio value="family"></ion-radio>
+  
+            <ion-label><img id="ion-img" src=""/></ion-label>
+          <ion-radio value="enemies" [disabled]="isDisabled"></ion-radio>
+    
+      </ion-row> -->
+
+
 </ion-row>
+
+
     
 </ion-row>
 <ion-row >
