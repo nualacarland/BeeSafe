@@ -98,7 +98,7 @@ export class RegisterPage {
     // }
    
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql("Cr (SELECT * FROM USERS WHERE NOT EXISTS AND 'user_email' = ?)", {} [
+    this.db.executeSql("SELECT * FROM USERS IF NOT EXISTS WHERE 'user_email' = ?", {} [
       this.userDetails.value.emailAddress
     ]
     ).then((data) => {
@@ -154,6 +154,7 @@ export class RegisterPage {
 //       this.nav.push();
 //     }
 // }   
+
 
 
   presentToast() {
