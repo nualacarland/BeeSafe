@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { EmergencyContactModalPage } from '../emergency-contact-modal/emergency-contact-modal';
 import { ToastController } from 'ionic-angular';
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 
@@ -15,20 +15,26 @@ import { Container } from '@angular/compiler/src/i18n/i18n_ast';
  * Ionic pages and navigation.
  */
 
+
 @IonicPage()
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
 })
 
+
+
 export class RegisterPage {
+  nav: any;
   private db: SQLiteObject;
-  
+
   private userDetails : FormGroup;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private toastCtrl: ToastController,
-    private formBuilder: FormBuilder, private sqlite: SQLite) {
+    private formBuilder: FormBuilder, private sqlite: SQLite){
+
       this.userDetails = this.formBuilder.group({
+
         emailAddress: ['', Validators.required],
         pin1: ['', Validators.required],
         pin2: ['', Validators.required],
@@ -47,7 +53,7 @@ export class RegisterPage {
         location:'default',
         
       })
-    
+     
       .then((db: SQLiteObject) => {
         console.log("database created");
         this.db = db;
@@ -73,6 +79,7 @@ export class RegisterPage {
   openModal() {
     let myModal = this.modalCtrl.create(EmergencyContactModalPage);
     myModal.present();
+
   }
 
 
@@ -80,8 +87,16 @@ export class RegisterPage {
     //TODO: Do your check to see if the user exists via SQL if they do not insert them, then present your toast
     console.log('Yo we in the check user now');
 
+    // if((this.userDetails.value.emailAddress('user_email') === null)){
+    //   this.errorToast();
+    // } 
+    // if(this.userDetails.value.emailAddress == ""){
+    //   this.errorToast();
+    // || this.userDetails.value.emailAddress('user_email') === null)
+    // }
+   
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql( "SELECT * FROM USERS WHERE user_email = ?", [
+    this.db.executeSql("INSERT INTO users (user_email, user_pin) VALUES (?,?)", [
       this.userDetails.value.emailAddress
     ]
     ).then((data) => {
@@ -89,12 +104,14 @@ export class RegisterPage {
 
       if(data.length > 0){
         //TODO: records have been found so user already exists
-        console.log("User Details already exist");
+        console.log('User Details already exist');
         this.errorToast();
       }else {
        this.insertUser()
+       console.log('User inserted to db!')
+     
       }
-
+      // (SELECT * FROM USERS WHERE user_email = ?)
   }, (e) => {
 
       console.log("Error: " + JSON.stringify(e));
@@ -117,6 +134,7 @@ export class RegisterPage {
     ).then((data) => {
       console.log(data);
       // this.doLocalShit()
+     
       this.presentToast()
       
   }, (e) => {
@@ -124,7 +142,17 @@ export class RegisterPage {
   });
   }
 
-  
+  onSubmit(value: any): void { 
+    if(this.userDetails.valid) {
+        window.localStorage.setItem('user_pin', value.user_pin);
+        window.localStorage.setItem('user_email', value.user_email);
+
+        this.nav.push();
+    }
+}   
+
+
+
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Account was created successfully',

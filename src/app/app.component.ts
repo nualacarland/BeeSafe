@@ -90,6 +90,15 @@ private createTables():  void {
   this.db.executeSql("CREATE TABLE IF NOT EXISTS USERS ('user_ID' int(11) auto_increment, 'user_pin' int(80), 'user_emails' varchar(255), PRIMARY KEY ('user_ID')",{})
   .then(() => {
     console.log('Users table created!');
+    setTimeout(function(){ 
+      this.db.executeSql( "SELECT * FROM USERS", {}
+      ).then((data) => {
+        console.log(data);
+    }, (e) => {
+  
+        console.log("Error: " + JSON.stringify(e));
+    });
+     }, 3000);
 
   })
   .catch(e => console.log(e));
