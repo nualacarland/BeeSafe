@@ -26,6 +26,8 @@ import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 
 export class RegisterPage {
   nav: any;
+  value: any;
+  
   private db: SQLiteObject;
 
   private userDetails : FormGroup;
@@ -96,7 +98,7 @@ export class RegisterPage {
     // }
    
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql("INSERT INTO users (user_email, user_pin) VALUES (?,?)", [
+    this.db.executeSql("Cr (SELECT * FROM USERS WHERE NOT EXISTS AND 'user_email' = ?)", {} [
       this.userDetails.value.emailAddress
     ]
     ).then((data) => {
@@ -111,7 +113,7 @@ export class RegisterPage {
        console.log('User inserted to db!')
      
       }
-      // (SELECT * FROM USERS WHERE user_email = ?)
+    
   }, (e) => {
 
       console.log("Error: " + JSON.stringify(e));
@@ -134,7 +136,9 @@ export class RegisterPage {
     ).then((data) => {
       console.log(data);
       // this.doLocalShit()
-     
+      if(this.userDetails.valid) {
+      this.nav.push();
+    }
       this.presentToast()
       
   }, (e) => {
@@ -142,15 +146,14 @@ export class RegisterPage {
   });
   }
 
-  onSubmit(value: any): void { 
-    if(this.userDetails.valid) {
-        window.localStorage.setItem('user_pin', value.user_pin);
-        window.localStorage.setItem('user_email', value.user_email);
+//   // onSubmit(value: any): void { 
+//     if(this.userDetails.valid) {
+//         window.localStorage.setItem('user_pin', value.user_pin);
+//         window.localStorage.setItem('user_email', value.user_email);
 
-        this.nav.push();
-    }
-}   
-
+//       this.nav.push();
+//     }
+// }   
 
 
   presentToast() {
