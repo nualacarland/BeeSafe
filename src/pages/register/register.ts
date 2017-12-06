@@ -59,9 +59,9 @@ export class RegisterPage {
 
   createAccount(){
     console.log('What is in the form? ', this.userDetails.value);
-    this.insertUser();
-
+    this.checkUser();
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
@@ -78,20 +78,21 @@ export class RegisterPage {
 
   checkUser(){
     //TODO: Do your check to see if the user exists via SQL if they do not insert them, then present your toast
+    console.log('Yo we in the check user now');
 
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql( "SELECT * FROM USERS WHERE user_email= ?" [
-      this.userDetails.value.emailAddress]
+    this.db.executeSql( "SELECT * FROM USERS WHERE user_email = ?", [
+      this.userDetails.value.emailAddress
+    ]
     ).then((data) => {
       console.log(data);
 
       if(data.length > 0){
         //TODO: records have been found so user already exists
         console.log("User Details already exist");
-
+        this.errorToast();
       }else {
        this.insertUser()
-      this.presentToast()
       }
 
   }, (e) => {
@@ -109,16 +110,21 @@ export class RegisterPage {
 
     //TODO: Do your insert statement here, you always have access to this.userDetails.value which is the form inputs and you will always know it is valid.
     this.db.executeSql("INSERT INTO USERS VALUES (user_id, user_pin, user_email)", [
-      this.userDetails.value.emailAddress
+      null,
+      tempPin,
+      this.userDetails.value.emailAddress,
     ]
     ).then((data) => {
       console.log(data);
-
+      // this.doLocalShit()
+      this.presentToast()
+      
   }, (e) => {
       console.log("Error: " + JSON.stringify(e));
   });
   }
 
+  
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Account was created successfully',
@@ -132,6 +138,22 @@ export class RegisterPage {
     toast.present();
 
   }  
+
+
+  errorToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Account already exists!',
+      duration: 3000,
+      position: 'top',
+      cssClass: "toast-error",
+    });
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+    toast.present();
+
+  }  
+  
 
 
  
