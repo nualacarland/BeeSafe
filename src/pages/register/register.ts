@@ -94,23 +94,22 @@ export class RegisterPage {
     // } 
     // if(this.userDetails.value.emailAddress == ""){
     //   this.errorToast();
+    // }
     // || this.userDetails.value.emailAddress('user_email') === null)
     // }
    
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql("SELECT * FROM USERS IF NOT EXISTS WHERE 'user_email' = ?", {} [
+    this.db.executeSql("SELECT * FROM USERS WHERE 'user_emails' = ?", {} [
       this.userDetails.value.emailAddress
     ]
     ).then((data) => {
       console.log(data);
-
       if(data.length > 0){
         //TODO: records have been found so user already exists
         console.log('User Details already exist');
         this.errorToast();
       }else {
        this.insertUser()
-       console.log('User inserted to db!')
      
       }
     
@@ -128,23 +127,24 @@ export class RegisterPage {
     console.log('this should be your 4 digit pin for the user ',tempPin);
 
     //TODO: Do your insert statement here, you always have access to this.userDetails.value which is the form inputs and you will always know it is valid.
-    this.db.executeSql("INSERT INTO USERS VALUES (user_id, user_pin, user_email)", [
+    this.db.executeSql("INSERT INTO USERS (user_ID, user_pin, user_emails) VALUES (?,?,?)", [
       null,
       tempPin,
       this.userDetails.value.emailAddress,
     ]
     ).then((data) => {
-      console.log(data);
+      console.log(data);{
       // this.doLocalShit()
-      if(this.userDetails.valid) {
-      this.nav.push();
+      // if(this.userDetails.valid) {
+      // this.nav.push();
     }
       this.presentToast()
       
   }, (e) => {
       console.log("Error: " + JSON.stringify(e));
   });
-  }
+
+}
 
 //   // onSubmit(value: any): void { 
 //     if(this.userDetails.valid) {
