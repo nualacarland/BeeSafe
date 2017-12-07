@@ -84,6 +84,7 @@ createDatabaseFile() {
     this.sqlite.create({
       name: 'BeeSafe.db',
       location: 'default'
+      
     })
   
   .then((db: SQLiteObject) => {
@@ -95,7 +96,7 @@ createDatabaseFile() {
     .then(res => console.log('Executed SQL - DROPPED USER TABLE'))
     .catch(e => console.log(e));
 
-      
+    
     db.executeSql("CREATE TABLE users (user_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, user_pin INTEGER, user_emails varchar(255))", {})
     .then(res => {
       console.log('Executed SQL - Table Created');

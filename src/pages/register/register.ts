@@ -6,6 +6,7 @@ import { ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Container } from '@angular/compiler/src/i18n/i18n_ast';
+import { Storage } from '@ionic/storage';
 
 
 /**
@@ -32,8 +33,9 @@ export class RegisterPage {
 
   private userDetails : FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private toastCtrl: ToastController,
-    private formBuilder: FormBuilder, private sqlite: SQLite){
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public modalCtrl: ModalController, private toastCtrl: ToastController,
+    private formBuilder: FormBuilder, private sqlite: SQLite, private storage: Storage){
 
       this.userDetails = this.formBuilder.group({
 
@@ -84,28 +86,23 @@ export class RegisterPage {
 
   }
 
+  //  if(this.storage.getItem('user_emails') === null) {
+  //     this.errorToast();
+  //   }
 
   checkUser(){
     //TODO: Do your check to see if the user exists via SQL if they do not insert them, then present your toast
     console.log('Yo we in the check user now');
 
-    // if((this.userDetails.value.emailAddress('user_email') === null)){
-    //   this.errorToast();
-    // } 
-    // if(this.userDetails.value.emailAddress == ""){
-    //   this.errorToast();
-    // }
-    // || this.userDetails.value.emailAddress('user_email') === null)
-    // }
-   
+   if(this.storage.set('user_email', this.userDetails.value.user_email)) {
     console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql("SELECT * FROM USERS WHERE 'user_emails' = ?", {} [
+    this.db.executeSql("SELECT * FROM USERS WHERE user_emails= ?", {} [
       this.userDetails.value.emailAddress
     ]
     ).then((data) => {
-      console.log(data);
+
       if(data.length > 0){
-        //TODO: records have been found so user already exists
+
         console.log('User Details already exist');
         this.errorToast();
       }else {
@@ -119,6 +116,7 @@ export class RegisterPage {
   });
 
   }
+}
 
   insertUser(){
 
@@ -132,29 +130,32 @@ export class RegisterPage {
       tempPin,
       this.userDetails.value.emailAddress,
     ]
+
     ).then((data) => {
       console.log(data);{
-      // this.doLocalShit()
-      // if(this.userDetails.valid) {
-      // this.nav.push();
-    }
       this.presentToast()
-      
+      this.doLocalShit()
+    }
+
+
   }, (e) => {
       console.log("Error: " + JSON.stringify(e));
   });
 
 }
+  doLocalShit(){ 
+   
+        this.storage.set('user_pin', this.userDetails.value.user_pin);
+        this.storage.set('user_email', this.userDetails.value.user_email);
 
-//   // onSubmit(value: any): void { 
-//     if(this.userDetails.valid) {
-//         window.localStorage.setItem('user_pin', value.user_pin);
-//         window.localStorage.setItem('user_email', value.user_email);
+      this.nav.push();
+      console.log('locally stored!')
+}   
 
-//       this.nav.push();
-//     }
-// }   
-
+// checkPreviousAuthorization(){ 
+//   if((this.storage.get('user_emails') === null)) {
+//     this.errorToast()
+//   } 
 
 
   presentToast() {
@@ -168,7 +169,8 @@ export class RegisterPage {
       console.log('Dismissed toast');
     });
     toast.present();
-
+    this.navCtrl.push('LoginPage');
+    // this.navCtrl.push('DashboardPage');
   }  
 
 

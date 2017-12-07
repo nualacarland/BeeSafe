@@ -22,6 +22,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+
   gotoLazyPage(){
     this.navCtrl.push('DashboardPage');
   }
@@ -39,6 +40,12 @@ export class LoginPage {
     console.log('ionViewWillAppear LoginPage');
 
     //localStorage to see if someone has already logged in
+
+    
+    
+
+
+
 
   }
 }

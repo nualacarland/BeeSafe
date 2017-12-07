@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ModalController, NavParams } from 'ionic-angular';
 import { Toast } from '@ionic-native/toast';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 
@@ -27,6 +28,8 @@ import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
     IonicModule.forRoot(MyApp,{
         backButtonText: 'Back'
     }),
+    IonicStorageModule.forRoot()
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
