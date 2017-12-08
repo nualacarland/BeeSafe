@@ -25,6 +25,37 @@ import { Storage } from '@ionic/storage';
 
 
 
+
+/*
+Right...
+then on register take all their details and insert them into the storage, check to see if the storage is present if it is then someone has already registered and 
+we shouldnt let them.
+
+then on login check the pin against what is stored locally.
+
+then goto home screen
+
+the triggers are gonna be tricky to save in local storage but its gonna be more manageable than sqlite
+
+distractions = [{
+
+    distraction_title: 'test',
+    distraction_text: 'test',
+    distraction_url: 'www.',
+    distraction_photo: '/assets/images/logo.png'
+
+},{
+
+    distraction_title: 'test',
+    distraction_text: 'test',
+    distraction_url: 'www.',
+    distraction_photo: '/assets/images/logo.png'
+
+}]
+
+
+*/
+
 export class RegisterPage {
   nav: any;
   value: any;
@@ -52,20 +83,7 @@ export class RegisterPage {
         contact3Name: ['', Validators.required]
       });
 
-      this.sqlite.create({
-        name: 'BeeSafe.db',
-        location:'default',
-        
-      })
-     
-      .then((db: SQLiteObject) => {
-        console.log("database created");
-        this.db = db;
-    
-      })
-      .catch(e => console.log(e));
   }
-
 
   createAccount(){
     console.log('What is in the form? ', this.userDetails.value);
@@ -85,77 +103,67 @@ export class RegisterPage {
     myModal.present();
 
   }
-
-  //  if(this.storage.getItem('user_emails') === null) {
-  //     this.errorToast();
-  //   }
-
-  checkUser(){
-    //TODO: Do your check to see if the user exists via SQL if they do not insert them, then present your toast
-    console.log('Yo we in the check user now');
-
-   if(this.storage.set('user_email', this.userDetails.value.user_email)) {
-    console.log('INSIDE CHECK USER FUNC', this.userDetails.value);
-    this.db.executeSql("SELECT * FROM USERS WHERE user_emails= ?", {} [
-      this.userDetails.value.emailAddress
-    ]
-    ).then((data) => {
-
-      if(data.length > 0){
-
-        console.log('User Details already exist');
-        this.errorToast();
-      }else {
-       this.insertUser()
-     
-      }
-    
-  }, (e) => {
-
-      console.log("Error: " + JSON.stringify(e));
-  });
-
+  
+  checkUser() {
+    this.storage.get('user_email').then((value) => {
+      
+            console.log('this is the user email that is stored', value);
+      
+            if(value != "" || value != null){
+      
+              this.doLocalShit();
+              this.presentToast();
+            }else{
+              this.errorToast();
+            }
+          }).catch((e) => {
+            console.log(e);
+          });
   }
-}
 
-  insertUser(){
-
+  insertUser()
+  {
     var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4;
 
-    console.log('this should be your 4 digit pin for the user ',tempPin);
+    console.log('this should be your 4 digit pin for the user ', tempPin);
+    // var triggers = [Trigger];
+    
 
-    //TODO: Do your insert statement here, you always have access to this.userDetails.value which is the form inputs and you will always know it is valid.
-    this.db.executeSql("INSERT INTO USERS (user_ID, user_pin, user_emails) VALUES (?,?,?)", [
-      null,
-      tempPin,
-      this.userDetails.value.emailAddress,
-    ]
+    //2 triggers in array of local storage
+    //they added another one.
+    //this.storage.get(triggers);
+    //temparray of triggers that now contains your old two then push the new one they added on
+    //then set the triggers again
 
-    ).then((data) => {
-      console.log(data);{
-      this.presentToast()
-      this.doLocalShit()
-    }
+    // this.storage.set('triggers', trigger);
 
-
-  }, (e) => {
-      console.log("Error: " + JSON.stringify(e));
-  });
-
+    //check
+    
 }
+
   doLocalShit(){ 
    
         this.storage.set('user_pin', this.userDetails.value.user_pin);
         this.storage.set('user_email', this.userDetails.value.user_email);
 
+        this.storage.set('emergency1', {
+          telephone: this.userDetails.value.contact1Tel,
+          contact_name: this.userDetails.value.contact1Name
+        });
+
+        this.storage.set('emergency2', {
+          telephone: this.userDetails.value.contact2Tel,
+          contact_name: this.userDetails.value.contact2Name
+        }) ;      
+        
+        this.storage.set('emergency3', {
+          telephone: this.userDetails.value.contact3Tel,
+          contact_name: this.userDetails.value.contact3Name
+        });
+
       this.nav.push();
       console.log('locally stored!')
 }   
-
-// checkPreviousAuthorization(){ 
-//   if((this.storage.get('user_emails') === null)) {
-//     this.errorToast()
-//   } 
 
 
   presentToast() {
@@ -170,7 +178,7 @@ export class RegisterPage {
     });
     toast.present();
     this.navCtrl.push('LoginPage');
-    // this.navCtrl.push('DashboardPage');
+
   }  
 
 
