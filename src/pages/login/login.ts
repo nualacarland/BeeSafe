@@ -1,8 +1,6 @@
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,31 +16,8 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginPage {
 
-  private db: SQLiteObject;
-  private userDetails : FormGroup;
-  
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private formBuilder: FormBuilder ) {
-
-
-        this.userDetails = this.formBuilder.group({
-  
-          pin1: ['', Validators.required],
-          pin2: ['', Validators.required],
-          pin3: ['', Validators.required],
-          pin4: ['', Validators.required]
-  
-        });
-
-}
-  //localStorage to see if someone has already logged in
-
-
-
-
-
-
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
@@ -65,13 +40,24 @@ export class LoginPage {
 
     console.log('ionViewWillAppear LoginPage');
 
-  
+    // checkLogin() {
 
+    //   this.Storage.get('user_pin').then((value) => {
+        
+    //           console.log('User pin is recognised', value);
+        
+    //           if(value != "" || value != null){
+        
+    //           } else{
+             
+    //           }
+    //         }).catch((e) => {
+    //           console.log(e);
+    //         });
+    // }
     
+
   
-
-
-
 
   }
 }

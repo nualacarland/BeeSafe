@@ -10,8 +10,9 @@
         
 <p id="text-line"> Please enter your email address</p>
 
-<ion-item no-lines id="password" >
-<ion-input type="text" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email Address"></ion-input>
+
+<ion-item no-lines id="password">
+<ion-input  type="text" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email Address"></ion-input>
 </ion-item>
 <ion-row>
     <p id="text-line">Select your Avatar</p>
@@ -131,7 +132,7 @@
 </ion-item>
 
 <div id="CreateAccount">
-    <button ion-button color="primary" type="submit" [disabled]="!userDetails.valid" (click)="doLocalShit()" id="create-btn">CREATE ACCOUNT</button>
+    <button ion-button color="primary" type="submit" [disabled]="!userDetails.valid"  id="create-btn">CREATE ACCOUNT</button>
     </div>
 </form>
   

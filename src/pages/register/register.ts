@@ -1,3 +1,5 @@
+import { LoginPage } from './../login/login';
+import { DashboardPage } from './../dashboard/dashboard';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
@@ -15,7 +17,6 @@ import { Storage } from '@ionic/storage';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 
 @IonicPage()
 @Component({
@@ -66,7 +67,7 @@ export class RegisterPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl: ModalController, private toastCtrl: ToastController,
-    private formBuilder: FormBuilder, private sqlite: SQLite, private storage: Storage){
+    private formBuilder: FormBuilder, private storage: Storage){
 
       this.userDetails = this.formBuilder.group({
 
@@ -88,6 +89,7 @@ export class RegisterPage {
   createAccount(){
     console.log('What is in the form? ', this.userDetails.value);
     this.checkUser();
+
   }
 
   ionViewDidLoad() {
@@ -112,8 +114,8 @@ export class RegisterPage {
             if(value != "" || value != null){
       
               this.doLocalShit();
-              this.presentToast();
-            }else{
+            } else
+            {
               this.errorToast();
             }
           }).catch((e) => {
@@ -121,28 +123,15 @@ export class RegisterPage {
           });
   }
 
-  insertUser()
-  {
-    var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4;
+//   insertUser()
+//   {
+//     var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4;
 
-    console.log('this should be your 4 digit pin for the user ', tempPin);
-    // var triggers = [Trigger];
-    
+//     console.log('this should be your 4 digit pin for the user ', tempPin);
 
-    //2 triggers in array of local storage
-    //they added another one.
-    //this.storage.get(triggers);
-    //temparray of triggers that now contains your old two then push the new one they added on
-    //then set the triggers again
+// }
 
-    // this.storage.set('triggers', trigger);
-
-    //check
-    
-}
-
-  doLocalShit(){ 
-   
+  doLocalShit() { 
         this.storage.set('user_pin', this.userDetails.value.user_pin);
         this.storage.set('user_email', this.userDetails.value.user_email);
 
@@ -161,8 +150,10 @@ export class RegisterPage {
           contact_name: this.userDetails.value.contact3Name
         });
 
-      this.nav.push();
       console.log('locally stored!')
+      this.presentToast();
+      this.navCtrl.push('LoginPage');
+
 }   
 
 
@@ -177,11 +168,11 @@ export class RegisterPage {
       console.log('Dismissed toast');
     });
     toast.present();
-    this.navCtrl.push('LoginPage');
+    // this.navCtrl.push('LoginPage');
 
   }  
 
-
+  
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account already exists!',
