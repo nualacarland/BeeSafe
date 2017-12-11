@@ -3,6 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModalController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 // import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
 
@@ -18,7 +19,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, private storage: Storage) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation

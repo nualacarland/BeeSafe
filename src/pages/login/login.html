@@ -8,7 +8,7 @@
 
 
 <ion-content padding>
-<!-- <form [formGroup]="userDetails" (ngSubmit)="createAccount()"> -->
+<form [formGroup]="userDetails" (ngSubmit)="checkPin()">
 
   <ion-row>
     <ion-col text-center> 
@@ -50,7 +50,7 @@
   
   <ion-row>
     <ion-col text-center>
-            <button ion-button color="primary" (click)="gotoLazyPage()" id="login-btn">LOGIN</button>
+            <button ion-button color="primary" id="login-btn">LOGIN</button>
     </ion-col>
   </ion-row>
 
@@ -60,7 +60,7 @@
     </ion-col>
   </ion-row>
   </ion-grid>
- <!-- </form> -->
+ </form>
 
 
 </ion-content>

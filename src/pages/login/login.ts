@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { ToastController } from 'ionic-angular';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -16,11 +19,26 @@ import { Storage } from '@ionic/storage';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  private userDetails : FormGroup;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, private formBuilder: FormBuilder) {
+
+    this.userDetails = this.formBuilder.group({
+      
+              pin1: ['', Validators.required],
+              pin2: ['', Validators.required],
+              pin3: ['', Validators.required],
+              pin4: ['', Validators.required],
+             
+            });
+      
+        }
+
+
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log('ionViewDidLoad LoginPage');  
+  
   }
 
 
@@ -40,24 +58,46 @@ export class LoginPage {
 
     console.log('ionViewWillAppear LoginPage');
 
-    // checkLogin() {
+  }
 
-    //   this.Storage.get('user_pin').then((value) => {
+  checkPin() {
+    var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4
+    console.log(tempPin);
+    console.log(tempPin);
+ 
+
+    console.log('What is the temp pin '+ tempPin);
+    this.storage.get('tempPin').then((value) => {
+      console.log('What is the stored pin ', value);
+      
+            console.log('this is the user_pin stored', value);
+      
+            if(tempPin == value){
+              this.navCtrl.push('DashboardPage');
+            } 
+            else
+            {
+              this.errorToast();
         
-    //           console.log('User pin is recognised', value);
-        
-    //           if(value != "" || value != null){
-        
-    //           } else{
-             
-    //           }
-    //         }).catch((e) => {
-    //           console.log(e);
-    //         });
-    // }
-    
+            }
+          }).catch((e) => {
+            console.log(e);
+          });
+  }
 
   
 
-  }
+  errorToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Account not Recognized!',
+      duration: 3000,
+      position: 'top',
+      cssClass: "toast-error",
+    });
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+    toast.present();
+
+  } 
 }

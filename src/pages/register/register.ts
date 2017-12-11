@@ -94,6 +94,9 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+    // this.storage.clear();
+    // console.log('storage wiped!');
+ 
   }
 
   gotoDashboardPage() {
@@ -107,11 +110,12 @@ export class RegisterPage {
   }
   
   checkUser() {
-    this.storage.get('user_email').then((value) => {
+    var tempEmail = this.userDetails.value.emailAddress
+    this.storage.get('emailAddress').then((value) => {
       
             console.log('this is the user email that is stored', value);
       
-            if(value != "" || value != null){
+            if(tempEmail != value) {
       
               this.doLocalShit();
             } else
@@ -123,6 +127,34 @@ export class RegisterPage {
           });
   }
 
+
+
+  // checkPin() {
+  //   var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4
+  //   console.log(tempPin);
+  //   console.log(tempPin);
+ 
+
+
+  //   console.log('What is the temp pin '+ tempPin);
+  //   this.storage.get('tempPin').then((value) => {
+  //     console.log('What is the stored pin ', value);
+      
+  //           console.log('this is the user_pin stored', value);
+      
+  //           if(value == tempPin){
+  //             this.errorToast();
+  //           } 
+  //           else
+  //           {
+  //             this.navCtrl.push('DashboardPage');
+        
+  //           }
+  //         }).catch((e) => {
+  //           console.log(e);
+  //         });
+  // }
+
 //   insertUser()
 //   {
 //     var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4;
@@ -132,8 +164,12 @@ export class RegisterPage {
 // }
 
   doLocalShit() { 
-        this.storage.set('user_pin', this.userDetails.value.user_pin);
-        this.storage.set('user_email', this.userDetails.value.user_email);
+        // this.storage.set('user_pin', this.userDetails.value.user_pin);
+        this.storage.set('pin1', this.userDetails.value.pin1);
+        this.storage.set('pin2', this.userDetails.value.pin2);
+        this.storage.set('pin3', this.userDetails.value.pin3);
+        this.storage.set('pin4', this.userDetails.value.pin4);
+        this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
         this.storage.set('emergency1', {
           telephone: this.userDetails.value.contact1Tel,
@@ -149,9 +185,8 @@ export class RegisterPage {
           telephone: this.userDetails.value.contact3Tel,
           contact_name: this.userDetails.value.contact3Name
         });
-
-      console.log('locally stored!')
       this.presentToast();
+      console.log('locally stored!');
       this.navCtrl.push('LoginPage');
 
 }   
