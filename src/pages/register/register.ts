@@ -164,11 +164,11 @@ export class RegisterPage {
 // }
 
   doLocalShit() { 
-        // this.storage.set('user_pin', this.userDetails.value.user_pin);
-        this.storage.set('pin1', this.userDetails.value.pin1);
-        this.storage.set('pin2', this.userDetails.value.pin2);
-        this.storage.set('pin3', this.userDetails.value.pin3);
-        this.storage.set('pin4', this.userDetails.value.pin4);
+        this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4);
+        // this.storage.set('pin1', this.userDetails.value.pin1);
+        // this.storage.set('pin2', this.userDetails.value.pin2);
+        // this.storage.set('pin3', this.userDetails.value.pin3);
+        // this.storage.set('pin4', this.userDetails.value.pin4);
         this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
         this.storage.set('emergency1', {

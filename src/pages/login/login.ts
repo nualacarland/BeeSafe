@@ -67,7 +67,7 @@ export class LoginPage {
  
 
     console.log('What is the temp pin '+ tempPin);
-    this.storage.get('tempPin').then((value) => {
+    this.storage.get('user_pin').then((value) => {
       console.log('What is the stored pin ', value);
       
             console.log('this is the user_pin stored', value);
