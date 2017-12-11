@@ -94,8 +94,8 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
-    // this.storage.clear();
-    // console.log('storage wiped!');
+    this.storage.clear();
+    console.log('storage wiped!');
  
   }
 
@@ -127,48 +127,9 @@ export class RegisterPage {
           });
   }
 
-
-
-  // checkPin() {
-  //   var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4
-  //   console.log(tempPin);
-  //   console.log(tempPin);
- 
-
-
-  //   console.log('What is the temp pin '+ tempPin);
-  //   this.storage.get('tempPin').then((value) => {
-  //     console.log('What is the stored pin ', value);
-      
-  //           console.log('this is the user_pin stored', value);
-      
-  //           if(value == tempPin){
-  //             this.errorToast();
-  //           } 
-  //           else
-  //           {
-  //             this.navCtrl.push('DashboardPage');
-        
-  //           }
-  //         }).catch((e) => {
-  //           console.log(e);
-  //         });
-  // }
-
-//   insertUser()
-//   {
-//     var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4;
-
-//     console.log('this should be your 4 digit pin for the user ', tempPin);
-
-// }
-
   doLocalShit() { 
         this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4);
-        // this.storage.set('pin1', this.userDetails.value.pin1);
-        // this.storage.set('pin2', this.userDetails.value.pin2);
-        // this.storage.set('pin3', this.userDetails.value.pin3);
-        // this.storage.set('pin4', this.userDetails.value.pin4);
+    
         this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
         this.storage.set('emergency1', {
@@ -203,8 +164,6 @@ export class RegisterPage {
       console.log('Dismissed toast');
     });
     toast.present();
-    // this.navCtrl.push('LoginPage');
-
   }  
 
   
