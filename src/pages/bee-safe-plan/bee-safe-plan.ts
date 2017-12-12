@@ -1,3 +1,4 @@
+import { AddTriggerPage } from './../add-trigger/add-trigger';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -26,4 +27,12 @@ export class BeeSafePlanPage {
     this.navCtrl.push('HelpNowPage');
   }
 
+  gotoDoingWell(){
+    this.navCtrl.push('DoingWellPage');
+  }
+
+  addTrigger(){
+    this.navCtrl.push('AddTriggerPage');
+  }
+  
 }

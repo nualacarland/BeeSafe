@@ -7,12 +7,40 @@
 <ion-header>
 
   <ion-navbar id="nav-bar">
-    <ion-title>EditTrigger</ion-title>
+    <ion-title>Trigger</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+ <ion-row>
+   <ion-col>
+      <h1 id="main-text">What do you think is triggering you to feel this way?</h1>
+   </ion-col>
+ </ion-row>
+
+          <button ion-button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+          <!-- <span class="caret"></span></button> -->
+          <ul class="dropdown-menu">
+            <li><a href="#">Trigger example 1</a></li>
+            <li><a href="#">Trigger example 2</a></li>
+            <li><a href="#">Trigger example 3</a></li>
+          </ul>
+          
+ <ion-row>
+   <ion-col>
+   <button ion-button id="ion-button">NEXT</button>
+   </ion-col>
+ </ion-row>
+
+ <ion-row>
+   <ion-col>
+     <h2 (click)="goToDistractionsPage()">Skip</h2>
+   </ion-col>
+ </ion-row>
+
+
 
 </ion-content>

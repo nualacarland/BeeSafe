@@ -33,8 +33,6 @@ export class HelpNowPage {
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, ) {
-
-    // contact1Name = this.storage.get('contact1Name');
     
     storage.get('emergency1').then((val) => {
       console.log('What is this value ',val);
@@ -57,20 +55,6 @@ export class HelpNowPage {
 
   }
 
-
-    // var contactsArray = [];
-    // var emergencyContacts = [{
-      
-    //       contact1Name: '',
-    //       contact1Tel: '',
-    //       contact2Name: '',
-    //       contact2Tel: '',
-    //       contact3Name: '',
-    //       contact3Tel: ''
-
-    //   }]
-   // var emergencyContacts = ["test", "test", "test"];
-    // localStorage.setItem("test", JSON.stringify(emergencyContacts));
 
   gotoDashboardPage() {
     this.navCtrl.push('DashboardPage');

@@ -22,4 +22,9 @@ export class EditTriggerPage {
     console.log('ionViewDidLoad EditTriggerPage');
   }
 
+  gotoDistractionsPage(){
+    this.navCtrl.push('DistractionsPage');
+
+  }
+
 }
