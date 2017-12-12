@@ -32,7 +32,7 @@ export class BeeSafePlanPage {
   }
 
   addTrigger(){
-    this.navCtrl.push('AddTriggerPage');
+    this.navCtrl.push('');
   }
-  
+
 }
