@@ -9,6 +9,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 import { Storage } from '@ionic/storage';
+import { MenuController } from 'ionic-angular';
 
 
 /**
@@ -67,7 +68,7 @@ export class RegisterPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl: ModalController, private toastCtrl: ToastController,
-    private formBuilder: FormBuilder, private storage: Storage){
+    private formBuilder: FormBuilder, private storage: Storage, public menu: MenuController){
 
       this.userDetails = this.formBuilder.group({
 
@@ -94,8 +95,9 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
-    this.storage.clear();
-    console.log('storage wiped!');
+    // this.storage.clear();
+    // console.log('storage wiped!');
+    this.menu.enable(false);
  
   }
 
@@ -113,7 +115,7 @@ export class RegisterPage {
     var tempEmail = this.userDetails.value.emailAddress
     this.storage.get('emailAddress').then((value) => {
       
-            console.log('this is the user email that is stored', value);
+            console.log('this is the user email that is stored', this.userDetails.value);
       
             if(tempEmail != value) {
       
@@ -146,6 +148,8 @@ export class RegisterPage {
           telephone: this.userDetails.value.contact3Tel,
           contact_name: this.userDetails.value.contact3Name
         });
+
+        
       this.presentToast();
       console.log('locally stored!');
       this.navCtrl.push('LoginPage');

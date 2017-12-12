@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ModalController, NavParams } from 'ionic-angular';
 import { Toast } from '@ionic-native/toast';
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+// import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
@@ -14,6 +14,8 @@ import { EmergencyContactModalPage } from '../pages/emergency-contact-modal/emer
 import { PlanModalPage } from '../pages/plan-modal/plan-modal';
 import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/distractions-info-modal';
 import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
+// import { PinDialog } from '@ionic-native/pin-dialog';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
     StatusBar,
     SplashScreen,
     Toast,
-    SQLite,
+    // SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler,}
   ]
 })

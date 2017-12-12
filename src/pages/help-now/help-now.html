@@ -22,9 +22,47 @@
 
   <ion-row>
     <ion-col>
-  <h1 id="emergency-contacts">Your Emergency Contacts:</h1>
+  <h1 id="emergency-contacts">Your Emergency Contacts: </h1>
   </ion-col>
   </ion-row>
+
+  <!--Emergency Contacts from Local Storage -->
+  <ion-row>
+    <ion-col>
+      <h2 id="other-1"> {{emergency1.contact_name}} </h2>
+    </ion-col>
+  </ion-row>
+<ion-row>
+  <ion-col>
+  <h2 id="link-1"> {{emergency1.telephone}} </h2>
+  <a href="{{emergency1.telephone}}" id="call-link-2" ></a>
+</ion-col>
+</ion-row>
+ 
+<ion-row>
+    <ion-col>
+      <h2 id="other"> {{emergency2.contact_name}} </h2>
+    </ion-col>
+  </ion-row>
+<ion-row>
+  <ion-col>
+  <h2 id="link-2"> {{emergency2.telephone}} </h2>
+</ion-col>
+</ion-row>
+
+<ion-row>
+    <ion-col>
+      <h2 id="other"> {{emergency3.contact_name}} </h2>
+    </ion-col>
+  </ion-row>
+<ion-row>
+  <ion-col>
+  <h2 id="link-3"> {{emergency3.telephone}} </h2>
+</ion-col>
+</ion-row>
+
+
+
 
   <ion-row>
     <ion-col>

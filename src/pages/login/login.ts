@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { MenuController } from 'ionic-angular/components/app/menu-controller';
+// import { PinDialog } from '@ionic-native/pin-dialog';
+
 
 
 /**
@@ -21,7 +24,7 @@ export class LoginPage {
 
   private userDetails : FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, private formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, private formBuilder: FormBuilder, public menu: MenuController) {
 
     this.userDetails = this.formBuilder.group({
       
@@ -35,10 +38,10 @@ export class LoginPage {
         }
 
 
-
+        
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');  
-  
+    this.menu.enable(false);
   }
 
 
@@ -100,4 +103,20 @@ export class LoginPage {
     toast.present();
 
   } 
+
+//   pinKeyboard() {
+//   this.pinDialog.prompt('Enter your PIN', 'Verify PIN', ['OK', 'Cancel'])
+//   .then(
+//     (result: any) => {
+//       if (result.buttonIndex == 1) console.log('User clicked OK, value is: ', result.input1);
+//       else if(result.buttonIndex == 2) console.log('User cancelled');
+    
+//     }
+//   );
+// }
+
+
+
+
 }
+ 
