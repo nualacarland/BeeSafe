@@ -45,10 +45,10 @@ export class ProfilePage {
     this.userDetails = this.formBuilder.group({
       
               emailAddress: [''],
-              pin1: ['', Validators.required],
-              pin2: ['', Validators.required],
-              pin3: ['', Validators.required],
-              pin4: ['', Validators.required],
+              pin1: [''],
+              pin2: [''],
+              pin3: [''],
+              pin4: [''],
               contact1Tel: [''],
               contact1Name: [''],
               contact2Tel: [''],
@@ -147,6 +147,10 @@ export class ProfilePage {
   
       this.errorToast();
     //   this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
+
+    } else {
+      this.presentToast();
+      console.log('local storage changed!');
     }
 
     this.storage.set('emailAddress', this.userDetails.value.emailAddress);
@@ -167,8 +171,6 @@ export class ProfilePage {
     });
 
     
-
-
     // //no changes in 
     // if(this.userDetails.value.contact1Tel == this._oldContact1.telephone && this.userDetails.value.contact1Name == this._oldContact1.contact_name){
     //   this.storage.set('emergency1', {
@@ -186,20 +188,19 @@ export class ProfilePage {
 
     // }
 
- if(this.userDetails.value.pin1 != this._oldPin.user_pin){
+//  if(this.userDetails.value.pin1 != this._oldPin.user_pin){
 
- this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
- } 
+//  this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
+//  } 
 
-  this.presentToast();
- console.log('local storage changed!');
+ 
 
   }
 
 errorToast() {
   let toast = this.toastCtrl.create({
     message: 'Please enter Pin',
-    duration: 20000,
+    duration: 2000,
     position: 'top',
     cssClass: 'toast-error',
   });
