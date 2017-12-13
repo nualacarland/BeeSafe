@@ -24,8 +24,10 @@
 
 <ion-content padding>
 
+        <form [formGroup]="userDetails" (ngSubmit)="editLocalShit()">
+
   <ion-item no-lines id="password" >
-  <ion-input id="ion-input-1" type="password" style="background-color:#FAF4EA;" placeholder="Email address"></ion-input>
+  <ion-input id="ion-input-1" type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email address"></ion-input>
   </ion-item>
   <ion-row>
       <p id="text-line">Select your Avatar</p>
@@ -60,35 +62,35 @@
       <p id="text-line">Please enter your 4-digit pin</p>
           <ion-col col-3>
               <ion-item no-lines id="input-1" >
-              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              <ion-input formControlName="pin1" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-2" >
-              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              <ion-input formControlName="pin2" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-3" >
-              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              <ion-input formControlName="pin3" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-4" >
-              <ion-input type="password" style="background-color:#FAF4EA;"></ion-input>
+              <ion-input formControlName="pin4" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
   </ion-row>
 
   <ion-row>
     <p id="text-line">Affirmations</p>
-
-      <ion-toggle  color="beesafeorange"></ion-toggle>
-  
     
+ <ion-toggle color="beesafeorange"></ion-toggle>
+  
+      
   </ion-row>
 
 
@@ -108,11 +110,11 @@
      </p>
   
   <ion-item no-lines id="contactName-1" >
-  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="contact1Name" placeholder="">{{contact1Name}}</ion-input>
   </ion-item>
   
   <ion-item no-lines id="contactNumber-1" >
-  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" formControlName="contact1Tel"placeholder="Number"></ion-input>
   </ion-item>
   
   <p id="Contact-two">
@@ -120,11 +122,11 @@
      </p>
   
   <ion-item no-lines id="contactName-2" >
-  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="contact2Name" placeholder="Name"></ion-input>
   </ion-item>
   
   <ion-item no-lines id="contactNumber-2" >
-  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" formControlName="contact2Tel" placeholder="Number"></ion-input>
   </ion-item>
   
   <p id="Contact-Three">
@@ -132,15 +134,16 @@
      </p>
   
   <ion-item no-lines id="contactName-3" >
-  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="contact3Name" placeholder="Name"></ion-input>
   </ion-item>
   
   <ion-item no-lines id="contactNumber-3" >
-  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" placeholder="Number"></ion-input>
+  <ion-input id="ion-input" type="number" style="background-color:#FAF4EA;" formControlName="contact3Tel" placeholder="Number"></ion-input>
   </ion-item>
-  
+</form>
+
   <div id="SaveChanges">
-      <button ion-button color="primary" (click)="presentToast()" id="save-btn">SAVE CHANGES</button>
+      <button ion-button color="primary" (click)="editLocalShit()" [disabled]="!userDetails.valid" id="save-btn">SAVE CHANGES</button>
       </div>
   
     

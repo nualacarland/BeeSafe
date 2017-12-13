@@ -23,4 +23,69 @@ page-add-edit-scrapbook {
         width: 100%;
     }
 
+
+#save-distraction {
+    height: 60px;
+    width: 250px;
+    border-radius: 2px;
+    background-color: #559AD1;
+    font-size: 21px;
+    font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+    font-weight: 500;
+    margin-top: 28px;
+    margin-left:63px;
+    margin-right: 62px;
+
+}
+
+#trigger-input {
+    margin-top:13px;
+    margin-right:47px;
+    margin-left:48px;
+    height:60px;
+    width:290px;
+    font-family: 'Avenir Rounded reg', Arial, sans-serif;
+    font-size:15px;
+    line-height: 19px;
+    color:#5B6275;
+}
+
+#trigger-input-memory {
+   margin-top:13px;
+    margin-right:47px;
+    margin-left:48px;
+    height:125px;
+    width:290px;
+    font-family: 'Avenir Rounded reg', Arial, sans-serif;
+    font-size:15px;
+    line-height: 19px;
+    color:#5B6275;
+}
+
+#ion-input {
+    padding-right:11.77px;
+    padding-left:22px;
+    padding-top:16px;
+    padding-bottom:15px;
+
+    color: #5B6275;
+}
+
+#ion-input-memory {
+    padding-right:11.77px;
+    padding-left:22px;
+    padding-top:16px;
+    height:125px;
+    padding-bottom:15px;
+   
+    color: #5B6275;
+}
+
+
+
+
+
+
+
+
 }
