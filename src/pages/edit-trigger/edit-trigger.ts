@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 /**
  * Generated class for the EditTriggerPage page.
@@ -8,6 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+
 @IonicPage()
 @Component({
   selector: 'page-edit-trigger',
@@ -15,12 +18,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditTriggerPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+private userDetails : FormGroup;
+
+private newTrigger;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage) {
+
+        storage.get('newTrigger').then((val) => {
+          console.log('Trigger saved in storage --> ', val);
+          this.newTrigger = val.newTrigger;
+
+        });
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditTriggerPage');
   }
+
+  
+  
+
 
   gotoViewDistractions(){
     this.navCtrl.push('View-DistractionsPage');

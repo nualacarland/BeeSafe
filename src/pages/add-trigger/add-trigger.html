@@ -31,15 +31,17 @@
 
 <ion-content padding>
 
+    <form [formGroup]="userDetails" (ngSubmit)="saveNewTrigger()">
+
   <h1 id="text-line">Enter new trigger below</h1>
 
 <ion-item no-lines id="trigger-input">
-  <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Enter your own trigger"></ion-input>
+  <ion-input type="text" style="background-color:#FAF4EA;" formControlName="newTrigger" placeholder="Enter your own trigger"></ion-input>
 </ion-item>
 
-<div >
-  <button ion-button color="primary" (click)="presentToast()" id="save-trigger">SAVE</button>
+<div>
+  <button ion-button color="primary" [disabled]="!userDetails.valid" (click)="saveNewTrigger()" id="save-trigger">SAVE</button>
 </div>
-
+</form>
 
 </ion-content>

@@ -3,7 +3,10 @@ import { IonicPage, NavController, NavParams, Platform, LoadingController,  Acti
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera, DestinationType } from '@ionic-native/camera';
+import { Cordova } from '@ionic-native/core';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
+
 
 
 /**
@@ -21,11 +24,12 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 export class AddDistractionPage {
 
   private userDetails : FormGroup;
-  private imageSrc: string;
-  chosenPicture: any;
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController,  private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
+  base64Image: any;
+  
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
+   private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 
+   public platform: Platform, public loadingCtrl: LoadingController ) {
 
     this.userDetails = this.formBuilder.group({
       
@@ -37,14 +41,12 @@ export class AddDistractionPage {
         
             });
 
-            const options: CameraOptions = {
-              quality: 100,
-              destinationType: this.camera.DestinationType.DATA_URL,
-              encodingType: this.camera.EncodingType.JPEG,
-              mediaType: this.camera.MediaType.PICTURE
-            }
-         
+    
   }
+
+ionViewDidLoad() {
+  console.log('ionViewDidLoad AddDistractionPage');
+}
 
 saveDistractions() {
 
@@ -64,57 +66,26 @@ saveDistractions() {
 
   this.presentToast();
   console.log('locally stored!');
-
+ 
 }
 
-// changePicture() {
-  
-//       const actionsheet = this.actionsheetCtrl.create({
-//         title: 'upload picture',
-//         buttons: [
-//           {
-//             text: !this.platform.is('ios') ? 'gallery' : 'camera roll',
-//             icon: !this.platform.is('ios') ? 'image' : null,
-//             handler: () => {
-//               this.getPicture();
-//             }
-//           },
-//           {
-//             text: 'cancel',
-//             icon: !this.platform.is('ios') ? 'close' : null,
-//             role: 'destructive',
-//             handler: () => {
-//               console.log('the user has cancelled the interaction.');
-//             }
-//           }
-//         ]
-//       });
-//       return actionsheet.present();
-//     }
-    
-//     getPicture() {
-//       const loading = this.loadingCtrl.create();
-  
-//       loading.present();
-//       return this.cameraProvider.getPictureFromPhotoLibrary().then(picture => {
-//         if (picture) {
-//           this.chosenPicture = picture;
-//         }
-//         loading.dismiss();
-//       }, error => {
-//         alert(error);
-//       });
-//     }
+accessGallery(){
+  this.camera.getPicture({
+    sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+    destinationType: this.camera.DestinationType.DATA_URL
+   }).then((sourcePath) => {
+     this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
+     console.log('Image has been selected', this.camera.DestinationType.DATA_URL );
+
+    }, (err) => {
+     console.log(err);
+   });
+ }
 
 
 
 
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddDistractionPage');
-  }
-
-  gotoPlan() {
+  gotoPlan(){
     this.navCtrl.push('CreateBeesafePlanPage');
   }
 

@@ -41,11 +41,14 @@
     <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="distraction" placeholder="* Enter your own distraction"></ion-input>
   </ion-item>
 
-  <ion-item no-lines id="distraction-input">
-    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Add photo from your gallery"></ion-input>
+  <ion-item no-lines id="distraction-input-gallery">
+    <button ion-button full id="ion-input-gallery" type="button" style="background-color:#FAF4EA;"  (click)="accessGallery()">Add photo from your gallery</button>
+    <img [src]="base64Image" *ngIf="base64Image" />
+    
   </ion-item>
 
-  <ion-item no-lines id="distraction-input">
+ 
+  <ion-item no-lines id="distraction-input-website">
     <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="websiteLink" placeholder="Add website www."></ion-input>
   </ion-item>
 
@@ -54,11 +57,22 @@
   </ion-item>
 
   <div>
-      <button ion-button color="primary" (click)="saveDistraction('success')" [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
+      <button ion-button color="primary" (click)="saveDistraction('success')" type="submit"  [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
 
       
   </div>
 </form>
+
+
+<!-- <ion-row>
+    <ion-col>
+
+          <button ion-button color="primary" (click)="accessGallery()">Open Gallery</button>
+          <img [src]="base64Image" *ngIf="base64Image" />
+     
+</ion-col>
+</ion-row> -->
+
 
 
 

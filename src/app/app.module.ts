@@ -14,8 +14,8 @@ import { EmergencyContactModalPage } from '../pages/emergency-contact-modal/emer
 import { PlanModalPage } from '../pages/plan-modal/plan-modal';
 import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/distractions-info-modal';
 import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
-// import { PinDialog } from '@ionic-native/pin-dialog';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
+
 
 
 @NgModule({
