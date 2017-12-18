@@ -1,5 +1,8 @@
+import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+
 
 /**
  * Generated class for the ViewDistractionsPage page.
@@ -15,11 +18,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ViewDistractionsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+private distraction;
+private websiteLink;
+private youtubeLink;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+
+    storage.get('distraction').then((val) => {
+      console.log('What is this value ',val);
+      this.distraction = val;
+    });
+
+    storage.get('websiteLink').then((val) => {
+      console.log('What is this value ',val);
+      this.websiteLink = val;
+    });
+
+    storage.get('youtubeLink').then((val) => {
+      console.log('What is this value ',val);
+      this.youtubeLink = val;
+    });
+
+    
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ViewDistractionsPage');
   }
+
+
+
 
 }

@@ -36,10 +36,10 @@ private newTrigger;
     console.log('ionViewDidLoad EditTriggerPage');
   }
 
-  
-  
 
 
+
+  
   gotoViewDistractions(){
     this.navCtrl.push('View-DistractionsPage');
   }

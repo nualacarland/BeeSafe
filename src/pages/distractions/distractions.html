@@ -36,7 +36,7 @@
 
       </ion-row>
 
-      <ion-list>
+      <!-- <ion-list>
 
     <ion-card id="ion-card-first">
     <ion-item-sliding #item>
@@ -49,13 +49,13 @@
     
     <ion-item-options side="right">
         <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
-        <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+        <button ion-button id="Delete" (click)="removeItem(item)">Delete</button>
     </ion-item-options>
     </ion-item-sliding>
   </ion-card>
 
   <ion-card id="ion-card">
-    <ion-item-sliding #item>
+    <ion-item-sliding *ngFor="let item of items">
     <ion-item id="trigger-list">
     <div>
       <ion-img id="ion-img"src=""></ion-img>
@@ -64,11 +64,13 @@
       Listening to Music
     </ion-item>
 
+
     <ion-item-options side="right">
         <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
-        <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+        <button ion-button id="Delete" (click)="removeItem(item)">Delete</button>
     </ion-item-options>
     </ion-item-sliding>
+
   </ion-card>
    
 
@@ -85,14 +87,59 @@
     
         <ion-item-options side="right">
             <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
-            <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+            <button ion-button id="Delete" (click)="removeItem(item)">Delete</button>
         </ion-item-options>
         </ion-item-sliding>
       </ion-card>
       
-        </ion-list>
+        </ion-list> -->
 
 
+
+        <ion-list>
+      
+          <button item-end ion-button icon-only clear (click)="addItem()">
+            <ion-icon color="primary" name="add-circle"></ion-icon>
+          </button>
+    
+
+
+          <ion-card id="ion-card">
+        <ion-item-sliding *ngFor="let item of items; let i = index; ">
+          <ion-item>
+              <div>
+                  <ion-img id="ion-img" src=""></ion-img>
+                  <ion-img id="ion-img" src=""></ion-img>
+                  </div>
+            {{item.title}}
+          </ion-item>
+          <ion-item-options>
+              <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+            <button ion-button expandable id="Delete" (click)="deleteItem(items, i)">
+             Delete
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+        </ion-card>
+ 
+
+
+        <!-- <ion-card id="ion-card">
+            <ion-item-sliding #item>
+                <ion-item id="trigger-list">
+                    <div>
+                        <ion-img id="ion-img" src=""></ion-img>
+                        <ion-img id="ion-img" src=""></ion-img>
+                        </div>
+                      
+                Calling a Friend
+                </ion-item> -->
+       
+  
+
+
+
+      </ion-list>
 
 
 </ion-content>
