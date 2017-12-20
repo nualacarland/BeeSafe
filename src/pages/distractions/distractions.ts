@@ -22,14 +22,13 @@ export class DistractionsPage {
   
     items = [
       {
-        title: 'item 1',
-        
+        distraction_title: 'Math Studies',
       },
       {
-        title: 'Item 2',
+        distraction_title: 'Listening to Music',
       },
       {
-        title: 'Item 3',
+        distraction_title: 'Calling a Friend',
       },
     ];
 
@@ -77,7 +76,7 @@ export class DistractionsPage {
 
   addItem() {
   	console.log('add item');
-  	this.items.push({ title: 'Item ' + (this.items.length + 1) });
+  	this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
   }
 
   deleteItem(list, index) {
@@ -114,13 +113,5 @@ export class DistractionsPage {
     }
   }
 
-  // removeItem(item){ 
-  //   for (let i = 0; i < this.items.length; i++) { 
-  //   if (this.items[i] == item) 
-  //     {this.items.splice(i, 1); 
-    
-  //   } 
-  //  } 
-  // }
 
 }

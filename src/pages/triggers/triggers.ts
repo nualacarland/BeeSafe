@@ -22,13 +22,13 @@ export class TriggersPage {
   
   items = [
     {
-      title: 'item 1',
+      trigger_title: 'Arguing with Friends',
     },
     {
-      title: 'Item 2',
+      trigger_title: 'Parents',
     },
     {
-      title: 'Item 3',
+      trigger_title: 'School Work',
     },
   ];
 
@@ -59,12 +59,17 @@ export class TriggersPage {
 /*Add Triggers */
   addItem() {
   	console.log('add item');
-  	this.items.push({ title: 'Item ' + (this.items.length + 1) });
+  	this.items.push({ trigger_title: 'Item ' + (this.items.length + 1) });
   }
 
   deleteItem(list, index) {
     list.splice(index,1);
   }
+
+  unread(list, index) {
+    list.splice(index,1);
+  }
+ 
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');
@@ -74,7 +79,7 @@ export class TriggersPage {
     }
 
     this.activeItemSliding = itemSlide;
-    const swipeAmount = 33; // set your required swipe amount
+    const swipeAmount = 1; // set your required swipe amount
 
     console.log('swipe amount ', swipeAmount);
     itemSlide.startSliding(swipeAmount);

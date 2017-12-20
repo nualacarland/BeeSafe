@@ -37,8 +37,31 @@
 
       </ion-row>
 
+     <ion-list>
+          <ion-item-sliding id="ion-card" *ngFor="let item of items; let i = index; ">
+            <ion-item id="trigger-list">
+              {{item.trigger_title}}
+            </ion-item>
+            <ion-item-options slide="right">
+                <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+              <button ion-button expandable id="Delete" (click)="deleteItem(items, i)">
+               Delete
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        
 
-      <ion-list>
+        </ion-list>
+
+
+
+
+</ion-content>
+
+
+
+
+      <!-- <ion-list>
 
         <ion-card id="ion-card">
     <ion-item-sliding #item>
@@ -67,38 +90,16 @@
     </ion-item-sliding>
   </ion-card>
    
-  
+
   <ion-card id="ion-card">
-    <ion-item-sliding #item>
+    <ion-item-sliding *ngFor="let item of items; let i = index; ">
         <ion-item id="trigger-list">
         School work
         </ion-item>
     
         <ion-item-options side="right">
             <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
-            <button ion-button id="Delete" (click)="unread(item)">Delete</button>
+            <button ion-button id="Delete" (click)="deleteItem(items, i)">Delete</button>
         </ion-item-options>
         </ion-item-sliding>
-      </ion-card>
-      
-     
-        <ion-card id="ion-card">
-          <ion-item-sliding *ngFor="let item of items; let i = index; ">
-            <ion-item id="trigger-list">
-              {{item.title}}
-            </ion-item>
-            <ion-item-options slide="right">
-                <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
-              <button ion-button expandable id="Delete" (click)="deleteItem(items, i)">
-               Delete
-              </button>
-            </ion-item-options>
-          </ion-item-sliding>
-          </ion-card>
-
-        </ion-list>
-
-
-
-
-</ion-content>
+      </ion-card> -->
