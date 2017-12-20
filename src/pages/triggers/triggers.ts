@@ -59,7 +59,7 @@ export class TriggersPage {
 /*Add Triggers */
   addItem() {
   	console.log('add item');
-  	this.items.push({ trigger_title: 'Item ' + (this.items.length + 1) });
+  	this.items.push({trigger_title: ""});
   }
 
   deleteItem(list, index) {
@@ -100,3 +100,5 @@ export class TriggersPage {
     }
   }
 }
+
+

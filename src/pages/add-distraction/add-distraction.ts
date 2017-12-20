@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, LoadingController,  ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, LoadingController,  ActionSheetController, Item, ItemSliding } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
@@ -25,6 +25,19 @@ export class AddDistractionPage {
 
   private userDetails : FormGroup;
   base64Image: any;
+  activeItemSliding: ItemSliding = null;
+  
+    items = [
+      {
+        distraction_title: 'Math Studies',
+      },
+      {
+        distraction_title: 'Listening to Music',
+      },
+      {
+        distraction_title: 'Calling a Friend',
+      },
+    ];
   
  
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
@@ -40,8 +53,7 @@ export class AddDistractionPage {
               youtubeLink: ['']
         
             });
-
-    
+          
   }
 
 ionViewDidLoad() {
@@ -56,18 +68,25 @@ saveDistractions() {
   this.storage.set('distraction', this.userDetails.value.distraction);
   console.log('this is the distraction info ->', this.userDetails.value.distraction);
 
-  // this.storage.set('galleryPhoto', this.userDetails.value.galleryPhoto);
-
+  this.storage.set('galleryPhoto', this.camera.DestinationType.DATA_URL);
+  
   this.storage.set('websiteLink', this.userDetails.value.websiteLink);
   console.log('this is the Website Link ->', this.userDetails.value.websiteLink);
 
   this.storage.set('youtubeLink', this.userDetails.value.youtubeLink);
   console.log('this is the Youtube Link ->', this.userDetails.value.youtubeLink);
 
-  this.presentToast();
+
   console.log('locally stored!');
- 
+  this.navCtrl.push('DistractionsPage');
+  this.addItem();
 }
+
+addItem() {
+  console.log('Item Added!');
+  this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
+}
+
 
 accessGallery(){
   this.camera.getPicture({
@@ -81,9 +100,6 @@ accessGallery(){
      console.log(err);
    });
  }
-
-
-
 
   gotoPlan(){
     this.navCtrl.push('CreateBeesafePlanPage');

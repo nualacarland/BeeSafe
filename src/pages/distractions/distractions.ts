@@ -74,6 +74,7 @@ export class DistractionsPage {
 
   }
 
+
   addItem() {
   	console.log('add item');
   	this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
