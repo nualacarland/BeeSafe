@@ -36,7 +36,7 @@
 
       </ion-row>
 
-      <!-- <ion-list>
+      <ion-list>
 
     <ion-card id="ion-card-first">
     <ion-item-sliding #item>
@@ -92,18 +92,12 @@
         </ion-item-sliding>
       </ion-card>
       
-        </ion-list> -->
-
+        </ion-list>
 
 
         <ion-list>
-      
-          <button item-end ion-button icon-only clear (click)="addItem()">
-            <ion-icon color="primary" name="add-circle"></ion-icon>
-          </button>
+
     
-
-
           <ion-card id="ion-card">
         <ion-item-sliding *ngFor="let item of items; let i = index; ">
           <ion-item>
@@ -122,23 +116,6 @@
         </ion-item-sliding>
         </ion-card>
  
-
-
-        <!-- <ion-card id="ion-card">
-            <ion-item-sliding #item>
-                <ion-item id="trigger-list">
-                    <div>
-                        <ion-img id="ion-img" src=""></ion-img>
-                        <ion-img id="ion-img" src=""></ion-img>
-                        </div>
-                      
-                Calling a Friend
-                </ion-item> -->
-       
-  
-
-
-
       </ion-list>
 
 

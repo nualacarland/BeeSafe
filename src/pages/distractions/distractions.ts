@@ -22,7 +22,8 @@ export class DistractionsPage {
   
     items = [
       {
-        title: 'Item 1',
+        title: 'item 1',
+        
       },
       {
         title: 'Item 2',
@@ -32,17 +33,23 @@ export class DistractionsPage {
       },
     ];
 
-  things = [
-    {
-      title: 'Thing 1',
-    },
-    {
-      title: 'Thing 2',
-    },
-    {
-      title: 'Thing 3',
-    },
-  ];
+
+  //   distractions = [{
+
+  //     distraction_title: 'test',
+  //     distraction_text: 'test',
+  //     distraction_url: 'www.',
+  //     distraction_photo: '/assets/images/logo.png'
+  
+  // },{
+  
+  //     distraction_title: 'test',
+  //     distraction_text: 'test',
+  //     distraction_url: 'www.',
+  //     distraction_photo: '/assets/images/logo.png'
+  
+  // }]
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
 
