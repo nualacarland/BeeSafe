@@ -77,6 +77,7 @@ export class TriggersPage {
     if (this.activeItemSliding) { // use this so that only one active sliding item allowed
       this.closeOption();
     }
+    
 
     this.activeItemSliding = itemSlide;
     const swipeAmount = 1; // set your required swipe amount
