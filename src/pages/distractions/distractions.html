@@ -28,17 +28,14 @@
           </ion-icon>
         
           <div>
-      <button ion-button id="add" (click)="gotoAddDistractionPage()">
+      <button ion-button id="add" (click)="addItem()">
           <ion-icon id="plus" name="md-add"></ion-icon> 
          ADD NEW
       </button>
       </div>
 
       </ion-row>
-
-     
-
-
+    
         <ion-list>
 
         <ion-item-sliding id="ion-card" *ngFor="let item of items; let i = index; ">

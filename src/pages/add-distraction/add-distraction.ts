@@ -53,7 +53,7 @@ export class AddDistractionPage {
               youtubeLink: ['']
         
             });
-          
+   
   }
 
 ionViewDidLoad() {
@@ -69,7 +69,8 @@ saveDistractions() {
   console.log('this is the distraction info ->', this.userDetails.value.distraction);
 
   this.storage.set('galleryPhoto', this.camera.DestinationType.DATA_URL);
-  
+  console.log('this is the image path->', this.camera.DestinationType.DATA_URL);
+
   this.storage.set('websiteLink', this.userDetails.value.websiteLink);
   console.log('this is the Website Link ->', this.userDetails.value.websiteLink);
 
@@ -85,6 +86,10 @@ saveDistractions() {
 addItem() {
   console.log('Item Added!');
   this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
+}
+
+saveRadioButtons(){
+
 }
 
 

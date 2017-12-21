@@ -33,23 +33,6 @@ export class DistractionsPage {
     ];
 
 
-  //   distractions = [{
-
-  //     distraction_title: 'test',
-  //     distraction_text: 'test',
-  //     distraction_url: 'www.',
-  //     distraction_photo: '/assets/images/logo.png'
-  
-  // },{
-  
-  //     distraction_title: 'test',
-  //     distraction_text: 'test',
-  //     distraction_url: 'www.',
-  //     distraction_photo: '/assets/images/logo.png'
-  
-  // }]
-
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
 
   }
@@ -75,16 +58,16 @@ export class DistractionsPage {
   }
 
 
-  addItem() {
-  	console.log('add item');
-  	this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
+  addItem(){
+    console.log('add item');
+    this.items.push({distraction_title: ""});
   }
 
   deleteItem(list, index) {
-    list.splice(index,1);
+    list.splice(index, 1)
   }
 
-
+ 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');
     event.stopPropagation(); // here if you want item to be tappable
