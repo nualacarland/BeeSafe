@@ -1,3 +1,4 @@
+import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Item, ItemSliding } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
@@ -20,25 +21,30 @@ export class DistractionsPage {
 
   activeItemSliding: ItemSliding = null;
   
-    items = [
-      {
-        distraction_title: 'Math Studies',
-      },
-      {
-        distraction_title: 'Listening to Music',
-      },
-      {
-        distraction_title: 'Calling a Friend',
-      },
-    ];
+  private items;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DistractionsPage');
+    this.storage.get('distractions').then((val)=>{
+      console.log('What is the value of the distractions array',val);
+      this.items = val;
+    })
+
+  }
+
+
+  ionViewDidEnter(){
+    console.log('ionViewDidEnter DistractionsPage');
+    this.storage.get('distractions').then((val)=>{
+      console.log('What is the value of the distractions array',val);
+      this.items = val;
+    })
   }
 
   openModal() {
@@ -58,14 +64,21 @@ export class DistractionsPage {
   }
 
 
-  addItem(){
-    console.log('add item');
-    this.items.push({distraction_title: ""});
-  }
-
   deleteItem(list, index) {
     list.splice(index, 1)
   }
+
+
+
+  gotoEditPage(distractionIndex: number){
+
+    console.log('do some edit magic');
+    console.log(distractionIndex);
+
+    this.navCtrl.push('EditDistractionPage', { 'distractionIndex': distractionIndex });
+  }
+
+
 
  
   openOption(itemSlide: ItemSliding, item: Item, event) {

@@ -56,20 +56,17 @@ export class TriggersPage {
     this.navCtrl.push('AddTriggerPage');
   }
 
-/*Add Triggers */
-  addItem() {
+  addItem(){
   	console.log('add item');
-  	this.items.push({trigger_title: "" });
+    this.items.push({trigger_title: "" });
+    this.navCtrl.push('AddTriggerPage');
   }
 
   deleteItem(list, index) {
     list.splice(index,1);
   }
 
-  unread(list, index) {
-    list.splice(index,1);
-  }
- 
+  
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');

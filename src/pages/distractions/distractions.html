@@ -28,7 +28,7 @@
           </ion-icon>
         
           <div>
-      <button ion-button id="add" (click)="addItem()">
+      <button ion-button id="add" (click)="gotoAddDistractionPage()">
           <ion-icon id="plus" name="md-add"></ion-icon> 
          ADD NEW
       </button>
@@ -44,10 +44,10 @@
                   <ion-img id="ion-img" src=""></ion-img>
                   <ion-img id="ion-img" src=""></ion-img>
                   </div>
-            {{item.distraction_title}}
+            {{distraction.distractionTitle}}
           </ion-item>
           <ion-item-options>
-              <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>
+              <button ion-button id="Edit" (click)="gotoEditPage(i)">Edit</button>
             <button ion-button expandable id="Delete" (click)="deleteItem(items, i)">
              Delete
             </button>

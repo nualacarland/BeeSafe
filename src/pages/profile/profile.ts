@@ -45,10 +45,10 @@ export class ProfilePage {
     this.userDetails = this.formBuilder.group({
       
               emailAddress: [''],
-              pin1: [''],
-              pin2: [''],
-              pin3: [''],
-              pin4: [''],
+              pin1: ['', Validators.required],
+              pin2: ['', Validators.required],
+              pin3: ['', Validators.required],
+              pin4: ['', Validators.required],
               contact1Tel: [''],
               contact1Name: [''],
               contact2Tel: [''],

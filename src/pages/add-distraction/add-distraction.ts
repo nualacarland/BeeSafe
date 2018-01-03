@@ -1,3 +1,4 @@
+import { Distraction } from './../../app/models/distraction';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, LoadingController,  ActionSheetController, Item, ItemSliding } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
@@ -6,6 +7,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Camera, DestinationType } from '@ionic-native/camera';
 import { Cordova } from '@ionic-native/core';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
+
 
 
 
@@ -62,36 +64,94 @@ ionViewDidLoad() {
 
 saveDistractions() {
 
-  this.storage.set('distractionTitle', this.userDetails.value.distractionTitle);
-  console.log('this is the distraction title ->', this.userDetails.value.distractionTitle);
-
-  this.storage.set('distraction', this.userDetails.value.distraction);
-  console.log('this is the distraction info ->', this.userDetails.value.distraction);
-
-  this.storage.set('galleryPhoto', this.camera.DestinationType.DATA_URL);
-  console.log('this is the image path->', this.camera.DestinationType.DATA_URL);
-
-  this.storage.set('websiteLink', this.userDetails.value.websiteLink);
-  console.log('this is the Website Link ->', this.userDetails.value.websiteLink);
-
-  this.storage.set('youtubeLink', this.userDetails.value.youtubeLink);
-  console.log('this is the Youtube Link ->', this.userDetails.value.youtubeLink);
 
 
-  console.log('locally stored!');
-  this.navCtrl.push('DistractionsPage');
-  this.addItem();
+
+  this.storage.get('distractions').then((val) => {
+    console.log('distractions ',val);
+
+    if(val == null){
+
+
+      
+
+
+      var newDistraction =  [new Distraction(this.userDetails.value.distractionTitle, 
+        this.userDetails.value.distraction,
+        this.camera.DestinationType.DATA_URL,
+        this.userDetails.value.websiteLink,
+        this.userDetails.value.youtubeLink)];
+
+
+        this.storage.set('distractions', newDistraction);
+    } else{
+      var tempDistractions: [Distraction] = val;
+      var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
+        this.userDetails.value.distraction,
+        this.camera.DestinationType.DATA_URL,
+        this.userDetails.value.websiteLink,
+        this.userDetails.value.youtubeLink);
+
+
+
+      tempDistractions.push(newSingleDistraction);
+
+      this.storage.set('distractions', tempDistractions);
+
+    }
+
+
+
+    console.log('locally stored!');
+    this.navCtrl.push('DistractionsPage');
+
+
+
+
+    // this.
+
+    // this.storage.set('distractionTitle', this.userDetails.value.distractionTitle);
+    // console.log('this is the distraction title ->', this.userDetails.value.distractionTitle);
+  
+    // this.storage.set('distraction', this.userDetails.value.distraction);
+    // console.log('this is the distraction info ->', this.userDetails.value.distraction);
+  
+    // this.storage.set('galleryPhoto', this.camera.DestinationType.DATA_URL);
+    // console.log('this is the image path->', this.camera.DestinationType.DATA_URL);
+  
+    // this.storage.set('websiteLink', this.userDetails.value.websiteLink);
+    // console.log('this is the Website Link ->', this.userDetails.value.websiteLink);
+  
+    // this.storage.set('youtubeLink', this.userDetails.value.youtubeLink);
+    // console.log('this is the Youtube Link ->', this.userDetails.value.youtubeLink);
+
+
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-addItem() {
-  console.log('Item Added!');
-  this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
+// addItem() {
+//   console.log('Item Added!');
+//   this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
+//   this.navCtrl.push('');
+// }
+
+addItem(){
+  console.log('add item');
+  this.items.push({distraction_title: ""});
 }
-
-saveRadioButtons(){
-
-}
-
 
 accessGallery(){
   this.camera.getPicture({
