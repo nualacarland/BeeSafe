@@ -4,6 +4,7 @@ import { Distraction } from './../../app/models/distraction';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 /**
  * Generated class for the EditDistractionPage page.
  *
@@ -75,7 +76,7 @@ export class EditDistractionPage {
   editDistraction(){
     this.storage.get('distractions').then((val)=>{
 
-      this.distraction.distractionInfo = this.form.distractionTitle;
+      this.distraction.distractionInfo = this.userDetails.distractionTitle;
       this.distraction.distractionInfo = "newshit";
       this.distraction.distractionInfo = "newshit";
       this.distraction.distractionInfo = "newshit";

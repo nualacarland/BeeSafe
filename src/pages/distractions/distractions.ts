@@ -27,6 +27,7 @@ export class DistractionsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage) {
 
+  
   }
 
   ionViewDidLoad() {

@@ -29,17 +29,17 @@ export class AddDistractionPage {
   base64Image: any;
   activeItemSliding: ItemSliding = null;
   
-    items = [
-      {
-        distraction_title: 'Math Studies',
-      },
-      {
-        distraction_title: 'Listening to Music',
-      },
-      {
-        distraction_title: 'Calling a Friend',
-      },
-    ];
+    // items = [
+    //   {
+    //     distraction_title: 'Math Studies',
+    //   },
+    //   {
+    //     distraction_title: 'Listening to Music',
+    //   },
+    //   {
+    //     distraction_title: 'Calling a Friend',
+    //   },
+    // ];
   
  
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
@@ -62,18 +62,17 @@ ionViewDidLoad() {
   console.log('ionViewDidLoad AddDistractionPage');
 }
 
+gotoPlan(){
+  this.navCtrl.push('CreateBeesafePlanPage');
+}
+
 saveDistractions() {
-
-
 
 
   this.storage.get('distractions').then((val) => {
     console.log('distractions ',val);
 
     if(val == null){
-
-
-      
 
 
       var newDistraction =  [new Distraction(this.userDetails.value.distractionTitle, 
@@ -107,46 +106,10 @@ saveDistractions() {
 
 
 
-
-    // this.
-
-    // this.storage.set('distractionTitle', this.userDetails.value.distractionTitle);
-    // console.log('this is the distraction title ->', this.userDetails.value.distractionTitle);
-  
-    // this.storage.set('distraction', this.userDetails.value.distraction);
-    // console.log('this is the distraction info ->', this.userDetails.value.distraction);
-  
-    // this.storage.set('galleryPhoto', this.camera.DestinationType.DATA_URL);
-    // console.log('this is the image path->', this.camera.DestinationType.DATA_URL);
-  
-    // this.storage.set('websiteLink', this.userDetails.value.websiteLink);
-    // console.log('this is the Website Link ->', this.userDetails.value.websiteLink);
-  
-    // this.storage.set('youtubeLink', this.userDetails.value.youtubeLink);
-    // console.log('this is the Youtube Link ->', this.userDetails.value.youtubeLink);
-
-
-
   });
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
-// addItem() {
-//   console.log('Item Added!');
-//   this.items.push({ distraction_title: 'Item ' + (this.items.length + 1) });
-//   this.navCtrl.push('');
-// }
 
 addItem(){
   console.log('add item');
@@ -165,10 +128,6 @@ accessGallery(){
      console.log(err);
    });
  }
-
-  gotoPlan(){
-    this.navCtrl.push('CreateBeesafePlanPage');
-  }
 
   successToast() {
     let toast = this.toastCtrl.create({
