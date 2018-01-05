@@ -8,6 +8,7 @@ export class Distraction {
         public youtubeLink: string
       
     ) {
+        
 
     }
 }
