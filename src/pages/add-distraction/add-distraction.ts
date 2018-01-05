@@ -29,19 +29,7 @@ export class AddDistractionPage {
   base64Image: any;
   activeItemSliding: ItemSliding = null;
   
-    // items = [
-    //   {
-    //     distraction_title: 'Math Studies',
-    //   },
-    //   {
-    //     distraction_title: 'Listening to Music',
-    //   },
-    //   {
-    //     distraction_title: 'Calling a Friend',
-    //   },
-    // ];
-  
- 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
    private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 
    public platform: Platform, public loadingCtrl: LoadingController ) {
@@ -62,8 +50,8 @@ ionViewDidLoad() {
   console.log('ionViewDidLoad AddDistractionPage');
 }
 
-gotoPlan(){
-  this.navCtrl.push('CreateBeesafePlanPage');
+doCancel(){
+  this.navCtrl.push('DistractionsPage');
 }
 
 saveDistractions() {
@@ -99,22 +87,14 @@ saveDistractions() {
 
     }
 
-
-
     console.log('locally stored!');
     this.navCtrl.push('DistractionsPage');
-
-
+    
 
   });
 
 }
 
-
-addItem(){
-  console.log('add item');
-  this.items.push({distraction_title: ""});
-}
 
 accessGallery(){
   this.camera.getPicture({
@@ -126,6 +106,7 @@ accessGallery(){
 
     }, (err) => {
      console.log(err);
+     console.log('error');
    });
  }
 

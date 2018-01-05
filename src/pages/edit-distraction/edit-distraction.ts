@@ -67,9 +67,6 @@ export class EditDistractionPage {
     console.log(this.navParams.get('distractionIndex'));
     console.log(this.navParams.get('distractionIndex'));
 
-
-
-
   }
 
 

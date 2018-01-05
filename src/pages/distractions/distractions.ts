@@ -1,8 +1,11 @@
+import { Distraction } from './../../app/models/distraction';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Item, ItemSliding } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { DistractionsInfoModalPage } from '../distractions-info-modal/distractions-info-modal';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+
 
 
 /**
@@ -22,12 +25,20 @@ export class DistractionsPage {
   activeItemSliding: ItemSliding = null;
   
   private items;
-
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage) {
-
+  private userDetails;
   
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage, private formBuilder: FormBuilder, ) {
+    this.userDetails = this.formBuilder.group({
+      
+      distractionTitle: ['', Validators.required],
+      distraction: ['', Validators.required],
+      galleryPhoto: [''],
+      websiteLink: [''],
+      youtubeLink: ['']
+
+    });
+
   }
 
   ionViewDidLoad() {
@@ -38,7 +49,6 @@ export class DistractionsPage {
     })
 
   }
-
 
   ionViewDidEnter(){
     console.log('ionViewDidEnter DistractionsPage');
@@ -64,12 +74,12 @@ export class DistractionsPage {
 
   }
 
-
   deleteItem(list, index) {
-    list.splice(index, 1)
+    list.splice(index, 1);
+    this.storage.remove(list);
+    console.log('Deleting distraction from local storage');
   }
-
-
+  
 
   gotoEditPage(distractionIndex: number){
 
@@ -80,8 +90,6 @@ export class DistractionsPage {
   }
 
 
-
- 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');
     event.stopPropagation(); // here if you want item to be tappable

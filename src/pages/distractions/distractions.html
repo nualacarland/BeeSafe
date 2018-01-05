@@ -38,16 +38,14 @@
     
         <ion-list>
 
-        <ion-item-sliding id="ion-card" *ngFor="let item of items; let i = index; ">
+        <ion-item-sliding id="ion-card" *ngFor="let item of items; let i = index;">
           <ion-item id="trigger-list"> 
-              <div *ngIf="distraction != null">
-                  <!-- <ion-img id="ion-img" src=""></ion-img>
-                  <ion-img id="ion-img" src=""></ion-img> -->
-                  {{distraction.distractionTitle}}
+              <div>
+                  <ion-img id="ion-img" src=""></ion-img>
+                  <ion-img id="ion-img" src=""></ion-img>
+                 
                   </div>
-                  <!-- <div *ngIf="distraction != null">
-                    {{distraction.distractionTitle}}
-                </div> -->
+          
           </ion-item>
           <ion-item-options>
               <button ion-button id="Edit" (click)="gotoEditPage(i)">Edit</button>
