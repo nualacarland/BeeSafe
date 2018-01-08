@@ -40,7 +40,7 @@
      <ion-list>
           <ion-item-sliding id="ion-card" *ngFor="let item of items; let i = index; ">
             <ion-item id="trigger-list">
-              {{triggers.triggerTitle}}
+           {{trigger}}
             </ion-item>
             <ion-item-options slide="right">
                 <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>

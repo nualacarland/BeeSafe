@@ -56,7 +56,7 @@ export class AddTriggerPage {
 
         tempTrigger.push(newSingleTrigger);
         this.storage.set('triggers', tempTrigger);
-
+        
       }
 
       console.log('locally stored!');
