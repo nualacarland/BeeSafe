@@ -1,7 +1,10 @@
+import { Triggers } from './../../app/models/triggers';
+import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Item, ItemSliding } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { TriggerModalPage } from '../trigger-modal/trigger-modal';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 
 /**
@@ -19,25 +22,36 @@ import { TriggerModalPage } from '../trigger-modal/trigger-modal';
 export class TriggersPage {
 
   activeItemSliding: ItemSliding = null;
-  
-  items = [
-    {
-      trigger_title: 'Arguing with Friends',
-    },
-    {
-      trigger_title: 'Parents',
-    },
-    {
-      trigger_title: 'School Work',
-    },
-  ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  private items;
+  private userDetails;
+
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private storage: Storage, private formBuilder: FormBuilder) {
+        this.userDetails = this.formBuilder.group({
+
+          triggerTitle: ['', Validators.required],
+
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TriggersPage');
+    this.storage.get('triggers').then((val) =>{
+      console.log('What is the value of the trigger', val);
+      this.items = val;
+    
+    })
   }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter TriggerPage');
+    this.storage.get('triggers').then((val) => {
+      console.log('What is the value of the trigger', val);
+      this.items = val;
+    })
+  }
+
 
 /*Navigation*/
   openModal() {
@@ -52,13 +66,12 @@ export class TriggersPage {
     this.navCtrl.push('CreateBeesafePlanPage');
   }
 
-  gotoAddPage() {
+  gotoAddPage(){
     this.navCtrl.push('AddTriggerPage');
   }
 
   addItem(){
   	console.log('add item');
-    this.items.push({trigger_title: "" });
     this.navCtrl.push('AddTriggerPage');
   }
 
@@ -66,7 +79,6 @@ export class TriggersPage {
     list.splice(index,1);
   }
 
-  
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');

@@ -29,7 +29,7 @@
           </ion-icon>
         
           <div id="add">
-      <button ion-button id="add-trigger-btn" (click)="addItem()">
+      <button ion-button id="add-trigger-btn" (click)="gotoAddPage()">
           <ion-icon id="plus" name="md-add"></ion-icon> 
          ADD NEW
         </button>
@@ -40,7 +40,7 @@
      <ion-list>
           <ion-item-sliding id="ion-card" *ngFor="let item of items; let i = index; ">
             <ion-item id="trigger-list">
-              {{item.trigger_title}}
+              {{triggers.triggerTitle}}
             </ion-item>
             <ion-item-options slide="right">
                 <button ion-button id="Edit" (click)="gotoEditPage()">Edit</button>

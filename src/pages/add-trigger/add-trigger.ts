@@ -1,8 +1,10 @@
+import { Triggers } from './../../app/models/triggers';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Platform, LoadingController,  ActionSheetController, Item, ItemSliding } from 'ionic-angular';
 
 /**
  * Generated class for the AddTriggerPage page.
@@ -19,29 +21,52 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 export class AddTriggerPage {
 
   private userDetails : FormGroup;
+  activeItemSliding: ItemSliding = null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
+              private formBuilder: FormBuilder, private storage: Storage ) {
 
-    storage.get('newTrigger').then((val) => {
-      console.log('newTrigger ',val);
-      
+    
+    this.userDetails = this.formBuilder.group({
+
+      triggerTitle: ['', Validators.required]
+
     });
-
+      
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddTriggerPage');
   }
 
+
+  saveNewTriggers(){
+
+    this.storage.get('triggers').then((val) =>{
+      console.log('triggers', val);
+
+      if(val == null){
+
+        var newTrigger = [new Triggers(this.userDetails.value.triggerTitle)];
+
+        this.storage.set('triggers', newTrigger);
+      } else{
+        var tempTrigger: [Triggers] = val;
+        var newSingleTrigger : Triggers = new Triggers(this.userDetails.value.triggerTitle);
+
+        tempTrigger.push(newSingleTrigger);
+        this.storage.set('triggers', tempTrigger);
+
+      }
+
+      console.log('locally stored!');
+      this.navCtrl.push('TriggersPage');
+      
   
-  saveNewTrigger() {
-    this.storage.set('newTrigger', this.userDetails.value.newTrigger);
-    console.log('this is the new Trigger saved ->', this.userDetails.value.newTrigger);
-
-    this.presentToast();
-    console.log('Locally stored!');
+    });
+  
   }
-
+  
 
   gotoTriggersPage() {
     this.navCtrl.push('TriggersPage');

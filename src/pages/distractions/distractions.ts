@@ -28,7 +28,7 @@ export class DistractionsPage {
   private userDetails;
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage, private formBuilder: FormBuilder, ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage, private formBuilder: FormBuilder ) {
     this.userDetails = this.formBuilder.group({
       
       distractionTitle: ['', Validators.required],
