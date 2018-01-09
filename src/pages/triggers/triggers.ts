@@ -70,13 +70,15 @@ export class TriggersPage {
     this.navCtrl.push('AddTriggerPage');
   }
 
-  addItem(){
-  	console.log('add item');
-    this.navCtrl.push('AddTriggerPage');
-  }
+  // addItem(){
+  // 	console.log('add item');
+  //   this.navCtrl.push('AddTriggerPage');
+  // }
 
   deleteItem(list, index) {
     list.splice(index,1);
+    this.storage.remove(index);
+    console.log('Trigger deleted!')
   }
 
 
@@ -87,7 +89,6 @@ export class TriggersPage {
       this.closeOption();
     }
     
-
     this.activeItemSliding = itemSlide;
     const swipeAmount = 1; // set your required swipe amount
 
