@@ -10,6 +10,7 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 import { Storage } from '@ionic/storage';
 import { MenuController } from 'ionic-angular';
+import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
 
 
 /**
@@ -109,6 +110,11 @@ export class RegisterPage {
     let myModal = this.modalCtrl.create(EmergencyContactModalPage);
     myModal.present();
 
+  }
+
+  openAffirModal(){
+    let myModal = this.modalCtrl.create(AffirmationModalPage);
+    myModal.present();
   }
   
   checkUser() {
