@@ -1,10 +1,13 @@
-import { Triggers } from './../../app/models/triggers';
+import { Trigger } from './../../app/models/Trigger';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, LoadingController, ActionSheetController, Item, ItemSliding } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Platform, LoadingController,  ActionSheetController, Item, ItemSliding } from 'ionic-angular';
+import { Camera, DestinationType } from '@ionic-native/camera';
+import { Cordova } from '@ionic-native/core';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
+
 
 /**
  * Generated class for the AddTriggerPage page.
@@ -21,12 +24,13 @@ import { Platform, LoadingController,  ActionSheetController, Item, ItemSliding 
 export class AddTriggerPage {
 
   private userDetails : FormGroup;
+  base64Image: any;
   activeItemSliding: ItemSliding = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
-              private formBuilder: FormBuilder, private storage: Storage ) {
+              private formBuilder: FormBuilder, private storage: Storage, private camera: Camera, public actionsheetCtrl: ActionSheetController,
+            public platform: Platform, public loadingCtrl: LoadingController ) {
 
-    
     this.userDetails = this.formBuilder.group({
 
       triggerTitle: ['', Validators.required]
@@ -35,10 +39,14 @@ export class AddTriggerPage {
       
   }
 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddTriggerPage');
   }
 
+  doCancel(){
+    this.navCtrl.push('TriggersPage');
+  }
 
   saveNewTriggers(){
 
@@ -47,12 +55,13 @@ export class AddTriggerPage {
 
       if(val == null){
 
-        var newTrigger = [new Triggers(this.userDetails.value.triggerTitle)];
+        var newTrigger = [new Trigger(this.userDetails.value.triggerTitle)];
 
         this.storage.set('triggers', newTrigger);
+
       } else{
-        var tempTrigger: [Triggers] = val;
-        var newSingleTrigger : Triggers = new Triggers(this.userDetails.value.triggerTitle);
+        var tempTrigger: [Trigger] = val;
+        var newSingleTrigger : Trigger = new Trigger(this.userDetails.value.triggerTitle);
 
         tempTrigger.push(newSingleTrigger);
         this.storage.set('triggers', tempTrigger);
@@ -60,28 +69,62 @@ export class AddTriggerPage {
       }
 
       console.log('locally stored!');
+      this.successToast();
       this.navCtrl.push('TriggersPage');
       
-  
     });
+  
+
+
+  }
+  
+    successToast() {
+      let toast = this.toastCtrl.create({
+        message: 'New Trigger saved successfully',
+        duration: 3000,
+        position: 'top',
+        cssClass: "toast-success",
+      });
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      });
+      toast.present();
+    } 
+  
+    // saveTrigger(message){
+    //   if(message == 'success'){
+    //     this.successToast();
+    //   }else{
+    //     this.errorToast();
+    //   }
+    // }
+  
+    // presentToast() {
+    //   let toast = this.toastCtrl.create({
+    //     message: 'New Trigger created Successfully!',
+    //     duration: 3000,
+    //     position: 'top',
+    //     cssClass: "toast-success",
+    //   });
+    //   toast.onDidDismiss(() => {
+    //     console.log('Dismissed toast');
+    //   });
+    //   toast.present();
+    // }  
+  
+  
+    errorToast() {
+      let toast = this.toastCtrl.create({
+        message: 'New Trigger - failed.',
+        duration: 20000,
+        position: 'top',
+        cssClass: 'toast-error',
+      });
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      });
+      toast.present();
+    } 
   
   }
   
-
-  gotoTriggersPage() {
-    this.navCtrl.push('TriggersPage');
-  }
-  presentToast() {
-    let toast = this.toastCtrl.create({
-      message: 'New Trigger saved Successfully!',
-      duration: 3000,
-      position: 'top',
-      cssClass: "toast-success",
-    });
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-    toast.present();
-
-  }  
-}

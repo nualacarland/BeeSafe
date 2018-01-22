@@ -28,7 +28,6 @@ export class DistractionsPage {
   private userDetails;
   
   
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage, private formBuilder: FormBuilder ) {
     this.userDetails = this.formBuilder.group({
       
@@ -75,13 +74,16 @@ export class DistractionsPage {
 
   }
 
-  deleteItem(list, index) {
-    list.splice(index, 1);
-    this.storage.remove(list);
-    console.log('Deleting distraction from local storage');
+  // deleteItem(list, index) {
+  //   list.splice(index, 1);
+  //   this.storage.remove(list);
+  //   console.log('Deleting distraction from local storage');
+  // }
+  
+  deleteItem(list, index){
+    this.items.splice(index, 1);
   }
   
-
   gotoEditPage(distractionIndex: number){
 
     console.log('do some edit magic');

@@ -16,7 +16,7 @@
           </ion-title>
           <ion-buttons end>
             <button ion-button (click)="gotoTriggersPage()">
-              <ion-icon id="cancel" name="">Cancel</ion-icon>
+              <ion-icon id="cancel" (click)="doCancel()" name="">Cancel</ion-icon>
             </button>
         </ion-buttons>
         </ion-navbar>
@@ -29,7 +29,7 @@
   <h1 id="text-line">Enter new trigger below</h1>
 
 <ion-item no-lines id="trigger-input">
-  <ion-input type="text" style="background-color:#FAF4EA;" formControlName="newTrigger" placeholder="Enter your own trigger"></ion-input>
+  <ion-input type="text" style="background-color:#FAF4EA;" formControlName="triggerTitle" placeholder="Enter your own trigger"></ion-input>
 </ion-item>
 
 

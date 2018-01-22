@@ -1,4 +1,4 @@
-import { Triggers } from './../../app/models/triggers';
+import { Trigger } from './../../app/models/trigger';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Item, ItemSliding } from 'ionic-angular';
@@ -30,10 +30,11 @@ export class TriggersPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private storage: Storage, private formBuilder: FormBuilder) {
         this.userDetails = this.formBuilder.group({
 
-          triggerTitle: ['', Validators.required],
+          triggerTitle: ['', Validators.required]
 
     });
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TriggersPage');
@@ -44,14 +45,23 @@ export class TriggersPage {
     })
   }
 
+
   ionViewDidEnter() {
-    console.log('ionViewDidEnter TriggerPage');
+    console.log('ionViewDidEnter TriggersPage');
     this.storage.get('triggers').then((val) => {
       console.log('What is the value of the trigger', val);
       this.items = val;
     })
   }
 
+
+  gotoEditPage(triggerIndex: number){
+
+    console.log('do some edit magic');
+    console.log(triggerIndex);
+
+    this.navCtrl.push('EditTriggerPage', { 'distractionIndex': triggerIndex });
+  }
 
 /*Navigation*/
   openModal() {
@@ -70,16 +80,17 @@ export class TriggersPage {
     this.navCtrl.push('AddTriggerPage');
   }
 
-  // addItem(){
-  // 	console.log('add item');
-  //   this.navCtrl.push('AddTriggerPage');
+
+  // deleteItem(list, index) {
+  //   list.splice(index,1);
+  //   this.storage.remove(index);
+  //   console.log('Trigger deleted!')
   // }
 
-  deleteItem(list, index) {
-    list.splice(index,1);
-    this.storage.remove(index);
-    console.log('Trigger deleted!')
+  deleteItem(list, index){
+    this.items.splice(index, 1);
   }
+
 
 
   openOption(itemSlide: ItemSliding, item: Item, event) {

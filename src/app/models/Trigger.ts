@@ -1,4 +1,4 @@
-export class Triggers {
+export class Trigger {
 
     constructor(
         public triggerTitle: string
