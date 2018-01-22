@@ -15,6 +15,7 @@ import { PlanModalPage } from '../pages/plan-modal/plan-modal';
 import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/distractions-info-modal';
 import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
 import { Camera } from '@ionic-native/camera';
+import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-modal';
 
 
 
@@ -24,6 +25,7 @@ import { Camera } from '@ionic-native/camera';
     EmergencyContactModalPage,
     PlanModalPage,
     DistractionsInfoModalPage,
+    AffirmationModalPage,
     TriggerModalPage,
   ],
   imports: [
@@ -40,6 +42,7 @@ import { Camera } from '@ionic-native/camera';
     EmergencyContactModalPage,
     PlanModalPage,
     DistractionsInfoModalPage,
+    AffirmationModalPage,
     TriggerModalPage,
   ],
   providers: [

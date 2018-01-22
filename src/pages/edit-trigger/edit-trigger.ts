@@ -25,7 +25,7 @@ private newTrigger;
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage) {
 
         storage.get('newTrigger').then((val) => {
-          console.log('Trigger saved in storage --> ', val);
+          console.log('Trigger saved in storage -> ', val);
           this.newTrigger = val.newTrigger;
 
         });
@@ -36,10 +36,6 @@ private newTrigger;
     console.log('ionViewDidLoad EditTriggerPage');
   }
 
-
-
-
-  
   gotoViewDistractions(){
     this.navCtrl.push('View-DistractionsPage');
   }

@@ -35,4 +35,8 @@ export class BeeSafePlanPage {
     this.navCtrl.push('');
   }
 
+  gotoEditTrigger(){
+    this.navCtrl.push('EditTriggerPage');
+  }
+
 }

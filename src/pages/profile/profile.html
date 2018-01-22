@@ -30,7 +30,7 @@
   <ion-input id="ion-input-1" type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email address"></ion-input>
   </ion-item>
   <ion-row>
-      <p id="text-line">Select your Avatar *</p>
+      <p id="text-line">Select your Avatar*</p>
 
       <ion-row>
             
@@ -69,7 +69,7 @@
       
   </ion-row>
   <ion-row>
-      <p id="text-line">Please enter your 4-digit pin *</p>
+      <p id="text-line">Please enter your 4-digit pin*</p>
           <ion-col col-3>
               <ion-item no-lines id="input-1" >
               <ion-input formControlName="pin1" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
@@ -95,13 +95,17 @@
           </ion-col>
   </ion-row>
 
+ 
   <ion-row>
     <p id="text-line">Affirmations</p>
+    <ion-icon name="ios-information-circle-outline" id="AffInformation" style="color:#559ad1;" tappable (click)="openAffirModal()">
+    </ion-icon>
+    <h4 id="noTxt">NO</h4>
+    <ion-toggle color="beesafeorange"></ion-toggle>
+    <h4 id="yesTxt">YES</h4>
 
- <ion-toggle color="beesafeorange"></ion-toggle>
-  
-      
   </ion-row>
+
 
 
   <ion-row>

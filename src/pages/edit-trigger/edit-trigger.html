@@ -19,7 +19,6 @@
 
 <ion-content padding>
 
-    <form [formGroup]="userDetails" (ngSubmit)="getTriggers()">
  <ion-row>
    <ion-col>
       <h1 id="main-text">What do you think is triggering you to feel this way?</h1>
@@ -31,8 +30,8 @@
  <ion-item no-lines id="trigger-input">
   <ion-input style="background-color:#FAF4EA; color: #5B6275; font-family: Arial, Helvetica, sans-serif;" [(ngModel)]="Triggers"  placeholder="Please select a trigger"></ion-input>
   <ion-select [(ngModel)]="Triggers" interface="popover">
-      <ion-option value="{{newTrigger}}">{{newTrigger}}</ion-option>
-      <ion-option value="{{newTrigger}}">{{newTrigger}}</ion-option>
+      <ion-option value=""></ion-option>
+      <ion-option value=""></ion-option>
     </ion-select>
 </ion-item>
 </ion-col>

@@ -4,7 +4,8 @@ import { Storage } from '@ionic/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ToastController } from 'ionic-angular';
 import { getLocaleDayNames } from '@angular/common/src/i18n/locale_data_api';
-
+import { ModalController } from 'ionic-angular';
+import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
 
 
 /**
@@ -40,7 +41,8 @@ export class ProfilePage {
   private _oldEmailAddress;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, 
+    private storage: Storage, private toastCtrl: ToastController, public modalCtrl: ModalController) {
 
     this.userDetails = this.formBuilder.group({
       
@@ -63,8 +65,11 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage');
     this.tempSetup();
     this.getOldStorage();
+  }
 
-
+  openAffirModal(){
+    let Modal = this.modalCtrl.create(AffirmationModalPage);
+     Modal.present();
   }
 
   tempSetup(){

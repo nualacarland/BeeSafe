@@ -18,6 +18,8 @@
 </ion-header>
 
 <ion-content padding>
+
+    
     <ion-row>
         <div class="triggers-info">
             <p id="text-line">My Distraction <br/> Techniques
@@ -38,15 +40,19 @@
     
         <ion-list>
 
-        <ion-item-sliding id="ion-card" *ngFor="let item of items; let i = index;">
+        <ion-item-sliding id="ion-card" *ngFor="let distraction of items; let i = index;">
           <ion-item id="trigger-list"> 
               <div>
                   <ion-img id="ion-img" src=""></ion-img>
                   <ion-img id="ion-img" src=""></ion-img>
-                 
+                  <h1 style="font-size: 16px;">{{distraction.distractionTitle}} </h1>
+
                   </div>
-          
+            
+                 
+
           </ion-item>
+
           <ion-item-options>
               <button ion-button id="Edit" (click)="gotoEditPage(i)">Edit</button>
             <button ion-button expandable id="Delete" (click)="deleteItem(items, i)">

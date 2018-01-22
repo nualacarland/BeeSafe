@@ -15,14 +15,14 @@
      
     <form [formGroup]="userDetails" (ngSubmit)="createAccount()">
         
-<p id="text-line">Please enter your email address *</p>
+<p id="text-line">Please enter your email address*</p>
 
 
 <ion-item no-lines id="password">
 <ion-input  type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email Address"></ion-input>
 </ion-item>
 <ion-row>
-    <p id="text-line">Select your Avatar *</p>
+    <p id="text-line">Select your Avatar*</p>
     
 <ion-row radio-group>
     
@@ -57,7 +57,7 @@
     </ion-col>
 </ion-row> -->
 <ion-row >
-    <p id="text-line">Please enter your 4-digit pin *</p>
+    <p id="text-line">Please enter your 4-digit pin*</p>
         <ion-col col-3>
             <ion-item no-lines id="input-1" >
             <ion-input type="number" formControlName="pin1" maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
@@ -87,9 +87,9 @@
     <p id="text-line">Affirmations</p>
     <ion-icon name="ios-information-circle-outline" id="AffInformation" style="color:#559ad1;" tappable (click)="openAffirModal()">
     </ion-icon>
-    <h4 id="noTxt">No</h4>
+    <h4 id="noTxt">NO</h4>
     <ion-toggle color="beesafeorange"></ion-toggle>
-    <h4 id="yesTxt">Yes</h4>
+    <h4 id="yesTxt">YES</h4>
 
   </ion-row>
 
@@ -97,7 +97,7 @@
 <ion-row>
   <div class="emergency-contacts">
       <p id="text-line">Emergency Contacts  
-          <ion-icon name="ios-information-circle-outline" style="color:#559ad1; height:20px; width:20px; font-weight:bold;" tappable (click)="openModal()">
+          <ion-icon name="ios-information-circle-outline" id="EmergencyContactsInfo" style="color:#559ad1;" tappable (click)="openModal()">
           </ion-icon>
           </p>
   </div>

@@ -113,8 +113,8 @@ export class RegisterPage {
   }
 
   openAffirModal(){
-    let myModal = this.modalCtrl.create(AffirmationModalPage);
-    myModal.present();
+    let Modal = this.modalCtrl.create(AffirmationModalPage);
+   Modal.present();
   }
   
   checkUser() {
