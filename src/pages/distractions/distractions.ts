@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams, Item, ItemSliding } from 'ionic-an
 import { ModalController } from 'ionic-angular';
 import { DistractionsInfoModalPage } from '../distractions-info-modal/distractions-info-modal';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { reorderArray } from 'ionic-angular/util/util';
 
 
 
@@ -74,15 +75,27 @@ export class DistractionsPage {
 
   }
 
-  // deleteItem(list, index) {
-  //   list.splice(index, 1);
-  //   this.storage.remove(list);
-  //   console.log('Deleting distraction from local storage');
+  // deleteItem(items, index) {
+  //   items.splice(index, 1);
+  //   this.storage.remove(items);
   // }
   
-  deleteItem(list, index){
+  deleteItem(items, index){
     this.items.splice(index, 1);
+    this.storage.set('distractions',  this.items);
   }
+
+
+  // deleteItem(items, index) {
+  //   var index = this.items.indexOf(items, 0);
+  //   if (index > -1) {
+  //       this.items.splice(index, 1);
+  //   }
+  // }
+
+  // reorderItems(index){
+  //   this.items = reorderArray(this.items, index);
+  // }
   
   gotoEditPage(distractionIndex: number){
 

@@ -81,27 +81,21 @@ export class TriggersPage {
   }
 
 
-  // deleteItem(list, index) {
-  //   list.splice(index,1);
-  //   this.storage.remove(index);
-  //   console.log('Trigger deleted!')
-  // }
-
   deleteItem(list, index){
     this.items.splice(index, 1);
+    this.storage.set('triggers',  this.items);
+
   }
-
-
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');
-    event.stopPropagation(); // here if you want item to be tappable
-    if (this.activeItemSliding) { // use this so that only one active sliding item allowed
+    event.stopPropagation(); 
+    if (this.activeItemSliding) { 
       this.closeOption();
     }
     
     this.activeItemSliding = itemSlide;
-    const swipeAmount = 1; // set your required swipe amount
+    const swipeAmount = 1; 
 
     console.log('swipe amount ', swipeAmount);
     itemSlide.startSliding(swipeAmount);

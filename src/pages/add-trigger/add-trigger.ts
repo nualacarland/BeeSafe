@@ -67,15 +67,11 @@ export class AddTriggerPage {
         this.storage.set('triggers', tempTrigger);
         
       }
-
       console.log('locally stored!');
       this.successToast();
-      this.navCtrl.push('TriggersPage');
+    
       
     });
-  
-
-
   }
   
     successToast() {
@@ -89,30 +85,10 @@ export class AddTriggerPage {
         console.log('Dismissed toast');
       });
       toast.present();
+      this.navCtrl.push('TriggersPage');
     } 
   
-    // saveTrigger(message){
-    //   if(message == 'success'){
-    //     this.successToast();
-    //   }else{
-    //     this.errorToast();
-    //   }
-    // }
-  
-    // presentToast() {
-    //   let toast = this.toastCtrl.create({
-    //     message: 'New Trigger created Successfully!',
-    //     duration: 3000,
-    //     position: 'top',
-    //     cssClass: "toast-success",
-    //   });
-    //   toast.onDidDismiss(() => {
-    //     console.log('Dismissed toast');
-    //   });
-    //   toast.present();
-    // }  
-  
-  
+ 
     errorToast() {
       let toast = this.toastCtrl.create({
         message: 'New Trigger - failed.',
