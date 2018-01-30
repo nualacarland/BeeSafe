@@ -55,14 +55,6 @@ export class TriggersPage {
   }
 
 
-  gotoEditPage(triggerIndex: number){
-
-    console.log('do some edit magic');
-    console.log(triggerIndex);
-
-    this.navCtrl.push('EditTriggerPage', { 'distractionIndex': triggerIndex });
-  }
-
 /*Navigation*/
   openModal() {
     let myModal = this.modalCtrl.create(TriggerModalPage);
@@ -78,6 +70,14 @@ export class TriggersPage {
 
   gotoAddPage(){
     this.navCtrl.push('AddTriggerPage');
+  }
+
+  gotoEditPage(triggerIndex: number){
+
+    // console.log('do some edit magic');
+    // console.log(triggerIndex);
+
+    this.navCtrl.push('EditTriggerPage', { 'distractionIndex': triggerIndex });
   }
 
 

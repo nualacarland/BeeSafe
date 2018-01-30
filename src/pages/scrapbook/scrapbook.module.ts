@@ -10,4 +10,6 @@ import { ScrapbookPage } from './scrapbook';
     IonicPageModule.forChild(ScrapbookPage),
   ],
 })
+
+
 export class ScrapbookPageModule {}

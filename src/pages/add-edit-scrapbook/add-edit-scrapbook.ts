@@ -30,7 +30,7 @@ export class AddEditScrapbookPage {
               memoryInfo: [''],
               galleryImg: [''],
               youtubeLink: ['']
-        
+              
             });
 
   }
@@ -41,7 +41,6 @@ export class AddEditScrapbookPage {
 
     this.storage.set('dateAdded', this.userDetails.value.dateAdded);
     console.log('This is the Date of post ->', this.userDetails.value.dateAdded);
-
 
     this.storage.set('memoryInfo', this.userDetails.value.memoryInfo);
     console.log('This is the memory info ->', this.userDetails.value.memoryInfo);
@@ -54,6 +53,7 @@ export class AddEditScrapbookPage {
 
     this.presentToast();
     console.log('locally stored!');
+    this.navCtrl.push('ScrapbookPage');
 
   }
 

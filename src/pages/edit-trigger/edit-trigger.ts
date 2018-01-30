@@ -18,23 +18,39 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EditTriggerPage {
 
+private items;
 private userDetails : FormGroup;
 
-private newTrigger;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage, ) {
+    this.userDetails = this.formBuilder.group({
 
-        storage.get('newTrigger').then((val) => {
-          console.log('Trigger saved in storage -> ', val);
-          this.newTrigger = val.newTrigger;
+       triggerTitle: ['', Validators.required]
+  
+    });
 
-        });
   }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditTriggerPage');
-  }
+    this.storage.get('triggerTitle').then((val) =>{
+      console.log('What is the value of the trigger', val);
+      this.items = val;
+  })
+}
+
+ionViewDidEnter(){
+
+  console.log('ionViewDidEnter EditTriggerPage');
+  this.storage.get('triggerTitle').then((val) => {
+    console.log('What is the value of the trigger', val);
+    this.items = val;
+
+  })
+
+}
+
 
   gotoViewDistractions(){
     this.navCtrl.push('View-DistractionsPage');

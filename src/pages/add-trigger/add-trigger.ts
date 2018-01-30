@@ -67,12 +67,26 @@ export class AddTriggerPage {
         this.storage.set('triggers', tempTrigger);
         
       }
-      console.log('locally stored!');
-      this.successToast();
+      console.log('locally stored Successfully!');
+      this.presentToast();
+      this.navCtrl.push('TriggersPage');
     
       
     });
   }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'New Distraction created Successfully!',
+      duration: 3000,
+      position: 'top',
+      cssClass: "toast-success",
+    });
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+    toast.present();
+  }  
   
     successToast() {
       let toast = this.toastCtrl.create({
