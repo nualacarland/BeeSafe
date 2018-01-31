@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Distraction } from './../../app/models/distraction';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Memory } from './../../app/models/Memory';
+import { Storage } from '@ionic/angular';
+
+
 
 /**
  * Generated class for the ScrapbookPage page.
