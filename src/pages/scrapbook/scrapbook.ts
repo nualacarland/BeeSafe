@@ -1,9 +1,10 @@
+import { ScrapbookMemoryPage } from './../scrapbook-memory/scrapbook-memory';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Distraction } from './../../app/models/distraction';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Memory } from './../../app/models/Memory';
-import { Storage } from '@ionic/angular';
+
 
 
 
@@ -23,36 +24,53 @@ import { Storage } from '@ionic/angular';
 export class ScrapbookPage {
 
   private items;
-  private userDetails;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private formBuilder: FormBuilder, public validators: Validators) {
-    this.userDetails = this.formBuilder.group({
-      
-        scrapbookTitle: ['', Validators.required],
-        dateAdded: [''],
-        memoryInfo: [''],
-        galleryImg: [''],
-        youtubeLink: ['']
+  private scrapbookTitle;
+  private dateAdded;
+  private memoryInfo;
+  private galleryImg;
+  private youtubeLink;
   
-      });
-      
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage ) {
+
+    storage.get('scrapbookTitle').then((val) =>{
+    console.log('What is the scrapbook title:', val);
+    this.items = val;
+    });
+
+    storage.get('dateAdded').then((val) => {
+    console.log('What is the Date added:', val);
+    this.items = val;
+    });
+
+    storage.get('memoryInfo').then((val)=>{
+    console.log('What is the Memory Info:', val);
+    this.items = val;
+    });
+
+    storage.get('galleryImg').then((val)=> {
+    console.log('What is the Image:', val);
+    this.items = val;
+    });
+
+    storage.get('youtubeLink').then((val)=> {
+    console.log('What is the youtube link:', val);
+    this.items = val;
+    });
+
   }
+   
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScrapbookPage');
-    this.storage.get('memorys').then((val) =>{
-      console.log('What is the vlaue of the Memory array', val);
-      this.items = val;
-    })
- 
+
   }
 
   ionViewDidEnter() {
     console.log('ionViewDidEnter ScrapbookPage');
-    this.storage.get('memorys').then((val)=>{
-      console.log('What is the value of the Scrapbook Memory array', val);
-      this.items = val;
-    })
+
   }
 
   gotoAddMemory() {
@@ -63,28 +81,15 @@ export class ScrapbookPage {
     this.navCtrl.push('HelpNowPage');
   }
    
+  // getScrapbookMemory(){
+  //     this.storage.get('memorys').then((val)=>{
+  //       console.log('this is the scrapbook memory >', val);
+  //       this.items = val;
+        
+  //     })
+  // }
+  // }
 
 }
 
 
-  // this.posts = [
-    //   {
-    //     description: 'Date Added',
-    //     image:
-        
-    //   },
-    //   {
-    //     description: 'Date Added',
-        
-    //   },
-    //   {
-    //     description: 'Date Added',
-      
-    //   },
-     
-    //   {
-    //     description: 'Date Added',
-  
-    //   },
-     
-    // ];
