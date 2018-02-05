@@ -5,19 +5,34 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+  
+    <ion-navbar id="nav-bar">
+        <button ion-button menuToggle left>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title id="ion-title">
+         Edit Distraction
+        </ion-title>
+        <ion-buttons end>
+          <button ion-button (click)="gotoHelpNowPage()">
+            <ion-icon id="help" name="">HELP</ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+  </ion-header>
 
-  <ion-navbar>
-    <ion-title>edit-distraction</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
 <ion-content padding>
 
-  <div *ngIf="distraction != null">
+    <form [formGroup]="userDetails" (ngSubmit)="editDistraction()">
+
+
+ <div *ngIf="distraction != null">
       {{distraction.distractionTitle}}
       {{distraction.distractionInfo}}
   </div>
 
+
+</form>
 </ion-content>

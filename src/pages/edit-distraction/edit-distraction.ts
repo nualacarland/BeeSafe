@@ -19,9 +19,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditDistractionPage {
 
-  private passedDistractionIndex;
+  private passedDistractionIndex: any;
   private distraction : Distraction;
   private userDetails;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public formBuilder: FormBuilder, public validators: Validators) {
     this.userDetails = this.formBuilder.group({
       
@@ -33,15 +35,13 @@ export class EditDistractionPage {
 
     });
 
-    this.setupFields();
-
-
+    this.setUpFields();
   }
 
-  setupFields(){
-    
-  }
 
+setUpFields(){
+
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditDistractionPage');
@@ -60,12 +60,6 @@ export class EditDistractionPage {
     });
 
     console.log(this.navParams.get('distractionIndex'));
-    console.log(this.navParams.get('distractionIndex'));
-    console.log(this.navParams.get('distractionIndex'));
-    console.log(this.navParams.get('distractionIndex'));
-    console.log(this.navParams.get('distractionIndex'));
-    console.log(this.navParams.get('distractionIndex'));
-    console.log(this.navParams.get('distractionIndex'));
 
   }
 
@@ -74,10 +68,12 @@ export class EditDistractionPage {
     this.storage.get('distractions').then((val)=>{
 
       this.distraction.distractionInfo = this.userDetails.distractionTitle;
-      this.distraction.distractionInfo = "newshit";
-      this.distraction.distractionInfo = "newshit";
-      this.distraction.distractionInfo = "newshit";
-
+      this.distraction.distractionInfo = this.userDetails.distractionInfo;
+      this.distraction.distractionInfo = this.userDetails.galleryPhoto;
+      this.distraction.distractionInfo = this.userDetails.websiteLink;
+      this.distraction.distractionInfo = this.userDetails.youtubeLink;
+      // this.distraction.distractionInfo = "newshit";
+ 
       var tempArray = val;
 
       tempArray[this.passedDistractionIndex] = this.distraction;

@@ -15,6 +15,7 @@ import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
  * Ionic pages and navigation.
  */
 
+
 @IonicPage()
 @Component({
   selector: 'page-profile',

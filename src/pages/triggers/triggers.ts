@@ -74,10 +74,8 @@ export class TriggersPage {
 
   gotoEditPage(triggerIndex: number){
 
-    // console.log('do some edit magic');
-    // console.log(triggerIndex);
 
-    this.navCtrl.push('EditTriggerPage', { 'distractionIndex': triggerIndex });
+    this.navCtrl.push('UpdateTriggerPage', { 'triggerIndex': triggerIndex });
   }
 
 

@@ -30,38 +30,38 @@ export class ScrapbookPage {
   private memoryInfo;
   private galleryImg;
   private youtubeLink;
+
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage ) {
 
     storage.get('scrapbookTitle').then((val) =>{
-    console.log('What is the scrapbook title:', val);
-    this.items = val;
+      console.log('What is the scrapbook title:', val);
+      this.items = val;
     });
 
     storage.get('dateAdded').then((val) => {
-    console.log('What is the Date added:', val);
-    this.items = val;
+      console.log('What is the Date added:', val);
+      this.items = val;
     });
 
     storage.get('memoryInfo').then((val)=>{
-    console.log('What is the Memory Info:', val);
-    this.items = val;
+      console.log('What is the Memory Info:', val);
+      this.items = val;
     });
 
     storage.get('galleryImg').then((val)=> {
-    console.log('What is the Image:', val);
-    this.items = val;
+      console.log('What is the Image:', val);
+      this.items = val;
     });
 
     storage.get('youtubeLink').then((val)=> {
-    console.log('What is the youtube link:', val);
-    this.items = val;
+      console.log('What is the youtube link:', val);
+      this.items = val;
     });
 
   }
    
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScrapbookPage');
@@ -81,14 +81,6 @@ export class ScrapbookPage {
     this.navCtrl.push('HelpNowPage');
   }
    
-  // getScrapbookMemory(){
-  //     this.storage.get('memorys').then((val)=>{
-  //       console.log('this is the scrapbook memory >', val);
-  //       this.items = val;
-        
-  //     })
-  // }
-  // }
 
 }
 
