@@ -51,9 +51,22 @@ ionViewDidEnter(){
 
 }
 
+getLocalStorage(){
+  this.storage.get('emailAddress').then((value) => {
+
+  });
+}
+
 
   gotoViewDistractions(){
     this.navCtrl.push('View-DistractionsPage');
   }
 
 }
+
+
+// storage.get('emergency1').then((val) => {
+//   console.log('What is this value ',val);
+//   this.emergency1.telephone = val.telephone;
+//   this.emergency1.contact_name = val.contact_name;
+// });

@@ -1,3 +1,4 @@
+import { Validators } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -27,6 +28,7 @@ import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-mod
     DistractionsInfoModalPage,
     AffirmationModalPage,
     TriggerModalPage,
+    
   ],
   imports: [
     BrowserModule,
