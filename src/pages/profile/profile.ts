@@ -27,6 +27,7 @@ export class ProfilePage {
   private _oldContact1 : {
     telephone:'',
     contact_name: ''
+
   }
   private _oldContact2 : {
     telephone:'',
@@ -64,7 +65,7 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
-    this.tempSetup();
+    // this.tempSetup();
     this.getOldStorage();
   }
 
@@ -73,12 +74,12 @@ export class ProfilePage {
      Modal.present();
   }
 
-  tempSetup(){
-    // this.storage.set('user_pin', '1234');
-    // this.storage.set('emailAddress', 'nuala@origin-digital.com');
-    // this.storage.set('emergency2', {telephone: '2222', contact_name: 'contact2'});
-    // this.storage.set('emergency3', {telephone: '3333', contact_name: 'contact3'});
-  }
+  // tempSetup(){
+  //   this.storage.set('user_pin', '1234');
+  //   this.storage.set('emailAddress', 'nuala@origin-digital.com');
+  //   this.storage.set('emergency2', {telephone: '2222', contact_name: 'contact2'});
+  //   this.storage.set('emergency3', {telephone: '3333', contact_name: 'contact3'});
+  // }
 
 
   getOldStorage(){
@@ -86,8 +87,6 @@ export class ProfilePage {
 
     //Then in the editLocalShit() check if it is equal to the old shit
     //either you can update it to its old values or not update.
-
-
 
 
     this.storage.get('emergency1').then((value) => {

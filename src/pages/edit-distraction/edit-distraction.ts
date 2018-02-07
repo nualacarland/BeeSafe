@@ -1,4 +1,4 @@
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { Distraction } from './../../app/models/distraction';
 import { Component } from '@angular/core';
@@ -19,53 +19,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditDistractionPage {
 
-  private passedDistractionIndex: any;
-  private distraction : Distraction;
-  private userDetails;
+  // private passedDistractionIndex: any;
+  // private distraction : Distraction;
 
+  private userDetails: FormGroup;
   private _oldDistractionTitle;
   private _oldDistraction;
   private _oldgalleryPhoto;
   private _oldwebsiteLink;
   private _oldyoutubeLink;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public formBuilder: FormBuilder, public validators: Validators) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public formBuilder: FormBuilder) {
     this.userDetails = this.formBuilder.group({
       
-      distractionTitle: ['', Validators.required],
-      distraction: ['', Validators.required],
+      distractionTitle: [''],
+      distraction: [''],
       galleryPhoto: [''],
       websiteLink: [''],
       youtubeLink: ['']
 
     });
-
-    this.setUpFields();
   }
-
-
-setUpFields(){
-
-}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditDistractionPage');
-    this.passedDistractionIndex = this.navParams.get('distractionIndex');
-
-    this.storage.get('distractions').then((val)=>{
-
-      this.distraction = val[this.passedDistractionIndex];
-      //TODO: Get the distractions array from storage
-      //use the passed in array index to find which one we need
-      //distractionsArray[this.passedDistractionIndex]
-
-      console.log(this.distraction);
-
-    });
-
-    console.log(this.navParams.get('distractionIndex'));
-
+    this.getOldStorage();
+    
   }
 
 
@@ -123,15 +102,29 @@ setUpFields(){
     
   }
 
-  editLocal
-
-
-
 }
 
 
 
 
+
+
+   // this.passedDistractionIndex = this.navParams.get('distractionIndex');
+
+    // this.storage.get('distractions').then((val)=>{
+
+      // this.distraction = val[this.passedDistractionIndex];
+      //TODO: Get the distractions array from storage
+      //use the passed in array index to find which one we need
+    //   //distractionsArray[this.passedDistractionIndex]
+
+    //   console.log(this.distraction);
+
+    // });
+
+    // console.log(this.navParams.get('distractionIndex'));
+
+  
 
 
 

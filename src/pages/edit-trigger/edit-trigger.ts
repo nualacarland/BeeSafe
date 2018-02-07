@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+// import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 /**
  * Generated class for the EditTriggerPage page.
@@ -18,49 +18,30 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EditTriggerPage {
 
-private items;
-private userDetails : FormGroup;
+  private triggerTitle;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage, ) {
-    this.userDetails = this.formBuilder.group({
-
-       triggerTitle: ['', Validators.required]
-  
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage ) {
+    
+    storage.get('triggerTitle').then((val) =>{
+      console.log('what is the value',val);
+      this.triggerTitle = val;
     });
 
+  }
+
+  getTriggerList(){
+    this.storage.get('triggerTitle').then((val) =>{
+      this.triggerTitle = val;
+      this.triggerTitle.push()
+    })
   }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditTriggerPage');
-    this.storage.get('triggerTitle').then((val) =>{
-      console.log('What is the value of the trigger', val);
-      this.items = val;
-  })
+   
 }
 
-ionViewDidEnter(){
-
-  console.log('ionViewDidEnter EditTriggerPage');
-  this.storage.get('triggerTitle').then((val) => {
-    console.log('What is the value of the trigger', val);
-    this.items = val;
-
-  })
-
-}
-
-getLocalStorage(){
-  this.storage.get('emailAddress').then((value) => {
-
-  });
-}
-
-
-  gotoViewDistractions(){
-    this.navCtrl.push('View-DistractionsPage');
-  }
 
 }
 

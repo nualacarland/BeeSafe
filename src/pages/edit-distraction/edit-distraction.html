@@ -26,7 +26,47 @@
 <ion-content padding>
 
  
-  <form [formGroup]="userDetails" (ngSubmit)="editDistraction()">
+  <form [formGroup]="userDetails" (ngSubmit)="getOldStorage()">
+
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+        <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="distractionTitle"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+          <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="distraction"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+          <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="galleryPhoto"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="websiteLink"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+          <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="youtubeLink"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
 
  <div *ngIf="distraction != null">
@@ -34,6 +74,7 @@
       {{distraction.distractionInfo}}
   </div>
 
-
 </form>
+
+
 </ion-content>
