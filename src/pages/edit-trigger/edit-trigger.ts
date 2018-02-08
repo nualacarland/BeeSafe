@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-// import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 /**
  * Generated class for the EditTriggerPage page.
@@ -18,36 +18,26 @@ import { Storage } from '@ionic/storage';
 })
 export class EditTriggerPage {
 
-  private triggerTitle;
+ private items;
+ private userDetails;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage ) {
-    
-    storage.get('triggerTitle').then((val) =>{
-      console.log('what is the value',val);
-      this.triggerTitle = val;
-    });
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private formBuilder: FormBuilder ) {
+    this.userDetails = this.formBuilder.group({
 
-  }
+      triggerTitle: ['']
 
-  getTriggerList(){
-    this.storage.get('triggerTitle').then((val) =>{
-      this.triggerTitle = val;
-      this.triggerTitle.push()
     })
-  }
 
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditTriggerPage');
+    this.storage.get('triggers').then((val) =>{
+      console.log('what is the value of the trigger', val);
+      this.items = val; 
+    })
    
 }
 
 
 }
-
-
-// storage.get('emergency1').then((val) => {
-//   console.log('What is this value ',val);
-//   this.emergency1.telephone = val.telephone;
-//   this.emergency1.contact_name = val.contact_name;
-// });
