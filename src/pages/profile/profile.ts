@@ -80,6 +80,7 @@ export class ProfilePage {
   //   this.storage.set('emergency2', {telephone: '2222', contact_name: 'contact2'});
   //   this.storage.set('emergency3', {telephone: '3333', contact_name: 'contact3'});
   // }
+  
 
 
   getOldStorage(){

@@ -26,55 +26,52 @@
 <ion-content padding>
 
  
-  <form [formGroup]="userDetails" (ngSubmit)="getOldStorage()">
-
-    <ion-row>
-      <ion-col>
-        <ion-item no-lines>
-        <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="distractionTitle"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-item no-lines>
-          <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="distraction"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-item no-lines>
-          <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="galleryPhoto"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-        <ion-col>
-          <ion-item no-lines>
-            <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="websiteLink"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-item no-lines>
-          <ion-input id="ion-input" style="background-color:#FAF4EA" formControlName="youtubeLink"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+  <form [formGroup]="userDetails" (ngSubmit)="editLocalShit()">
 
 
- <div *ngIf="distraction != null">
-      {{distraction.distractionTitle}}
-      {{distraction.distractionInfo}}
+  <h1 id="text-line-1"> Select how you can feel: </h1>
+
+  <ion-img id="img-select-1" src=""></ion-img>
+  <ion-img id="img-select" src=""></ion-img>
+  <ion-img id="img-select" src=""></ion-img>
+
+  <h1 id="text-line-2"> What distraction technique would you use when you feel this way? </h1>
+
+  <ion-item no-lines id="distraction-input-1">
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="distractionTitle" placeholder="* Enter distraction title"></ion-input>
+  </ion-item>
+
+  <ion-item no-lines id="distraction-input">
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="distraction" placeholder="* Enter your own distraction"></ion-input>
+  </ion-item>
+
+  <ion-item no-lines id="distraction-input-gallery">
+    <button ion-button full id="ion-input-gallery" type="button" style="background-color:#FAF4EA;" (click)="accessGallery()">Add photo from your gallery</button>
+    <img [src]="base64Image" *ngIf="base64Image" />
+    
+  </ion-item>
+
+ 
+  <ion-item no-lines id="distraction-input-website">
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="websiteLink" placeholder="Add website www."></ion-input>
+  </ion-item>
+
+  <ion-item no-lines id="distraction-input">
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="youtubeLink" placeholder="Add youtube link"></ion-input>
+  </ion-item>
+
+  <div>
+      <button ion-button color="primary" (click)="editLocalShit()" [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
+
   </div>
 
+
 </form>
+
+<!-- <div *ngIf="distraction != null">
+    {{distraction.distractionTitle}}
+    {{distraction.distractionInfo}}
+</div> -->
 
 
 </ion-content>

@@ -38,5 +38,120 @@ page-edit-distraction {
         margin-bottom: 13px;
     }
 
+    #img-select {
+        height: 40px;
+        width: 40px;
+        margin-right:40px;
+    }
+
+    #img-select-1 {
+        height: 40px;
+        width: 40px;
+        margin-left:85px;
+        margin-right:40px;
+        margin-top: 19px;
+   
+    }
+
+    #text-line-1 {
+        height: 22px;
+        color: #313745;
+        font-size: 23px;
+        font-weight: 500;
+        line-height: 22px;
+        text-align: center;
+        font-family: 'Avenir Rounded Med', Arial, sans-serif;
+        margin-top: 25px;
+    }
+
+    #text-line-2 {
+        height: 36px;
+        color: #313745;
+        font-size: 15px;
+
+        line-height: 18px;
+        text-align: center;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
+        margin-left:53px;
+        margin-right:52px;
+        margin-top: 29px;
+    }
+
+    #distraction-input-1 {
+        margin-top:15px;
+        margin-right:47px;
+        margin-left:48px;
+        height:50px;
+        width:280px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size:15px;
+        line-height: 19px;
+        color:#5B6275;
+    }
+    #distraction-input {
+        margin-top:10px;
+        margin-right:47px;
+        margin-left:48px;
+        height:50px;
+        width:280px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size:15px;
+        line-height: 19px;
+        // color:#5B6275;
+    }
+    #distraction-input-gallery {
+        margin-right:47px;
+        margin-bottom:0px;
+        margin-left:48px;
+        
+        width:290px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size:15px;
+        line-height: 19px;
+        // color:#5B6275;
+    }
+    #distraction-input-website {
+        margin-top:0px;
+        margin-right:47px;
+        margin-left:48px;
+        height:50px;
+        width:280px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-size:15px;
+        line-height: 19px;
+        color:#5B6275;
+    }
+
+    #ion-input {
+        padding-right:11.77px;
+        padding-left:22px;
+        padding-top:16px;
+        padding-bottom:15px;
+        color: #5B6275;
+    }
+
+    #ion-input-gallery {
+        padding-right:21px;
+        font-size:15px;
+        // padding-left:-10px;
+        padding-top:16px;
+        height:50px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        padding-bottom:15px;
+        color: #5B6275;
+    }
+    #save-distraction {
+        height: 60px;
+        width: 250px;
+        border-radius: 2px;
+        background-color: #559AD1;
+        font-size: 21px;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
+        font-weight: 500;
+        margin-top: 28px;
+        margin-left:63px;
+        margin-right: 62px;
+
+    }
 
 }

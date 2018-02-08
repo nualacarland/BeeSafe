@@ -67,8 +67,6 @@ if(this.userDetails.value.triggerTitle == ''){
   })
 
 
-
-  
 }
   // this.storage.set('triggerTitle', this.userDetails.value.triggerTitle);
 }
