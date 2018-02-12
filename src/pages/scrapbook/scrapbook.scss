@@ -41,6 +41,17 @@ page-scrapbook {
          
     }
 
+    #youtubePlayButton{
+        border-radius: 2px;
+        background-color: #559AD1;
+        font-size:16px;
+        color: #ffffff;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+      
+        
+       
+    }
+
 /* Masonry Cards */
 .pins {
     column-count: 2;
@@ -52,10 +63,12 @@ page-scrapbook {
 
 .card {
     margin-top: 10px;
+
 }
 
 ion-avatar {
     margin: 0 !important;
+    
 }
 
 .item ion-avatar img {

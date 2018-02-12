@@ -6,6 +6,7 @@ import { ModalController, NavParams } from 'ionic-angular';
 import { Toast } from '@ionic-native/toast';
 // import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { IonicStorageModule } from '@ionic/storage';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 
 import { MyApp } from './app.component';
 
@@ -52,6 +53,7 @@ import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-mod
     SplashScreen,
     Toast,
     Camera,
+    YoutubeVideoPlayer,
     {provide: ErrorHandler, useClass: IonicErrorHandler,}
   ]
 })

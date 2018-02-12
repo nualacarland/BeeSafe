@@ -1,3 +1,4 @@
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { ScrapbookMemoryPage } from './../scrapbook-memory/scrapbook-memory';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
@@ -26,7 +27,7 @@ export class ScrapbookPage {
   base64Image: any;
   private items;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private FormBuilder: FormBuilder, private storage: Storage ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer ) {
     
           this.userDetails = this.FormBuilder.group({
               scrapbookTitle: [''],
@@ -55,6 +56,9 @@ export class ScrapbookPage {
     })
   }
 
+  openVideo(){
+    this.youtube.openVideo('youtubeLink');
+  }
 
   gotoAddMemory() {
     this.navCtrl.push('AddEditScrapbookPage');
