@@ -78,7 +78,7 @@ export class AddEditScrapbookPage {
          var newSingleMemory : Memory =  new Memory(this.userDetails.value.scrapbookTitle, 
            this.userDetails.value.dateAdded,
            this.userDetails.value.memoryInfo,
-           this.userDetails.value.galleryImg,
+           this.userDetails.value.gallery,
            this.userDetails.value.youtubeLink);
    
          tempMemory.push(newSingleMemory);
