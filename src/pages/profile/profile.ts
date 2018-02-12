@@ -192,7 +192,7 @@ export class ProfilePage {
     //     contact_name: this._oldContact1.contact_name
     //   });
 
-    // }
+    // }code 
 
 //  if(this.userDetails.value.pin1 != this._oldPin.user_pin){
 

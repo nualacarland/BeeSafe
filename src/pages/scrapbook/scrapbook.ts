@@ -1,11 +1,10 @@
 import { ScrapbookMemoryPage } from './../scrapbook-memory/scrapbook-memory';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Distraction } from './../../app/models/distraction';
-import { FormBuilder, Validators } from '@angular/forms';
+import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Memory } from './../../app/models/Memory';
-
-
+import { ToastController } from 'ionic-angular/components/toast/toast-controller';
+import { Storage } from '@ionic/storage';
 
 
 /**
@@ -23,64 +22,48 @@ import { Memory } from './../../app/models/Memory';
 
 export class ScrapbookPage {
 
+  private userDetails : FormGroup;
+  base64Image: any;
   private items;
-
-  private scrapbookTitle;
-  private dateAdded;
-  private memoryInfo;
-  private galleryImg;
-  private youtubeLink;
-
   
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage ) {
-
-    storage.get('scrapbookTitle').then((val) =>{
-      console.log('What is the scrapbook title:', val);
-      this.items = val;
-    });
-
-    storage.get('dateAdded').then((val) => {
-      console.log('What is the Date added:', val);
-      this.items = val;
-    });
-
-    storage.get('memoryInfo').then((val)=>{
-      console.log('What is the Memory Info:', val);
-      this.items = val;
-    });
-
-    storage.get('galleryImg').then((val)=> {
-      console.log('What is the Image:', val);
-      this.items = val;
-    });
-
-    storage.get('youtubeLink').then((val)=> {
-      console.log('What is the youtube link:', val);
-      this.items = val;
-    });
-
-  }
-   
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ScrapbookPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private FormBuilder: FormBuilder, private storage: Storage ) {
+    
+          this.userDetails = this.FormBuilder.group({
+              scrapbookTitle: [''],
+              dateAdded: [''],
+              memoryInfo: [''],
+              galleryImg: [''],
+              youtubeLink: ['']
+              
+           });
 
   }
 
-  ionViewDidEnter() {
+    ionViewDidLoad() {
+      console.log('ionViewDidLoad ScrapbookPage');
+      this.storage.get('Memory').then((val)=>{
+        console.log('What is the value of the Memory array',val);
+        this.items = val;
+    })
+  }
+
+  ionViewDidEnter(){
     console.log('ionViewDidEnter ScrapbookPage');
-
+    this.storage.get('Memory').then((val)=>{
+      console.log('What is the value of the Memory array',val);
+      this.items = val;
+    })
   }
+
 
   gotoAddMemory() {
-    this.navCtrl.push('ScrapbookMemoryPage');
+    this.navCtrl.push('AddEditScrapbookPage');
   } 
-
   gotoHelpNowPage(){
     this.navCtrl.push('HelpNowPage');
   }
-   
+
+
 
 }
 

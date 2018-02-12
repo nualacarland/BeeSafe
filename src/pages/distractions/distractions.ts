@@ -83,10 +83,8 @@ export class DistractionsPage {
   
   gotoEditPage(distractionIndex: number){
 
-    // console.log('do some edit magic');
-    // console.log(distractionIndex);
-
     this.navCtrl.push('EditDistractionPage', { 'distractionIndex': distractionIndex });
+    
   }
 
 

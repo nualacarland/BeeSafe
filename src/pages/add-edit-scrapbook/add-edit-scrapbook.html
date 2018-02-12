@@ -25,7 +25,7 @@
 
 <ion-content padding>
 
-    <form [formGroup]="userDetails" (ngSubmit)="saveScrapbookMemory()">
+    <form [formGroup]="userDetails" (ngSubmit)="saveMemory()">
 
   <ion-item no-lines id="trigger-input" >
       <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="scrapbookTitle" placeholder="*Please enter a title"></ion-input>
@@ -48,6 +48,6 @@
   </ion-item>
 </form>
 
-  <button ion-button color="primary" (click)="saveScrapbookMemory('success')" [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
+  <button ion-button color="primary" (click)="saveMemory()" [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
 
 </ion-content>

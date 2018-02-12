@@ -64,11 +64,12 @@ if(this.userDetails.value.triggerTitle == ''){
     var tempTriggers = val;
     tempTriggers[this.triggerIndex].triggerTitle = this.userDetails.value.triggerTitle;
     this.storage.set('triggers',tempTriggers);
+    this.navCtrl.push('TriggersPage');
   })
 
 
 }
-  // this.storage.set('triggerTitle', this.userDetails.value.triggerTitle);
+
 }
 
 
