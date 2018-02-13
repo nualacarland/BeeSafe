@@ -1,3 +1,4 @@
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { ScrapbookMemoryPage } from './../scrapbook-memory/scrapbook-memory';
 import { Component } from '@angular/core';
@@ -6,6 +7,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Memory } from './../../app/models/Memory';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { Storage } from '@ionic/storage';
+
 
 
 /**
@@ -26,8 +28,11 @@ export class ScrapbookPage {
   private userDetails : FormGroup;
   base64Image: any;
   private items;
+  trustedVideoUrl: SafeResourceUrl;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
+             private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer,
+             private domSanitizer: DomSanitizer) {
     
           this.userDetails = this.FormBuilder.group({
               scrapbookTitle: [''],
@@ -45,6 +50,7 @@ export class ScrapbookPage {
       this.storage.get('Memory').then((val)=>{
         console.log('What is the value of the Memory array',val);
         this.items = val;
+        
     })
   }
 
@@ -53,11 +59,16 @@ export class ScrapbookPage {
     this.storage.get('Memory').then((val)=>{
       console.log('What is the value of the Memory array',val);
       this.items = val;
+      // this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.value.youtubeLink);
     })
   }
 
   openVideo(){
     this.youtube.openVideo('youtubeLink');
+  }
+
+  viewMemory(){
+    this.navCtrl.push('ScrapbookMemoryPage');
   }
 
   gotoAddMemory() {

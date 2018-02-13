@@ -1,5 +1,8 @@
+import { Storage } from '@ionic/storage';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 /**
  * Generated class for the ScrapbookMemoryPage page.
@@ -15,12 +18,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ScrapbookMemoryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private items;
+  private userDetails : FormGroup;
+  base64Image: any;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private FormBuilder: FormBuilder) {
+   
+    this.userDetails = this.FormBuilder.group({
+      scrapbookTitle: [''],
+      dateAdded: [''],
+      memoryInfo: [''],
+      galleryImg: [''],
+      youtubeLink: ['']
+      
+   });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScrapbookMemoryPage');
+    this.storage.get('Memory').then((val) => {
+    console.log('what is the value of the memory array', val);
+    this.items = val;
+    })
   }
+
 
   gotoHelpNow() {
     this.navCtrl.push('HelpNowPage');
@@ -29,5 +51,9 @@ export class ScrapbookMemoryPage {
   gotoEdit() {
     this.navCtrl.push('AddEditScrapbookPage');
   }
+
+
+    
+
 
 }

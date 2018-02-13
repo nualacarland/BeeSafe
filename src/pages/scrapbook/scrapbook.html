@@ -34,26 +34,34 @@
 
 
 <div class="pins">
-  <ion-card class="pin" *ngFor="let item of items">
-    <div *ngIf="item.scrapbookTitle" class="post-description">
-    </div>
-    <ion-item>
-      <ion-avatar item-start>
-         <!-- <img src="assets/img/avatar/marty-avatar.png">  -->
-      </ion-avatar>
-      <div>
-      <p><small>{{item.dateAdded}}</small></p>
-      </div>
-      <div>
-      <small>{{item.scrapbookTitle}}</small>
-      </div>
-      <button id="youtubePlayButton" (click)="openVideo()"><ion-icon name="ios-play"> PLAY</ion-icon></button>
-      
-      
+<ion-card tappable (click)="viewMemory()" class="pin" *ngFor="let item of items">
 
-  
-    </ion-item>
-  </ion-card>
+    <ion-item>
+      <!-- <ion-avatar item-start>
+          <img src="assets/img/avatar/marty-avatar.png">
+      </ion-avatar> -->
+    <ion-row>
+      <p><small id="ion-date">{{item.dateAdded}}</small></p>
+    </ion-row>
+
+    <ion-row>
+      <small id="ion-title">{{item.scrapbookTitle}}</small>
+    </ion-row>
+
+    <ion-row>
+      <button id="youtubePlayButton"(click)="openVideo()"><ion-icon name="ios-play"></ion-icon> PLAY</button>
+      <!-- <iframe width="100" height="100" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe> -->
+    </ion-row>
+
+
+    <ion-row>
+      <p><small id="ion-info">{{item.memoryInfo}}</small></p>
+    </ion-row>
+
+   
+
+  </ion-item>
+</ion-card>
 </div>
 
 

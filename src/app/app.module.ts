@@ -1,3 +1,4 @@
+import { YoutubePipe } from './../pipes/youtube/youtube';
 import { Validators } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -29,7 +30,7 @@ import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-mod
     DistractionsInfoModalPage,
     AffirmationModalPage,
     TriggerModalPage,
-    
+    YoutubePipe,
   ],
   imports: [
     BrowserModule,

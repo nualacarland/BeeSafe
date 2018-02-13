@@ -96,8 +96,8 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
-    // this.storage.clear();
-    // console.log('storage wiped!');
+    this.storage.clear();
+    console.log('storage wiped!');
     this.menu.enable(false);
  
   }
