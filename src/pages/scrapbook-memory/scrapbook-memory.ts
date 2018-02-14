@@ -1,7 +1,9 @@
+import { Memory } from './../../app/models/Memory';
 import { Storage } from '@ionic/storage';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 
 /**
@@ -18,39 +20,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ScrapbookMemoryPage {
 
-  private items;
+  private chosenMemory;
   private userDetails : FormGroup;
   base64Image: any;
-
+  private chosenIndex;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private FormBuilder: FormBuilder) {
    
-    this.userDetails = this.FormBuilder.group({
-      scrapbookTitle: [''],
-      dateAdded: [''],
-      memoryInfo: [''],
-      galleryImg: [''],
-      youtubeLink: ['']
-      
-   });
+
+    this.chosenMemory = this.navParams.get('chosenMemory');
+    this.chosenIndex = this.navParams.get('chosenIndex');
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ScrapbookMemoryPage');
-    this.storage.get('Memory').then((val) => {
-    console.log('what is the value of the memory array', val);
-    this.items = val;
-    })
+    // console.log('ionViewDidLoad ScrapbookMemoryPage');
+    // this.storage.get('Memory').then((val) => {
+    // console.log('what is the value of the memory array', val);
+    // this.items = val;
+    
+    // })
   }
 
-
+  
   gotoHelpNow() {
     this.navCtrl.push('HelpNowPage');
   }
 
   gotoEdit() {
-    this.navCtrl.push('AddEditScrapbookPage');
+    this.navCtrl.push('AddEditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex});
   }
+
+
+  
 
 
     

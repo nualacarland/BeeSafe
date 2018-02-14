@@ -34,7 +34,7 @@
 
 
 <div class="pins">
-<ion-card tappable (click)="viewMemory()" class="pin" *ngFor="let item of items">
+<ion-card tappable (click)="gotoEditPage(item,i)" class="pin" *ngFor="let item of items">
 
     <ion-item>
       <!-- <ion-avatar item-start>

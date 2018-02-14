@@ -25,7 +25,7 @@ import { Storage } from '@ionic/storage';
 
 export class ScrapbookPage {
 
-  private userDetails : FormGroup;
+  private userDetails;
   base64Image: any;
   private items;
   trustedVideoUrl: SafeResourceUrl;
@@ -44,6 +44,8 @@ export class ScrapbookPage {
            });
 
   }
+
+
 
     ionViewDidLoad() {
       console.log('ionViewDidLoad ScrapbookPage');
@@ -66,6 +68,12 @@ export class ScrapbookPage {
   openVideo(){
     this.youtube.openVideo('youtubeLink');
   }
+
+  gotoEditPage(item: any, index: Number){
+
+    this.navCtrl.push('ScrapbookMemoryPage', { 'chosenMemory': item, 'chosenIndex' : index });
+  }
+
 
   viewMemory(){
     this.navCtrl.push('ScrapbookMemoryPage');

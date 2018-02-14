@@ -29,6 +29,16 @@ export class AddEditScrapbookPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage,
               private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
 
+
+
+                if(this.navParams.get('chosenIndex')){
+
+                }
+
+                if(this.navParams.get('chosenMemory')){
+
+                }
+
     this.userDetails = this.formBuilder.group({
       
               scrapbookTitle: ['', Validators.required],
@@ -75,6 +85,10 @@ export class AddEditScrapbookPage {
            this.storage.set('Memory', newMemory);
        } else{
          var tempMemory: [Memory] = val;
+         //So make an array of memories equal to what is in the local storage
+         //Then select the one you want by the chosenIndex that you pass in 
+         //so something like tempMemory[this.chosenIndex].title = 'new stuff from form' (this.userDetails.value.title)
+         //this.storage.set('Memory',tempMemory)
          var newSingleMemory : Memory =  new Memory(this.userDetails.value.scrapbookTitle, 
            this.userDetails.value.dateAdded,
            this.userDetails.value.memoryInfo,

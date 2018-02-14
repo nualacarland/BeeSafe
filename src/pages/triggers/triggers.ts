@@ -46,6 +46,7 @@ export class TriggersPage {
   }
 
 
+
   ionViewDidEnter() {
     console.log('ionViewDidEnter TriggersPage');
     this.storage.get('triggers').then((val) => {
@@ -73,11 +74,8 @@ export class TriggersPage {
   }
 
   gotoEditPage(triggerIndex: number){
-
-
     this.navCtrl.push('UpdateTriggerPage', { 'triggerIndex': triggerIndex });
   }
-
 
   deleteItem(list, index){
     this.items.splice(index, 1);
