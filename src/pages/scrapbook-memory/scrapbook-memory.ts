@@ -30,7 +30,8 @@ export class ScrapbookMemoryPage {
 
     this.chosenMemory = this.navParams.get('chosenMemory');
     this.chosenIndex = this.navParams.get('chosenIndex');
-
+    console.log('What is the memory',this.chosenMemory);
+    console.log('What is the index',this.chosenIndex);
   }
 
   ionViewDidLoad() {
@@ -47,9 +48,26 @@ export class ScrapbookMemoryPage {
     this.navCtrl.push('HelpNowPage');
   }
 
-  gotoEdit() {
-    this.navCtrl.push('AddEditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex});
+  gotoEdit(chosenMemory,i) {
+    console.log('CLicked goto edit scrapbook button');
+    console.log(this.chosenMemory);
+    console.log(this.chosenIndex);
+    this.navCtrl.push('EditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });
   }
+
+  
+  // deleteItem(list, i){
+  //   this.chosenIndex.splice(i, 1);
+  //   this.storage.set('Memory',  this.chosenIndex);
+
+  // }
+
+  // deleteItem(list, index){
+  //   this.items.splice(index, 1);
+  //   this.storage.set('triggers',  this.items);
+
+  // }
+  
 
 
   

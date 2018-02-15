@@ -30,7 +30,6 @@ export class AddEditScrapbookPage {
               private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
 
 
-
                 if(this.navParams.get('chosenIndex')){
 
                 }

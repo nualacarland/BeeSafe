@@ -46,7 +46,6 @@ export class ScrapbookPage {
   }
 
 
-
     ionViewDidLoad() {
       console.log('ionViewDidLoad ScrapbookPage');
       this.storage.get('Memory').then((val)=>{

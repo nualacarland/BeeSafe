@@ -25,30 +25,31 @@
 
 <ion-content padding>
 
-  
+  <form [formGroup]="userDetails" (ngSubmit)="EditMemory()">
 
 <ion-item  no-lines id="trigger-input" >
-  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;"  placeholder="*Please enter a title"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="scrapbookTitle" placeholder="*Please enter a title"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="trigger-input" >
-  <ion-input id="ion-input" type="date" style="background-color:#FAF4EA;" displayFormat="MM/DD/YYYY"></ion-input>
+  <ion-input id="ion-input" type="date" style="background-color:#FAF4EA;" formControlName="dateAdded" displayFormat="MM/DD/YYYY"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="trigger-input-memory" >
-  <ion-input id="ion-input-memory" type="text" style="background-color:#FAF4EA;"  placeholder="Add a memory"></ion-input>
+  <ion-input id="ion-input-memory" type="text" style="background-color:#FAF4EA;" formControlName="memoryInfo" placeholder="Add a memory"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="trigger-input" >
-  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;"  placeholder="Add a photo from your gallery"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="galleryImg" placeholder="Add a photo from your gallery"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="trigger-input" >
-  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;"  placeholder="Add a youtube link"></ion-input>
+  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="youtubeLink" placeholder="Add a youtube link"></ion-input>
 </ion-item>
 
+</form>
 
-<button ion-button color="primary" (click)="saveMemory()"  id="save-distraction">SAVE</button>
+<button ion-button color="primary" (click)="EditMemory()"  id="save-distraction">SAVE</button>
 
 </ion-content>
 

@@ -26,36 +26,44 @@ export class EditScrapbookPage {
   private userDetails: FormGroup;
   base64Image: any;
   private chosenIndex;
-  private chosenMemory;
+  private chosenMemory : Memory;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage,
-              private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
+              private formBuilder: FormBuilder, private storage: Storage,private camera: Camera, public actionsheetCtrl: ActionSheetController,
+               public platform: Platform, public loadingCtrl: LoadingController) {
 
-
-                // if(this.navParams.get('chosenIndex')){
-
-                // }
-                // if(this.navParams.get('chosenMemory')){
-
-                // }
-
-     this.userDetails = this.formBuilder.group({
-
-      scrapbookTitle: ['', Validators.required],
-      dateAdded: [''],
-      memoryInfo: [''],
-      galleryImg: [''],
-      youtubeLink: ['']
-                         
-     });
+                this.userDetails = this.formBuilder.group({
+                  scrapbookTitle: ['', Validators.required],
+                  dateAdded: [''],
+                  memoryInfo: [''],
+                  galleryImg: [''],
+                  youtubeLink: ['']
+                                    
+                });
 
   }
 
-      
+  ionViewWillEnter(){
+
+
+
+      this.chosenIndex = this.navParams.get('chosenIndex');
+      this.chosenMemory = this.navParams.get('chosenMemory');
+
+
+   console.log('Right whats in here');
+   console.log(this.chosenIndex);
+   console.log(this.chosenMemory);
+    this.userDetails.get('scrapbookTitle').setValue(this.chosenMemory.scrapbookTitle);
+    this.userDetails.get('dateAdded').setValue(this.chosenMemory.dateAdded);
+    this.userDetails.get('memoryInfo').setValue(this.chosenMemory.memoryInfo);
+    this.userDetails.get('youtubeLink').setValue(this.chosenMemory.youtubeLink);
+
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditScrapbookPage');
-    
 
   }
 
@@ -65,49 +73,29 @@ export class EditScrapbookPage {
     
         if(val == null){
     
-          var newMemory =  [new Memory(this.userDetails.value.scrapbookTitle, 
+          var storedMemory =  [new Memory(this.userDetails.value.scrapbookTitle, 
             this.userDetails.value.dateAdded,
             this.userDetails.value.memoryInfo,
             this.userDetails.value.galleryImg,
             this.userDetails.value.youtubeLink)];
     
-            this.storage.set('Memory', newMemory);
+            this.storage.set('Memory', storedMemory);
           
             }else {
-            
+
             var tempMemory: [Memory] = val;
-            tempMemory[this.chosenIndex].scrapbookTitle = (this.userDetails.value.scrapbookTitle)
+            tempMemory[this.chosenIndex].scrapbookTitle = this.userDetails.value.scrapbookTitle;
+            tempMemory[this.chosenIndex].dateAdded = this.userDetails.value.dateAdded;
+            tempMemory[this.chosenIndex].memoryInfo = this.userDetails.value.memoryInfo;
             this.storage.set('Memory', tempMemory);
 
             }
 
        console.log('Locally Updated!');
-       this.navCtrl.push('ScrapbookPage');
+       this.navCtrl.setRoot('DashboardPage');
        
      });
    }
-
-        
-    
-      
-          // var tempMemory: [Memory] = val;
-          // //So make an array of memories equal to what is in the local storage
-          // //Then select the one you want by the chosenIndex that you pass in 
-          // //so something like tempMemory[this.chosenIndex].title = 'new stuff from form' (this.userDetails.value.title)
-          // //this.storage.set('Memory',tempMemory)
-
-          // var newSingleMemory : Memory =  new Memory(this.userDetails.value.scrapbookTitle, 
-          //   this.userDetails.value.dateAdded,
-          //   this.userDetails.value.memoryInfo,
-          //   this.userDetails.value.gallery,
-          //   this.userDetails.value.youtubeLink);
-    
-          // tempMemory.push(newSingleMemory);
-    
-          // this.storage.set('Memory', tempMemory);
-
-       
-
 
 
    accessGallery(){

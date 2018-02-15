@@ -40,11 +40,11 @@
   </ion-item>
   </ion-card>
   
-  <button id="edit-btn" (click)="gotoEdit()" ion-button> EDIT</button>
+  <button id="edit-btn" (click)="gotoEdit(chosenMemory)" ion-button> EDIT</button>
 </ion-col>
 
 <ion-col col-6>
-  <button id="delete-btn" (click)="deleteItem(chosenMemory)" ion-button> DELETE</button> 
+  <button id="delete-btn" (click)="deleteItem(chosenMemory,i)" ion-button> DELETE</button> 
 </ion-col>
 
 
