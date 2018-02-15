@@ -3,8 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Storage } from '@ionic/storage';
-
-
+import { MenuController } from 'ionic-angular/components/app/menu-controller';
 
 /**
  * Generated class for the ForgotPage page.
@@ -20,23 +19,29 @@ import { Storage } from '@ionic/storage';
 })
 export class ForgotPage {
 
-  private userDetails : FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage) {
+  private forgotPassword : FormGroup;
 
-    this.userDetails = this.formBuilder.group({
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage, public menu: MenuController) {
+
+    this.forgotPassword = this.formBuilder.group({
       
       emailAddress: ['', Validators.required]
             
             })
 
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ForgotPage');
+    this.menu.enable(false);
 
   }
 
 
  gotoLoginPage() {
    this.navCtrl.push('LoginPage');
+
  }
 
 
@@ -69,9 +74,7 @@ errorToast() {
 
 } 
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ForgotPage');
-  }
+
 
   
 

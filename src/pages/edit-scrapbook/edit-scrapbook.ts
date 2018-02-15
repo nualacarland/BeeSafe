@@ -84,6 +84,7 @@ export class EditScrapbookPage {
             this.storage.set('Memory', storedMemory);
           
             }else {
+              
 
             var tempMemory: [Memory] = val;
             tempMemory[this.chosenIndex].scrapbookTitle = this.userDetails.value.scrapbookTitle;

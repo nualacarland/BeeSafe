@@ -30,8 +30,8 @@
 
 <ion-content padding>
 
- 
-  <form [formGroup]="userDetails" (ngSubmit)="editLocalShit()">
+
+    <form [formGroup]="userDetails" (ngSubmit)="EditDistraction()">
 
 
   <h1 id="text-line-1"> Select how you can feel: </h1>
@@ -66,10 +66,9 @@
   </ion-item>
 
   <div>
-      <button ion-button color="primary" (click)="editLocalShit()" [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
+      <button ion-button color="primary" (click)="EditDistraction()" [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
 
   </div>
-
 
 </form>
 

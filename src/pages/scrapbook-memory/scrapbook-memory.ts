@@ -55,19 +55,12 @@ export class ScrapbookMemoryPage {
     this.navCtrl.push('EditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });
   }
 
-  
-  // deleteItem(list, i){
-  //   this.chosenIndex.splice(i, 1);
-  //   this.storage.set('Memory',  this.chosenIndex);
-
-  // }
-
-  // deleteItem(list, index){
+  // deleteItem(items, index){
   //   this.items.splice(index, 1);
-  //   this.storage.set('triggers',  this.items);
-
+  //   this.storage.set('Memory',  this.items);
   // }
-  
+
+
 
 
   

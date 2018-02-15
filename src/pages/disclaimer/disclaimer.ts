@@ -22,4 +22,8 @@ export class DisclaimerPage {
     console.log('ionViewDidLoad DisclaimerPage');
   }
 
+  gotoHelpNowPage(){
+    this.navCtrl.push('HelpNowPage');
+  }
+
 }
