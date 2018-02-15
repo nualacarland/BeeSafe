@@ -27,17 +27,24 @@
 
   <ion-col col-3>
 
-  <ion-card *ngIf="chosenMemory">
+  <ion-card id="memory-display" *ngIf="chosenMemory">
 
     <ion-item>
      <!-- <ion-avatar item-start>
       <img src="assets/img/avatar/marty-avatar.png">
      </ion-avatar> -->
   <ion-row>
-  <p><small id="ion-date">{{chosenMemory.dateAdded}}</small></p>
+  <p><small id="ion-date"></small></p>
   </ion-row>
   <ion-row>
-    <small>{{chosenMemory.scrapbookTitle}}</small>
+    <small id="stored-title">{{chosenMemory.scrapbookTitle}}</small>
+  </ion-row>
+  <ion-row>
+      <button id="youtubePlayButton"(click)="openVideo()"><ion-icon name="ios-play"></ion-icon> PLAY</button>
+      <!-- <iframe width="100" height="100" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe> -->
+  </ion-row>
+  <ion-row>
+    <p><small id="mem-info">{{chosenMemory.memoryInfo}}</small></p>
   </ion-row>
 
 

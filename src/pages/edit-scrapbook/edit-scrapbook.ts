@@ -94,7 +94,7 @@ export class EditScrapbookPage {
             }
 
        console.log('Locally Updated!');
-       this.navCtrl.setRoot('DashboardPage');
+       this.navCtrl.setRoot('ScrapbookPage');
        
      });
    }

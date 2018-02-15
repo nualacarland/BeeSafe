@@ -11,7 +11,7 @@ page-scrapbook {
         font-size: 18px;
         font-weight: 500;
         text-align: center;
-        margin-top: 27px;
+        margin-top: 10px;
         margin-bottom:26px;
         padding-top:40px;
     }
@@ -68,11 +68,12 @@ page-scrapbook {
         padding-bottom:9px;
         margin-right:10px;
         margin-left:0px;
+        
      
     }
 
     /* Masonry Card Styling */
-    #ion-title{
+    #scrapbook-title{
       font-size: 16px;
       font-family: 'Avenir Rounded reg', Arial, sans-serif;
       margin-top:3px;
