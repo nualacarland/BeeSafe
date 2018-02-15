@@ -14,6 +14,11 @@
          Edit Distraction
         </ion-title>
         <ion-buttons end>
+            <ion-col text-center>
+                <div (click)="gotoHelpNowPage()" class="help-logo">
+              <!-- <ion-img id="logo" src="assets/imgs/navlogo.png"></ion-img> -->
+              </div>
+            </ion-col>
           <button ion-button (click)="gotoHelpNowPage()">
             <ion-icon id="help" name="">HELP</ion-icon>
           </button>
@@ -31,9 +36,9 @@
 
   <h1 id="text-line-1"> Select how you can feel: </h1>
 
-  <ion-img id="img-select-1" src=""></ion-img>
-  <ion-img id="img-select" src=""></ion-img>
-  <ion-img id="img-select" src=""></ion-img>
+  <ion-img id="img-select-1" src="assets/imgs/emoji-not-bad.png"></ion-img>
+  <ion-img id="img-select" src="assets/imgs/emoji-need-support.png"></ion-img>
+  <ion-img id="img-select" src="assets/imgs/emoji-really-struggling.png"></ion-img>
 
   <h1 id="text-line-2"> What distraction technique would you use when you feel this way? </h1>
 

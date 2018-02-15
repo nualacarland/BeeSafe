@@ -46,8 +46,6 @@ export class EditScrapbookPage {
 
   ionViewWillEnter(){
 
-
-
       this.chosenIndex = this.navParams.get('chosenIndex');
       this.chosenMemory = this.navParams.get('chosenMemory');
 
@@ -65,6 +63,10 @@ export class EditScrapbookPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditScrapbookPage');
 
+  }
+
+  gotoHelpNow(){
+    this.navCtrl.push('HelpNowPage');
   }
 
   EditMemory() {

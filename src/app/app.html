@@ -1,6 +1,10 @@
 <ion-menu [content]="content">
   <ion-header>
-  <ion-img id="avatar-img" src=""></ion-img>
+  <ion-col text-center>
+      <div class="nav-logo">
+    <!-- <ion-img id="logo" src="assets/imgs/navlogo.png"></ion-img> -->
+    </div>
+  </ion-col>
   </ion-header>
 
   <ion-content>
@@ -13,14 +17,17 @@
           Help Right Now
         </ion-item> -->
       <button id="ion-text" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" mode="md">
-          <ion-icon  id="nav-img" name="call" item-left *ngIf="p.component =='HelpNowPage' "></ion-icon>          
+          <div class="help-now" item-left *ngIf="p.component =='HelpNowPage' "></div>          
         {{p.title}}
       </button>
     </ion-list>
   </ion-content>
 
   <ion-footer>
-    <ion-img id="footer-img" src=""></ion-img>
+      <ion-col text-center>
+          <div class="hsc-logo">
+        </div>
+      </ion-col>
     </ion-footer>
 
 </ion-menu>

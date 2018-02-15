@@ -98,4 +98,19 @@ page-dashboard {
         margin: 0;
     }
 
-}
+
+    .nav-logo{
+        background-image: url('../assets/imgs/navlogo.png');
+        background-size: cover;
+        max-width: 100%;
+        height:58px;
+        width:146px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:5px;
+    }
+
+    }
+

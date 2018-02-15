@@ -74,14 +74,6 @@ export class ProfilePage {
      Modal.present();
   }
 
-  // tempSetup(){
-  //   this.storage.set('user_pin', '1234');
-  //   this.storage.set('emailAddress', 'nuala@origin-digital.com');
-  //   this.storage.set('emergency2', {telephone: '2222', contact_name: 'contact2'});
-  //   this.storage.set('emergency3', {telephone: '3333', contact_name: 'contact3'});
-  // }
-  
-
 
   getOldStorage(){
     // TODO: Get the current values from the local storage and assign these to some variables

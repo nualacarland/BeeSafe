@@ -156,7 +156,10 @@ export class AddEditScrapbookPage {
     toast.present();
   } 
 
+ gotoHelpNow(){
+   this.navCtrl.push('HelpNowPage');
 
+ }
 
 }
 

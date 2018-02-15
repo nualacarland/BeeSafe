@@ -14,6 +14,11 @@
           Creating My Bee Safe Plan
         </ion-title>
         <ion-buttons end>
+            <ion-col text-center>
+                <div (click)="gotoHelpNowPage()" class="help-logo">
+              <!-- <ion-img id="logo" src="assets/imgs/navlogo.png"></ion-img> -->
+              </div>
+            </ion-col>
           <button ion-button (click)="gotoHelpNowPage()">
             <ion-icon id="help" name="">HELP</ion-icon>
           </button>
@@ -44,7 +49,7 @@
               <ion-col col-6>
                   <ion-card tappable (click)="gotoTriggersPage()" class="TriggersBtn" > 
                   <div id="ion-img">
-                    <ion-img id="img" src=""></ion-img>
+                    <ion-img id="img" src="assets/imgs/icon-triggers.png"></ion-img>
                     </div>
                   Triggers
                  <br>
@@ -59,7 +64,7 @@
               <ion-col col-6 style="height:200px; background-color:white;">
                   <ion-card tappable (click)="gotoDistractionsPage()" class="DistractionBtn"> 
                   <div id="ion-img">
-                      <ion-img id="img" src=""></ion-img>
+                      <ion-img id="img" src="assets/imgs/icon-distractions.png"></ion-img>
                       </div>
                       Distractions
                          <br>

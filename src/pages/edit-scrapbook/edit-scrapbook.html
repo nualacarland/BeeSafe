@@ -14,7 +14,12 @@
           Edit 
         </ion-title>
         <ion-buttons end>
-          <button ion-button (click)="gotoHelpNowPage()">
+            <ion-col text-center>
+                <div (click)="gotoHelpNow()" class="help-logo">
+              <!-- <ion-img id="logo" src="assets/imgs/navlogo.png"></ion-img> -->
+              </div>
+            </ion-col>
+          <button ion-button (click)="gotoHelpNow()">
             <ion-icon id="help" name="">HELP</ion-icon>
           </button>
         </ion-buttons>

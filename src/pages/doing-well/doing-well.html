@@ -13,9 +13,14 @@
               Bee Safe Plan
             </ion-title>
             <ion-buttons end>
-              <button ion-button (click)="gotoHelpNow()">
-                <ion-icon id="help" name="">Help</ion-icon>
-              </button>
+                <ion-col text-center>
+                    <div (click)="gotoHelpNowPage()" class="help-logo">
+                  <!-- <ion-img id="logo" src="assets/imgs/navlogo.png"></ion-img> -->
+                  </div>
+                </ion-col>
+                <button ion-button (click)="gotoHelpNowPage()">
+              <ion-icon id="help" name="">HELP</ion-icon>
+            </button>
             </ion-buttons>
         </ion-navbar>
 </ion-header>
@@ -23,7 +28,7 @@
 <ion-content padding>
 
 <h1 id="text-line-1">
-  <ion-img id="ion-img"src=""></ion-img>
+  <ion-img id="ion-img"src="assets/imgs/emoji-doing-well.png"></ion-img>
   That is Fantastic
 </h1>
 

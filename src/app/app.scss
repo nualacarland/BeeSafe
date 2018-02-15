@@ -130,3 +130,41 @@
     .back-button-icon-ios{
         // display: none;
     }
+
+    .nav-logo{
+        background-image: url('../assets/imgs/avatar-star.png');
+        background-size: cover;
+        max-width: 100%;
+        height: 55px;
+        width: 100px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-left: 40px;
+        margin-top: 15px;
+
+    }
+
+    .hsc-logo{
+        background-image: url('../assets/imgs/hsc-logo.png');
+        background-size: cover;
+        max-width: 100%;
+        height: 70px;
+        width: 183px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-left: 40px;
+        margin-top: 15px;
+
+    }
+
+    .help-now{
+        background-image: url('../assets/imgs/icon-help-now.png');
+        background-size: cover;
+        max-width: 100%;
+        height: 28px;
+        width: 36px;
+        background-repeat: no-repeat;
+        background-size: contain;
+     
+
+    }

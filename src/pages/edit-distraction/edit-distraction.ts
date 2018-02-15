@@ -57,6 +57,10 @@ export class EditDistractionPage {
     
   }
 
+  gotoHelpNowPage(){
+    this.navCtrl.push('HelpNowPage');
+  }
+
  
   getOldStorage(){
     this.storage.get('distractionTitle').then((value) =>{
