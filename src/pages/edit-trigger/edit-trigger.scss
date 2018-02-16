@@ -71,9 +71,14 @@ page-edit-trigger {
 
     // }
 
+
+    .select-text{
+        position:fixed;
+        margin-left: -248px;
+    }
+
     input:focus::-webkit-input-placeholder {
         color: transparent;
     }
-
  
 }

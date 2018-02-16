@@ -16,8 +16,13 @@
               Distractions
             </ion-title>
             <ion-buttons end>
-              <button ion-button (click)="gotoHelpNowPage()">
-                <ion-icon id="help"name="">Help</ion-icon>
+                <ion-col text-center>
+                    <div (click)="gotoHelpNow()" class="help-logo">
+                  <!-- <ion-img id="logo" src="assets/imgs/navlogo.png"></ion-img> -->
+                  </div>
+                </ion-col>
+              <button ion-button (click)="gotoHelpNow()">
+                <ion-icon id="help"name="">HELP</ion-icon>
               </button>
             </ion-buttons>
       
@@ -36,15 +41,25 @@
 
 <ion-col>
   <ion-row>
-    <ion-card> 
-      <h1>{{distraction}}</h1>
+    <ion-card *ngFor="let distraction of items; let i = index;"> 
+      <h2 id="distraction-title">{{distraction.distractionTitle}}</h2>
       <br>
-      <br>
-      <br>
+      <ion-row>
+          <button id="youtubePlayButton"(click)="openVideo()"><ion-icon name="ios-play"></ion-icon> PLAY</button>
+          <!-- <iframe width="100" height="100" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe> -->
+      </ion-row>
+   
+      <ion-row>
+        <button id="distraction-info">{{distraction.distraction}}</button>
+      </ion-row>
+     <ion-row>
+       <h2 id="weblink">{{distraction.websiteLink}}</h2>
+     </ion-row>
       <br>
     </ion-card>
   </ion-row>
 </ion-col>
+
 
 
 

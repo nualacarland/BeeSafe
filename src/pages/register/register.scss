@@ -96,6 +96,7 @@ input::placeholder {
 #emojiRadio{
     margin-right:26px;
     margin-left:18px;
+    background-image: url('assets/imgs/avatar-heart.png');
 }
 
 #Contact-one {
@@ -207,5 +208,17 @@ input::placeholder {
 .emergency-contacts{
     padding-bottom:0px;
 }
+
+label > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+  label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+  }
+  label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid black;
+  }
 
 }

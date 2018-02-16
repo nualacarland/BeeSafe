@@ -26,18 +26,33 @@
     <form [formGroup]="userDetails" (ngSubmit)="saveDistractions()">
 
   <h1 id="text-line-1"> Select how you can feel: </h1>
+  
+  <ion-col col-2>
+      <label>
+      <input type="radio" name="fb" value="emoji-notbad"/>
+      <img id="img-select-1"src="assets/imgs/emoji-not-bad.png">
+      </label>
+  </ion-col>
 
-    <ion-img id="img-select-1" src="assets/imgs/emoji-not-bad.png"></ion-img>
-    <ion-img id="img-select" src="assets/imgs/emoji-need-support.png"></ion-img>
-    <ion-img id="img-select" src="assets/imgs/emoji-really-struggling.png"></ion-img>
+  <ion-col col-2>
+    <label>
+      <input type="radio" name="fb" value="emoji-support"/>
+      <img id="img-select" src="assets/imgs/emoji-need-support.png">
+    </label>
+  </ion-col>
 
-  <!-- <ion-row>
-    <ion-col>
-      <input id="emojiRadio" type="radio" ng-model="radio.q1" value="object">
-      <input id="emojiRadio" type="radio" ng-model="radio.q1" value="object">
-
+  <ion-col col-2>
+      <label>
+        <input type="radio" name="fb" value="emoji-struggling"/>
+        <img id="img-select" src="assets/imgs/emoji-really-struggling.png">
+      </label>
     </ion-col>
-  </ion-row>   -->
+
+
+    <!-- <ion-img id="img-select-1" src="assets/imgs/emoji-not-bad.png"></ion-img>
+    <ion-img id="img-select" src="assets/imgs/emoji-need-support.png"></ion-img>
+    <ion-img id="img-select" src="assets/imgs/emoji-really-struggling.png"></ion-img> -->
+
 
 
   <h1 id="text-line-2"> What distraction technique would you use when you feel this way? </h1>

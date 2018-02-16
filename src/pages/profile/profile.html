@@ -37,29 +37,47 @@
   <ion-row>
       <p id="text-line">Select your Avatar*</p>
 
-      <ion-row>
+      <ion-row radio-group>
+    
+            <ion-col col-2>
+                <label>
+                <input type="radio" name="fb" value="small" />
+                <img id="ion-img-1"src="assets/imgs/avatar-heart.png">
+                </label>
+            </ion-col>
+            <ion-col col-2>
+                <label>
+                <input type="radio" name="fb" value="small" />
+                <img id="ion-img"src="assets/imgs/avatar-car.png">
+                </label>
+            </ion-col>
+            <ion-col col-2>
+                <label>
+                <input type="radio" name="fb" value="small" />
+                <img id="ion-img"src="assets/imgs/avatar-flower.png">
+                </label>
+            </ion-col>
+            <ion-col col-2>
+                <label>
+                <input type="radio" name="fb" value="small" />
+                <img id="ion-img"src="assets/imgs/avatar-star.png">
+                </label>
+            </ion-col>
+            <ion-col col-2>
+                <label>
+                <input type="radio" name="fb" value="small" />
+                <img id="ion-img"src="assets/imgs/avatar-football.png">
+                </label>
+            </ion-col>
+            <ion-col col-2>
+                <label>
+                <input type="radio" name="fb" value="small" />
+                <img id="ion-img"src="assets/imgs/avatar-music.png">
+                </label>
+            </ion-col>
             
-        <ion-col col-2>
-            <ion-img id="ion-img-1" src="assets/imgs/avatar-heart.png"> </ion-img>
-        </ion-col>
-        <ion-col col-2>
-            <ion-img id="ion-img" src="assets/imgs/avatar-car.png"> </ion-img>
-        </ion-col>
-    
-        <ion-col col-2>
-            <ion-img id="ion-img" src="assets/imgs/avatar-flower.png"> </ion-img>
-        </ion-col >
-    
-        <ion-col col-2>
-            <ion-img id="ion-img" src="assets/imgs/avatar-star.png"> </ion-img>
-        </ion-col>
-        <ion-col col-2>
-                <ion-img id="ion-img" src="assets/imgs/avatar-football.png"> </ion-img>
-        </ion-col>
-        <ion-col col-2>
-            <ion-img id="ion-img" src="assets/imgs/avatar-music.png"> </ion-img>
-        </ion-col>
         </ion-row>
+        
         
           <!-- <ion-row radio-group>
 
@@ -77,25 +95,25 @@
       <p id="text-line">Please enter your 4-digit pin*</p>
           <ion-col col-3>
               <ion-item no-lines id="input-1" >
-              <ion-input formControlName="pin1" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin1" type="tel" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-2" >
-              <ion-input formControlName="pin2" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin2" type="tel" maxlength="1"  text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-3" >
-              <ion-input formControlName="pin3" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin3" type="tel" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-4" >
-              <ion-input formControlName="pin4" type="number" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin4" type="tel" maxlength="1" text-center  style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
   </ion-row>

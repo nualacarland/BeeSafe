@@ -21,16 +21,31 @@ export class ForgotPage {
 
 
   private forgotPassword : FormGroup;
+  private didGetEmailRight : Boolean = false;
+  private resetPin : FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage, public menu: MenuController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
+    private formBuilder: FormBuilder, private storage: Storage, public menu: MenuController) {
 
-    this.forgotPassword = this.formBuilder.group({
+            this.forgotPassword = this.formBuilder.group({
       
-      emailAddress: ['', Validators.required]
+                emailAddress: ['', Validators.required]
             
-            })
+            });
+
+
+            this.resetPin = this.formBuilder.group({
+      
+              pin1: ['', Validators.compose([Validators.maxLength(1), Validators.required])],
+              pin2: ['', Validators.compose([Validators.maxLength(1), Validators.required])],
+              pin3: ['', Validators.compose([Validators.maxLength(1), Validators.required])],
+              pin4: ['', Validators.compose([Validators.maxLength(1), Validators.required])],          
+          });
 
   }
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForgotPage');
@@ -39,11 +54,60 @@ export class ForgotPage {
   }
 
 
+
+
  gotoLoginPage() {
    this.navCtrl.push('LoginPage');
 
  }
 
+
+ resetPinFunc(){
+
+
+  //Basically copy the code from register, just replace what is locally stored for the user pin with whatever they type into the four inputs
+
+
+  console.log('They have reset their pin lets see what it is');
+
+  console.log(this.resetPin.value);
+  this.successToast();
+  this.navCtrl.push('LoginPage');
+
+
+
+  // this.storage.set('user_pin', this.resetPin.value.pin1 + this.resetPin.value.pin2 +this.resetPin.value.pin3 +this.resetPin.value.pin4);
+
+
+
+
+ }
+
+ submitEmail(){
+  //TODO: If the email is the same as the value thats in the localstorage allow them to procede
+
+
+  this.storage.get('emailAddress').then((value) => {
+      
+    console.log('this is the user email that is stored', value);
+    console.log('this is what they typed in ',this.forgotPassword.value.emailAddress);
+    if(value == this.forgotPassword.value.emailAddress){
+      console.log('YAY THE EMAIL MATCHES');
+      this.didGetEmailRight = true;
+      //We will then show the next screen.
+    }else{
+      this.errorToast();
+    }
+
+  }).catch((e) => {
+    console.log(e);
+  });
+
+
+
+
+
+ }
 
  presentToast() {
   let toast = this.toastCtrl.create({
@@ -58,6 +122,19 @@ export class ForgotPage {
   toast.present();
 
 }  
+successToast() {
+  let toast = this.toastCtrl.create({
+    message: 'Pin has been Reset!',
+    duration: 3000,
+    position: 'top',
+    cssClass: "toast-success",
+  });
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+  toast.present();
+
+} 
 
 
 errorToast() {

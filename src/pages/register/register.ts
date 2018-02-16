@@ -1,7 +1,7 @@
 import { LoginPage } from './../login/login';
 import { DashboardPage } from './../dashboard/dashboard';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, RadioGroup } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { EmergencyContactModalPage } from '../emergency-contact-modal/emergency-contact-modal';
 import { ToastController } from 'ionic-angular';
@@ -11,6 +11,7 @@ import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 import { Storage } from '@ionic/storage';
 import { MenuController } from 'ionic-angular';
 import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
+
 
 
 /**
@@ -27,45 +28,16 @@ import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
 })
 
 
-
-
-/*
-Right...
-then on register take all their details and insert them into the storage, check to see if the storage is present if it is then someone has already registered and 
-we shouldnt let them.
-
-then on login check the pin against what is stored locally.
-
-then goto home screen
-
-the triggers are gonna be tricky to save in local storage but its gonna be more manageable than sqlite
-
-distractions = [{
-
-    distraction_title: 'test',
-    distraction_text: 'test',
-    distraction_url: 'www.',
-    distraction_photo: '/assets/images/logo.png'
-
-},{
-
-    distraction_title: 'test',
-    distraction_text: 'test',
-    distraction_url: 'www.',
-    distraction_photo: '/assets/images/logo.png'
-
-}]
-
-
-*/
-
 export class RegisterPage {
   nav: any;
   value: any;
   
   private db: SQLiteObject;
-
   private userDetails : FormGroup;
+  val: any;
+  toggleStatus: any;
+  toggleAlert: any;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl: ModalController, private toastCtrl: ToastController,
@@ -85,9 +57,22 @@ export class RegisterPage {
         contact3Tel: ['', Validators.required],
         contact3Name: ['', Validators.required]
       });
+      
+      this.toggleAlert = this.formBuilder.group({
 
-  }
+      })
 
+  
+    //   storage.ready().then(() => {
+    //   storage.get('toggleStatus').then((val) => {
+    //   this.val=val;
+    //   console.log('Status = ', val);
+    //   })
+    // });
+        
+     }  
+
+  
   createAccount(){
     console.log('What is in the form? ', this.userDetails.value);
     this.checkUser();
@@ -96,8 +81,8 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
-    this.storage.clear();
-    console.log('storage wiped!');
+    // this.storage.clear();
+    // console.log('storage wiped!');
     this.menu.enable(false);
  
   }
@@ -116,7 +101,21 @@ export class RegisterPage {
     let Modal = this.modalCtrl.create(AffirmationModalPage);
    Modal.present();
   }
-  
+
+
+  ChangeToggle() {
+    if(this.toggleAlert== true){
+        this.storage.set('toggleStatus','true');         
+         console.log("toggleAlert = "+this.toggleStatus);   
+     }
+     else{
+     this.storage.set('toggleStatus','false');
+     console.log("toggleAlert = "+this.toggleStatus);
+      }
+    }
+
+
+
   checkUser() {
     var tempEmail = this.userDetails.value.emailAddress
     this.storage.get('emailAddress').then((value) => {

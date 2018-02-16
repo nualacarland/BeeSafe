@@ -6,21 +6,57 @@
 -->
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-img id="main-logo"src="assets/imgs/mainlogo.png"></ion-img>
 
-  <ion-img id="main-logo"src="assets/imgs/mainlogo.png"></ion-img>
+        <form [formGroup]="forgotPassword" (ngSubmit)="submitEmail()" *ngIf="!didGetEmailRight">
+            <p id="text-line">Enter your email address and we <br> will send you a new 4-digit pin</p>
+            
+            <ion-item no-lines id="password" >
+                <ion-input type="email" id="input-box" formControlName="emailAddress" style="background-color:#FAF4EA;" placeholder="Email address"></ion-input>
+            </ion-item>
 
-    <p id="text-line">
-      Enter your email address and we <br> will send you a new 4-digit pin
-    </p>
+            <div id="SendForgot">
+              <button ion-button color="primary" id="send-btn">SEND</button>
+            </div>
+        </form>
 
-  <ion-item no-lines id="password" >
-  <ion-input type="text" id="input-box" style="background-color:#FAF4EA;" placeholder="Email address"></ion-input>
-  </ion-item>
+        <form [formGroup]="resetPin" (ngSubmit)="resetPinFunc()" *ngIf="didGetEmailRight">
+            <ion-row >
+                <p id="text-line">Please enter your 4-digit pin</p>
+                    <ion-col col-3>
+                        <ion-item no-lines id="input-1" >
+                        <ion-input type="tel" formControlName="pin1" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                        
+                    <ion-col col-3>
+                        <ion-item no-lines id="input-2" >
+                        <ion-input type="tel" formControlName="pin2" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc" pattern="[0-9]"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                        
+                    <ion-col col-3>
+                        <ion-item no-lines id="input-3" >
+                        <ion-input type="tel" formControlName="pin3" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc" ></ion-input>
+                        </ion-item>
+                    </ion-col>
+                        
+                    <ion-col col-3>
+                        <ion-item no-lines id="input-4" >
+                        <ion-input type="tel" formControlName="pin4" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                        </ion-item>
+                    </ion-col>
+            </ion-row>
 
-
-<div id="SendForgot">
-  <button ion-button color="primary" (click)="presentToast()" id="send-btn">SEND</button>
-  </div>
-
+            <div id="SendForgot">
+              <button ion-button color="primary" id="send-btn">SEND</button>
+            </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 

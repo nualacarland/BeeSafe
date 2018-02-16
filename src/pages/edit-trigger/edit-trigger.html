@@ -29,11 +29,15 @@
    <ion-col>
   
  <ion-item no-lines id="trigger-input">
-  <ion-input style="background-color:#FAF4EA; color: #5B6275; font-family: Arial, Helvetica, sans-serif;" placeholder="Please select a trigger"></ion-input>
-  <ion-select select-popover-list-margin-start interface="popover" >
-   <ion-option *ngFor="let trigger of items; let i = index;" [value]="trigger.triggerTitle">{{trigger.triggerTitle}}</ion-option>
+  <ion-input style="background-color:#FAF4EA; color: #5B6275; font-family: Arial, Helvetica, sans-serif;"  placeholder="Please select a trigger"></ion-input>
+  <ion-select interface="popover">
+   <ion-option *ngFor="let trigger of items; let i = index;" [value]="trigger.triggerTitle" >{{trigger.triggerTitle}}</ion-option>
   </ion-select>
 </ion-item>
+
+
+
+
 
 
 </ion-col>
@@ -59,7 +63,7 @@
 <ion-row>
   <ion-col>
 <div>
-    <button ion-button color="primary" (click)="gotoDistractionsPage()" id="save-trigger">NEXT</button>
+    <button ion-button color="primary" (click)="gotoView()" id="save-trigger">NEXT</button>
   </div>
 </ion-col>
 </ion-row>
@@ -67,7 +71,7 @@
 
   <ion-row>
    <ion-col>
-     <h2 id="skip-btn" (click)="gotoViewDistractions()">Skip</h2>
+     <h2 id="skip-btn" (click)="gotoView()">Skip</h2>
    </ion-col>
  </ion-row>
 

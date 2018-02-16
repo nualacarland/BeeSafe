@@ -1,6 +1,12 @@
+import { FormBuilder } from '@angular/forms';
+import { ToastController } from 'ionic-angular/components/toast/toast-controller';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { Distraction } from './../../app/models/distraction';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 
 
@@ -18,37 +24,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ViewDistractionsPage {
 
-private distraction;
-private websiteLink;
-private youtubeLink;
+  private items;
+  private userDetails;
+  
 
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private storage: Storage, private formBuilder: FormBuilder ) {
+    this.userDetails = this.formBuilder.group({
+      
+      distractionTitle: [''],
+      distraction: [''],
+      galleryPhoto: [''],
+      websiteLink: [''],
+      youtubeLink: ['']
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
-
-    storage.get('distraction').then((val) => {
-      console.log('What is this value ',val);
-      this.distraction = val;
     });
 
-    storage.get('websiteLink').then((val) => {
-      console.log('What is this value ',val);
-      this.websiteLink = val;
-    });
-
-    storage.get('youtubeLink').then((val) => {
-      console.log('What is this value ',val);
-      this.youtubeLink = val;
-    });
-
-    
   }
-
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewDistractionsPage');
+    console.log('ionViewDidLoad DistractionsPage');
+    this.storage.get('distractions').then((val)=>{
+      console.log('What is the value of the distractions array',val);
+      this.items = val;
+    })
+
   }
 
+  ionViewDidEnter(){
+    console.log('ionViewDidEnter DistractionsPage');
+    this.storage.get('distractions').then((val)=>{
+      console.log('What is the value of the distractions array',val);
+      this.items = val;
+    })
+  }
 
-
+  gotoHelpNow(){
+    this.navCtrl.push('HelpNowPage');
+  }
 
 }

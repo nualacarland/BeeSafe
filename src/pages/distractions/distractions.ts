@@ -25,9 +25,10 @@ export class DistractionsPage {
 
   activeItemSliding: ItemSliding = null;
   
-  private items;
+ 
   private userDetails;
-  
+  private distractionIndex;
+  private items: Distraction;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage, private formBuilder: FormBuilder ) {
     this.userDetails = this.formBuilder.group({

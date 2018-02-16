@@ -39,5 +39,13 @@ export class EditTriggerPage {
    
 }
 
+gotoTriggersPage(){
+  this.navCtrl.push('DashboardPage');
+}
+
+gotoView(){
+  this.navCtrl.push('ViewDistractionsPage');
+}
+
 
 }

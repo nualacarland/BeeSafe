@@ -6,7 +6,7 @@ import { Distraction } from './../../app/models/distraction';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheet, ActionSheetController, LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-import { getLocaleDayNames } from '@angular/common/src/i18n/locale_data_api';
+
 
 
 
@@ -45,6 +45,7 @@ export class EditDistractionPage {
 
     });
   }
+
 
   // ionViewDidLoad() {
   //   console.log('ionViewDidLoad EditDistractionPage');
@@ -104,9 +105,6 @@ export class EditDistractionPage {
    
  });
 }
-
-
-
 
 
 

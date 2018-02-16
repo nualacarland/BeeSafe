@@ -44,6 +44,19 @@ page-add-distraction {
         margin-right:52px;
         margin-top: 29px;
     }
+    #img-select-1 {
+        height: 36px;
+        width: 38px;
+        margin-right:20px;
+        margin-left:5px;
+    }
+    
+    #img-select {
+        height: 36px;
+        width: 38px;
+        margin-right:20px;
+        
+    }
     #distraction-input-1 {
         margin-top:15px;
         margin-right:47px;
@@ -140,6 +153,17 @@ page-add-distraction {
         margin-top: 19px;
    
     }
+    label > input{ /* HIDE RADIO */
+        visibility: hidden; /* Makes input not-clickable */
+        position: absolute; /* Remove input from document flow */
+      }
+      label > input + img{ /* IMAGE STYLES */
+        cursor:pointer;
+        border:2px solid transparent;
+      }
+      label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+        border:2px solid black;
+      }
 
  
 }

@@ -90,6 +90,7 @@ saveDistractions() {
     console.log('locally stored!');
     this.navCtrl.push('DistractionsPage');
     
+    
 
   });
 

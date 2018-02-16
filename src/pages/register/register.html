@@ -27,58 +27,66 @@
 <ion-row radio-group>
     
     <ion-col col-2>
-        <ion-img id="ion-img-1" src="assets/imgs/avatar-heart.png"> </ion-img>
+        <label>
+        <input type="radio" name="fb" value="radio-heart"/>
+        <img id="ion-img-1"src="assets/imgs/avatar-heart.png">
+        </label>
     </ion-col>
     <ion-col col-2>
-        <ion-img id="ion-img" src="assets/imgs/avatar-car.png"> </ion-img>
-    </ion-col>
-
-    <ion-col col-2>
-        <ion-img id="ion-img" src="assets/imgs/avatar-flower.png"> </ion-img>
-    </ion-col >
-
-    <ion-col col-2>
-        <ion-img id="ion-img" src="assets/imgs/avatar-star.png"> </ion-img>
+        <label>
+        <input type="radio" name="fb" value="radio-car" />
+        <img id="ion-img"src="assets/imgs/avatar-car.png">
+        </label>
     </ion-col>
     <ion-col col-2>
-         <ion-img id="ion-img" src="assets/imgs/avatar-football.png"> </ion-img>
+        <label>
+        <input type="radio" name="fb" value="radio-flower" />
+        <img id="ion-img"src="assets/imgs/avatar-flower.png">
+        </label>
     </ion-col>
     <ion-col col-2>
-        <ion-img  id="ion-img" tappable src="assets/imgs/avatar-music.png"> </ion-img> 
+        <label>
+        <input type="radio" name="fb" value="radio-star" />
+        <img id="ion-img"src="assets/imgs/avatar-star.png">
+        </label>
     </ion-col>
-
-<!-- <ion-row>
-    <ion-col>
-
-        <input id="emojiRadio" type="radio" ng-model="radio.q1" value="object">
-        <ion-input id="emojiRadio" type="radio" ng-model="radio.q1" value="object">
-        
-
+    <ion-col col-2>
+        <label>
+        <input type="radio" name="fb" value="radio-football" />
+        <img id="ion-img"src="assets/imgs/avatar-football.png">
+        </label>
     </ion-col>
-</ion-row> -->
+    <ion-col col-2>
+        <label>
+        <input type="radio" name="fb" value="avatar-music" />
+        <img id="ion-img"src="assets/imgs/avatar-music.png">
+        </label>
+    </ion-col>
+    
 <ion-row >
+
     <p id="text-line">Please enter your 4-digit pin*</p>
         <ion-col col-3>
             <ion-item no-lines id="input-1" >
-            <ion-input type="number" formControlName="pin1" maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+            <ion-input type="tel" formControlName="pin1" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
             </ion-item>
         </ion-col>
             
         <ion-col col-3>
             <ion-item no-lines id="input-2" >
-            <ion-input type="number" formControlName="pin2" maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+            <ion-input type="tel" formControlName="pin2" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
             </ion-item>
         </ion-col>
        
         <ion-col col-3>
             <ion-item no-lines id="input-3" >
-            <ion-input type="number" formControlName="pin3" maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+            <ion-input type="tel" formControlName="pin3" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
             </ion-item>
         </ion-col>
             
         <ion-col col-3>
             <ion-item no-lines id="input-4" >
-            <ion-input type="number" formControlName="pin4" maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+            <ion-input type="tel" formControlName="pin4" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
             </ion-item>
         </ion-col>
 </ion-row>
@@ -88,7 +96,8 @@
     <ion-icon name="ios-information-circle-outline" id="AffInformation" style="color:#559ad1;" tappable (click)="openAffirModal()">
     </ion-icon>
     <h4 id="noTxt">NO</h4>
-    <ion-toggle color="beesafeorange"></ion-toggle>
+    <!-- <ion-toggle color="beesafeorange" [(ngModel)]="toggleAlert" [checked]="toggleStatus" (ionChange)="Change-toggle();"></ion-toggle> -->
+    <ion-toggle color="beesafeorange" [(ngModel)]="toggleAlert" (ionChange)="ChangeToggle();"></ion-toggle>
     <h4 id="yesTxt">YES</h4>
 
   </ion-row>
@@ -108,6 +117,7 @@
 <p id="Contact-one">
     EMERGENCY CONTACT ONE
    </p>
+
 
 <ion-item no-lines id="contactName-1" >
 <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact1Name"></ion-input>
