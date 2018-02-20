@@ -30,7 +30,7 @@ import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-mod
     DistractionsInfoModalPage,
     AffirmationModalPage,
     TriggerModalPage,
-    YoutubePipe,
+    YoutubePipe
   ],
   imports: [
     BrowserModule,

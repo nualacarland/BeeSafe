@@ -61,6 +61,7 @@ export class ScrapbookPage {
       console.log('What is the value of the Memory array',val);
       this.items = val;
       // this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.value.youtubeLink);
+      // console.log(this.userDetails.value.youtubeLink)
     })
   }
 

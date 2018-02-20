@@ -87,9 +87,11 @@ export class EditScrapbookPage {
               
 
             var tempMemory: [Memory] = val;
+
             tempMemory[this.chosenIndex].scrapbookTitle = this.userDetails.value.scrapbookTitle;
             tempMemory[this.chosenIndex].dateAdded = this.userDetails.value.dateAdded;
             tempMemory[this.chosenIndex].memoryInfo = this.userDetails.value.memoryInfo;
+            tempMemory[this.chosenIndex].youtubeLink = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
             this.storage.set('Memory', tempMemory);
 
             }

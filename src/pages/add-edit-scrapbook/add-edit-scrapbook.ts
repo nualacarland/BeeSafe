@@ -93,6 +93,8 @@ export class AddEditScrapbookPage {
            this.userDetails.value.memoryInfo,
            this.userDetails.value.gallery,
            this.userDetails.value.youtubeLink);
+
+           
    
          tempMemory.push(newSingleMemory);
    
