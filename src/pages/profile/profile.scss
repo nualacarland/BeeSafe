@@ -118,7 +118,21 @@ input::placeholder {
     line-height: 22px;
     padding-bottom:11px;
     padding-left:20px;
+    margin-top:20px;
     
+    }
+
+    #text-line-pin{
+        height:22px;
+        width:100%;
+        color: #313745;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
+        font-size:18px;
+        font-weight: 500;
+        line-height: 22px;
+        padding-bottom:11px;
+        padding-left:20px;
+        margin-top:-25px;
     }
     #input-1 {
         height:60px;

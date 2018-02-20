@@ -44,6 +44,7 @@ export class RegisterPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl: ModalController, private toastCtrl: ToastController,
     private formBuilder: FormBuilder, private storage: Storage, public menu: MenuController){
+
       this.avatarsArray = [
         {
           title: 'avatar1',
@@ -72,14 +73,6 @@ export class RegisterPage {
       ];
 
 
-
-      this.itemList = [0,1,2,3,4,5];
-      
-
-
-
-
-
       this.userDetails = this.formBuilder.group({
 
         emailAddress: ['', Validators.required],
@@ -97,10 +90,6 @@ export class RegisterPage {
         contact3Name: ['', Validators.required]
       });
       
-
-
-
-    
      }  
 
   
@@ -135,7 +124,7 @@ export class RegisterPage {
 
   showConfirmAlert(selectedRadio: any){
     console.log('what is in the form avatar value', this.userDetails.value.avatars);
-
+   
   }
 
 
@@ -146,7 +135,7 @@ export class RegisterPage {
             console.log('this is the user email that is stored', this.userDetails.value);
       
             if(tempEmail != value) {
-      
+              
               this.doLocalShit();
             } else
             {

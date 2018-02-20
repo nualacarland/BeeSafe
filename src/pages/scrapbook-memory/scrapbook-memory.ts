@@ -34,6 +34,7 @@ export class ScrapbookMemoryPage {
 
 
   }
+  
 
   ionViewDidLoad() {
     this.chosenMemory = this.navParams.get('chosenMemory');

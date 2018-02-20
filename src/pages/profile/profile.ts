@@ -19,6 +19,7 @@ import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
 @IonicPage()
 @Component({
   selector: 'page-profile',
+
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
@@ -98,6 +99,7 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+    console.log('what is the old avatar', this._oldSelectedAvatar);
     // this.tempSetup();
     this.getOldStorage();
   }
@@ -198,6 +200,7 @@ export class ProfilePage {
     } else {
       this.presentToast();
       console.log('local storage changed!');
+      console.log('new avatar', this.userDetails.value.avatars);
     }
 
     this.storage.set('emailAddress', this.userDetails.value.emailAddress);

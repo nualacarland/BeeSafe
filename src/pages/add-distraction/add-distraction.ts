@@ -77,7 +77,7 @@ saveDistractions() {
         this.userDetails.value.distraction,
         this.camera.DestinationType.DATA_URL,
         this.userDetails.value.websiteLink,
-        this.userDetails.value.youtubeLink);
+        this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/"));
 
 
 

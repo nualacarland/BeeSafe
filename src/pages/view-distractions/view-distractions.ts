@@ -26,9 +26,12 @@ export class ViewDistractionsPage {
 
   private items;
   private userDetails;
+  trustedVideoUrl: SafeResourceUrl;
+  private distraction;
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ,private storage: Storage, private formBuilder: FormBuilder ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private storage: Storage,
+     private formBuilder: FormBuilder, private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer ) {
     this.userDetails = this.formBuilder.group({
       
       distractionTitle: [''],
@@ -41,14 +44,18 @@ export class ViewDistractionsPage {
 
   }
 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DistractionsPage');
     this.storage.get('distractions').then((val)=>{
       console.log('What is the value of the distractions array',val);
       this.items = val;
+
+      this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
     })
 
   }
+
 
   ionViewDidEnter(){
     console.log('ionViewDidEnter DistractionsPage');

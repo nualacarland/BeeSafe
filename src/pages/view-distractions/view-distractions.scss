@@ -54,6 +54,7 @@ page-view-distractions {
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-weight:700;
         margin-left: 20px;
+        margin-top: 25px;
 
     }
  
@@ -66,7 +67,7 @@ page-view-distractions {
      color: #ffffff;
      font-family: 'Avenir Rounded demi', Arial, sans-serif;
      padding-top:8px;
-     margin-top:2px;
+     margin-top:-42px;
      padding-bottom:9px;
      margin-right:10px;
      margin-left:203px;
@@ -77,10 +78,15 @@ page-view-distractions {
      font-size:20px;
      margin-top:10px;
      margin-left:20px;
+     background-color: #ffffff;
+     margin-bottom: 10px;
  }
 
  #weblink{
     margin-right: 150px;
+    margin-left:120px;
+    color:#559AD1;
+    font-weight:500;
  }
 
 
