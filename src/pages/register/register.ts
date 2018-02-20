@@ -35,13 +35,50 @@ export class RegisterPage {
   private db: SQLiteObject;
   private userDetails : FormGroup;
   val: any;
-  toggleStatus: any;
-  toggleAlert: any;
+  // toggleStatus: any;
+  // toggleAlert: any;
+  private avatarsArray: any;
+  private itemList;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public modalCtrl: ModalController, private toastCtrl: ToastController,
     private formBuilder: FormBuilder, private storage: Storage, public menu: MenuController){
+      this.avatarsArray = [
+        {
+          title: 'avatar1',
+          image: 'assets/imgs/avatar-heart.png'
+        },
+        {
+          title: 'avatar2',
+          image: 'assets/imgs/avatar-car.png'
+        },
+        {
+          title: 'avatar3',
+          image: 'assets/imgs/avatar-flower.png'
+        },
+        {
+          title: 'avatar4',
+          image: 'assets/imgs/avatar-star.png'
+        },
+        {
+          title: 'avatar5',
+          image: 'assets/imgs/avatar-football.png'
+        },
+        {
+          title: 'avatar6',
+          image: 'assets/imgs/avatar-music.png'
+        }
+      ];
+
+
+
+      this.itemList = [0,1,2,3,4,5];
+      
+
+
+
+
 
       this.userDetails = this.formBuilder.group({
 
@@ -50,6 +87,8 @@ export class RegisterPage {
         pin2: ['', Validators.required],
         pin3: ['', Validators.required],
         pin4: ['', Validators.required],
+        avatars: ['', Validators.required],
+        selectedItem: ['', Validators.required],
         contact1Tel: ['', Validators.required],
         contact1Name: ['', Validators.required],
         contact2Tel: ['', Validators.required],
@@ -58,18 +97,10 @@ export class RegisterPage {
         contact3Name: ['', Validators.required]
       });
       
-      this.toggleAlert = this.formBuilder.group({
 
-      })
 
-  
-    //   storage.ready().then(() => {
-    //   storage.get('toggleStatus').then((val) => {
-    //   this.val=val;
-    //   console.log('Status = ', val);
-    //   })
-    // });
-        
+
+    
      }  
 
   
@@ -84,7 +115,7 @@ export class RegisterPage {
     // this.storage.clear();
     // console.log('storage wiped!');
     this.menu.enable(false);
- 
+    console.log(this.avatarsArray);
   }
 
   gotoDashboardPage() {
@@ -102,18 +133,10 @@ export class RegisterPage {
    Modal.present();
   }
 
+  showConfirmAlert(selectedRadio: any){
+    console.log('what is in the form avatar value', this.userDetails.value.avatars);
 
-  ChangeToggle() {
-    if(this.toggleAlert== true){
-        this.storage.set('toggleStatus','true');         
-         console.log("toggleAlert = "+this.toggleStatus);   
-     }
-     else{
-     this.storage.set('toggleStatus','false');
-     console.log("toggleAlert = "+this.toggleStatus);
-      }
-    }
-
+  }
 
 
   checkUser() {
@@ -135,10 +158,14 @@ export class RegisterPage {
   }
 
   doLocalShit() { 
+
+
         this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4);
     
         this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
+        this.storage.set('avatar', this.userDetails.value.avatars);
+        
         this.storage.set('emergency1', {
           telephone: this.userDetails.value.contact1Tel,
           contact_name: this.userDetails.value.contact1Name

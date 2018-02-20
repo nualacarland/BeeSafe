@@ -50,7 +50,7 @@ export class ScrapbookMemoryPage {
   }
 
   gotoEdit(chosenMemory,i) {
-    console.log('CLicked goto edit scrapbook button');
+    console.log('clicked goto edit scrapbook button');
     console.log(this.chosenMemory);
     console.log(this.chosenIndex);
     this.navCtrl.push('EditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });

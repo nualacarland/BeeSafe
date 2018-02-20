@@ -42,9 +42,41 @@ export class ProfilePage {
 
   private _oldEmailAddress;
 
+  private _oldSelectedAvatar;
+
+  private avatarsArray: any;
+  private itemList;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, 
     private storage: Storage, private toastCtrl: ToastController, public modalCtrl: ModalController) {
+
+      this.avatarsArray = [
+        {
+          title: 'avatar1',
+          image: 'assets/imgs/avatar-heart.png'
+        },
+        {
+          title: 'avatar2',
+          image: 'assets/imgs/avatar-car.png'
+        },
+        {
+          title: 'avatar3',
+          image: 'assets/imgs/avatar-flower.png'
+        },
+        {
+          title: 'avatar4',
+          image: 'assets/imgs/avatar-star.png'
+        },
+        {
+          title: 'avatar5',
+          image: 'assets/imgs/avatar-football.png'
+        },
+        {
+          title: 'avatar6',
+          image: 'assets/imgs/avatar-music.png'
+        }
+      ];
 
     this.userDetails = this.formBuilder.group({
       
@@ -53,6 +85,7 @@ export class ProfilePage {
               pin2: ['', Validators.required],
               pin3: ['', Validators.required],
               pin4: ['', Validators.required],
+              avatars: ['', Validators.required],
               contact1Tel: [''],
               contact1Name: [''],
               contact2Tel: [''],
@@ -72,6 +105,11 @@ export class ProfilePage {
   openAffirModal(){
     let Modal = this.modalCtrl.create(AffirmationModalPage);
      Modal.present();
+  }
+
+  showConfirmAlert(selectedRadio: any){
+    console.log('what is in the form avatar value', this.userDetails.value.avatars);
+
   }
 
 
@@ -105,7 +143,7 @@ export class ProfilePage {
             console.log(e);
           });
 
-          
+         
     this.storage.get('emergency3').then((value) => {
       this._oldContact3 = value;
         console.log('What is the value', value);
@@ -123,6 +161,17 @@ export class ProfilePage {
         console.log('what is the old email', this._oldEmailAddress);
         this.userDetails.get('emailAddress').setValue(this._oldEmailAddress);
         
+          }).catch((e) => {
+            console.log(e);
+          });
+
+    this.storage.get('avatar').then((value) => {
+      this._oldSelectedAvatar = value;
+        console.log('What is the avatar', value);
+        console.log('what is the old avatar', this._oldSelectedAvatar);
+        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar.avatars);
+
+
           }).catch((e) => {
             console.log(e);
           });

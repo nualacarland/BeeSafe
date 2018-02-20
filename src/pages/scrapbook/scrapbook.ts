@@ -1,4 +1,4 @@
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { ScrapbookMemoryPage } from './../scrapbook-memory/scrapbook-memory';
 import { Component } from '@angular/core';
@@ -43,20 +43,26 @@ export class ScrapbookPage {
               
            });
 
+      
   }
 
 
     ionViewDidLoad() {
       console.log('ionViewDidLoad ScrapbookPage');
+      this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
+      console.log('youtube link stored', this.userDetails.youtubeLink);
       this.storage.get('Memory').then((val)=>{
         console.log('What is the value of the Memory array',val);
-        this.items = val;
-        
+        this.items = val; 
     })
+  
+    
   }
 
   ionViewDidEnter(){
     console.log('ionViewDidEnter ScrapbookPage');
+    this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
+    console.log('youtube link stored', this.userDetails.youtubeLink);
     this.storage.get('Memory').then((val)=>{
       console.log('What is the value of the Memory array',val);
       this.items = val;

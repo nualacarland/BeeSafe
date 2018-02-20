@@ -165,8 +165,8 @@ input::placeholder {
 #ion-img-1 {
     height: 36px;
     width: 38px;
-    margin-right:20px;
-    margin-left:5px;
+    // margin-right:20px;
+    // margin-left:5px;
 }
 
 #ion-img {
@@ -221,4 +221,20 @@ label > input{ /* HIDE RADIO */
     border:2px solid black;
   }
 
+.item-radio-checked ion-thumbnail img{
+    border: 1px solid black;
 }
+
+.avatar-radios {
+    .radio-icon{
+        display: none;
+    }
+}
+
+
+
+
+}
+
+
+

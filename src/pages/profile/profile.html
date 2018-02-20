@@ -37,58 +37,25 @@
   <ion-row>
       <p id="text-line">Select your Avatar*</p>
 
-      <ion-row radio-group>
-    
-            <ion-col col-2>
-                <label>
-                <input type="radio" name="fb" value="small" />
-                <img id="ion-img-1"src="assets/imgs/avatar-heart.png">
-                </label>
-            </ion-col>
-            <ion-col col-2>
-                <label>
-                <input type="radio" name="fb" value="small" />
-                <img id="ion-img"src="assets/imgs/avatar-car.png">
-                </label>
-            </ion-col>
-            <ion-col col-2>
-                <label>
-                <input type="radio" name="fb" value="small" />
-                <img id="ion-img"src="assets/imgs/avatar-flower.png">
-                </label>
-            </ion-col>
-            <ion-col col-2>
-                <label>
-                <input type="radio" name="fb" value="small" />
-                <img id="ion-img"src="assets/imgs/avatar-star.png">
-                </label>
-            </ion-col>
-            <ion-col col-2>
-                <label>
-                <input type="radio" name="fb" value="small" />
-                <img id="ion-img"src="assets/imgs/avatar-football.png">
-                </label>
-            </ion-col>
-            <ion-col col-2>
-                <label>
-                <input type="radio" name="fb" value="small" />
-                <img id="ion-img"src="assets/imgs/avatar-music.png">
-                </label>
-            </ion-col>
-            
-        </ion-row>
-        
-        
-          <!-- <ion-row radio-group>
 
-          <ion-radio  id="ion-img" src="../assets/test_img.jpg"></ion-radio>
-          <ion-radio  id="ion-img" src="../assets/test_img.jpg"></ion-radio>
-          <ion-radio  id="ion-img" src="../assets/test_img.jpg"></ion-radio>
-          <ion-radio  id="ion-img" src="../assets/test_img.jpg"></ion-radio>
-          <ion-radio  id="ion-img" src="../assets/test_img.jpg"></ion-radio>
-          <ion-radio  id="ion-img" src="../assets/test_img.jpg"></ion-radio>
-    
-      </ion-row> -->
+
+      <ion-row>
+            <ion-list formControlName="avatars" radio-group>
+                    <ion-row>
+                    <ion-col col-2  *ngFor="let avatar of avatarsArray">
+                            <ion-item >
+                                    <ion-thumbnail item-start>
+                                            <img id="ion-img-1" [src]="avatar.image">
+                                    </ion-thumbnail>
+                                    <ion-radio class="avatar-radios" value="{{avatar.image}}" (ionSelect)='showConfirmAlert(avatar.image)'>
+                                    </ion-radio>
+                        </ion-item>
+                    </ion-col>
+                    </ion-row>
+
+         
+            </ion-list>
+            </ion-row>
       
   </ion-row>
   <ion-row>

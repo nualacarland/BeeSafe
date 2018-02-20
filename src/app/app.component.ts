@@ -59,7 +59,13 @@ export class MyApp {
   }
 
 ionViewDidLoad(){
-
+  this.storage.get('avatars').then((val) =>{
+    console.log('what is the value of the avatar', val);
+});
 }
+
+
+
+
 
 }
