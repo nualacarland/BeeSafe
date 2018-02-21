@@ -4,9 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { Distraction } from './../../app/models/distraction';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheet, ActionSheetController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheet, ActionSheetController, LoadingController, Loading } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-
+import { ModalController } from 'ionic-angular';
 
 
 
@@ -18,23 +18,57 @@ import { ToastController } from 'ionic-angular';
  */
 
 @IonicPage()
+
 @Component({
   selector: 'page-edit-distraction',
   templateUrl: 'edit-distraction.html',
 })
 export class EditDistractionPage {
 
-  // private distractionIndex: Distraction;
   private userDetails: FormGroup;
   base64Image: any;
-  private chosenIndex;
+  private _oldDistractionTitle;
+  private _oldDistraction;
+  private _oldgalleryPhoto;
+  private _oldwebsiteLink;
+  private _oldyoutubeLink;
+  private _oldSelectedAvatar;
+
   private items: Distraction;
+  private avatarsArray: any;
+  private itemList;
 
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage, public formBuilder: FormBuilder, private toastCtrl: ToastController,
-              private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, 
+      private storage: Storage, private toastCtrl: ToastController, public modalCtrl: ModalController,
+    private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
   
+        this.avatarsArray = [
+          {
+            title: 'avatar1',
+            image: 'assets/imgs/avatar-heart.png'
+          },
+          {
+            title: 'avatar2',
+            image: 'assets/imgs/avatar-car.png'
+          },
+          {
+            title: 'avatar3',
+            image: 'assets/imgs/avatar-flower.png'
+          },
+          {
+            title: 'avatar4',
+            image: 'assets/imgs/avatar-star.png'
+          },
+          {
+            title: 'avatar5',
+            image: 'assets/imgs/avatar-football.png'
+          },
+          {
+            title: 'avatar6',
+            image: 'assets/imgs/avatar-music.png'
+          }
+        ];
+
     this.userDetails = this.formBuilder.group({
       
       distractionTitle: [''],
@@ -47,64 +81,107 @@ export class EditDistractionPage {
   }
 
 
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad EditDistractionPage');
-  //   console.log('What was the distraction index passed in', this.chosenDistraction);
-  // }
-
-  ionViewDidEnter(){
-    this.chosenIndex = this.navParams.get('chosenIndex');
-    this.items = this.navParams.get('items');
-
-
-   console.log('Right whats in here');
-   console.log(this.chosenIndex);
-   console.log(this.items);
-    this.userDetails.get('distractionTitle').setValue(this.items.distractionTitle);
-    this.userDetails.get('distraction').setValue(this.items.distraction);
-    this.userDetails.get('galleryPhoto').setValue(this.items.galleryPhoto);
-    this.userDetails.get('websiteLink').setValue(this.items.websiteLink);
-    this.userDetails.get('youtubeLink').setValue(this.items.youtubeLink);
-
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad EditDistractionPage');
+    this.getOldStorage();
   }
 
+ 
+  getOldStorage(){
 
-  gotoHelpNowPage(){
-    this.navCtrl.push('HelpNowPage');
-  }
-
-  EditDistraction() {
-    this.storage.get('Distraction').then((val) => {
-    console.log('Distraction ',val);
-
-    if(val == null){
-
-      var storedDistraction =  [new Distraction(this.userDetails.value.distractionTitle, 
-        this.userDetails.value.distractionInfo,
-        this.userDetails.value.memoryInfo,
-        this.userDetails.value.galleryImg,
-        this.userDetails.value.youtubeLink)];
-
-        this.storage.set('Distraction', storedDistraction);
-      
-        }else {
-          
-
-        var tempDistraction: [Distraction] = val;
-        tempDistraction[this.chosenIndex].distractionTitle = this.userDetails.value.distractionTitle;
-        tempDistraction[this.chosenIndex].distraction = this.userDetails.value.distraction;
-        tempDistraction[this.chosenIndex].galleryPhoto = this.userDetails.value.galleryPhoto;
-        tempDistraction[this.chosenIndex].websiteLink = this.userDetails.value.websiteLink;
-        tempDistraction[this.chosenIndex].youtubeLink = this.userDetails.value.youtubeLink;
-        this.storage.set('Distraction', tempDistraction);
-
-        }
-
-   console.log('Locally Updated!');
-   this.navCtrl.setRoot('DistractionsPage');
    
- });
-}
+  
+    this.storage.get('distractionTitle').then((value) => {
+      this._oldDistractionTitle = value;
+        console.log('What is the value', value);
+        console.log('what is the old distractionTitle', this._oldDistractionTitle);
+        this.userDetails.get('distractionTitle').setValue(this._oldDistractionTitle.distractionTitle);
+        
+          }).catch((e) => {
+            console.log(e);
+          });
+
+
+    this.storage.get('distraction').then((value) => {
+      this._oldDistraction = value;
+        console.log('What is the value', value);
+        console.log('what is the old distraction', this._oldDistraction);
+        this.userDetails.get('distraction').setValue(this._oldDistraction.distraction);
+  
+
+          }).catch((e) => {
+            console.log(e);
+          });
+
+         
+    this.storage.get('galleryPhoto').then((value) => {
+      this._oldgalleryPhoto = value;
+        console.log('What is the value', value);
+        console.log('what is the old galleryPhoto', this._oldgalleryPhoto);
+        this.userDetails.get('contact3Name').setValue(this._oldgalleryPhoto.galleryPhoto);
+      
+          }).catch((e) => {
+            console.log(e);
+          });
+
+                
+    this.storage.get('websiteLink').then((value) => {
+      this._oldwebsiteLink = value;
+        console.log('What is the value', value);
+        console.log('what is the old websiteLink', this._oldwebsiteLink);
+        this.userDetails.get('websiteLink').setValue(this._oldwebsiteLink.websiteLink);
+        
+          }).catch((e) => {
+            console.log(e);
+          });
+
+    this.storage.get('avatar').then((value) => {
+      this._oldSelectedAvatar = value;
+        console.log('What is the avatar', value);
+        console.log('what is the old avatar', this._oldSelectedAvatar);
+        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar.avatars);
+
+
+          }).catch((e) => {
+            console.log(e);
+          });
+
+  this.storage.get('youtubeLink').then((value) => {
+    this._oldyoutubeLink = value;
+      console.log('What is the value', value);
+      console.log('what is the old youtubeLink', this._oldyoutubeLink);
+      this.userDetails.get('youtubeLink').setValue(this._oldyoutubeLink.youtubeLink);
+      
+        }).catch((e) => {
+          console.log(e);
+        });          
+     
+    
+  }
+
+  editLocalShit() { 
+
+     // private _oldDistractionTitle;
+    // private _oldDistraction;
+    // private _oldgalleryPhoto;
+    // private _oldwebsiteLink;
+    // private _oldyoutubeLink;
+
+    this.storage.set('distractionTitle', this.userDetails.value.distractionTitle);
+    this.storage.set('distraction', this.userDetails.value.distraction);
+    this.storage.set('galleryPhoto', this.userDetails.value.galleryPhoto);
+    this.storage.set('websiteLink', this.userDetails.value.websiteLink);
+    this.storage.set('youtubeLink', this.userDetails.value.youtubeLink);
+
+    this.presentToast();
+    console.log('new avatar', this.userDetails.value.avatars);
+    console.log('Local storage edited!');
+
+  }
+
+  
+
+
 
 
 
@@ -141,16 +218,3 @@ toast.present();
 
 
     
-  
-  
-
-
-
-
-
-
-
-
-
-
-

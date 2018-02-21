@@ -19,32 +19,27 @@
 
 
     <ion-item no-lines id="password">
-    <ion-input  type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email Address"></ion-input>
+        <ion-input  type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email Address"></ion-input>
     </ion-item>
     <ion-row>
-        <p id="text-line">Select your Avatar*</p>
-        <!-- <ion-list formControlName="selectedItem" radio-group>
-                <ion-item *ngFor="let item of itemList">
-                    <ion-label>blah</ion-label>
-                    <ion-radio value="blah" (ionSelect)='showConfirmAlert("blah")'></ion-radio>
-                </ion-item>
-            </ion-list> -->
+    <p id="text-line">Select your Avatar*</p>
+      
     <ion-row>
-            <ion-list formControlName="avatars" radio-group>
-                    <ion-row>
-                    <ion-col col-2  *ngFor="let avatar of avatarsArray">
-                            <ion-item >
-                                    <ion-thumbnail item-start>
-                                            <img id="ion-img-1" [src]="avatar.image">
-                                    </ion-thumbnail>
-                                    <ion-radio class="avatar-radios" value="{{avatar.image}}" (ionSelect)='showConfirmAlert(avatar.image)'>
-                                    </ion-radio>
-                        </ion-item>
-                    </ion-col>
-                    </ion-row>
+         <ion-list formControlName="avatars" radio-group>
+     <ion-row>
+           <ion-col col-2  *ngFor="let avatar of avatarsArray">
+     <ion-item >
+            <ion-thumbnail item-start>
+            <img id="ion-img-1" [src]="avatar.image">
+        </ion-thumbnail>
+            <ion-radio class="avatar-radios" value="{{avatar.image}}" (ionSelect)='showConfirmAlert(avatar.image)'>
+        </ion-radio>
+    </ion-item>
+ </ion-col>
+ </ion-row>
 
          
-            </ion-list>
+ </ion-list>
 
 
     <ion-row >

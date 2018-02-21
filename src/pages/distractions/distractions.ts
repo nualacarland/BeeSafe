@@ -76,17 +76,25 @@ export class DistractionsPage {
 
   }
   
-  // deleteItem(items, index){
-  //   this.items.splice(index, 1);
-  //   this.storage.set('distractions',  this.items);
-  // }
+  deleteItem(items, index){
+    this.items.splice(index, 1);
+    this.storage.set('distractions',  this.items);
+  }
 
   
-  gotoEditPage(distractionIndex: number){
+  gotoEditPage(item: any, index){
 
-    this.navCtrl.push('EditDistractionPage', { 'distractionIndex': distractionIndex });
+    this.navCtrl.push('EditDistractionPage', {item, index});
     
   }
+
+  
+  // gotoEditPage(item: any, index: Number){
+
+  //   this.navCtrl.push('ScrapbookMemoryPage', { 'chosenMemory': item, 'chosenIndex' : index });
+  // }  
+  
+  
 
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
