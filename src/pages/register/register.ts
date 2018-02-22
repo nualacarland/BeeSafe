@@ -71,15 +71,6 @@ export class RegisterPage {
         }
       ];
 
-
-
-      this.itemList = [0,1,2,3,4,5];
-      
-
-
-
-
-
       this.userDetails = this.formBuilder.group({
 
         emailAddress: ['', Validators.required],
@@ -97,9 +88,6 @@ export class RegisterPage {
         contact3Name: ['', Validators.required]
       });
       
-
-
-
     
      }  
 
@@ -187,6 +175,8 @@ export class RegisterPage {
       this.navCtrl.push('LoginPage');
 
 }   
+
+
 
 
   presentToast() {

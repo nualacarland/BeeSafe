@@ -9,17 +9,30 @@ page-create-beesafe-plan {
         width: 345px;
       
     }
+
+    #text-line{
+        margin-left:-28px;
+    }
     
     #ion-title {
         height:22px;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         font-weight:700;
         text-align: center;
         margin-top: 27px;
         margin-bottom:26px;
     }
 
+    .toolbar-title-ios{
+        font-size:16px;
+    }
+    .toolbar-title-md{
+        font-size:16px;
+    }
+    .bar-button-ios{
+        margin-top: -4px;
+    }
 
     #help {
         height: 16px;
@@ -69,7 +82,7 @@ page-create-beesafe-plan {
     
 
     #img {
-        height: 80px;
+        height: 84px;
         width: 80px;
     }
     #ion-img{
@@ -81,7 +94,9 @@ page-create-beesafe-plan {
     }
 
     #info-icon {
-     margin-left:10px;
+       margin-top: -63px;
+       float:right;
+       margin-right:13px;
     }
        
 
@@ -95,7 +110,7 @@ page-create-beesafe-plan {
         background-size: contain;
         margin-left: auto;
         margin-right: auto;
-        margin-top:5px;
+     
     }
 
     #help {
@@ -109,5 +124,10 @@ page-create-beesafe-plan {
         margin-bottom: 13px;
     }
     
+    .card-md{
+        margin: 0px;
+    }
+
+  
 }
 

@@ -41,7 +41,7 @@ export class LoginPage {
         
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');  
-    this.menu.enable(false);
+    // this.menu.enable(true);
   }
 
 

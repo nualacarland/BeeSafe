@@ -18,9 +18,9 @@
     background-color: #FAF4EA;
 }
 
-.ion-img{
-    background-color: transparent !important;
-}
+// .ion-img{
+//     background-color: transparent !important;
+// }
 
 
 @font-face{
@@ -97,8 +97,16 @@
         padding-left:16px;
        
     }
+.header-md::after{
+width:0px;
+}
 
-    
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+    width:0px;
+}
+
+  
+
     #ion-text {
         font-size: 19px;
         color: #5B6275;
@@ -171,7 +179,38 @@
      
 
     }
+    #ion-img-1{
+        margin-top: 12px;
+        margin-left:26px;
+    }
 
+
+    .button-md{
+        text-transform: none;
+    }
+    .toolbar-title-md{
+        font-weight: 600;
+    }
+    .back-button-text{
+        display: none;
+    }
+
+    #ion-title{
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+    }
+    .toolbar-ios ion-title {
+        left: 0 !important;
+        top: 0 !important;
+        padding: 0 90px 1px !important;
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        pointer-events: none !important;
+    }
     // .ion-img{
     //     background-color: transparent !important;
     // }

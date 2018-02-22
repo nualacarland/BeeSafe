@@ -98,6 +98,11 @@ page-dashboard {
         margin: 0;
     }
 
+    .card-md{
+        margin:0px;
+    }
+    
+
 
     .nav-logo{
         background-image: url('../assets/imgs/navlogo.png');
@@ -109,7 +114,7 @@ page-dashboard {
         background-size: contain;
         margin-left: auto;
         margin-right: auto;
-        margin-top:5px;
+        margin-top:-4px;
     }
 
     }
