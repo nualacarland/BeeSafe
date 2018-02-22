@@ -1,12 +1,14 @@
 <ion-menu [content]="content">
   <ion-header>
-  <ion-col text-center>
-      <div src="avatar.image" >
-    <!-- <ion-img id="logo" src="assets/imgs/navlogo.png"></ion-img> -->
+  <ion-col text-center *ngIf="_oldSelectedAvatar">
+      <div>
+          <ion-thumbnail item-start>
+              <img id="ion-img-1" [src]="_oldSelectedAvatar">
+      </ion-thumbnail>
     </div>
   </ion-col>
   </ion-header>
-
+  
   <ion-content>
     <ion-list no-lines id="ion-list" mode="md">
         <!-- <ion-item class="ion-text" menu-close (click)="gotoHome()" >

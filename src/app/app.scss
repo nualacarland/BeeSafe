@@ -18,6 +18,9 @@
     background-color: #FAF4EA;
 }
 
+.ion-img{
+    background-color: transparent !important;
+}
 
 
 @font-face{
@@ -124,12 +127,12 @@
      
     }
 
-    .back-button-icon-md{
-        // display: none;
-    }
-    .back-button-icon-ios{
-        // display: none;
-    }
+    // .back-button-icon-md{
+    //     // display: none;
+    // }
+    // .back-button-icon-ios{
+    //     // display: none;
+    // }
 
     .nav-logo{
         background-image: url('../assets/imgs/avatar-star.png');
@@ -168,3 +171,7 @@
      
 
     }
+
+    // .ion-img{
+    //     background-color: transparent !important;
+    // }

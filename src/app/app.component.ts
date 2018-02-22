@@ -16,11 +16,51 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = 'LoginPage';
+  private _oldSelectedAvatar;
+  private avatarsArray: any;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController, private storage: Storage) {
     this.initializeApp();
+
+    this.avatarsArray = [
+      {
+        title: 'avatar1',
+        image: 'assets/imgs/avatar-heart.png'
+      },
+      {
+        title: 'avatar2',
+        image: 'assets/imgs/avatar-car.png'
+      },
+      {
+        title: 'avatar3',
+        image: 'assets/imgs/avatar-flower.png'
+      },
+      {
+        title: 'avatar4',
+        image: 'assets/imgs/avatar-star.png'
+      },
+      {
+        title: 'avatar5',
+        image: 'assets/imgs/avatar-football.png'
+      },
+      {
+        title: 'avatar6',
+        image: 'assets/imgs/avatar-music.png'
+      }
+    ];
+
+
+    this.storage.get('avatar').then((value) => {
+      this._oldSelectedAvatar = value;
+        console.log('What is the chosen avatar', value);
+    });
+
+
+
+
+
 
     // used for an example of ngFor and navigation
     this.pages = [  
@@ -53,6 +93,7 @@ export class MyApp {
       // this.nav.setBack
     }else{
       this.nav.setRoot(page.component);
+    
       
     }
 

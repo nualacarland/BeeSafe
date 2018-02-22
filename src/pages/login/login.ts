@@ -76,7 +76,7 @@ export class LoginPage {
             console.log('this is the user_pin stored', value);
       
             if(tempPin == value){
-              this.navCtrl.push('DashboardPage');
+              this.navCtrl.setRoot('DashboardPage');
             } 
             else
             {
