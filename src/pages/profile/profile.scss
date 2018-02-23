@@ -66,6 +66,7 @@ page-profile {
     // margin-left:5px;
 }
 
+
 #ion-img {
     height: 36px;
     width: 38px;
@@ -243,7 +244,7 @@ input::placeholder {
         padding-bottom:23px;
         padding-top:26px;
         padding-right:42px;
-        padding-left:43px;
+        padding-left:28px;
     }
     
     .emergency-contacts{
@@ -265,5 +266,28 @@ input::placeholder {
       .item-radio-checked ion-thumbnail img{
         border: 1px solid black;
     }
+
+//    .list-avatars{
+//     padding-left: 35px;
+//     margin-left: -29px;
+//     margin-right: 24px;
+//     margin-bottom: -2px;
+//    }
+
+#ion-img-1 {
+    height: 36px;
+    width: 38px;
+    margin-right:25px;
+    margin-left:-16px;
+    
+}
+
+.list-ios{
+    padding-left:35px;
+    margin-left:-29px;
+    margin-right: 24px;
+    margin-bottom: -2px;
+}
+
 
 }

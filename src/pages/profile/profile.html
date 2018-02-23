@@ -40,7 +40,7 @@
 
 
       <ion-row>
-            <ion-list formControlName="avatars" radio-group>
+            <ion-list id="list-avatars" formControlName="avatars" radio-group>
                     <ion-row>
                     <ion-col col-2  *ngFor="let avatar of avatarsArray">
                             <ion-item >
@@ -57,6 +57,8 @@
             </ion-list>
             </ion-row>
       
+
+
   </ion-row>
   <ion-row>
       <p id="text-line">Please enter your 4-digit pin*</p>
@@ -84,6 +86,7 @@
               </ion-item>
           </ion-col>
   </ion-row>
+
 
  
   <ion-row>

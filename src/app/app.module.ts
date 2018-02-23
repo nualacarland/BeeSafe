@@ -35,7 +35,8 @@ import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-mod
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,{
-        backButtonText: 'Back'
+        backButtonText: '',
+        mode: 'ios'
     }),
     IonicStorageModule.forRoot()
     
