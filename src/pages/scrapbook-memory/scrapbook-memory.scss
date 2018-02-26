@@ -31,7 +31,7 @@ page-scrapbook-memory {
         background-size: contain;
         margin-left: auto;
         margin-right: auto;
-        margin-top:5px;
+        margin-top:-6px;
     }
 
     #help {
@@ -101,6 +101,7 @@ page-scrapbook-memory {
         width:170px;
         border-radius: 4px;
         margin-top:15px;
+        margin-left: -28px;
   
     }
 
@@ -109,4 +110,9 @@ page-scrapbook-memory {
         margin-top:20px;
         margin-bottom:10px;
     }
+
+    .toolbar-title-ios{
+        margin-top:7px;
+    }
+
 }

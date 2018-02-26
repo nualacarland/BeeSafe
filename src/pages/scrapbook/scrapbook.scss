@@ -26,12 +26,13 @@ page-scrapbook {
         background-size: contain;
         margin-left: auto;
         margin-right: auto;
-        margin-top:5px;
+        margin-top:-6px;
+        color: rgb(246, 69, 69);
     }
 
     #help {
         height: 16px;
-        color: rgb(246, 69, 69);;
+        color: rgb(246, 69, 69);
         font-family: 'Avenir Rounded demi', Arial, sans-serif;
         font-weight:700;
         font-size:13px;
@@ -101,6 +102,9 @@ page-scrapbook {
         margin-bottom:10px;
     }
 
+    .toolbar-title-ios{
+        margin-top:7px;
+    }
 
 
    

@@ -102,8 +102,6 @@ page-dashboard {
         margin:0px;
     }
     
-
-
     .nav-logo{
         background-image: url('../assets/imgs/navlogo.png');
         background-size: cover;
@@ -115,6 +113,12 @@ page-dashboard {
         margin-left: auto;
         margin-right: auto;
         margin-top:-4px;
+    }
+
+    .aff-text{
+        text-align: center;
+        font-family: 'Avenir Rounded med', Arial, sans-serif;
+        font-size: 20px;	
     }
 
     }
