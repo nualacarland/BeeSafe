@@ -8,6 +8,7 @@ import { Storage } from '@ionic/storage';
 import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -61,7 +62,6 @@ export class MyApp {
 
 
 
-
     // used for an example of ngFor and navigation
     this.pages = [  
       { title: 'Home', component: 'DashboardPage'},
@@ -93,7 +93,6 @@ export class MyApp {
       // this.nav.setBack
     }else{
       this.nav.setRoot(page.component);
-    
       
     }
 

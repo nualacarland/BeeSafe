@@ -28,16 +28,35 @@ export class AddDistractionPage {
   private userDetails : FormGroup;
   base64Image: any;
   activeItemSliding: ItemSliding = null;
+  // private emojiArray: any;
+  // private itemList;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
    private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 
    public platform: Platform, public loadingCtrl: LoadingController ) {
 
+    // this.emojiArray = [
+    //         {
+    //           title: 'emojiNotBad',
+    //           image: 'assets/imgs/emoji-not-bad.png'
+    //         },
+    //         {
+    //           title: 'emojiSupport',
+    //           image: 'assets/imgs/emoji-need-support.png'
+    //         },
+    //         {
+    //           title: 'emojiStruggling',
+    //           image: 'assets/imgs/emoji-really-struggling.png'
+    //         }
+
+    //       ];
+
     this.userDetails = this.formBuilder.group({
       
               distractionTitle: ['', Validators.required],
               distraction: ['', Validators.required],
+              emojis: [''],
               galleryPhoto: [''],
               websiteLink: [''],
               youtubeLink: ['']
@@ -46,12 +65,21 @@ export class AddDistractionPage {
    
   }
 
+ 
+
 ionViewDidLoad() {
   console.log('ionViewDidLoad AddDistractionPage');
+  // console.log(this.emojiArray);
+ 
 }
 
 doCancel(){
   this.navCtrl.push('DistractionsPage');
+}
+
+showConfirmAlert(selectedCheckbox: any){
+  console.log('what is the saved emojis', this.userDetails.value.emojis);
+
 }
 
 saveDistractions() {
@@ -69,7 +97,8 @@ saveDistractions() {
         this.userDetails.value.websiteLink,
         this.userDetails.value.youtubeLink)];
 
-
+        this.storage.set('emojis', this.userDetails.value.emojis);
+        console.log('emojis that are being saved', this.userDetails.value.emojis);
         this.storage.set('distractions', newDistraction);
     } else{
       var tempDistractions: [Distraction] = val;
@@ -79,13 +108,15 @@ saveDistractions() {
         this.userDetails.value.websiteLink,
         this.userDetails.value.youtubeLink);
 
-
-
+   
+        this.storage.set('emojis', this.userDetails.value.emojis);
+        console.log('emojis that are being saved', this.userDetails.value.emojis);
       tempDistractions.push(newSingleDistraction);
 
       this.storage.set('distractions', tempDistractions);
 
     }
+    console.log('this is the emojis selected',);
 
     console.log('locally stored!');
     this.navCtrl.push('DistractionsPage');

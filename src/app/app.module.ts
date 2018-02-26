@@ -19,7 +19,7 @@ import { DistractionsInfoModalPage } from '../pages/distractions-info-modal/dist
 import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
 import { Camera } from '@ionic-native/camera';
 import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-modal';
-
+import { Keyboard } from 'ionic-angular';
 
 
 
@@ -58,6 +58,7 @@ import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-mod
     Toast,
     Camera,
     YoutubeVideoPlayer,
+    Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler,}
   ]
 })

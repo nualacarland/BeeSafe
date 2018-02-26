@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Keyboard } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
@@ -24,7 +24,8 @@ export class LoginPage {
 
   private userDetails : FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, private formBuilder: FormBuilder, public menu: MenuController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, 
+              private formBuilder: FormBuilder, public menu: MenuController, public keyboard: Keyboard) {
 
     this.userDetails = this.formBuilder.group({
       
@@ -42,6 +43,7 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');  
     // this.menu.enable(true);
+    
   }
 
 
