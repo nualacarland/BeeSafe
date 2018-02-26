@@ -101,6 +101,7 @@ export class EditScrapbookPage {
        
      });
    }
+   
 
 
    accessGallery(){

@@ -29,6 +29,7 @@ export class ScrapbookPage {
   base64Image: any;
   private items;
   trustedVideoUrl: SafeResourceUrl;
+ 
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
              private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer,
@@ -49,11 +50,12 @@ export class ScrapbookPage {
 
     ionViewDidLoad() {
       console.log('ionViewDidLoad ScrapbookPage');
-      this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
-      console.log('youtube link stored', this.userDetails.youtubeLink);
       this.storage.get('Memory').then((val)=>{
         console.log('What is the value of the Memory array',val);
         this.items = val; 
+
+        this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.items.youtubeLink);
+        console.log('youtube link stored', this.items.youtubeLink);
     })
   
     
@@ -61,8 +63,8 @@ export class ScrapbookPage {
 
   ionViewDidEnter(){
     console.log('ionViewDidEnter ScrapbookPage');
-    this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
-    console.log('youtube link stored', this.userDetails.youtubeLink);
+  
+    
     this.storage.get('Memory').then((val)=>{
       console.log('What is the value of the Memory array',val);
       this.items = val;

@@ -79,7 +79,7 @@ export class AddEditScrapbookPage {
            this.userDetails.value.dateAdded,
            this.userDetails.value.memoryInfo,
            this.userDetails.value.galleryImg,
-           this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/"))];
+           this.userDetails.value.youtubeLink)];
    
            this.storage.set('Memory', newMemory);
        } else{

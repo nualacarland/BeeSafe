@@ -1,5 +1,8 @@
 export class Memory {
 
+  splice(arg0: any, arg1: any): any {
+    throw new Error("Method not implemented.");
+  }
     constructor(
         public scrapbookTitle: string,
         public dateAdded: number,

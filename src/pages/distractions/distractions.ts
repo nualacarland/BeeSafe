@@ -82,11 +82,19 @@ export class DistractionsPage {
   }
 
   
-  gotoEditPage(distractionIndex: number){
+  gotoEditPage(item: any, index){
 
-    this.navCtrl.push('EditDistractionPage', { 'distractionIndex': distractionIndex });
+    this.navCtrl.push('EditDistractionPage', {item, index});
     
   }
+
+  
+  // gotoEditPage(item: any, index: Number){
+
+  //   this.navCtrl.push('ScrapbookMemoryPage', { 'chosenMemory': item, 'chosenIndex' : index });
+  // }  
+  
+  
 
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
