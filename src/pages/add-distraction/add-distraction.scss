@@ -34,9 +34,9 @@ page-add-distraction {
 
     #text-line-2 {
         height: 36px;
+        width:71%;
         color: #313745;
         font-size: 15px;
-
         line-height: 18px;
         text-align: center;
         font-family: 'Avenir Rounded med', Arial, sans-serif;
@@ -60,9 +60,9 @@ page-add-distraction {
     #distraction-input-1 {
         margin-top:15px;
         margin-right:47px;
-        margin-left:48px;
+        margin-left:29px;
         height:50px;
-        width:280px;
+        width:81%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
@@ -71,9 +71,9 @@ page-add-distraction {
     #distraction-input {
         margin-top:10px;
         margin-right:47px;
-        margin-left:48px;
+        margin-left:29px;
         height:50px;
-        width:280px;
+        width:81%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
@@ -83,9 +83,8 @@ page-add-distraction {
     #distraction-input-gallery {
         margin-right:47px;
         margin-bottom:0px;
-        margin-left:48px;
-        
-        width:290px;
+        margin-left:29px;
+        width:83%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
@@ -94,9 +93,9 @@ page-add-distraction {
     #distraction-input-website {
         margin-top:0px;
         margin-right:47px;
-        margin-left:48px;
+        margin-left:29px;
         height:50px;
-        width:280px;
+        width:81%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
@@ -125,14 +124,14 @@ page-add-distraction {
     }
     #save-distraction {
         height: 60px;
-        width: 250px;
+        width: 69%;
         border-radius: 2px;
         background-color: #559AD1;
         font-size: 21px;
         font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
         font-weight: 500;
         margin-top: 28px;
-        margin-left:63px;
+        margin-left:56px;
         margin-right: 62px;
 
     }
@@ -142,14 +141,14 @@ page-add-distraction {
     #img-select {
         height: 40px;
         width: 40px;
-        margin-right:40px;
+        margin-right:38px;
     }
 
     #img-select-1 {
         height: 40px;
         width: 40px;
         margin-left:85px;
-        margin-right:40px;
+        margin-right:38px;
         margin-top: 19px;
    
     }
@@ -167,6 +166,7 @@ page-add-distraction {
 
       .col {
         margin-left: -23px;
+        width:100%;
     }
 
  

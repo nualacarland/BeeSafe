@@ -10,6 +10,8 @@ page-login {
         padding-top:10px;
     }
 
+  
+
     #text-line {
         height:24px;
         width: 100%;
@@ -48,7 +50,7 @@ page-login {
  
 #input-1 {
     height:60px;
-    width:100%;
+    width:80px;
     padding-top:0px;
     float: left;
   
@@ -56,13 +58,13 @@ page-login {
 }
 #input-2 {
     height:60px;
-    width:100%;
+    width:80px;
     padding-top:0px;
     float: left;         
 }
 #input-3 {
     height:60px;
-    width:100%;
+    width:80px;
     padding-top:0px;
     float: left;
 }
@@ -93,27 +95,20 @@ page-login {
     }
    
     #create-btn {
+        display: block !important;
+        width:100% !important;
         height: 75px;
         background-color: #5B6275;
         font-size: 18px;
         font-family: 'Avenir Rounded', Arial, sans-serif;
         font-weight: 22px;
-          margin: 0;
+        margin: 0;
     }
     
-    #create {
-        display: block !important;
-        width:100% !important;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right:20px;
-        padding-left:0px;
-    }
-   
+ 
     .footer-toolbar{
         padding: 0 !important;
         
-            
         .toolbar-background{
             background-color: transparent !important;
             border: none !important;
@@ -121,10 +116,12 @@ page-login {
         }
     }
 
+    // #footer {
+    //     post
+    // }
   
-
-
-    }
+    
+}
     
 
 

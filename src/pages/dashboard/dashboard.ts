@@ -20,14 +20,6 @@ import { MockProvider } from '../../app/models/provider';
 
 export class DashboardPage {
 
-  // private _data = [
-  //   'Affirmation 1',
-  //   'Affirmation 2',
-  //   'Affirmation 3',
-  //   'Affirmation 4',
-
-  // ];
-
   public quotesArray: any[] = [];
   public randomQuote: string;
 
@@ -68,31 +60,6 @@ export class DashboardPage {
 
 
 
-
-  // private _getRandomData() {
-  //   let i = Math.floor( Math.random() * this._data.length );
-  //   return this._data[i];
-  
-  // }
-
-  // getData(): any[] {
-  //   // return mock data synchronously
-  //   let data: any[] = [];
-  //   for (var i = 0; i < 3; i++) {
-  //     data.push( this._getRandomData() );
-  //   }
-  //   return data;
-  // }
-
-  // getAsyncData(): Promise<any[]> {
-  //   // async receive mock data
-  //   return new Promise(resolve => {
-
-  //     setTimeout(() => {
-  //       resolve(this.getData());
-  //     }, 1000);
-
-  //   });
   }
 
 

@@ -39,11 +39,10 @@ export class LoginPage {
         }
 
 
-        
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');  
     // this.menu.enable(true);
-    
+  
   }
 
 
@@ -79,7 +78,7 @@ export class LoginPage {
       
             if(tempPin == value){
               this.navCtrl.setRoot('DashboardPage');
-              
+
             } 
             else
             {
@@ -106,20 +105,6 @@ export class LoginPage {
     toast.present();
 
   } 
-
-//   pinKeyboard() {
-//   this.pinDialog.prompt('Enter your PIN', 'Verify PIN', ['OK', 'Cancel'])
-//   .then(
-//     (result: any) => {
-//       if (result.buttonIndex == 1) console.log('User clicked OK, value is: ', result.input1);
-//       else if(result.buttonIndex == 2) console.log('User cancelled');
-    
-//     }
-//   );
-// }
-
-
-
 
 }
  

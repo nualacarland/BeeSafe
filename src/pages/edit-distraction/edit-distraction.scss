@@ -56,21 +56,19 @@ page-edit-distraction {
         margin-bottom: 13px;
     }
 
-    #img-select {
-        height: 40px;
-        width: 40px;
-        margin-right:40px;
-    }
-
     #img-select-1 {
-        height: 40px;
-        width: 40px;
-        margin-left:85px;
-        margin-right:40px;
-        margin-top: 19px;
-   
+        height: 36px;
+        width: 38px;
+        margin-right:20px;
+        margin-left:5px;
     }
-
+    
+    #img-select {
+        height: 36px;
+        width: 38px;
+        margin-right:20px;
+        
+    }
     #text-line-1 {
         height: 22px;
         color: #313745;
@@ -84,9 +82,9 @@ page-edit-distraction {
 
     #text-line-2 {
         height: 36px;
+        width:71%;
         color: #313745;
         font-size: 15px;
-
         line-height: 18px;
         text-align: center;
         font-family: 'Avenir Rounded med', Arial, sans-serif;
@@ -98,9 +96,9 @@ page-edit-distraction {
     #distraction-input-1 {
         margin-top:15px;
         margin-right:47px;
-        margin-left:48px;
+        margin-left:29px;
         height:50px;
-        width:280px;
+        width:81%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
@@ -109,20 +107,20 @@ page-edit-distraction {
     #distraction-input {
         margin-top:10px;
         margin-right:47px;
-        margin-left:48px;
+        margin-left:29px;
         height:50px;
-        width:280px;
+        width:81%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
         // color:#5B6275;
     }
+
     #distraction-input-gallery {
         margin-right:47px;
         margin-bottom:0px;
-        margin-left:48px;
-        
-        width:290px;
+        margin-left:29px;
+        width:83%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
@@ -131,9 +129,9 @@ page-edit-distraction {
     #distraction-input-website {
         margin-top:0px;
         margin-right:47px;
-        margin-left:48px;
+        margin-left:29px;
         height:50px;
-        width:280px;
+        width:81%;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:15px;
         line-height: 19px;
@@ -160,14 +158,14 @@ page-edit-distraction {
     }
     #save-distraction {
         height: 60px;
-        width: 250px;
+        width: 69%;
         border-radius: 2px;
         background-color: #559AD1;
         font-size: 21px;
         font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
         font-weight: 500;
         margin-top: 28px;
-        margin-left:63px;
+        margin-left:56px;
         margin-right: 62px;
 
     }
@@ -184,8 +182,8 @@ page-edit-distraction {
         border:2px solid black;
       }
 
-    .col {
+      .col {
         margin-left: -23px;
+        width:100%;
     }
-
 }

@@ -177,8 +177,6 @@ export class RegisterPage {
 }   
 
 
-
-
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Account was created successfully',
