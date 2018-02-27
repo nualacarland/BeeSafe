@@ -81,8 +81,8 @@
       "cordova-plugin-youtube-video-player": {}
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
