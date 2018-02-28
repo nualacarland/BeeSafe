@@ -42,6 +42,10 @@ export class UpdateTriggerPage {
     this.getOldStorage();
   }
 
+  gotoHelpNow(){
+    this.navCtrl.push('HelpNowPage');
+  }
+
 
 getOldStorage(){
   this.storage.get('triggers').then((val) => {
@@ -67,11 +71,9 @@ if(this.userDetails.value.triggerTitle == ''){
     this.navCtrl.push('TriggersPage');
   })
 
-
 }
 
 }
-
 
 errorToast() {
   let toast = this.toastCtrl.create({

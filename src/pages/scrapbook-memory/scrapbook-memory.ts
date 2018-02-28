@@ -2,9 +2,10 @@ import { Memory } from './../../app/models/Memory';
 import { Storage } from '@ionic/storage';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import { reorderArray } from 'ionic-angular/util/util';
 
 
 
@@ -34,8 +35,6 @@ export class ScrapbookMemoryPage {
    
   }
   
-
-
   ionViewDidLoad() {
     this.chosenMemory = this.navParams.get('chosenMemory');
     this.chosenIndex = this.navParams.get('chosenIndex');
@@ -58,29 +57,21 @@ export class ScrapbookMemoryPage {
     this.navCtrl.push('EditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });
   }
 
-  // deleteItem(chosenMemory, i){
-  //   this.items.splice(chosenMemory, i);
-  //   this.storage.set('Memory', { 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });
-  // }
-
-  deleteItem(items, index){
-    this.items.splice(index, 1);
-    this.storage.set('Memory',  this.items);
-  }
-
 
   // deleteItem(items, index){
   //   this.items.splice(index, 1);
-  //   this.storage.set('distractions',  this.items);
+  //   this.storage.set('Memory',  this.items);
   // }
 
+ 
+
+  // deleteItem(list, index){
+  //   this.items.splice(index, 1);
+  //   this.storage.set('triggers',  this.items);
+
+  // }
   
-  // gotoEditPage(item: any, index){
-
-  //   this.navCtrl.push('EditDistractionPage', {item, index});
-    
-  // }
-
+  
   
 
 

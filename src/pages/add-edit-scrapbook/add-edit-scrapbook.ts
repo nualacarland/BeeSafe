@@ -9,6 +9,7 @@ import { Platform } from 'ionic-angular/platform/platform';
 import { Camera, DestinationType } from '@ionic-native/camera';
 
 
+
 /**
  * Generated class for the AddEditScrapbookPage page.
  *

@@ -204,6 +204,8 @@ export class ProfilePage {
       this.navCtrl.push('DashboardPage');
     }
 
+    this.storage.set('avatars', this.userDetails.value.avatars);
+  
     this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
 
@@ -221,9 +223,9 @@ export class ProfilePage {
       contact_name: this.userDetails.value.contact3Name
     });
 
-    
+  
 
- 
+
   }
 
 errorToast() {

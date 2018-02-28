@@ -42,7 +42,8 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');  
     // this.menu.enable(true);
-  
+    this.navCtrl.setRoot('DashboardPage');
+
   }
 
   moveFocus(nextElement) {
@@ -81,6 +82,8 @@ export class LoginPage {
       
             if(tempPin == value){
               this.navCtrl.setRoot('DashboardPage');
+
+
 
             } 
             else

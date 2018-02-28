@@ -88,13 +88,7 @@ export class DistractionsPage {
   }
 
   
-  // gotoEditPage(item: any, index: Number){
-
-  //   this.navCtrl.push('ScrapbookMemoryPage', { 'chosenMemory': item, 'chosenIndex' : index });
-  // }  
-  
-  
-
+ 
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');

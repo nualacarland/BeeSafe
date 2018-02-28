@@ -62,9 +62,7 @@ export class ScrapbookPage {
           var num = val[_i];
           val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
           this.items.push(val[_i])
-
       }
-
 
       console.log('WHAT IS THE NEW ITEMS', this.items);
       // this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.value.youtubeLink);
@@ -72,6 +70,8 @@ export class ScrapbookPage {
       // console.log('what is the trusted link', this.trustedVideoUrl);
   })
   }
+  
+
   openVideo(){
     this.youtube.openVideo('youtubeLink');
   }

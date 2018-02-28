@@ -22,4 +22,8 @@ export class DoingWellPage {
     console.log('ionViewDidLoad DoingWellPage');
   }
 
+  gotoHelpNowPage(){
+    this.navCtrl.push('HelpNowPage');
+  }
+
 }

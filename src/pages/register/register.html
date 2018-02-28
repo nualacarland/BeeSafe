@@ -98,13 +98,13 @@
 
   
     <ion-item no-lines id="contactName-1" >
-    <ion-input type="email" style="background-color:#FAF4EA;" formControlName="contact1Name" placeholder="Name"></ion-input>
+    <ion-input id="ion-input" type="email" style="background-color:#FAF4EA;" formControlName="contact1Name" placeholder="Name"></ion-input>
     </ion-item>
   
 
 
     <ion-item no-lines id="contactNumber-1" >
-    <ion-input type="tel" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact1Tel"></ion-input>
+    <ion-input id="ion-input" type="tel" style="background-color:#FAF4EA;"  placeholder="Number" formControlName="contact1Tel"></ion-input>
     </ion-item>
 
     <p id="Contact-two">
@@ -112,11 +112,11 @@
     </p>
 
     <ion-item no-lines id="contactName-2" >
-    <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact2Name"></ion-input>
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact2Name"></ion-input>
     </ion-item>
 
     <ion-item no-lines id="contactNumber-2" >
-    <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact2Tel"></ion-input>
+    <ion-input id="ion-input" type="tel" style="background-color:#FAF4EA;"  placeholder="Number" formControlName="contact2Tel"></ion-input>
     </ion-item>
 
     <p id="Contact-Three">
@@ -124,15 +124,15 @@
     </p>
 
     <ion-item no-lines id="contactName-3" >
-    <ion-input type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact3Name"></ion-input>
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact3Name"></ion-input>
     </ion-item>
 
     <ion-item no-lines id="contactNumber-2" >
-    <ion-input type="number" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact3Tel"></ion-input>
+    <ion-input type="tel" style="background-color:#FAF4EA;" id="ion-input" placeholder="Number" formControlName="contact3Tel"></ion-input>
     </ion-item>
 
     <div id="CreateAccount">
-        <button ion-button color="primary" type="submit" id="create-btn">CREATE ACCOUNT</button>
+        <button ion-button color="primary" [disabled]="!userDetails.valid" type="submit" id="create-btn">CREATE ACCOUNT</button>
         </div>
         </ion-row>
     </ion-row>

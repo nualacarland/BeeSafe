@@ -86,6 +86,10 @@ export class EditDistractionPage {
     this.getOldStorage();
   }
 
+  gotoHelpNowPage(){
+    this.navCtrl.push('HelpNowPage');
+  }
+
  
   getOldStorage(){
 
