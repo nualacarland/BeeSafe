@@ -60,6 +60,7 @@ export class EditScrapbookPage {
 
   }
 
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditScrapbookPage');
 

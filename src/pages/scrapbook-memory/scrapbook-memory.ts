@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 
 
@@ -27,13 +27,14 @@ export class ScrapbookMemoryPage {
   base64Image: any;
   private chosenIndex;
   trustedVideoUrl: SafeResourceUrl;
-  private items: Memory;
+  // private items: Memory;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private FormBuilder: FormBuilder,
              private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer) {
    
   }
   
+
 
   ionViewDidLoad() {
     this.chosenMemory = this.navParams.get('chosenMemory');
@@ -42,6 +43,7 @@ export class ScrapbookMemoryPage {
     console.log('What is the index',this.chosenIndex);
     console.log('ionViewDidLoad ScrapbookMemoryPage');
     this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.chosenMemory.youtubeLink);
+    console.log('WHAT IS THE TRUSTED ONE HERE', this.trustedVideoUrl);
   }
 
   

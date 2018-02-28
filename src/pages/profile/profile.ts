@@ -201,6 +201,7 @@ export class ProfilePage {
       this.presentToast();
       console.log('local storage changed!');
       console.log('new avatar', this.userDetails.value.avatars);
+      this.navCtrl.push('DashboardPage');
     }
 
     this.storage.set('emailAddress', this.userDetails.value.emailAddress);
@@ -221,30 +222,8 @@ export class ProfilePage {
     });
 
     
-    // //no changes in 
-    // if(this.userDetails.value.contact1Tel == this._oldContact1.telephone && this.userDetails.value.contact1Name == this._oldContact1.contact_name){
-    //   this.storage.set('emergency1', {
-    //     telephone: this._oldContact1.telephone,
-    //     contact_name: this._oldContact1.contact_name
-    //   });
-
-    // }
-    // //Contact1 name changed only
-    // if(this.userDetails.value.contact1Tel != this._oldContact1.telephone && this.userDetails.value.contact1Name == this._oldContact1.contact_name){
-    //   this.storage.set('emergency1', {
-    //     telephone: this._oldContact1.telephone,
-    //     contact_name: this._oldContact1.contact_name
-    //   });
-
-    // }code 
-
-//  if(this.userDetails.value.pin1 != this._oldPin.user_pin){
-
-//  this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
-//  } 
 
  
-
   }
 
 errorToast() {

@@ -28,25 +28,25 @@
                 <p id="text-line">Please enter your 4-digit pin</p>
                     <ion-col col-3>
                         <ion-item no-lines id="input-1" >
-                        <ion-input type="tel" formControlName="pin1" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                        <ion-input type="tel" formControlName="pin1" maxlength="1" tabindex="1" (keyup)="moveFocus(b)" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                         </ion-item>
                     </ion-col>
                         
                     <ion-col col-3>
                         <ion-item no-lines id="input-2" >
-                        <ion-input type="tel" formControlName="pin2" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc" pattern="[0-9]"></ion-input>
+                        <ion-input type="tel" formControlName="pin2" maxlength="1" tabindex="1" #b (keyup)="moveFocus(c)" text-center style="background-color:#FAF4EA;-webkit-text-security:disc" pattern="[0-9]"></ion-input>
                         </ion-item>
                     </ion-col>
                         
                     <ion-col col-3>
                         <ion-item no-lines id="input-3" >
-                        <ion-input type="tel" formControlName="pin3" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc" ></ion-input>
+                        <ion-input type="tel" formControlName="pin3" maxlength="1" text-center #c (keyup)="moveFocus(d)" style="background-color:#FAF4EA;-webkit-text-security:disc" ></ion-input>
                         </ion-item>
                     </ion-col>
                         
                     <ion-col col-3>
                         <ion-item no-lines id="input-4" >
-                        <ion-input type="tel" formControlName="pin4" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                        <ion-input type="tel" formControlName="pin4" maxlength="1" text-center #d style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                         </ion-item>
                     </ion-col>
             </ion-row>

@@ -31,6 +31,7 @@ export class AddDistractionPage {
   // private emojiArray: any;
   // private itemList;
   
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
    private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 

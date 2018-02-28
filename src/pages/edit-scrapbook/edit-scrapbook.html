@@ -39,15 +39,16 @@
 </ion-item>
 
 <ion-item no-lines id="trigger-input" >
-  <ion-input id="ion-input" type="date" style="background-color:#FAF4EA;" formControlName="dateAdded" displayFormat="MM/DD/YYYY"></ion-input>
+  <ion-input id="ion-input" type="date" style="background-color:#FAF4EA;" formControlName="dateAdded" placeholder="Enter date here"></ion-input>
 </ion-item>
 
 <ion-item no-lines id="trigger-input-memory" >
   <ion-input id="ion-input-memory" type="text" style="background-color:#FAF4EA;" formControlName="memoryInfo" placeholder="Add a memory"></ion-input>
 </ion-item>
 
-<ion-item no-lines id="trigger-input" >
-  <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="galleryImg" placeholder="Add a photo from your gallery"></ion-input>
+<ion-item no-lines id="distraction-input-gallery">
+  <button ion-button full id="ion-input-gallery" type="button" style="background-color:#FAF4EA;"  (click)="accessGallery()">Add photo from your gallery</button>
+  <img [src]="base64Image" *ngIf="base64Image" />
 </ion-item>
 
 <ion-item no-lines id="trigger-input" >

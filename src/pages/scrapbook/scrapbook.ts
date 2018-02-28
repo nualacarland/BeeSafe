@@ -1,8 +1,9 @@
+import { YoutubePipe } from './../../pipes/youtube/youtube';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { ScrapbookMemoryPage } from './../scrapbook-memory/scrapbook-memory';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, Item } from 'ionic-angular';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Memory } from './../../app/models/Memory';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
@@ -27,8 +28,9 @@ export class ScrapbookPage {
 
   private userDetails;
   base64Image: any;
-  private items;
+  private items = [];
   trustedVideoUrl: SafeResourceUrl;
+
  
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
@@ -43,36 +45,34 @@ export class ScrapbookPage {
               youtubeLink: ['']
               
            });
-
-      
   }
-
 
     ionViewDidLoad() {
+      var key = "Memory";
       console.log('ionViewDidLoad ScrapbookPage');
-      this.storage.get('Memory').then((val)=>{
-        console.log('What is the value of the Memory array',val);
-        this.items = val; 
+      console.log(this.items);
 
-        this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.items.youtubeLink);
-        console.log('youtube link stored', this.items.youtubeLink);
-    })
-  
-    
   }
 
-  ionViewDidEnter(){
-    console.log('ionViewDidEnter ScrapbookPage');
-  
-    
+  ionViewWillEnter(){
     this.storage.get('Memory').then((val)=>{
       console.log('What is the value of the Memory array',val);
-      this.items = val;
-      // this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.value.youtubeLink);
-      // console.log(this.userDetails.value.youtubeLink)
-    })
-  }
 
+        console.log();
+        for (var _i = 0; _i < val.length; _i++) {
+          var num = val[_i];
+          val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
+          this.items.push(val[_i])
+
+      }
+
+
+      console.log('WHAT IS THE NEW ITEMS', this.items);
+      // this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.value.youtubeLink);
+      // console.log('what is the youtube link', this.userDetails.value.youtubeLink);
+      // console.log('what is the trusted link', this.trustedVideoUrl);
+  })
+  }
   openVideo(){
     this.youtube.openVideo('youtubeLink');
   }

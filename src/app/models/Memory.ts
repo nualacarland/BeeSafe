@@ -1,3 +1,5 @@
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+
 export class Memory {
 
   splice(arg0: any, arg1: any): any {

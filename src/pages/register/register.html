@@ -49,25 +49,25 @@
             <div id="pin-inputs">
             <ion-col col-3>
                 <ion-item no-lines id="input-1" >
-                <ion-input type="tel" formControlName="pin1" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                <ion-input type="tel" formControlName="pin1" text-center maxlength="1"  tabindex="1" (keyup)="moveFocus(b)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                 </ion-item>
             </ion-col>
                 
             <ion-col col-3>
                 <ion-item no-lines id="input-2" >
-                <ion-input type="tel" formControlName="pin2" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                <ion-input type="tel" formControlName="pin2" text-center maxlength="1"  tabindex="2" #b (keyup)="moveFocus(c)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                 </ion-item>
             </ion-col>
         
             <ion-col col-3>
                 <ion-item no-lines id="input-3" >
-                <ion-input type="tel" formControlName="pin3" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                <ion-input type="tel" formControlName="pin3" text-center maxlength="1"  tabindex="3" #c (keyup)="moveFocus(d)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                 </ion-item>
             </ion-col>
                 
             <ion-col col-3>
                 <ion-item no-lines id="input-4" >
-                <ion-input type="tel" formControlName="pin4" text-center maxlength="1" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+                <ion-input type="tel" formControlName="pin4" text-center maxlength="1" tabindex="4" #d style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                 </ion-item>
             </ion-col>
             </div>

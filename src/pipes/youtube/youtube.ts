@@ -15,7 +15,6 @@ export class YoutubePipe implements PipeTransform {
 
   }
 
-
   transform(value, args) {
 
     this.dom.bypassSecurityTrustResourceUrl(value);

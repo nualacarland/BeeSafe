@@ -45,47 +45,30 @@ export class ForgotPage {
   }
 
 
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForgotPage');
     this.menu.enable(false);
-
   }
 
-
-
+  moveFocus(nextElement) {
+    nextElement.setFocus();
+  }
 
  gotoLoginPage() {
    this.navCtrl.push('LoginPage');
 
  }
 
-
  resetPinFunc(){
-
-
-  //Basically copy the code from register, just replace what is locally stored for the user pin with whatever they type into the four inputs
-
-
   console.log('They have reset their pin lets see what it is');
 
   console.log(this.resetPin.value);
   this.successToast();
   this.navCtrl.push('LoginPage');
-
-
-
-  // this.storage.set('user_pin', this.resetPin.value.pin1 + this.resetPin.value.pin2 +this.resetPin.value.pin3 +this.resetPin.value.pin4);
-
-
-
-
+  
  }
 
  submitEmail(){
-  //TODO: If the email is the same as the value thats in the localstorage allow them to procede
-
 
   this.storage.get('emailAddress').then((value) => {
       
@@ -102,9 +85,6 @@ export class ForgotPage {
   }).catch((e) => {
     console.log(e);
   });
-
-
-
 
 
  }

@@ -26,6 +26,8 @@ export class AddEditScrapbookPage {
   private userDetails : FormGroup;
   base64Image: any;
 
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage,
               private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
 
@@ -94,8 +96,7 @@ export class AddEditScrapbookPage {
            this.userDetails.value.gallery,
            this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/"));
 
-           
-   
+          
          tempMemory.push(newSingleMemory);
    
          this.storage.set('Memory', tempMemory);
@@ -116,7 +117,6 @@ export class AddEditScrapbookPage {
       this.errorToast();
     }
   }
-
 
 
   presentToast() {
