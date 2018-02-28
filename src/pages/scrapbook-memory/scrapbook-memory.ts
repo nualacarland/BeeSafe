@@ -27,7 +27,7 @@ export class ScrapbookMemoryPage {
   base64Image: any;
   private chosenIndex;
   trustedVideoUrl: SafeResourceUrl;
-  // private items: Memory;
+  private items: Memory;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private FormBuilder: FormBuilder,
              private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer) {
@@ -58,13 +58,28 @@ export class ScrapbookMemoryPage {
     this.navCtrl.push('EditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });
   }
 
-  // deleteItem(items, chosenIndex){
-  //   this.chosenIndex.splice(items, 1);
+  // deleteItem(chosenMemory, i){
+  //   this.items.splice(chosenMemory, i);
   //   this.storage.set('Memory', { 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });
   // }
 
-  
+  deleteItem(items, index){
+    this.items.splice(index, 1);
+    this.storage.set('Memory',  this.items);
+  }
 
+
+  // deleteItem(items, index){
+  //   this.items.splice(index, 1);
+  //   this.storage.set('distractions',  this.items);
+  // }
+
+  
+  // gotoEditPage(item: any, index){
+
+  //   this.navCtrl.push('EditDistractionPage', {item, index});
+    
+  // }
 
   
 

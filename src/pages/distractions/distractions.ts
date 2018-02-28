@@ -25,7 +25,6 @@ export class DistractionsPage {
 
   activeItemSliding: ItemSliding = null;
   
- 
   private userDetails;
   private distractionIndex;
   private items: Distraction;

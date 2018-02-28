@@ -118,6 +118,9 @@ export class AddEditScrapbookPage {
     }
   }
 
+  goBack(){
+    this.navCtrl.push('ScrapbookPage');
+  }
 
   presentToast() {
     let toast = this.toastCtrl.create({

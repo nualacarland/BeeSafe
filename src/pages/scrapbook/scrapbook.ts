@@ -47,14 +47,13 @@ export class ScrapbookPage {
            });
   }
 
-    ionViewDidLoad() {
-      var key = "Memory";
-      console.log('ionViewDidLoad ScrapbookPage');
-      console.log(this.items);
+   
+  ionViewDidLoad(){
 
-  }
+    var key = "Memory";
+    console.log('ionViewDidLoad ScrapbookPage');
+    console.log(this.items);
 
-  ionViewWillEnter(){
     this.storage.get('Memory').then((val)=>{
       console.log('What is the value of the Memory array',val);
 

@@ -39,6 +39,7 @@ import { Keyboard } from 'ionic-angular';
     IonicModule.forRoot(MyApp,{
         backButtonText: '',
         mode: 'ios'
+ 
     }),
     IonicStorageModule.forRoot()
     
