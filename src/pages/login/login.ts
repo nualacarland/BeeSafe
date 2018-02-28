@@ -45,6 +45,9 @@ export class LoginPage {
   
   }
 
+  moveFocus(nextElement) {
+    nextElement.setFocus();
+  }
 
   gotoLazyPage(){
     this.navCtrl.push('DashboardPage');

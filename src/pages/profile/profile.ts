@@ -171,7 +171,7 @@ export class ProfilePage {
       this._oldSelectedAvatar = value;
         console.log('What is the avatar', value);
         console.log('what is the old avatar', this._oldSelectedAvatar);
-        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar.avatars);
+        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar.avatar);
 
 
           }).catch((e) => {
