@@ -180,15 +180,11 @@ export class EditDistractionPage {
     this.presentToast();
     console.log('new avatar', this.userDetails.value.avatars);
     console.log('Local storage edited!');
-    this.navCtrl.push('DistractionsPage');
+    this.navCtrl.pop();
 
   }
 
   
-
-
-
-
 
   errorToast() {
   let toast = this.toastCtrl.create({
