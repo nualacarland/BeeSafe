@@ -42,7 +42,7 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');  
     // this.menu.enable(true);
-    this.navCtrl.setRoot('DashboardPage');
+    // this.navCtrl.setRoot('DashboardPage');
 
   }
 
