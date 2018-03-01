@@ -63,7 +63,10 @@ export class ScrapbookMemoryPage {
   //   this.storage.set('Memory',  this.items);
   // }
 
- 
+  delete(){
+ this.chosenIndex.splice((this.chosenIndex), 1);
+ this.storage.set('chosenIndex', this.chosenIndex);
+  }
 
   // deleteItem(list, index){
   //   this.items.splice(index, 1);
