@@ -42,7 +42,7 @@ page-add-distraction {
         font-family: 'Avenir Rounded med', Arial, sans-serif;
         margin-left:53px;
         margin-right:52px;
-        margin-top: 29px;
+        margin-top: 89px;
     }
     #img-select-1 {
         height: 36px;
@@ -111,7 +111,6 @@ page-add-distraction {
     }
 
    
-
     #ion-input-gallery {
         padding-right:21px;
         font-size:15px;
@@ -152,6 +151,14 @@ page-add-distraction {
         margin-top: 19px;
    
     }
+
+
+      .col {
+        margin-left: -23px;
+        width:100%;
+    }
+
+
     label > input{ /* HIDE RADIO */
         visibility: hidden; /* Makes input not-clickable */
         position: absolute; /* Remove input from document flow */
@@ -163,12 +170,47 @@ page-add-distraction {
       label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
         border:2px solid black;
       }
-
-      .col {
-        margin-left: -23px;
-        width:100%;
+    
+    .item-radio-checked ion-thumbnail img{
+        border: 1px solid black;
     }
 
+    .emoji-items {
+        .checkbox-icon{
+            display: none;
+        }
+    }
+    
+
+    // #emoji-items{
+    //     margin-left: -23px;
+    //     width:100%;
+    // }
+
+    #ion-img-1 {
+        height: 36px;
+        width: 38px;
+        margin-right:25px;
+        margin-left:-16px;
+        
+    }
+
+
+    .list-ios{
+        padding-left:111px;
+        margin-left:-13px;
+        margin-right: -34px;
+        margin-bottom: -74px;
+    }
+
+   
+    
+    
+    .ion-row{
+        margin-right: 35px;
+        padding-left: -11px;
+    }
+    
  
 }
 

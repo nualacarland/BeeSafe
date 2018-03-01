@@ -91,6 +91,7 @@ export class RegisterPage {
       
      }  
 
+     
   
   createAccount(){
     console.log('What is in the form? ', this.userDetails.value);

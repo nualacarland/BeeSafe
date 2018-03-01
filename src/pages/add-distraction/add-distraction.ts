@@ -28,8 +28,8 @@ export class AddDistractionPage {
   private userDetails : FormGroup;
   base64Image: any;
   activeItemSliding: ItemSliding = null;
-  // private emojiArray: any;
-  // private itemList;
+  private emojiArray: any;
+  private itemList;
   
   
 
@@ -37,21 +37,21 @@ export class AddDistractionPage {
    private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 
    public platform: Platform, public loadingCtrl: LoadingController ) {
 
-    // this.emojiArray = [
-    //         {
-    //           title: 'emojiNotBad',
-    //           image: 'assets/imgs/emoji-not-bad.png'
-    //         },
-    //         {
-    //           title: 'emojiSupport',
-    //           image: 'assets/imgs/emoji-need-support.png'
-    //         },
-    //         {
-    //           title: 'emojiStruggling',
-    //           image: 'assets/imgs/emoji-really-struggling.png'
-    //         }
+    this.emojiArray = [
+            {
+              title: 'emojiNotBad',
+              image: 'assets/imgs/emoji-not-bad.png'
+            },
+            {
+              title: 'emojiSupport',
+              image: 'assets/imgs/emoji-need-support.png'
+            },
+            {
+              title: 'emojiStruggling',
+              image: 'assets/imgs/emoji-really-struggling.png'
+            }
 
-    //       ];
+          ];
 
     this.userDetails = this.formBuilder.group({
       
@@ -70,7 +70,7 @@ export class AddDistractionPage {
 
 ionViewDidLoad() {
   console.log('ionViewDidLoad AddDistractionPage');
-  // console.log(this.emojiArray);
+  console.log(this.emojiArray);
  
 }
 
@@ -99,6 +99,7 @@ saveDistractions() {
         this.userDetails.value.youtubeLink)];
 
         this.storage.set('emojis', this.userDetails.value.emojis);
+
         console.log('emojis that are being saved', this.userDetails.value.emojis);
         this.storage.set('distractions', newDistraction);
     } else{
@@ -111,6 +112,7 @@ saveDistractions() {
 
    
         this.storage.set('emojis', this.userDetails.value.emojis);
+
         console.log('emojis that are being saved', this.userDetails.value.emojis);
       tempDistractions.push(newSingleDistraction);
 
@@ -120,7 +122,7 @@ saveDistractions() {
     console.log('this is the emojis selected',);
 
     console.log('locally stored!');
-    this.navCtrl.push('DistractionsPage');
+    this.navCtrl.pop();
     
     
 

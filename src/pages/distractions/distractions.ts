@@ -6,7 +6,7 @@ import { ModalController } from 'ionic-angular';
 import { DistractionsInfoModalPage } from '../distractions-info-modal/distractions-info-modal';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { reorderArray } from 'ionic-angular/util/util';
-
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 
 /**
@@ -28,8 +28,11 @@ export class DistractionsPage {
   private userDetails;
   private distractionIndex;
   private items: Distraction;
+  trustedVideoUrl: SafeResourceUrl;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,private storage: Storage, private formBuilder: FormBuilder ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+              private storage: Storage, private formBuilder: FormBuilder, private domSanitizer: DomSanitizer ) {
+
     this.userDetails = this.formBuilder.group({
       
       distractionTitle: ['', Validators.required],
@@ -47,17 +50,18 @@ export class DistractionsPage {
     this.storage.get('distractions').then((val)=>{
       console.log('What is the value of the distractions array',val);
       this.items = val;
+
     })
 
   }
 
-  ionViewDidEnter(){
-    console.log('ionViewDidEnter DistractionsPage');
-    this.storage.get('distractions').then((val)=>{
-      console.log('What is the value of the distractions array',val);
-      this.items = val;
-    })
-  }
+  // ionViewDidEnter(){
+  //   console.log('ionViewDidEnter DistractionsPage');
+  //   this.storage.get('distractions').then((val)=>{
+  //     console.log('What is the value of the distractions array',val);
+  //     this.items = val;
+  //   })
+  // }
 
   openModal() {
     let myModal = this.modalCtrl.create(DistractionsInfoModalPage);
@@ -87,8 +91,6 @@ export class DistractionsPage {
     
   }
 
-  
- 
 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');

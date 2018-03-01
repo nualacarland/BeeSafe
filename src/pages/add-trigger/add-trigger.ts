@@ -44,9 +44,9 @@ export class AddTriggerPage {
     console.log('ionViewDidLoad AddTriggerPage');
   }
 
-  doCancel(){
-    this.navCtrl.push('TriggersPage');
-  }
+  // doCancel(){
+  //   this.navCtrl.push('TriggersPage');
+  // }
 
   saveNewTriggers(){
 
@@ -68,26 +68,15 @@ export class AddTriggerPage {
         
       }
       console.log('locally stored Successfully!');
-      this.presentToast();
-      this.navCtrl.push('TriggersPage');
+
+      this.successToast();
+      this.navCtrl.pop();
     
       
     });
   }
 
-  presentToast() {
-    let toast = this.toastCtrl.create({
-      message: 'New Distraction created Successfully!',
-      duration: 3000,
-      position: 'top',
-      cssClass: "toast-success",
-    });
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-    toast.present();
-  }  
-  
+
     successToast() {
       let toast = this.toastCtrl.create({
         message: 'New Trigger saved successfully',
@@ -99,7 +88,6 @@ export class AddTriggerPage {
         console.log('Dismissed toast');
       });
       toast.present();
-      this.navCtrl.push('TriggersPage');
     } 
   
  

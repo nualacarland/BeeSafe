@@ -1,5 +1,8 @@
 export class Distraction {
 
+  push(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
   splice: any;
     constructor(
         public distractionTitle: string,

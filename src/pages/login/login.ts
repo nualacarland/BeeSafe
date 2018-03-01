@@ -83,8 +83,6 @@ export class LoginPage {
             if(tempPin == value){
               this.navCtrl.setRoot('DashboardPage');
 
-
-
             } 
             else
             {

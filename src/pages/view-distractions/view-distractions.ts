@@ -5,7 +5,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { Distraction } from './../../app/models/distraction';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
 
 
 
@@ -26,10 +26,10 @@ export class ViewDistractionsPage {
 
   private items;
   private userDetails;
-  trustedVideoUrl: SafeResourceUrl;
   private distraction;
-  
+  trustedVideoUrl: SafeResourceUrl;
 
+  
   constructor(public navCtrl: NavController, public navParams: NavParams ,private storage: Storage,
      private formBuilder: FormBuilder, private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer ) {
     this.userDetails = this.formBuilder.group({
@@ -45,23 +45,16 @@ export class ViewDistractionsPage {
   }
 
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DistractionsPage');
-    this.storage.get('distractions').then((val)=>{
-      console.log('What is the value of the distractions array',val);
-      this.items = val;
-
-      this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
-    })
-
-  }
-
-
   ionViewDidEnter(){
     console.log('ionViewDidEnter DistractionsPage');
     this.storage.get('distractions').then((val)=>{
       console.log('What is the value of the distractions array',val);
+
+      console.log();
+      this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
+      console.log('WHAT IS THE TRUSTED ONE HERE', this.trustedVideoUrl);
       this.items = val;
+
     })
   }
 

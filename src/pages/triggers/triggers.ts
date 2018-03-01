@@ -46,7 +46,6 @@ export class TriggersPage {
   }
 
 
-
   ionViewDidEnter() {
     console.log('ionViewDidEnter TriggersPage');
     this.storage.get('triggers').then((val) => {
