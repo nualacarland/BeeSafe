@@ -113,23 +113,20 @@ saveDistractions() {
    
         this.storage.set('emojis', this.userDetails.value.emojis);
 
-        console.log('emojis that are being saved', this.userDetails.value.emojis);
+      console.log('emojis that are being saved', this.userDetails.value.emojis);
       tempDistractions.push(newSingleDistraction);
 
       this.storage.set('distractions', tempDistractions);
+      }
 
-    }
-    console.log('this is the emojis selected',);
-
-    console.log('locally stored!');
-    this.navCtrl.pop();
+      console.log('locally stored!');
+      this.successToast();
+      this.navCtrl.pop();
     
-    
-
+  
   });
 
 }
-
 
 accessGallery(){
   this.camera.getPicture({
@@ -157,27 +154,6 @@ accessGallery(){
     });
     toast.present();
   } 
-
-  saveDistraction(message){
-    if(message == 'success'){
-      this.successToast();
-    }else{
-      this.errorToast();
-    }
-  }
-
-  presentToast() {
-    let toast = this.toastCtrl.create({
-      message: 'New Distraction created Successfully!',
-      duration: 3000,
-      position: 'top',
-      cssClass: "toast-success",
-    });
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-    toast.present();
-  }  
 
 
   errorToast() {
