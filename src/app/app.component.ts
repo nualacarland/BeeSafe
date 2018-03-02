@@ -1,3 +1,4 @@
+import { DashboardPage } from './../pages/dashboard/dashboard';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -71,12 +72,14 @@ export class MyApp {
     ];
 
   }
+
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
+      this.statusBar.hide();
       this.splashScreen.hide();
+
     });
   }
 
@@ -89,6 +92,7 @@ export class MyApp {
       // this.nav.setBack
     }else{
       this.nav.setRoot(page.component);
+
       
     }
 
@@ -97,15 +101,18 @@ export class MyApp {
 ionViewDidLoad(){
   this.storage.get('avatars').then((val) =>{
     console.log('what is the value of the avatar', val);
-    
+    this.rootPage = DashboardPage;
 });
 }
 
-ionViewDidEnter(){
-  this.storage.get('avatars').then((val) =>{
-    console.log('what is the value of the avatar', val);
-});
-}
+// ionViewDidEnter(){
+//   this.storage.get('avatars').then((val) =>{
+//     console.log('what is the value of the avatar', val);
+//     this.rootPage = DashboardPage;
+// });
+// }
+
+
 
 
 

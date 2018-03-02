@@ -97,14 +97,17 @@ page-login {
     #create-btn {
         display: block !important;
         width:100% !important;
-        height: 75px;
+        height: 78px;
         background-color: #5B6275;
         font-size: 18px;
         font-family: 'Avenir Rounded', Arial, sans-serif;
         font-weight: 22px;
         
     }
-    
+
+    .button-inner{
+        margin-top: -8px !important;
+    }
     .footer{
         margin-top:157%;
     }
@@ -117,6 +120,10 @@ page-login {
             border: none !important;
           
         }
+    }
+
+    .button-ios{
+        margin:0.0rem;
     }
 
     // #footer {

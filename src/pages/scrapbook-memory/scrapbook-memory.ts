@@ -41,8 +41,16 @@ export class ScrapbookMemoryPage {
     console.log('What is the memory',this.chosenMemory);
     console.log('What is the index',this.chosenIndex);
     console.log('ionViewDidLoad ScrapbookMemoryPage');
-    this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.chosenMemory.youtubeLink);
-    console.log('WHAT IS THE TRUSTED ONE HERE', this.trustedVideoUrl);
+    // this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.chosenMemory.youtubeLink);
+    // console.log('WHAT IS THE TRUSTED ONE HERE', this.trustedVideoUrl);
+
+    if(this.chosenMemory.youtubeLink != ''){
+     this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.chosenMemory.youtubeLink);
+     console.log('WHAT IS THE TRUSTED ONE HERE', this.trustedVideoUrl);
+    }
+
+
+
   }
 
   

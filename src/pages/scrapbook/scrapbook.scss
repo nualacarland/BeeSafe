@@ -46,14 +46,14 @@ page-scrapbook {
             width: 250px;
             border-radius: 2px;
             background-color: #559AD1;
-            margin-left:63px;
-            margin-right: 62px;
+            // margin-left:63px;
+            // margin-right: 62px;
             font-size:21px;
             font-family: 'Avenir Rounded demi', Arial, sans-serif;
-            padding-top: 18px;
-            padding-bottom:17px;
-            padding-right:45px;
-            padding-left: 45px;
+            // padding-top: 18px;
+            // padding-bottom:17px;
+            // padding-right:45px;
+            // padding-left: 45px;
          
     }
 
@@ -78,18 +78,21 @@ page-scrapbook {
       font-size: 16px;
       font-family: 'Avenir Rounded reg', Arial, sans-serif;
       margin-top:3px;
+      margin-left:9px;
       font-weight: 700;
       margin-bottom:9px;
       color: #313745;
+
     }
 
     #ion-date{
-      font-size:8px;
+      font-size:13px;
       margin-top:13px;
       color: #313745;
     }
     #ion-info{
      font-size:12px;
+     margin-left: 9px;
      font-family: 'Avenir Rounded reg', Arial, sans-serif;
      font-weight: 700;
      color: #313745;
@@ -106,6 +109,10 @@ page-scrapbook {
         margin-top:7px;
     }
 
+    .post-description{
+        border-bottom: 0px solid #ffffff !important;
+    }
+
    
 /* Masonry Cards */
 .pins {
@@ -118,7 +125,8 @@ page-scrapbook {
 
 .card {
     margin-top: 10px;
-    width: 99%;
+    // width: 99%;
+   
 }
 
 ion-avatar {
@@ -127,8 +135,8 @@ ion-avatar {
 }
 
 .item ion-avatar img {
-    width: 155px ;
-    height: 9vw;
+    width: 155px  ;
+    height: auto;
 }
 
 .post-description {

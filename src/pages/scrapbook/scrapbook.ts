@@ -32,7 +32,7 @@ export class ScrapbookPage {
   trustedVideoUrl: SafeResourceUrl;
 
  
-  
+  posts =[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
              private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer,
              private domSanitizer: DomSanitizer) {
@@ -60,7 +60,9 @@ export class ScrapbookPage {
         console.log();
         for (var _i = 0; _i < val.length; _i++) {
           var num = val[_i];
-          val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
+          if(val[_i].youtubeLink != ''){
+            val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
+          }
           this.items.push(val[_i])
       }
 

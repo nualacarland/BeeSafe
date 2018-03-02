@@ -114,6 +114,7 @@ export class AddEditScrapbookPage {
    saveMem(message){
     if(message == 'success'){
       this.successToast();
+      this.navCtrl.pop();
     }else{
       this.errorToast();
     }

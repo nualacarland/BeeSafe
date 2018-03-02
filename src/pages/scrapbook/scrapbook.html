@@ -28,49 +28,35 @@
 </ion-header>
 
 <ion-content padding>
-
-  <ion-col>
-    <ion-row>
-  <button ion-button (click)="gotoAddMemory()" id="memory-btn">ADD MEMORY</button>
-  <br/>
-  <br/>
-</ion-row>
-</ion-col>
-
-
-<div class="pins">
-<ion-card tappable (click)="gotoEditPage(item,i)" class="pin" *ngFor="let item of items; let i = index;">
-
-    <ion-item>
-      <!-- <ion-avatar item-start>
-          <img src="assets/img/avatar/marty-avatar.png">
-      </ion-avatar> -->
-    <ion-row>
-      <p><small id="ion-date">{{item.dateAdded}}</small></p>
-    </ion-row>
-
-    <ion-row>
-      <small id="scrapbook-title">{{item.scrapbookTitle}}</small>
-    </ion-row>
   
-    <ion-row>
-      <!-- <button id="youtubePlayButton"(click)="openVideo()"><ion-icon name="ios-play"></ion-icon> PLAY</button> -->
-      <iframe class="iFrame" *ngIf="item" width="120" height="100" [src]="item.trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
-    </ion-row>
+<ion-row>
+  <ion-col text-center>
+    <button ion-button (click)="gotoAddMemory()" id="memory-btn">ADD MEMORY</button>
+  </ion-col>
+</ion-row>
 
 
-    <ion-row>
-      <p><small id="ion-info">{{item.memoryInfo}}</small></p>
-    </ion-row>
+ <div class="pins">
+  <ion-card class="pin" *ngFor="let item of items; let i = index;" tappable (click)="gotoEditPage(item,i)" >
+
+    <div id="ion-date" *ngIf="item.dateAdded" class="post-description">
+      <small>{{ item.dateAdded }}</small>
+    </div>
    
+      <ion-row>
+        <small  tappable id="scrapbook-title">{{item.scrapbookTitle}}</small>
+      </ion-row>
+  
+       <ion-row>
+        <p><small tappable id="ion-info">{{item.memoryInfo}}</small></p>
+      </ion-row>
+    <ion-item *ngIf="item.trustedVideoUrl != null">
+        <ion-row>
+            <iframe class="iFrame" *ngIf="item" width="100" height="110" [src]="item.trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
+          </ion-row>
+    </ion-item>
 
-  </ion-item>
-</ion-card>
+  </ion-card>
 </div>
-
-
-
-
-
 
 </ion-content>
