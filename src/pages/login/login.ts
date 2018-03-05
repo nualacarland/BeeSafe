@@ -99,7 +99,7 @@ export class LoginPage {
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account not Recognized!',
-      duration: 3000,
+      duration: 2000,
       position: 'top',
       cssClass: "toast-error",
     });

@@ -128,7 +128,7 @@ export class AddEditScrapbookPage {
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'New Distraction created Successfully!',
-      duration: 3000,
+      duration: 2000,
       position: 'top',
       cssClass: "toast-success",
     });
@@ -141,7 +141,7 @@ export class AddEditScrapbookPage {
   successToast() {
     let toast = this.toastCtrl.create({
       message: 'New Distraction saved successfully',
-      duration: 3000,
+      duration: 2000,
       position: 'top',
       cssClass: "toast-success",
     });

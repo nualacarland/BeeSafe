@@ -92,7 +92,7 @@ export class ForgotPage {
  presentToast() {
   let toast = this.toastCtrl.create({
     message: 'Email has been sent successfully!',
-    duration: 3000,
+    duration: 2000,
     position: 'top',
     cssClass: "toast-success",
   });
@@ -105,7 +105,7 @@ export class ForgotPage {
 successToast() {
   let toast = this.toastCtrl.create({
     message: 'Pin has been Reset!',
-    duration: 3000,
+    duration: 2000,
     position: 'top',
     cssClass: "toast-success",
   });
@@ -120,7 +120,7 @@ successToast() {
 errorToast() {
   let toast = this.toastCtrl.create({
     message: 'Email not recognised!',
-    duration: 3000,
+    duration: 2000,
     position: 'top',
     cssClass: "toast-error",
   });

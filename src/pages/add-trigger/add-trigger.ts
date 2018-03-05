@@ -80,7 +80,7 @@ export class AddTriggerPage {
     successToast() {
       let toast = this.toastCtrl.create({
         message: 'New Trigger saved successfully',
-        duration: 3000,
+        duration: 2000,
         position: 'top',
         cssClass: "toast-success",
       });
