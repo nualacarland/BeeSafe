@@ -130,13 +130,14 @@
     <ion-item no-lines id="contactNumber-2" >
     <ion-input type="tel" style="background-color:#FAF4EA;" id="ion-input" placeholder="Number" formControlName="contact3Tel"></ion-input>
     </ion-item>
+    </ion-row>
+    </ion-row>
+</form>
 
     <div id="CreateAccount">
-        <button ion-button color="primary" type="submit" id="create-btn">CREATE ACCOUNT</button>
+        <button ion-button color="primary" [disabled]="!userDetails.valid" type="submit" id="create-btn">CREATE ACCOUNT</button>
         </div>
-        </ion-row>
-    </ion-row>
-    </form>
+     
 
 </ion-content>
 <!-- 

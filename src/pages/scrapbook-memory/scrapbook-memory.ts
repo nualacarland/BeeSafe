@@ -49,8 +49,6 @@ export class ScrapbookMemoryPage {
      console.log('WHAT IS THE TRUSTED ONE HERE', this.trustedVideoUrl);
     }
 
-
-
   }
 
   
@@ -66,15 +64,15 @@ export class ScrapbookMemoryPage {
   }
 
 
-  // deleteItem(items, index){
-  //   this.items.splice(index, 1);
-  //   this.storage.set('Memory',  this.items);
-  // }
-
-  delete(){
- this.chosenIndex.splice((this.chosenIndex), 1);
- this.storage.set('chosenIndex', this.chosenIndex);
+  delete(items, index){
+    this.items.splice(index, 1);
+    this.storage.set('Memory',  this.items);
   }
+
+//   delete(){
+//  this.chosenIndex.splice((this.chosenIndex), 1);
+//  this.storage.set('chosenIndex', this.chosenIndex);
+//   }
 
   // deleteItem(list, index){
   //   this.items.splice(index, 1);
