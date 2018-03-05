@@ -102,6 +102,10 @@ saveDistractions() {
 
         console.log('emojis that are being saved', this.userDetails.value.emojis);
         this.storage.set('distractions', newDistraction);
+        console.log('locally stored!');
+        this.successToast();
+        this.navCtrl.pop();
+     
     } else{
       var tempDistractions: [Distraction] = val;
       var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
@@ -117,11 +121,14 @@ saveDistractions() {
       tempDistractions.push(newSingleDistraction);
 
       this.storage.set('distractions', tempDistractions);
-      }
-
       console.log('locally stored!');
       this.successToast();
       this.navCtrl.pop();
+   
+      }
+
+
+
     
   
   });

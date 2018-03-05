@@ -47,7 +47,7 @@ export class ForgotPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForgotPage');
-    this.menu.enable(false);
+    // this.menu.enable(false);
   }
 
   moveFocus(nextElement) {

@@ -105,7 +105,7 @@ export class AddEditScrapbookPage {
        }
    
        console.log('locally stored!');
-       this.navCtrl.push('ScrapbookPage');
+       this.navCtrl.pop();
        
      });
    }

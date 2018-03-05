@@ -32,7 +32,7 @@ export class ScrapbookPage {
   trustedVideoUrl: SafeResourceUrl;
 
  
-  posts =[];
+  posts = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
              private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer,
              private domSanitizer: DomSanitizer) {
@@ -46,10 +46,9 @@ export class ScrapbookPage {
               
            });
   }
-
+ 
    
-  ionViewDidLoad(){
-
+  ionViewDidload(){
     var key = "Memory";
     console.log('ionViewDidLoad ScrapbookPage');
     console.log(this.items);

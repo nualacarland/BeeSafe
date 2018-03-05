@@ -104,7 +104,7 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
     // this.storage.clear();
     // console.log('storage wiped!');
-    this.menu.enable(false);
+    // this.menu.enable(false);
     console.log(this.avatarsArray);
   }
 
@@ -178,7 +178,7 @@ export class RegisterPage {
         
       this.presentToast();
       console.log('locally stored!');
-      this.navCtrl.push('LoginPage');
+      this.navCtrl.pop();
 
 }   
 

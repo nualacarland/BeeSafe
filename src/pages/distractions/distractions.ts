@@ -45,23 +45,19 @@ export class DistractionsPage {
 
   }
 
-  ionViewDidLoad() {
+
+
+  ionViewWillEnter(){
     console.log('ionViewDidLoad DistractionsPage');
     this.storage.get('distractions').then((val)=>{
       console.log('What is the value of the distractions array',val);
       this.items = val;
 
-    })
-
+    });
   }
 
-  // ionViewDidEnter(){
-  //   console.log('ionViewDidEnter DistractionsPage');
-  //   this.storage.get('distractions').then((val)=>{
-  //     console.log('What is the value of the distractions array',val);
-  //     this.items = val;
-  //   })
-  // }
+
+
 
   openModal() {
     let myModal = this.modalCtrl.create(DistractionsInfoModalPage);

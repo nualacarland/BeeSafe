@@ -91,7 +91,7 @@ export class MyApp {
       this.nav.push(page.component);
       // this.nav.setBack
     }else{
-      this.nav.setRoot('DashboardPage');
+      this.nav.setRoot(page.component);
 
       
     }
@@ -99,7 +99,6 @@ export class MyApp {
   }
 
 ionViewDidLoad(){
-  this.nav.setRoot('DashboardPage');
   this.storage.get('avatars').then((val) =>{
     console.log('what is the value of the avatar', val);
   
@@ -107,7 +106,6 @@ ionViewDidLoad(){
 }
 
 ionViewDidEnter(){
-  this.nav.setRoot('DashboardPage');
   this.storage.get('avatars').then((val) =>{
     console.log('what is the value of the avatar', val);
 
