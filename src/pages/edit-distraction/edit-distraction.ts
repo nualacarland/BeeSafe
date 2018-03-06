@@ -93,8 +93,6 @@ export class EditDistractionPage {
  
   getOldStorage(){
 
-   
-  
     this.storage.get('distractionTitle').then((value) => {
       this._oldDistractionTitle = value;
         console.log('What is the value', value);
