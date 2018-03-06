@@ -245,7 +245,7 @@ errorToast() {
 presentToast() {
 let toast = this.toastCtrl.create({
   message: 'Profile Successfully Changed!',
-  duration: 3000,
+  duration: 2000,
   position: 'top',
   cssClass: "toast-success",
 });

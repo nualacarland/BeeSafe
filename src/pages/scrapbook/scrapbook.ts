@@ -48,8 +48,9 @@ export class ScrapbookPage {
   }
 
    
-  ionViewWillLoad(){
 
+  ionViewDidEnter(){
+    this.items = [];
     var key = "Memory";
     console.log('ionViewDidLoad ScrapbookPage');
     console.log(this.items);
@@ -67,12 +68,8 @@ export class ScrapbookPage {
       }
 
       console.log('WHAT IS THE NEW ITEMS', this.items);
-      // this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.value.youtubeLink);
-      // console.log('what is the youtube link', this.userDetails.value.youtubeLink);
-      // console.log('what is the trusted link', this.trustedVideoUrl);
-  })
+  });
   }
-  
 
   openVideo(){
     this.youtube.openVideo('youtubeLink');

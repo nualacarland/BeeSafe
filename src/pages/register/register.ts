@@ -178,7 +178,7 @@ export class RegisterPage {
         
       this.presentToast();
       console.log('locally stored!');
-      this.navCtrl.popTo('ScrapbookMemoryPage');
+      this.navCtrl.push('LoginPage');
 
 }   
 
@@ -186,7 +186,7 @@ export class RegisterPage {
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Account was created successfully',
-      duration: 2000,
+      duration: 3000,
       position: 'top',
       cssClass: "toast-success",
     });
@@ -200,7 +200,7 @@ export class RegisterPage {
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account already exists!',
-      duration: 2000,
+      duration: 3000,
       position: 'top',
       cssClass: "toast-error",
     });

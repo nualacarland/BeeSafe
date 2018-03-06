@@ -47,7 +47,7 @@
 
         <p id="text-line">Please enter your 4-digit pin*</p>
             <div id="pin-inputs">
-            <ion-col col-3>
+            <ion-col col->
                 <ion-item no-lines id="input-1" >
                 <ion-input type="tel" formControlName="pin1" text-center maxlength="1"  tabindex="1" (keyup)="moveFocus(b)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                 </ion-item>
@@ -130,13 +130,14 @@
     <ion-item no-lines id="contactNumber-2" >
     <ion-input type="tel" style="background-color:#FAF4EA;" id="ion-input" placeholder="Number" formControlName="contact3Tel"></ion-input>
     </ion-item>
-    </ion-row>
-    </ion-row>
-</form>
+  
 
     <div id="CreateAccount">
         <button ion-button color="primary" type="submit" id="create-btn">CREATE ACCOUNT</button>
         </div>
+    </ion-row>
+</ion-row>
+</form>
      
 
 </ion-content>

@@ -73,11 +73,13 @@ export class AddEditScrapbookPage {
    }
 
   saveMemory() {
+    var hasErrored = false;
     this.storage.get('Memory').then((val) => {
        console.log('Memory ',val);
-   
+
        if(val == null){
    
+        console.log('Memories are empty');
          var newMemory =  [new Memory(this.userDetails.value.scrapbookTitle, 
            this.userDetails.value.dateAdded,
            this.userDetails.value.memoryInfo,
@@ -91,21 +93,49 @@ export class AddEditScrapbookPage {
          //Then select the one you want by the chosenIndex that you pass in 
          //so something like tempMemory[this.chosenIndex].title = 'new stuff from form' (this.userDetails.value.title)
          //this.storage.set('Memory',tempMemory)
-         var newSingleMemory : Memory =  new Memory(this.userDetails.value.scrapbookTitle, 
-           this.userDetails.value.dateAdded,
-           this.userDetails.value.memoryInfo,
-           this.userDetails.value.gallery,
-           this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/"));
-
+        var tempYoutubeEmbed;
+         if(this.userDetails.value.youtubeLink.includes('watch?')){
+           console.log('STRING CONTAINS WATCH?');
+             tempYoutubeEmbed = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
+             hasErrored = false;
+        }else if(this.userDetails.value.youtubeLink.includes('youtu.be')){
+            console.log('its a mobile link');
+            var parts = this.userDetails.value.youtubeLink.split("/");
+            var result = parts[parts.length - 1]; // Or parts.pop();
+            tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
+            hasErrored = false;
+          }else{
+            console.log('This has fucked up somewhere throw an error');
+            hasErrored = true;
+            // this.errorToast();
+          // set a variable to error = true and dont allow the memory to be inserted.
           
-         tempMemory.push(newSingleMemory);
-   
-         this.storage.set('Memory', tempMemory);
+        }
+
+
+        if(!hasErrored){
+          var newSingleMemory : Memory =  new Memory(this.userDetails.value.scrapbookTitle, 
+            this.userDetails.value.dateAdded,
+            this.userDetails.value.memoryInfo,
+            this.userDetails.value.gallery,
+           tempYoutubeEmbed);
+ 
+ 
+           
+          tempMemory.push(newSingleMemory);
+    
+          this.storage.set('Memory', tempMemory);
+        }else{
+            //to your toast here or something
+            // this.errorToast();
+        }
+
    
        }
    
        console.log('locally stored!');
-       this.navCtrl.pop();
+      //  this.navCtrl.push('ScrapbookPage');
+      this.navCtrl.pop();
        
        
      });
@@ -153,7 +183,7 @@ export class AddEditScrapbookPage {
   
   errorToast() {
     let toast = this.toastCtrl.create({
-      message: 'New Distraction - failed.',
+      message: 'Failed.',
       duration: 20000,
       position: 'top',
       cssClass: 'toast-error',

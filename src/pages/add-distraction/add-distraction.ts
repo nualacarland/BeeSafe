@@ -37,21 +37,21 @@ export class AddDistractionPage {
    private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 
    public platform: Platform, public loadingCtrl: LoadingController ) {
 
-    this.emojiArray = [
-            {
-              title: 'emojiNotBad',
-              image: 'assets/imgs/emoji-not-bad.png'
-            },
-            {
-              title: 'emojiSupport',
-              image: 'assets/imgs/emoji-need-support.png'
-            },
-            {
-              title: 'emojiStruggling',
-              image: 'assets/imgs/emoji-really-struggling.png'
-            }
+    // this.emojiArray = [
+    //         {
+    //           title: 'emojiNotBad',
+    //           image: 'assets/imgs/emoji-not-bad.png'
+    //         },
+    //         {
+    //           title: 'emojiSupport',
+    //           image: 'assets/imgs/emoji-need-support.png'
+    //         },
+    //         {
+    //           title: 'emojiStruggling',
+    //           image: 'assets/imgs/emoji-really-struggling.png'
+    //         }
 
-          ];
+    //       ];
 
     this.userDetails = this.formBuilder.group({
       
