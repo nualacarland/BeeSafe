@@ -36,18 +36,23 @@
   <h1 id="text-line"> Try one of the following distractions. </h1>
 
 
-
 <ion-col>
   <ion-row>
     <ion-card *ngFor="let distraction of items; let i = index;"> 
       <h2 id="distraction-title">{{distraction.distractionTitle}}</h2>
       <br>
 
+<!--      
       <ion-row>
-          <button id="youtubePlayButton"(click)="openVideo()"><ion-icon name="ios-play"></ion-icon> PLAY</button>
               <iframe class="trustedVideoUrl" *ngIf="trustedVideoUrl" width="120" height="100" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe> 
       </ion-row>
-   
+    -->
+
+    <ion-item *ngIf="distraction.trustedVideoUrl != null">
+        <ion-row>
+            <iframe class="iFrame" *ngIf="distraction" width="300" height="150" [src]="distraction.trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
+          </ion-row>
+    </ion-item>
 
       <ion-row>
         <button id="distraction-info">{{distraction.distraction}}</button>
@@ -59,6 +64,7 @@
     </ion-card>
   </ion-row>
 </ion-col>
+
 
 
 

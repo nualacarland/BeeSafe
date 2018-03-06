@@ -71,6 +71,7 @@ export class AddEditScrapbookPage {
        console.log('error');
      });
    }
+   
 
   saveMemory() {
     var hasErrored = false;
@@ -105,6 +106,7 @@ export class AddEditScrapbookPage {
             tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
             hasErrored = false;
         }
+        
         //   }else{
         //     console.log('This has fucked up somewhere throw an error');
         //     hasErrored = true;

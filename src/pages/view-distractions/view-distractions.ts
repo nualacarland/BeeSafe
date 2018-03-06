@@ -24,7 +24,7 @@ import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
 })
 export class ViewDistractionsPage {
 
-  private items;
+  private items = [];
   private userDetails;
   private distraction;
   trustedVideoUrl: SafeResourceUrl;
@@ -46,16 +46,25 @@ export class ViewDistractionsPage {
 
 
   ionViewDidEnter(){
+    this.items = [];
+    var key = "distractions";
     console.log('ionViewDidEnter DistractionsPage');
+    console.log(this.items);
+
     this.storage.get('distractions').then((val)=>{
-      console.log('What is the value of the distractions array',val);
+      console.log('What is the value of the Distractions array',val);
 
-      console.log();
-      this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.userDetails.youtubeLink);
-      console.log('WHAT IS THE TRUSTED ONE HERE', this.trustedVideoUrl);
-      this.items = val;
+        console.log();
+        for (var _i = 0; _i < val.length; _i++) {
+          var num = val[_i];
+          if(val[_i].youtubeLink != ''){
+            val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
+          }
+          this.items.push(val[_i])
+      }
 
-    })
+      console.log('WHAT IS THE NEW ITEMS', this.items);
+  });
   }
 
   gotoHelpNow(){

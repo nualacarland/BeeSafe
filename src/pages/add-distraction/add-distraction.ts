@@ -66,6 +66,7 @@ export class AddDistractionPage {
    
   }
 
+
  
 
 ionViewDidLoad() {
@@ -85,9 +86,24 @@ showConfirmAlert(selectedCheckbox: any){
 
 saveDistractions() {
 
-
+  var hasErrored = false;
   this.storage.get('distractions').then((val) => {
     console.log('distractions ',val);
+    var tempYoutubeEmbed;
+
+    if(this.userDetails.value.youtubeLink.includes('watch?')){
+      console.log('STRING CONTAINS WATCH?');
+        tempYoutubeEmbed = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
+        hasErrored = false;
+   }else if(this.userDetails.value.youtubeLink.includes('youtu.be')){
+       console.log('its a mobile link');
+       var parts = this.userDetails.value.youtubeLink.split("/");
+       var result = parts[parts.length - 1]; // Or parts.pop();
+       tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
+       hasErrored = false;
+   }
+
+
 
     if(val == null){
 
@@ -95,8 +111,7 @@ saveDistractions() {
       var newDistraction =  [new Distraction(this.userDetails.value.distractionTitle, 
         this.userDetails.value.distraction,
         this.camera.DestinationType.DATA_URL,
-        this.userDetails.value.websiteLink,
-        this.userDetails.value.youtubeLink)];
+        this.userDetails.value.websiteLink,tempYoutubeEmbed)];
 
         this.storage.set('emojis', this.userDetails.value.emojis);
 
@@ -108,32 +123,42 @@ saveDistractions() {
      
     } else{
       var tempDistractions: [Distraction] = val;
+
+
+
+
+
+
+if(!hasErrored){
       var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
         this.userDetails.value.distraction,
         this.camera.DestinationType.DATA_URL,
         this.userDetails.value.websiteLink,
-        this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/"));
+        tempYoutubeEmbed);
 
-   
         this.storage.set('emojis', this.userDetails.value.emojis);
 
       console.log('emojis that are being saved', this.userDetails.value.emojis);
       tempDistractions.push(newSingleDistraction);
 
       this.storage.set('distractions', tempDistractions);
+      
+  }else{
+  //this.errorToast();  
+  }
+
       console.log('locally stored!');
       this.successToast();
       this.navCtrl.pop();
    
       }
-
-
-
-    
   
   });
 
 }
+
+
+
 
 accessGallery(){
   this.camera.getPicture({
