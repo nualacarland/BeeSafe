@@ -25,6 +25,9 @@ import { Keyboard } from 'ionic-angular';
 
 
 
+
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,9 +42,15 @@ import { Keyboard } from 'ionic-angular';
     BrowserModule,
     IonicModule.forRoot(MyApp,{
         backButtonText: '',
-        mode: 'ios'
- 
-    }),
+        mode: 'ios',
+        config: {
+          platforms: {
+            ios: {
+              statusbarPadding: true
+            }
+          }
+        },
+    },),
     IonicStorageModule.forRoot()
     
   ],

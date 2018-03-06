@@ -104,13 +104,13 @@ export class AddEditScrapbookPage {
             var result = parts[parts.length - 1]; // Or parts.pop();
             tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
             hasErrored = false;
-          }else{
-            console.log('This has fucked up somewhere throw an error');
-            hasErrored = true;
-            // this.errorToast();
-          // set a variable to error = true and dont allow the memory to be inserted.
-          
         }
+        //   }else{
+        //     console.log('This has fucked up somewhere throw an error');
+        //     hasErrored = true;
+        //   // set a variable to error = true and dont allow the memory to be inserted.
+          
+        // }
 
 
         if(!hasErrored){

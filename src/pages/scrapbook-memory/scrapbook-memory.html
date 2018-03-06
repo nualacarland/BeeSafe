@@ -37,15 +37,19 @@
   <p><small id="ion-date"></small></p>
   </ion-row>
   <ion-row>
-    <small id="stored-tite">{{chosenMemory.dateAdded}}</small>
+    <small id="date-added">{{chosenMemory.dateAdded}}</small>
   </ion-row>
   <ion-row>
     <small id="stored-title">{{chosenMemory.scrapbookTitle}}</small>
   </ion-row>
+
+  <ion-item *ngIf="chosenMemory.trustedVideoUrl != null">
   <ion-row>
       <!-- <button id="youtubePlayButton"(click)="openVideo()"><ion-icon name="ios-play"></ion-icon> PLAY</button> -->
       <iframe class="iFrame" *ngIf="trustedVideoUrl" width="300" height="150" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
   </ion-row>
+  </ion-item>
+
   <ion-row>
     <p><small id="mem-info">{{chosenMemory.memoryInfo}}</small></p>
   </ion-row>

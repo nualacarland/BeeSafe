@@ -78,6 +78,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.hide();
+      this.statusBar.overlaysWebView(false);
       this.splashScreen.hide();
 
     });
@@ -87,7 +88,7 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     console.log(page);
-    if(page.component == 'HelpNowPage'){
+    if(page.component == 'HelpNowPage', 'DashboardPage', 'BeeSafePlanPage', 'ScrapbookPage', 'CreateBeesafePlanPage', 'ResourcesPage', 'ProfilePage', 'DisclaimerPage'){
       this.nav.push(page.component);
       // this.nav.setBack
     }else{
