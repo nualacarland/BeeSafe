@@ -81,7 +81,7 @@ page-add-edit-scrapbook {
     padding-left:22px;
     padding-top:16px;
     padding-bottom:15px;
-
+    width:100%;
     color: #5B6275;
 }
 
@@ -116,6 +116,18 @@ page-add-edit-scrapbook {
     font-family: 'Avenir Rounded reg', Arial, sans-serif;
     padding-bottom:15px;
     color: #5B6275;
+}
+
+input[type="date"]
+{
+    display:block;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.2em;
+}
+
+.date-text:empty:not(:focus):before{
+    content: "Please select a date"
 }
 
 
