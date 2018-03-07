@@ -27,8 +27,26 @@
 
   <h1 id="text-line-1"> Select how you can feel: </h1>
  
+  <ion-row>
+      <ion-list formControlName="emojis" radio-group>
+              <ion-row>
+              <ion-col col-4 *ngFor="let emoji of emojiArray">
+                      <ion-item id="avatar-items">
+                              <ion-thumbnail item-start>
+                                      <img id="ion-img-1" [src]="emoji.image">
+                              </ion-thumbnail>
+                              <ion-radio class="avatar-radios" value="{{emoji.image}}" (ionSelect)='showConfirmAlert(emoji.image)'>
+                              </ion-radio>
+                  </ion-item>
+              </ion-col>
+              </ion-row>
 
 
+   
+      </ion-list>
+
+    </ion-row>
+<!-- 
       <ion-col class="col-img">
         <label>
         <input type="radio" name="fb" value="emoji-notbad"/>
@@ -44,7 +62,9 @@
           <input type="radio" name="fb" value="emoji-struggling"/>
           <img id="img-select" src="assets/imgs/emoji-really-struggling.png">
         </label>
-      </ion-col>
+      </ion-col> -->
+
+
 
 
   <h1 id="text-line-2"> What distraction technique would you use when you feel this way? </h1>

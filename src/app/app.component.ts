@@ -26,6 +26,7 @@ export class MyApp {
 
     this.initializeApp();
     this.avatarsArray = [
+      
       {
         title: 'avatar1',
         image: 'assets/imgs/avatar-heart.png'

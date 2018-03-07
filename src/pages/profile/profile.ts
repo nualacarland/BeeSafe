@@ -104,6 +104,10 @@ export class ProfilePage {
     this.getOldStorage();
   }
 
+  moveFocus(nextElement) {
+    nextElement.setFocus();
+  }
+
   openAffirModal(){
     let Modal = this.modalCtrl.create(AffirmationModalPage);
      Modal.present();

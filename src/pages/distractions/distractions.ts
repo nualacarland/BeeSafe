@@ -29,14 +29,33 @@ export class DistractionsPage {
   private distractionIndex;
   private items: Distraction;
   trustedVideoUrl: SafeResourceUrl;
+
+  private emojiArray: any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
               private storage: Storage, private formBuilder: FormBuilder, private domSanitizer: DomSanitizer ) {
+
+          this.emojiArray = [
+            {
+              title: 'emojiNotBad',
+              image: 'assets/imgs/emoji-not-bad.png'
+            },
+            {
+              title: 'emojiSupport',
+              image: 'assets/imgs/emoji-need-support.png'
+            },
+            {
+              title: 'emojiStruggling',
+              image: 'assets/imgs/emoji-really-struggling.png'
+            }
+
+          ];
 
     this.userDetails = this.formBuilder.group({
       
       distractionTitle: ['', Validators.required],
       distraction: ['', Validators.required],
+      emojis: [''],
       galleryPhoto: [''],
       websiteLink: [''],
       youtubeLink: ['']
@@ -45,11 +64,14 @@ export class DistractionsPage {
 
   }
 
+
   ionViewWillEnter(){
     console.log('ionViewDidLoad DistractionsPage');
+    
     this.storage.get('distractions').then((val)=>{
       console.log('What is the value of the distractions array',val);
       this.items = val;
+
 
     });
   }

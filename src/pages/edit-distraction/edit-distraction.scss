@@ -90,7 +90,7 @@ page-edit-distraction {
         font-family: 'Avenir Rounded med', Arial, sans-serif;
         margin-left:53px;
         margin-right:52px;
-        margin-top: 29px;
+        margin-top: -28px;
     }
 
     #distraction-input-1 {
@@ -182,6 +182,10 @@ page-edit-distraction {
       label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
         border:2px solid black;
       }
+    
+    .item-radio-checked ion-thumbnail img{
+        border: 1px solid black;
+    }
 
       .col {
         margin-left: -23px;
@@ -195,4 +199,17 @@ page-edit-distraction {
     .bar-button-ios{
         margin-right: -5px;
     }
+
+    #ion-img-1 {
+        height: 36px;
+        width: 38px;
+        margin-right:25px;
+        margin-left:-16px;
+        
+    }
+
+    .row {
+        margin-left: 6px;
+        margin-right: -41px;
+}
 }

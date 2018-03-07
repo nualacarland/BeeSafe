@@ -63,25 +63,25 @@
       <p id="text-line-pin">Please enter your 4-digit pin*</p>
           <ion-col col-3>
               <ion-item no-lines id="input-1" >
-              <ion-input formControlName="pin1" type="tel" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin1" type="tel" maxlength="1"  tabindex="1" (keyup)="moveFocus(b)" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-2" >
-              <ion-input formControlName="pin2" type="tel" maxlength="1"  text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin2" type="tel" maxlength="1"  tabindex="2" #b (keyup)="moveFocus(c)" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-3" >
-              <ion-input formControlName="pin3" type="tel" maxlength="1" text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin3" type="tel" maxlength="1" tabindex="3" #c (keyup)="moveFocus(d)"text-center style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
               
           <ion-col col-3>
               <ion-item no-lines id="input-4" >
-              <ion-input formControlName="pin4" type="tel" maxlength="1" text-center  style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              <ion-input formControlName="pin4" type="tel" maxlength="1" text-center tabindex="4" #d style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
               </ion-item>
           </ion-col>
   </ion-row>

@@ -49,10 +49,8 @@
         <ion-item-sliding id="ion-card" *ngFor="let distraction of items; let i = index;">
           <ion-item id="trigger-list"> 
               <div>
-                  <ion-img id="ion-img" src=""></ion-img>
-                  <ion-img id="ion-img" src=""></ion-img>
+                  <ion-img id="ion-img-emoji" src="{{distraction.emojis}}"></ion-img>
                   <h1 style="font-size: 16px;">{{distraction.distractionTitle}} </h1>
-
                   </div>
             
                  

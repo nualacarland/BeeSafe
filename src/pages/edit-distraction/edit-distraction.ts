@@ -36,8 +36,7 @@ export class EditDistractionPage {
   private oldDistraction: [Distraction];
   private distractionIndex: any;
  
-
-  private avatarsArray: any;
+  private emojiArray: any;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, 
@@ -45,33 +44,22 @@ export class EditDistractionPage {
     private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform,
      public loadingCtrl: LoadingController) {
 
-      
-        this.avatarsArray = [
-          {
-            title: 'avatar1',
-            image: 'assets/imgs/avatar-heart.png'
-          },
-          {
-            title: 'avatar2',
-            image: 'assets/imgs/avatar-car.png'
-          },
-          {
-            title: 'avatar3',
-            image: 'assets/imgs/avatar-flower.png'
-          },
-          {
-            title: 'avatar4',
-            image: 'assets/imgs/avatar-star.png'
-          },
-          {
-            title: 'avatar5',
-            image: 'assets/imgs/avatar-football.png'
-          },
-          {
-            title: 'avatar6',
-            image: 'assets/imgs/avatar-music.png'
-          }
-        ];
+      this.emojiArray = [
+        {
+          title: 'emojiNotBad',
+          image: 'assets/imgs/emoji-not-bad.png'
+        },
+        {
+          title: 'emojiSupport',
+          image: 'assets/imgs/emoji-need-support.png'
+        },
+        {
+          title: 'emojiStruggling',
+          image: 'assets/imgs/emoji-really-struggling.png'
+        }
+
+      ];
+    
 
         this.distractionIndex = this.navParams.get('distractionIndex');
 
@@ -79,6 +67,7 @@ export class EditDistractionPage {
   
     this.userDetails = this.formBuilder.group({
       
+      emojis: [''],
       distractionTitle: [''],
       distraction: [''],
       galleryPhoto: [''],
@@ -97,6 +86,10 @@ export class EditDistractionPage {
    this.getOldStorage();
   }
 
+  showConfirmAlert(selectedRadio: any){
+    console.log('what is the saved emojis', this.userDetails.value.emojis);
+  
+  }
 
 
   getOldStorage(){
@@ -104,6 +97,7 @@ export class EditDistractionPage {
       console.log('What is the value of the distraction', val);
       this.oldDistraction = val;
       console.log('What is the value!!!!', val);
+      this.userDetails.get('distraction').setValue(this.oldDistraction[this.distractionIndex].emojis);
       this.userDetails.get('distractionTitle').setValue(this.oldDistraction[this.distractionIndex].distractionTitle);
       this.userDetails.get('distraction').setValue(this.oldDistraction[this.distractionIndex].distraction);
       this.userDetails.get('websiteLink').setValue(this.oldDistraction[this.distractionIndex].websiteLink);
@@ -123,6 +117,7 @@ export class EditDistractionPage {
       console.log('Local Storage Changed!');
       this.storage.get('distractions').then((val) => {
         var tempDistraction = val;
+        tempDistraction[this.distractionIndex].emojis = this.userDetails.value.emojis;
         tempDistraction[this.distractionIndex].distractionTitle = this.userDetails.value.distractionTitle;
         tempDistraction[this.distractionIndex].distraction = this.userDetails.value.distraction;
         tempDistraction[this.distractionIndex].websiteLink = this.userDetails.value.websiteLink;
