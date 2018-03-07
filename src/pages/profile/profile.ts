@@ -171,7 +171,7 @@ export class ProfilePage {
       this._oldSelectedAvatar = value;
         console.log('What is the avatar', value);
         console.log('what is the old avatar', this._oldSelectedAvatar);
-        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar.avatar);
+        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar);
 
 
           }).catch((e) => {
@@ -224,9 +224,8 @@ export class ProfilePage {
     });
 
   
-
-
   }
+  
 
 errorToast() {
   let toast = this.toastCtrl.create({

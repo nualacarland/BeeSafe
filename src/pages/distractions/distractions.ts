@@ -45,8 +45,6 @@ export class DistractionsPage {
 
   }
 
-
-
   ionViewWillEnter(){
     console.log('ionViewDidLoad DistractionsPage');
     this.storage.get('distractions').then((val)=>{
@@ -55,8 +53,6 @@ export class DistractionsPage {
 
     });
   }
-
-
 
 
   openModal() {
@@ -81,13 +77,17 @@ export class DistractionsPage {
   }
 
   
-  gotoEditPage(item: any, index){
+  // gotoEditPage(item: any, index){
 
-    this.navCtrl.push('EditDistractionPage', {item, index});
+  //   this.navCtrl.push('EditDistractionPage', {item, index});
     
+  // }
+
+  gotoEditPage(distractionIndex: number){
+    this.navCtrl.push('EditDistractionPage', { 'distractionIndex': distractionIndex });
   }
 
-
+ 
   openOption(itemSlide: ItemSliding, item: Item, event) {
     console.log('opening item slide..');
     event.stopPropagation(); // here if you want item to be tappable

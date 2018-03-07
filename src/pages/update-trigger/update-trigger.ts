@@ -24,6 +24,7 @@ export class UpdateTriggerPage {
   private _oldTriggerTitle;
   private _oldTriggers: [Trigger];
   private triggerIndex : any;
+
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private storage: Storage, private toastCtrl: ToastController) {
     this.triggerIndex = this.navParams.get('triggerIndex');
@@ -36,6 +37,7 @@ export class UpdateTriggerPage {
 
   }
 
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad UpdateTriggerPage');
     console.log('WHAT WAS THE TRIGGER INDEX PASSED IN', this.triggerIndex);

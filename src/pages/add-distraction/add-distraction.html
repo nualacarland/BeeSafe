@@ -28,42 +28,20 @@
   <h1 id="text-line-1"> Select how you can feel: </h1>
  
 
-     <!-- <ion-row>
-        <ion-list>
-                <ion-row>
-        
-                <ion-col col-5  id="emoji-items" *ngFor="let emoji of emojiArray">
-                  <div id="emojis">
-                        <ion-item id="emoji-items">
-                                <ion-thumbnail item-start>
-                                        <img id="ion-img-1" [src]="emoji.image">
-                                </ion-thumbnail>
-                                <ion-radio class="emoji-checkbox" value="{{emoji.image}}" (ionSelect)='showConfirmAlert(emoji.image)'>
-                                </ion-radio>
-                    </ion-item>
-                    </div>
-                </ion-col>
-              
-                </ion-row>
-
-        </ion-list>
-
-      </ion-row>  -->
-
 
       <ion-col class="col-img">
         <label>
-        <input type="checkbox" name="fb" value="emoji-notbad"/>
+        <input type="radio" name="fb" value="emoji-notbad"/>
         <img id="img-select-1"src="assets/imgs/emoji-not-bad.png">
         </label>
     
       <label>
-        <input type="checkbox" name="fb" value="emoji-support"/>
+        <input type="radio" name="fb" value="emoji-support"/>
         <img id="img-select" src="assets/imgs/emoji-need-support.png">
       </label>
   
         <label>
-          <input type="checkbox" name="fb" value="emoji-struggling"/>
+          <input type="radio" name="fb" value="emoji-struggling"/>
           <img id="img-select" src="assets/imgs/emoji-really-struggling.png">
         </label>
       </ion-col>

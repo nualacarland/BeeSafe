@@ -29,6 +29,7 @@
 
 
 <ion-content padding>
+  
 
 
     <form [formGroup]="userDetails" (ngSubmit)="editLocalShit()">
@@ -64,7 +65,7 @@
   </ion-item>
 
   <ion-item no-lines id="distraction-input">
-    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;"  placeholder="* Enter your own distraction"></ion-input>
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="distraction" placeholder="* Enter your own distraction"></ion-input>
   </ion-item>
   
   <ion-item no-lines id="distraction-input-gallery">
@@ -75,23 +76,24 @@
 
  
   <ion-item no-lines id="distraction-input-website">
-    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;"  placeholder="Add website www."></ion-input>
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="websiteLink" placeholder="Add website www."></ion-input>
   </ion-item>
 
   <ion-item no-lines id="distraction-input">
-    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;"  placeholder="Add youtube link"></ion-input>
+    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="youtubeLink" placeholder="Add youtube link"></ion-input>
   </ion-item>
-
+</form>
   <div>
-      <button ion-button color="primary" [disabled]="!userDetails.valid" id="save-distraction">SAVE</button>
+      <button ion-button color="primary" (click)="editLocalShit()" id="save-distraction">SAVE</button>
 
   </div>
 
-</form>
+
 
 <!-- <div *ngIf="distraction != null">
     {{distraction.distractionTitle}}
     {{distraction.distractionInfo}}
+    [disabled]="!userDetails.valid"
 </div> -->
 
 
