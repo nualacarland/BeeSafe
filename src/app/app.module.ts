@@ -20,6 +20,7 @@ import { TriggerModalPage } from '../pages/trigger-modal/trigger-modal';
 import { Camera } from '@ionic-native/camera';
 import { AffirmationModalPage } from '../pages/affirmation-modal/affirmation-modal';
 import { Keyboard } from 'ionic-angular';
+import { NativeTransitionOptions, NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 
 
@@ -70,6 +71,7 @@ import { Keyboard } from 'ionic-angular';
     Camera,
     YoutubeVideoPlayer,
     Keyboard,
+    NativePageTransitions,
     {provide: ErrorHandler, useClass: IonicErrorHandler,}
   ]
 })

@@ -60,6 +60,24 @@
        url("../assets/fonts/20e7b0c853ec740e4038f6c34b1a61f1.svg#Avenir Next Rounded W01 Reg") format("svg");
     }
 
+    @keyframes animateInPrimary {
+        0% {
+          -webkit-transform: translate3d(-100%,0,0);
+        }
+       
+        100% {
+          -webkit-transform: translate3d(0,0,0);
+        }
+      }
+       
+      .animate-in-primary {
+          -webkit-animation: animateInPrimary;
+          animation: animateInPrimary;
+          -webkit-animation-duration: 750ms;
+          animation-duration: 750ms;
+        
+      }
+
     input{
         background-color: #FAF4EA;
     }

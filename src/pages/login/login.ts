@@ -4,7 +4,9 @@ import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { MenuController } from 'ionic-angular/components/app/menu-controller';
+import { NativeTransitionOptions, NativePageTransitions } from '@ionic-native/native-page-transitions';
 // import { PinDialog } from '@ionic-native/pin-dialog';
+
 
 
 
@@ -25,7 +27,7 @@ export class LoginPage {
   private userDetails : FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, 
-              private formBuilder: FormBuilder, public menu: MenuController, public keyboard: Keyboard) {
+              private formBuilder: FormBuilder, public menu: MenuController, public keyboard: Keyboard, private nativePageTransitions: NativePageTransitions) {
 
     this.userDetails = this.formBuilder.group({
       
@@ -36,27 +38,40 @@ export class LoginPage {
              
             });
       
-        }
+
+          }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');  
     // this.menu.enable(true);
     // this.navCtrl.setRoot('DashboardPage');
-
   }
 
   moveFocus(nextElement) {
     nextElement.setFocus();
   }
 
+
+  slidePage() {
+    let options: NativeTransitionOptions = {
+      direction: 'up',
+      duration: 400,
+      slowdownfactor: -1,
+      iosdelay: 50
+     };
+    this.nativePageTransitions.slide(options);
+    this.navCtrl.setRoot('ForgotPage');
+  }
+ 
+
   gotoLazyPage(){
     this.navCtrl.push('DashboardPage');
   }
 
-  gotoForgotPage(){
-    this.navCtrl.push('ForgotPage');
-  }
+  // gotoForgotPage(){
+  //   this.navCtrl.push('ForgotPage');
+  // }
 
   gotoRegisterPage() {
     this.navCtrl.push('RegisterPage');
