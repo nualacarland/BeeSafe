@@ -94,6 +94,12 @@ page-dashboard {
      
     }
 
+    #img-bee{
+        height:80px;
+        width:99px;
+        margin-left:-17px;
+    }
+
     .card-ios {
         margin: 0;
     }
@@ -114,15 +120,15 @@ page-dashboard {
         margin-right: auto;
         margin-top:13px;
 
-
-
-       
     }
 
     .aff-text{
         text-align: center;
         font-family: 'Avenir Rounded med', Arial, sans-serif;
-        font-size: 20px;	
+        font-size: 15px;
+        color: #5a6274;	
+        padding-top:10px;
+        padding-bottom:4px;
     }
 
     }

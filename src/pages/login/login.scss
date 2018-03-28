@@ -126,10 +126,21 @@ page-login {
         margin:0.0rem;
     }
 
-    // #footer {
-    //     post
-    // }
-  
+    .button-inner {
+        margin-top: 0px !important;
+    }
+
+.toolbar-ios{
+    padding:0px;
+    padding-left:0px;
+    padding-right:0px;
+    // min-height: 0px;
+}
+
+
+.toast-ios .toast-message{
+    font-family: 'Avenir rounded demi'!important;
+}
     
 }
     

@@ -52,7 +52,9 @@ $toast-wp-background:(#008000);
 
 $img-placeholder-background: (transparent);
 .toast-error .toast-wrapper{
-  background-color: red !important;
+  background-color: #ff0000 !important;
+  font-family: 'Avenir Rounded demi' !important;
+  text-align: center;
 }
 
 

@@ -25,10 +25,10 @@ export class DashboardPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
  
-      this.quotesArray.push('Affirmation 1');
-      this.quotesArray.push('Affirmation 2');
-      this.quotesArray.push('Affirmation 3');
-      this.quotesArray.push('Affirmation 4');
+      this.quotesArray.push('Lorem ipsum dolor sit amet');
+      this.quotesArray.push('Lorem ipsum dolor sit amet');
+      this.quotesArray.push('Lorem ipsum dolor sit amet');
+      this.quotesArray.push('Lorem ipsum dolor sit amet');
 
   }
 

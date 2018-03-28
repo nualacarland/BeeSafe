@@ -5,32 +5,53 @@ page-bee-safe-plan {
     }
 
     #text-line-1 {
-        font-size: 23px;
+        font-size: 22px;
         line-height:22px;
         text-align: center;
-        color: #313745;
-        font-family: 'Avenir Rounded', Arial, sans-serif;
-        margin-top: 49px;
-        margin-left:53px;
-        margin-right: 52px;
+        color: #5a6274;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        margin-top: 18px;
+        // margin-left:53px;
+        // margin-right: 52px;
         font-weight: 500;
+    }
+
+    #text-line {
+        font-size: 15px;
+        line-height:22px;
+        text-align: center;
+        color: #5a6274;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        margin-top: 17px;
+        // margin-left:53px;
+        // margin-right: 52px;
+        font-weight: 500;
+    }
+
+    .card-class{
+        padding-right: 73px;
+    }
+
+    .card-ios{
+        height:65px
     }
 
     #feeling-option {
        font-size: 20px;
        line-height: 37px;
-       color: #559AD1;
+       color: #5a6274;
        font-family: 'Avenir Rounded demi', Arial, sans-serif;
-       margin-left: 134px;
-       margin-top: 35px;
+       margin-left: 132px;
+       margin-top: 15px;
+       padding-bottom:15px;
     }
 
     #emoji-feeling {
-        height: 50px;
-        width: 50px;
+        height: 42px;
+        width: 32px;
         margin-left:-65px;
         margin-bottom: -20px;
-        margin-right: 19px;
+        margin-right: 11px;
         
     }
 

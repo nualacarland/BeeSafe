@@ -186,9 +186,10 @@ export class RegisterPage {
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Account was created successfully',
-      duration: 3000,
+      duration: 1000000000000,
       position: 'top',
-      cssClass: "toast-success",
+      cssClass: "toast-success beesafe-toast",
+
     });
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');
@@ -200,9 +201,9 @@ export class RegisterPage {
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account already exists!',
-      duration: 3000,
+      duration: 10000000,
       position: 'top',
-      cssClass: "toast-error",
+      cssClass: "toast-error beesafe-toast",
     });
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');

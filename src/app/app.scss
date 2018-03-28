@@ -18,6 +18,10 @@
     background-color: #FAF4EA;
 }
 
+.toolbar-title-ios{
+   color: #5a6274;
+}
+
 // .ion-img{
 //     background-color: transparent !important;
 // }
@@ -139,7 +143,7 @@ width:0px;
 
     #ion-text {
         font-size: 19px;
-        color: #5B6275;
+        color: #5a6274;
         font-family: 'Avenir Rounded demi', Arial, sans-serif;	
         font-weight: 500;
     }
@@ -231,10 +235,12 @@ width:0px;
         margin-top: 0 !important;
         margin-bottom: 0 !important;
         padding-top: 0 !important;
+        color: #5a6274;
     }
     .toolbar-ios ion-title {
         left: 0 !important;
         top: 0 !important;
+        color: #5a6274;
         padding: 0 90px 1px !important;
         position: absolute !important;
         width: 112% !important;
@@ -246,10 +252,12 @@ width:0px;
 
     .toolbar-ios{
         min-height: 65px !important;
+        color: #5a6274;
     }
 
     .toolbar-title-ios{
         margin-left: -21px;
+        color: #5a6274;
     }
 
     // .ion-img{

@@ -114,9 +114,9 @@ export class LoginPage {
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account not Recognized!',
-      duration: 2000,
+      duration: 10000000000000,
       position: 'top',
-      cssClass: "toast-error",
+      cssClass: "toast-error beesafe-toast",
     });
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');

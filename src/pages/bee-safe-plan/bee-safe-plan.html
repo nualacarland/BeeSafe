@@ -29,44 +29,60 @@
 
 <ion-row>
   <ion-col>
+ <h1 id="text-line">Understand your feelings and take control...</h1>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
   <h1 id="text-line-1">How are you feeling?</h1>
 </ion-col>
 </ion-row>
 
+
 <ion-row>
   <ion-col>
+      <ion-card >
   <h1 id="feeling-option" (click)="gotoDoingWell()">
   <ion-img id="emoji-feeling" src="assets/imgs/emoji-doing-well.png">
   </ion-img>
     Doing well
   </h1>
+</ion-card>
 </ion-col>
   </ion-row>
 
+
+
   <ion-row>
     <ion-col>
-  <h1 id="feeling-option" (click)="gotoEditTrigger()">
-  <ion-img id="emoji-feeling" src="assets/imgs/emoji-not-bad.png"></ion-img>
-    Not so bad
-  </h1>
+      <ion-card>
+           <h1 id="feeling-option"  (click)="gotoEditTrigger()">
+         <ion-img id="emoji-feeling" src="assets/imgs/emoji-not-bad.png"></ion-img>
+         Not so bad
+        </h1>
+         </ion-card>
     </ion-col>  
   </ion-row>
 
   <ion-row>
     <ion-col>
+      <ion-card>
   <h1 id="feeling-option" (click)="gotoEditTrigger()">
   <ion-img id="emoji-feeling" src="assets/imgs/emoji-need-support.png"></ion-img>
     Needing support
   </h1>
+  </ion-card>
   </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col>
+      <ion-card>
   <h1 id="feeling-option" (click)="gotoEditTrigger()">
   <ion-img id="emoji-feeling" src="assets/imgs/emoji-really-struggling.png"></ion-img>
     Really struggling
   </h1>
+  </ion-card>
     </ion-col>
   </ion-row>
   
