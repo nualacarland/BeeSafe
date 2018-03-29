@@ -61,11 +61,12 @@ export class AddEditScrapbookPage {
   accessGallery(){
     this.camera.getPicture({
       sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
-      destinationType: this.camera.DestinationType.DATA_URL
+      destinationType: this.camera.DestinationType.FILE_URI
      }).then((sourcePath) => {
        this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
-       console.log('Image has been selected', this.camera.DestinationType.DATA_URL );
-  
+       console.log('Image has been selected', this.camera.DestinationType.FILE_URI );
+      console.log('what is the source path', sourcePath);
+
       }, (err) => {
        console.log(err);
        console.log('error');
@@ -119,12 +120,13 @@ export class AddEditScrapbookPage {
           var newSingleMemory : Memory =  new Memory(this.userDetails.value.scrapbookTitle, 
             this.userDetails.value.dateAdded,
             this.userDetails.value.memoryInfo,
-            this.userDetails.value.gallery,
+            this.userDetails.value.galleryImg,
            tempYoutubeEmbed);
  
  
            
           tempMemory.push(newSingleMemory);
+       
     
           this.storage.set('Memory', tempMemory);
         }else{
@@ -204,28 +206,3 @@ export class AddEditScrapbookPage {
 }
 
 
-
-
-
-
- // saveScrapbookMemory(){
-  //   this.storage.set('scrapbookTitle', this.userDetails.value.scrapbookTitle);
-  //   console.log('This is the memory title ->', this.userDetails.value.scrapbookTitle);
-
-  //   this.storage.set('dateAdded', this.userDetails.value.dateAdded);
-  //   console.log('This is the Date of post ->', this.userDetails.value.dateAdded);
-
-  //   this.storage.set('memoryInfo', this.userDetails.value.memoryInfo);
-  //   console.log('This is the memory info ->', this.userDetails.value.memoryInfo);
-    
-  //   this.storage.set('galleryImg', this.userDetails.value.galleryImg);
-  //   console.log('This is the galley image ->', this.userDetails.value.galleryImg);
-
-  //   this.storage.set('youtubeLink', this.userDetails.value.youtubeLink);
-  //   console.log('This is the youtube link ->', this.userDetails.value.youtubeLink);
-
-  //   this.presentToast();
-  //   console.log('locally stored!');
-  //   this.navCtrl.push('ScrapbookPage');
-
-  // }

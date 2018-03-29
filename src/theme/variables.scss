@@ -50,7 +50,13 @@ $toast-ios-background:(#008000);
 $toast-md-background:(#008000);
 $toast-wp-background:(#008000);
 
+
 $img-placeholder-background: (transparent);
+
+.toast-ios .toast-message{
+  font-family: 'Avenir Rounded demi' !important;
+  text-align: center;
+}
 .toast-error .toast-wrapper{
   background-color: #ff0000 !important;
   font-family: 'Avenir Rounded demi' !important;

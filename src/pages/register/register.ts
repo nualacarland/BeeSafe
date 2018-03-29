@@ -186,7 +186,7 @@ export class RegisterPage {
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Account was created successfully',
-      duration: 1000000000000,
+      duration: 3000,
       position: 'top',
       cssClass: "toast-success beesafe-toast",
 
@@ -201,7 +201,7 @@ export class RegisterPage {
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account already exists!',
-      duration: 10000000,
+      duration: 3000,
       position: 'top',
       cssClass: "toast-error beesafe-toast",
     });

@@ -28,6 +28,13 @@
 </ion-header>
 
 <ion-content padding>
+
+<ion-row>
+  <ion-col>
+    <h2 class="aff-text">Lorem ipsum dolor sit amet</h2>
+  </ion-col>
+</ion-row>
+
   
 <ion-row>
   <ion-col text-center>
@@ -49,6 +56,10 @@
   
        <ion-row>
         <p><small tappable id="ion-info">{{item.memoryInfo}}</small></p>
+      </ion-row>
+
+      <ion-row>
+      <ion-img>{{item.galleryImg}}</ion-img>
       </ion-row>
       
     <ion-item *ngIf="item.trustedVideoUrl != null">

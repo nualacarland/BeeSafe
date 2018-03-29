@@ -114,7 +114,7 @@ export class LoginPage {
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account not Recognized!',
-      duration: 10000000000000,
+      duration: 3000,
       position: 'top',
       cssClass: "toast-error beesafe-toast",
     });
