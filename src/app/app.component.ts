@@ -63,10 +63,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [  
       { title: 'Home', component: 'DashboardPage'},
-      { title: 'Help Right Now', component: 'HelpNowPage' },
-      { title: 'Bee Safe Plan', component: 'BeeSafePlanPage' },
-      { title: 'Scrapbook', component: 'ScrapbookPage'},
-      { title: 'Creating my Bee Safe Plan', component: 'CreateBeesafePlanPage' },
+      { title: 'Help Now', component: 'HelpNowPage' },
+      { title: 'Bee Safe', component: 'BeeSafePlanPage' },
+      { title: 'My Scrapbook', component: 'ScrapbookPage'},
+      { title: 'Create Your Plan', component: 'CreateBeesafePlanPage' },
       { title: 'Resources', component: 'ResourcesPage'},
       { title: 'My Profile', component: 'ProfilePage'},
       { title: 'Disclaimer', component: 'DisclaimerPage'}

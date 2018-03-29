@@ -30,6 +30,7 @@ export class ScrapbookPage {
   base64Image: any;
   private items = [];
   trustedVideoUrl: SafeResourceUrl;
+  
 
  
   posts =[];
@@ -63,6 +64,7 @@ export class ScrapbookPage {
           var num = val[_i];
           if(val[_i].youtubeLink != ''){
             val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
+
           }
           this.items.push(val[_i])
       }

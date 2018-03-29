@@ -62,10 +62,11 @@ export class AddEditScrapbookPage {
     this.camera.getPicture({
       sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
       destinationType: this.camera.DestinationType.FILE_URI
+      
      }).then((sourcePath) => {
        this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
        console.log('Image has been selected', this.camera.DestinationType.FILE_URI );
-      console.log('what is the source path', sourcePath);
+        console.log('what is the source path', sourcePath);
 
       }, (err) => {
        console.log(err);
