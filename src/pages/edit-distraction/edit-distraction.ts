@@ -101,7 +101,8 @@ export class EditDistractionPage {
       this.userDetails.get('distractionTitle').setValue(this.oldDistraction[this.distractionIndex].distractionTitle);
       this.userDetails.get('distraction').setValue(this.oldDistraction[this.distractionIndex].distraction);
       this.userDetails.get('websiteLink').setValue(this.oldDistraction[this.distractionIndex].websiteLink);
-      this.userDetails.get('youtubeLink').setValue(this.oldDistraction[this.distractionIndex].youtubeLink);
+      this.userDetails.get('youtubeLink').setValue(this.oldDistraction[this.distractionIndex].youtubeLink); 
+      
   
       console.log(this.oldDistraction);
     })

@@ -1,3 +1,5 @@
+import { TourPage } from './../pages/tour/tour';
+import { LoginPage } from './../pages/login/login';
 import { DashboardPage } from './../pages/dashboard/dashboard';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -103,19 +105,13 @@ ionViewDidLoad(){
     console.log('what is the value of the avatar', val);
   
 });
+
+
 }
 
 ionViewDidEnter(){
   this.storage.get('avatars').then((val) =>{
     console.log('what is the value of the avatar', val);
-
 });
 }
-
-
-
-
-
-
-
 }

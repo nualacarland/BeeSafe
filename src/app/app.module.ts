@@ -1,3 +1,4 @@
+
 import { YoutubePipe } from './../pipes/youtube/youtube';
 import { Validators } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,11 +25,6 @@ import { NativeTransitionOptions, NativePageTransitions } from '@ionic-native/na
 
 
 
-
-
-
-
-
 @NgModule({
   declarations: [
     MyApp,
@@ -37,7 +33,7 @@ import { NativeTransitionOptions, NativePageTransitions } from '@ionic-native/na
     DistractionsInfoModalPage,
     AffirmationModalPage,
     TriggerModalPage,
-    YoutubePipe
+    YoutubePipe,
   ],
   imports: [
     BrowserModule,

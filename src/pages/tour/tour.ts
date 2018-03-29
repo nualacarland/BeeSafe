@@ -2,6 +2,7 @@ import { DashboardPage } from './../dashboard/dashboard';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, Platform } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 
 
@@ -19,41 +20,21 @@ import { IonicPage, NavController, NavParams, LoadingController, Platform } from
 })
 export class TourPage {
 
-  rootPage: any = 'LoginPage';
-  loader: any;
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public platform: Platform, public navParams: NavParams, private storage: Storage) {
  
-    this.platform.ready().then(() => {
- 
-      this.storage.get('tourShown').then((result) => {
- 
-        if(result){
-          this.rootPage = 'LoginPage';
-        } else {
-          this.rootPage = 'TourPage';
-          this.storage.set('tourShown', true);
-        }
- 
-        this.loader.dismiss();
- 
-      });
- 
-    });
- 
   }
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TourPage');
     
   }
 
-
   gotoDashboard(){
     this.navCtrl.setRoot('LoginPage');
   }
+
+
 
 }
 
