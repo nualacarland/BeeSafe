@@ -20,10 +20,16 @@ import { LoginPage } from '../login/login';
 })
 export class TourPage {
 
+  rootPage: any = 'LoginPage';
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public platform: Platform, public navParams: NavParams, private storage: Storage) {
- 
+
+  
   }
+  
+  
+    
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TourPage');
@@ -31,8 +37,11 @@ export class TourPage {
   }
 
   gotoDashboard(){
-    this.navCtrl.setRoot('LoginPage');
+    this.navCtrl.setRoot('DashboardPage');
   }
+
+ 
+
 
 
 

@@ -52,7 +52,6 @@ export class ScrapbookMemoryPage {
 
   }
 
-
   ionViewWillEnter(){
    
     this.storage.get('Memory').then((val)=>{
@@ -66,6 +65,7 @@ export class ScrapbookMemoryPage {
           }
           this.items.push(val[_i])
       }
+
 
       console.log('WHAT IS THE NEW ITEMS', this.items);
 

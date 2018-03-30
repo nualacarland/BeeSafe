@@ -1,3 +1,4 @@
+import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 export class Memory {

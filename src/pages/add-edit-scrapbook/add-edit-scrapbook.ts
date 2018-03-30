@@ -1,3 +1,4 @@
+import { DomSanitizer } from '@angular/platform-browser';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { Memory } from './../../app/models/Memory';
 import { Component } from '@angular/core';
@@ -7,6 +8,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ToastController } from 'ionic-angular';
 import { Platform } from 'ionic-angular/platform/platform';
 import { Camera, DestinationType } from '@ionic-native/camera';
+
 
 
 
@@ -30,7 +32,8 @@ export class AddEditScrapbookPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage,
-              private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController) {
+              private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController,
+              private DomSanitizer: DomSanitizer) {
 
 
                 if(this.navParams.get('chosenIndex')){
@@ -46,7 +49,7 @@ export class AddEditScrapbookPage {
               scrapbookTitle: ['', Validators.required],
               dateAdded: [''],
               memoryInfo: [''],
-              galleryImg: [''],
+              base64Image: [''],
               youtubeLink: ['']
               
             });
@@ -61,19 +64,23 @@ export class AddEditScrapbookPage {
   accessGallery(){
     this.camera.getPicture({
       sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
-      destinationType: this.camera.DestinationType.FILE_URI
+      destinationType: this.camera.DestinationType.DATA_URL,
+      mediaType: this.camera.MediaType.PICTURE
+    
+
       
      }).then((sourcePath) => {
        this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
-       console.log('Image has been selected', this.camera.DestinationType.FILE_URI );
+      //  console.log('Image has been selected', this.camera.DestinationType.FILE_URI );
         console.log('what is the source path', sourcePath);
 
       }, (err) => {
        console.log(err);
        console.log('error');
-     });
+     }); 
    }
    
+
 
   saveMemory() {
     var hasErrored = false;
@@ -86,7 +93,7 @@ export class AddEditScrapbookPage {
          var newMemory =  [new Memory(this.userDetails.value.scrapbookTitle, 
            this.userDetails.value.dateAdded,
            this.userDetails.value.memoryInfo,
-           this.userDetails.value.galleryImg,
+           this.base64Image,
            this.userDetails.value.youtubeLink)];
    
            this.storage.set('Memory', newMemory);
@@ -104,24 +111,18 @@ export class AddEditScrapbookPage {
         }else if(this.userDetails.value.youtubeLink.includes('youtu.be')){
             console.log('its a mobile link');
             var parts = this.userDetails.value.youtubeLink.split("/");
-            var result = parts[parts.length - 1]; // Or parts.pop();
+            var result = parts[parts.length - 1];
             tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
             hasErrored = false;
         }
         
-        //   }else{
-        //     console.log('This has fucked up somewhere throw an error');
-        //     hasErrored = true;
-        //   // set a variable to error = true and dont allow the memory to be inserted.
-          
-        // }
-
-
         if(!hasErrored){
+
+          console.log('what the fuck is the base64 ', this.base64Image);
           var newSingleMemory : Memory =  new Memory(this.userDetails.value.scrapbookTitle, 
             this.userDetails.value.dateAdded,
             this.userDetails.value.memoryInfo,
-            this.userDetails.value.galleryImg,
+            this.base64Image,
            tempYoutubeEmbed);
  
  

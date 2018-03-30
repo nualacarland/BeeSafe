@@ -43,12 +43,16 @@
     <small id="stored-title">{{chosenMemory.scrapbookTitle}}</small>
   </ion-row>
 
+  <ion-row>
+      <img [src]="chosenMemory.galleryImg" *ngIf="chosenMemory.galleryImg" width="300" height="150" />
+  </ion-row>
+
   <ion-item *ngIf="chosenMemory.trustedVideoUrl != null">
   <ion-row>
       <!-- <button id="youtubePlayButton"(click)="openVideo()"><ion-icon name="ios-play"></ion-icon> PLAY</button> -->
       <iframe class="iFrame" *ngIf="trustedVideoUrl" width="300" height="150" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
   </ion-row>
-  </ion-item>
+  </ion-item> 
 
   <ion-row>
     <p><small id="mem-info">{{chosenMemory.memoryInfo}}</small></p>

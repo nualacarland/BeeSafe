@@ -71,7 +71,8 @@ export class MyApp {
       { title: 'Create Your Plan', component: 'CreateBeesafePlanPage' },
       { title: 'Resources', component: 'ResourcesPage'},
       { title: 'My Profile', component: 'ProfilePage'},
-      { title: 'Disclaimer', component: 'DisclaimerPage'}
+      { title: 'Disclaimer', component: 'DisclaimerPage'},
+      { title: 'Tour', component: 'TourPage'}
     ];
 
   }

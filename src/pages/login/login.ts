@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Keyboard } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Keyboard, Platform } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
@@ -27,7 +27,7 @@ export class LoginPage {
   private userDetails : FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, 
-              private formBuilder: FormBuilder, public menu: MenuController, public keyboard: Keyboard, private nativePageTransitions: NativePageTransitions) {
+              private formBuilder: FormBuilder, public menu: MenuController, public keyboard: Keyboard, private nativePageTransitions: NativePageTransitions,public platform: Platform) {
 
     this.userDetails = this.formBuilder.group({
       
@@ -55,7 +55,7 @@ export class LoginPage {
 
   slidePage() {
     let options: NativeTransitionOptions = {
-      direction: 'up',
+      direction: 'left',
       duration: 400,
       slowdownfactor: -1,
       iosdelay: 50
@@ -66,15 +66,21 @@ export class LoginPage {
  
 
   gotoLazyPage(){
-    this.navCtrl.push('DashboardPage');
+
+
   }
 
-  // gotoForgotPage(){
-  //   this.navCtrl.push('ForgotPage');
-  // }
+
 
   gotoRegisterPage() {
-    this.navCtrl.push('RegisterPage');
+    let options: NativeTransitionOptions = {
+      direction: 'left',
+      duration: 400,
+      slowdownfactor: -1,
+      iosdelay: 50
+     };
+    this.nativePageTransitions.slide(options);
+    this.navCtrl.setRoot('RegisterPage');
   }
 
   ionViewWillAppear(){
@@ -96,7 +102,19 @@ export class LoginPage {
             console.log('this is the user_pin stored', value);
       
             if(tempPin == value){
-              this.navCtrl.setRoot('DashboardPage');
+
+              // this.storage.set('tourShown', false);
+
+              console.log('login butotn clicked');
+              this.storage.get('tourShown').then((result) => {
+                console.log('what is result', result);
+                if(result){
+                  this.navCtrl.setRoot('DashboardPage');
+                } else {
+                  this.navCtrl.setRoot('TourPage');
+                  this.storage.set('tourShown', true);
+                }
+              });
 
             } 
             else

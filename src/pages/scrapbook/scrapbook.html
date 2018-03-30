@@ -54,12 +54,12 @@
         <small  tappable id="scrapbook-title">{{item.scrapbookTitle}}</small>
       </ion-row>
   
-       <ion-row>
+      <ion-row>
         <p><small tappable id="ion-info">{{item.memoryInfo}}</small></p>
       </ion-row>
 
       <ion-row>
-      <ion-img>{{item.galleryImg}}</ion-img>
+        <img [src]="item.galleryImg" *ngIf="item.galleryImg" height="110" width="100" />
       </ion-row>
       
     <ion-item *ngIf="item.trustedVideoUrl != null">

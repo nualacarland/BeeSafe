@@ -46,7 +46,7 @@
 
   <ion-item no-lines id="distraction-input-gallery">
     <button ion-button full id="ion-input-gallery" type="button" style="background-color:#FAF4EA;"  (click)="accessGallery()">Add photo from your gallery</button>
-    <img [src]="base64Image" *ngIf="base64Image" />
+    <img [src]="DomSanitizer.bypassSecurityTrustUrl(base64Image)" *ngIf="base64Image" />
   </ion-item>
 
   <ion-item no-lines id="trigger-input" >

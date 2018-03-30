@@ -36,16 +36,16 @@ export class ScrapbookPage {
   posts =[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
              private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer,
-             private domSanitizer: DomSanitizer) {
+             private DomSanitizer: DomSanitizer) {
     
-          this.userDetails = this.FormBuilder.group({
-              scrapbookTitle: [''],
-              dateAdded: [''],
-              memoryInfo: [''],
-              galleryImg: [''],
-              youtubeLink: ['']
+          // this.userDetails = this.FormBuilder.group({
+          //     scrapbookTitle: [''],
+          //     dateAdded: [''],
+          //     memoryInfo: [''],
+          //     base64Image: [''],
+          //     youtubeLink: ['']
               
-           });
+          //  });
   }
 
    
@@ -54,18 +54,17 @@ export class ScrapbookPage {
     this.items = [];
     var key = "Memory";
     console.log('ionViewDidLoad ScrapbookPage');
-    console.log(this.items);
 
     this.storage.get('Memory').then((val)=>{
-      console.log('What is the value of the Memory array',val);
+      // console.log('What is the value of the Memory array',JSON.stringify(val));
 
         console.log();
         for (var _i = 0; _i < val.length; _i++) {
           var num = val[_i];
           if(val[_i].youtubeLink != ''){
-            val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
-
+            val[_i].trustedVideoUrl = this.DomSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
           }
+
           this.items.push(val[_i])
       }
 

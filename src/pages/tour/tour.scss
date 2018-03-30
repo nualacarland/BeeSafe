@@ -5,8 +5,24 @@ page-tour {
         font-size:16px;
         border: -1px !important;
         background-color: transparent;
-        margin-top: -319px;
+        margin-top: -440px;
         color: #559AD1;
         font-family: 'Avenir rounded demi';
+    }
+
+    #main-text{
+        font-size:28px;
+        font-family: 'Avenir rounded med';
+        // margin-top:70px;
+    }
+
+    #p-text{
+        font-size:16px;
+        font-family:'Avenir rounded reg';
+    }
+
+    #img-icon{
+        height:150px;
+        width:150px;
     }
 }
