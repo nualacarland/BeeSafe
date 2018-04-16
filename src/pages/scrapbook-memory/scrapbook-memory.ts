@@ -1,3 +1,4 @@
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Memory } from './../../app/models/Memory';
 import { Storage } from '@ionic/storage';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -7,6 +8,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import { reorderArray } from 'ionic-angular/util/util';
 import { ToastController } from 'ionic-angular';
+
 
 
 
@@ -32,7 +34,7 @@ export class ScrapbookMemoryPage {
   private items = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private FormBuilder: FormBuilder,
-             private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer, private toastCtrl: ToastController) {
+             private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer, private toastCtrl: ToastController, private inAppBrowser: InAppBrowser) {
    
   }
   
@@ -81,6 +83,14 @@ export class ScrapbookMemoryPage {
     console.log(this.chosenMemory);
     console.log(this.chosenIndex);
     this.navCtrl.push('EditScrapbookPage',{ 'chosenMemory': this.chosenMemory , 'chosenIndex' : this.chosenIndex });
+  }
+
+  doYoutubeLink(chosenMemory: any){
+    console.log('What is the clicked item', chosenMemory);
+    // this.cordova.InAppBrowser.open(item.youtubeLink, "_system", "location=true");
+    const browser = this.inAppBrowser.create(chosenMemory.youtubeLink, '_self');
+    // onclick="window.open('https://www.youtube.com/watch?v=Nn5RQpZBDsg', '_system', 'location=yes');"
+
   }
 
 

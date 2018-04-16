@@ -8,6 +8,10 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Memory } from './../../app/models/Memory';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { Storage } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+
+
 
 
 
@@ -26,9 +30,14 @@ import { Storage } from '@ionic/storage';
 
 export class ScrapbookPage {
 
+  cordova: any;
+  platform: any;
   private userDetails;
   base64Image: any;
+  
   private items = [];
+
+  youtubeLink: string;
   trustedVideoUrl: SafeResourceUrl;
   
 
@@ -36,7 +45,7 @@ export class ScrapbookPage {
   posts =[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
              private FormBuilder: FormBuilder, private storage: Storage, private youtube: YoutubeVideoPlayer,
-             private DomSanitizer: DomSanitizer) {
+             private DomSanitizer: DomSanitizer, private inAppBrowser: InAppBrowser) {
     
           // this.userDetails = this.FormBuilder.group({
           //     scrapbookTitle: [''],
@@ -72,6 +81,12 @@ export class ScrapbookPage {
   });
   }
 
+  // launch(url) {
+  //   this.platform.ready().then(() => {
+  //       this.cordova.InAppBrowser.open(url, "_system", "location=true");
+  //   });
+  // }
+
   openVideo(){
     this.youtube.openVideo('youtubeLink');
   }
@@ -93,7 +108,15 @@ export class ScrapbookPage {
     this.navCtrl.push('HelpNowPage');
   }
 
+  doYoutubeLink(item: any){
+    console.log('What is the clicked item', item);
+    // this.cordova.InAppBrowser.open(item.youtubeLink, "_system", "location=true");
+    const browser = this.inAppBrowser.create(item.youtubeLink, '_self');
+    // onclick="window.open('https://www.youtube.com/watch?v=Nn5RQpZBDsg', '_system', 'location=yes');"
 
+  }
+
+  
 
 }
 
