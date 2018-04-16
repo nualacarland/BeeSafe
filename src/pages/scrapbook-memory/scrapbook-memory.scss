@@ -54,10 +54,10 @@ page-scrapbook-memory {
         width: 100%;
     }
 
-   .card-ios{
-    height: 260px;
 
-   }
+    .card-ios{
+        height: auto;
+    }
 
    #stored-title{
        font-size: 18px;
@@ -78,9 +78,7 @@ page-scrapbook-memory {
     float: right;
     padding-bottom: 0px;
     margin-left:141px;
-   
-    
-    
+     
 }
 
 #mem-info{
@@ -114,7 +112,7 @@ page-scrapbook-memory {
 
     .iFrame{
         margin-left:12px;
-        margin-top:20px;
+        margin-top:5px;
         margin-bottom:10px;
     }
 
