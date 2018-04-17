@@ -112,7 +112,7 @@ export class AddEditScrapbookPage {
             console.log('its a mobile link');
             var parts = this.userDetails.value.youtubeLink.split("/");
             var result = parts[parts.length - 1];
-            tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
+            tempYoutubeEmbed = "https://www.youtube.com/embed/"+result+"?autoplay=0&showinfo=0&controls=0";
             hasErrored = false;
         }
         

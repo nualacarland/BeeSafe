@@ -4,6 +4,7 @@ import { Platform } from 'ionic-angular/platform/platform';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { Component } from '@angular/core';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { IonicPage, NavController, NavParams, ToastController, ActionSheetController, LoadingController } from 'ionic-angular';
 
 
@@ -56,6 +57,7 @@ export class EditScrapbookPage {
     this.userDetails.get('scrapbookTitle').setValue(this.chosenMemory.scrapbookTitle);
     this.userDetails.get('dateAdded').setValue(this.chosenMemory.dateAdded);
     this.userDetails.get('memoryInfo').setValue(this.chosenMemory.memoryInfo);
+    this.userDetails.get('galleryImg').setValue(this.chosenMemory.galleryImg);
     this.userDetails.get('youtubeLink').setValue(this.chosenMemory.youtubeLink);
 
   }
@@ -92,6 +94,7 @@ export class EditScrapbookPage {
             tempMemory[this.chosenIndex].scrapbookTitle = this.userDetails.value.scrapbookTitle;
             tempMemory[this.chosenIndex].dateAdded = this.userDetails.value.dateAdded;
             tempMemory[this.chosenIndex].memoryInfo = this.userDetails.value.memoryInfo;
+             tempMemory[this.chosenIndex].galleryImg = this.userDetails.value.galleryImg;
             tempMemory[this.chosenIndex].youtubeLink = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
             this.storage.set('Memory', tempMemory);
 
