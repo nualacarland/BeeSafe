@@ -50,7 +50,7 @@
 
     <ion-item *ngIf="distraction.trustedVideoUrl != null">
         <ion-row>
-            <iframe class="iFrame" *ngIf="distraction" width="300" height="150" [src]="distraction.trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
+            <iframe tappable class="iFrame" *ngIf="distraction" width="300" height="150" [src]="distraction.trustedVideoUrl" (click)="doYoutubeLink(distraction)" frameborder="0" allowfullscreen></iframe>
           </ion-row>
     </ion-item>
 
@@ -58,7 +58,7 @@
         <button id="distraction-info">{{distraction.distraction}}</button>
       </ion-row>
      <ion-row>
-       <h2 id="weblink">{{distraction.websiteLink}}</h2>
+       <h2 id="weblink" *ngIf="distraction.websiteLink != null" (click)="openUrl(distraction)"> {{distraction.websiteLink}}</h2>
      </ion-row>
       <br>
     </ion-card>

@@ -72,8 +72,6 @@
     <ion-item *ngIf="item.trustedVideoUrl != null">
         <ion-row>
             <iframe tappable class="iFrame" *ngIf="item" width="100" height="110" [src]="item.trustedVideoUrl" frameborder=0 allowfullscreen (click)="doYoutubeLink(item)"></iframe>
-           
-            
           </ion-row>
     </ion-item>
 

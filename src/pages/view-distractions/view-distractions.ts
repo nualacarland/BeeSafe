@@ -6,6 +6,7 @@ import { Distraction } from './../../app/models/distraction';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 
@@ -24,6 +25,7 @@ import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
 })
 export class ViewDistractionsPage {
 
+  InAppBrowser: any;
   private items = [];
   private userDetails;
   private distraction;
@@ -31,7 +33,8 @@ export class ViewDistractionsPage {
 
   
   constructor(public navCtrl: NavController, public navParams: NavParams ,private storage: Storage,
-     private formBuilder: FormBuilder, private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer ) {
+     private formBuilder: FormBuilder, private youtube: YoutubeVideoPlayer, private domSanitizer: DomSanitizer,
+    private inAppBrowser: InAppBrowser ) {
     this.userDetails = this.formBuilder.group({
       
       distractionTitle: [''],
@@ -66,6 +69,28 @@ export class ViewDistractionsPage {
       console.log('WHAT IS THE NEW ITEMS', this.items);
   });
   }
+
+  doYoutubeLink(distraction: any){
+    console.log('What is the clicked item', distraction);
+    // this.cordova.InAppBrowser.open(item.youtubeLink, "_system", "location=true");
+    const browser = this.inAppBrowser.create(distraction.youtubeLink, '_self');
+    // onclick="window.open('https://www.youtube.com/watch?v=Nn5RQpZBDsg', '_system', 'location=yes');"
+
+  }
+
+  // doLink(distraction: any){
+  //   console.log('What is the clicked item', distraction);
+  //   // const browser = this.InAppBrowser.open(distraction.websiteLink, "_system", "location=true");
+  //   const browser = this.inAppBrowser.create(distraction.websiteLink, '_self');
+
+  // } 
+
+  openUrl(distraction: any) {
+    const browser = this.InAppBrowser.create(distraction.websiteLink);
+  }
+
+
+
 
   gotoHelpNow(){
     this.navCtrl.push('HelpNowPage');
