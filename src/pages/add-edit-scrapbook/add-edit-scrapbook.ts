@@ -107,12 +107,13 @@ export class AddEditScrapbookPage {
          if(this.userDetails.value.youtubeLink.includes('watch?')){
            console.log('STRING CONTAINS WATCH?');
              tempYoutubeEmbed = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
+            
              hasErrored = false;
         }else if(this.userDetails.value.youtubeLink.includes('youtu.be')){
             console.log('its a mobile link');
             var parts = this.userDetails.value.youtubeLink.split("/");
             var result = parts[parts.length - 1];
-            tempYoutubeEmbed = "https://www.youtube.com/embed/"+result+"?autoplay=0&showinfo=0&controls=0";
+            tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
             hasErrored = false;
         }
         

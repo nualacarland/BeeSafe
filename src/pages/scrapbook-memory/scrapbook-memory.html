@@ -49,8 +49,9 @@
 
   <ion-item *ngIf="chosenMemory.trustedVideoUrl != null">
   <ion-row>
-      <button id="youtubePlayButton" ion-button *ngIf="chosenMemory" (click)="doYoutubeLink(chosenMemory)"> <ion-icon class="icon-play" name="ios-play"></ion-icon> PLAY</button>
-      <iframe class="iFrame" *ngIf="trustedVideoUrl" width="300" height="150" [src]="trustedVideoUrl" autoPlay="0" controls="0" frameborder="0" allowfullscreen></iframe>
+      <!-- <button id="youtubePlayButton" ion-button *ngIf="chosenMemory" (click)="doYoutubeLink(chosenMemory)"> <ion-icon class="icon-play" name="ios-play"></ion-icon> PLAY</button> -->
+      <iframe tappable class="iFrame" *ngIf="trustedVideoUrl" width="300" height="150" [src]="trustedVideoUrl" (click)="doYoutubeLink(chosenMemory)" frameborder="0" allowfullscreen></iframe>
+   
   </ion-row>
   </ion-item> 
 

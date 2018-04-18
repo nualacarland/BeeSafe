@@ -50,7 +50,7 @@ export class ScrapbookPage {
           // this.userDetails = this.FormBuilder.group({
           //     scrapbookTitle: [''],
           //     dateAdded: [''],
-          //     memoryInfo: [''],
+          //     memoryInfo: [''],s
           //     base64Image: [''],
           //     youtubeLink: ['']
               
