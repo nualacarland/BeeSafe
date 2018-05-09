@@ -58,7 +58,8 @@
         <button id="distraction-info">{{distraction.distraction}}</button>
       </ion-row>
      <ion-row>
-       <h2 id="weblink" *ngIf="distraction.websiteLink != null" (click)="openUrl(distraction)"> {{distraction.websiteLink}}</h2>
+       <h2 text-center id="weblink" *ngIf="distraction" (click)="doLink(distraction)"> {{distraction.websiteLink}}</h2>
+      
      </ion-row>
       <br>
     </ion-card>

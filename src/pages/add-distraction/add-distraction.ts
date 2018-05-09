@@ -124,7 +124,14 @@ saveDistractions() {
     } else{
       var tempDistractions: [Distraction] = val;
 
+    
 
+      // var tempWebsiteLink;
+      // if(this.userDetails.value.websiteLink.includes('www.')){
+      //   console.log('String is not secure');
+      //   tempWebsiteLink = this.userDetails.value.websiteLink.toString().replace("www.", "https://www.");
+      // }
+    
 
 
 if(!hasErrored){

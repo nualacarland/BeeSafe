@@ -78,16 +78,16 @@ export class ViewDistractionsPage {
 
   }
 
-  // doLink(distraction: any){
-  //   console.log('What is the clicked item', distraction);
-  //   // const browser = this.InAppBrowser.open(distraction.websiteLink, "_system", "location=true");
-  //   const browser = this.inAppBrowser.create(distraction.websiteLink, '_self');
+  doLink(distraction: any){
+    console.log('What is the clicked item', distraction);
+    // const browser = this.InAppBrowser.open(distraction.websiteLink, "_system", "location=true");
+    const browser = this.inAppBrowser.create(distraction.websiteLink, '_self');
 
-  // } 
+  } 
 
-  openUrl(distraction: any) {
-    const browser = this.InAppBrowser.create(distraction.websiteLink);
-  }
+  // openUrl(distraction: any) {
+  //   const browser = this.InAppBrowser.create(distraction.websiteLink);
+  // }
 
 
 
