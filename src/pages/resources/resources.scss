@@ -49,6 +49,8 @@ page-resources {
         margin-top: 31px;
         margin-left:37px;
         margin-right: 41px;
+        margin-bottom:35px;
+      
         
     }
 
@@ -82,7 +84,7 @@ page-resources {
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         height:24px;
         color: #313745;
-        font-size:20px;
+        font-size:18px;
         font-weight: 500;
         line-height: 24px;
     }
@@ -93,7 +95,18 @@ page-resources {
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         height:24px;
         color: #313745;
-        font-size:20px;
+        font-size:18px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    #important-num-3 {
+        margin-top:16px;
+        margin-left:40px;
+        margin-bottom: 16px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        height:24px;
+        color: #313745;
+        font-size:16px;
         font-weight: 500;
         line-height: 24px;
     }
@@ -101,7 +114,7 @@ page-resources {
       height: 23px;
       color: #559AD1;
       font-family: 'Avenir Rounded demi', Arial, sans-serif;
-      font-size: 19px;
+      font-size: 15px;
       font-weight: 500;
       line-height: 23px;
       float: right;
@@ -109,11 +122,35 @@ page-resources {
       margin-right: 2px;
       width: 48%;
     }
+    #call-link-3 {
+        height: 23px;
+        color: #559AD1;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 23px;
+        float: right;
+        margin-top: -17px;
+        margin-right: 2px;
+        width: 48%;
+      }
+    #web-link {
+        height: 23px;
+        color: #559AD1;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 23px;
+        float: right;
+        margin-top: -40px;
+        margin-right: 2px;
+        width: 48%;
+      }
     #call-link-2 {
         height: 23px;
         color: #559AD1;
         font-family: 'Avenir Rounded demi', Arial, sans-serif;
-        font-size: 19px;
+        font-size: 15px;
         font-weight: 500;
         line-height: 23px;
         float: right;
@@ -130,7 +167,7 @@ page-resources {
     }
 
     .card-ios{
-        margin-top:45px;
+        margin-top:15px;
     }
     
 }
