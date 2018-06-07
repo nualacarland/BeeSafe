@@ -104,6 +104,7 @@ input::placeholder {
     font-family: 'Avenir Rounded reg', Arial, sans-serif;
     letter-spacing:0px;
     padding-left:11px;
+    text-indent: 10px;
     color: #717685; 
 
 }
@@ -274,7 +275,13 @@ label > input{ /* HIDE RADIO */
     padding-left: -11px;
 }
 
+// .input-has-focus{
+//     margin-right:70px !important;
+// }
 
+.text-input{
+    text-indent:12px;
+}
 
 
 }

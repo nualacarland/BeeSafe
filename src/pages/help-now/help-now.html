@@ -20,7 +20,7 @@
   </ion-col>
   </ion-row>
 
-  <ion-card>
+ 
   <ion-row>
     <ion-col>
   <h1 id="emergency-contacts">Your Emergency Contacts: </h1>
@@ -31,13 +31,13 @@
   <!--Emergency Contacts from Local Storage -->
   <ion-row>
     <ion-col>
-      <h2 id="other-1"> {{emergency1.contact_name}} </h2>
+      <h2 id="other"> {{emergency1.contact_name}} </h2>
     </ion-col>
   </ion-row>
   
 <ion-row>
   <ion-col>
-  <a href="tel:{{emergency1.telephone}}" id="link-1"> {{emergency1.telephone}} </a>
+  <a href="tel:{{emergency1.telephone}}" id="link-2"> {{emergency1.telephone}} </a>
 </ion-col>
 </ion-row>
  
@@ -61,13 +61,11 @@
   </ion-row>
 <ion-row>
   <ion-col>
-  <a href="tel:{{emergency3.telephone}}" id="link-3"> {{emergency3.telephone}} </a>
+  <a href="tel:{{emergency3.telephone}}" id="link-2"> {{emergency3.telephone}} </a>
 </ion-col>
 </ion-row>
 
-</ion-card>
 
-<ion-card>
   <ion-row>
     <ion-col>
   <h1 id="other-contacts">Other Emergency Contacts:</h1>
@@ -92,6 +90,6 @@
       <a href="tel:08088088000" id="call-link-3" >0808 808 8000</a>
     </ion-col>
     </ion-row>
-</ion-card>
+
 
 </ion-content>

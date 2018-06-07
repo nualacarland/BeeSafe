@@ -24,6 +24,7 @@ import { NativeTransitionOptions, NativePageTransitions } from '@ionic-native/na
 })
 export class LoginPage {
 
+  tempPin: any;
   private userDetails : FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private storage: Storage, 
@@ -105,7 +106,7 @@ export class LoginPage {
 
               // this.storage.set('tourShown', false);
 
-              console.log('login butotn clicked');
+              console.log('login butttpn clicked');
               this.storage.get('tourShown').then((result) => {
                 console.log('what is result', result);
                 if(result){
@@ -120,7 +121,8 @@ export class LoginPage {
             else
             {
               this.errorToast();
-        
+              this.tempPin.reload();
+          
             }
           }).catch((e) => {
             console.log(e);
@@ -136,10 +138,15 @@ export class LoginPage {
       position: 'top',
       cssClass: "toast-error beesafe-toast",
     });
+    // location.reload();
     toast.onDidDismiss(() => {
+      location.reload();
       console.log('Dismissed toast');
+     
     });
     toast.present();
+  
+  
 
   } 
 

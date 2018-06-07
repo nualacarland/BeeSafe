@@ -44,9 +44,9 @@ export class AddTriggerPage {
     console.log('ionViewDidLoad AddTriggerPage');
   }
 
-  // doCancel(){
-  //   this.navCtrl.push('TriggersPage');
-  // }
+  doCancel(){
+    this.navCtrl.push('TriggersPage');
+  }
 
   saveNewTriggers(){
 
