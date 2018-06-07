@@ -4,30 +4,21 @@ page-plan-modal {
         height:24px;
         width:390px;
         color: #313745;
-        font-size:20px;
+        font-size:17px;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         line-height: 24px;
-        text-align: center;
+        text-align: left;
         padding-right:82px;
-        padding-left:43px;
+        padding-left:4px;
         padding-top:29px;
-        padding-bottom:24px;
+        margin-left:21px;
     }
     #nav-bar {
         height:75px;
         width: 100%;
     }
 
-     #close-btn {
-        height:60px;
-        width: 100%;
-        border-radius: 2px;
-        background-color: #559AD1;
-        font-size: 21px;
-        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
-        font-size:1.7rem;
-    }
-
+  
     #ion-title {
             height:22px;
             font-family: 'Avenir Rounded reg', Arial, sans-serif;
@@ -42,12 +33,21 @@ page-plan-modal {
     .toolbar-title-ios{
         font-size:15px;
     }
+    #close-btn {
+        height:60px;
+        border-radius: 2px;
+        background-color: #559AD1;
+        font-size:18px;
+     
+    }
 
     #Close {
         padding-bottom:23px;
-        padding-top:150px;
+        padding-top:135px;
         padding-right:62px;
         padding-left:62px;
+        font-size:10px;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
     }
     
 

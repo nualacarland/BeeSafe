@@ -8,7 +8,7 @@ page-triggers {
         height: 22px;
         width: 139px;
         color: #313745;
-        font-family: 'Avenir Rounded', Arial, sans-serif;
+        font-family: 'Avenir Rounded demi', Arial, sans-serif;
         font-size:21px;
         font-weight: 500;
         line-height: 22px;
@@ -132,6 +132,7 @@ page-triggers {
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size: 14px;
         padding-bottom:16px;
+        padding-top:15px;
     
     }
     #Delete {
@@ -141,8 +142,15 @@ page-triggers {
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         font-size:14px;
         padding-bottom:16px;
+        padding-top:15px;
     }
-
+    
+    .trigger-list{
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        color: #313745;
+        font-weight:600;
+        font-size: 16px;
+    }
 
    
 

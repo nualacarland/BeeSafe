@@ -6,6 +6,7 @@ import { ToastController } from 'ionic-angular';
 import { getLocaleDayNames } from '@angular/common/src/i18n/locale_data_api';
 import { ModalController } from 'ionic-angular';
 import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
+import { EmergencyContactModalPage } from '../emergency-contact-modal/emergency-contact-modal';
 
 
 /**
@@ -110,6 +111,11 @@ export class ProfilePage {
 
   openAffirModal(){
     let Modal = this.modalCtrl.create(AffirmationModalPage);
+     Modal.present();
+  }
+
+  openEmergencyModal(){
+    let Modal = this.modalCtrl.create(EmergencyContactModalPage);
      Modal.present();
   }
 

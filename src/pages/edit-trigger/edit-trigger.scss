@@ -24,7 +24,8 @@ page-edit-trigger {
 
     #main-text {
         font-family: 'Avenir Rounded reg', Arial, sans-serif;	
-        font-size: 19px;
+        font-size: 20px;
+        font-weight:600;
         text-align: center;
         margin-right:25px;
         margin-left:25px;
@@ -42,22 +43,22 @@ page-edit-trigger {
 
     #save-trigger {
         height: 60px;
-        width: 78%;
+        width: 76%;
         border-radius: 2px;
         background-color: #559AD1;
         font-size: 21px;
         font-family: 'Avenir Rounded Demi', Arial, sans-serif;	
         font-weight: 500;
         margin-top: 28px;
-        margin-left:37px;
+        margin-left:42px;
         margin-right: 55px;
         font-size:1.8rem;
     }
 
     #skip-btn {
-        font-family: 'Avenir Rounded', Arial, sans-serif;	
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;	
         font-size:18px;
-        font-weight:500px;
+        font-weight:700px;
         color:#5B6275;
         margin-right: 42px;
         margin-left:43px;
@@ -75,11 +76,20 @@ page-edit-trigger {
 
     .select-text{
         position:fixed;
-        margin-left: -248px;
-    }
+        margin-left: -240px;
+        margin-top:-10px;
+        height:22px;
+        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        color:#5B6275;
+        font-weight:500;
+        }
 
     input:focus::-webkit-input-placeholder {
         color: transparent;
+    }
+
+    .select-icon{
+        display:none;
     }
  
 #popover-click{

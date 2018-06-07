@@ -3,15 +3,16 @@ page-distractions-info-modal {
         height:24px;
         width:100%;
         color: #313745;
-        font-size:19px;
+        font-size:16px;
         font-family: 'Avenir Rounded reg', Arial, sans-serif;
         line-height: 24px;
-        text-align: center;
-        padding-right:42px;
-        padding-left:43px;
-        padding-top:29px;
-        padding-bottom:24px;
-    }
+        text-align: left;
+        // padding-right:42px;
+        // padding-left:43px;
+        // padding-top:29px;
+        // padding-bottom:24px;
+        margin-left:20px;
+        }
      #close-btn {
         height:60px;
         width: 100%;

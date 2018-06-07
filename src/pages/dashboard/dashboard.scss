@@ -93,11 +93,10 @@ page-dashboard {
        background: #ffffff
      
     }
-
     #img-bee{
-        height:80px;
-        width:99px;
-        margin-left:-17px;
+        height:81px;
+        width:109px;
+        margin-left:-28px;
     }
 
     .card-ios {
@@ -118,7 +117,7 @@ page-dashboard {
         background-size: contain;
         margin-left: auto;
         margin-right: auto;
-        margin-top:14px;
+        margin-top:6px;
 
     }
 
@@ -129,6 +128,11 @@ page-dashboard {
         color: #5a6274;	
         padding-top:10px;
         padding-bottom:4px;
+    }
+
+    .ion-img.img-loaded img{
+        display: block;
+        width:115px !important;
     }
 
     }

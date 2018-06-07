@@ -29,8 +29,8 @@
    <ion-col>
   
  <ion-item no-lines id="trigger-input">
-  <ion-input style="background-color:#FAF4EA; color: #5B6275; font-family: Arial, Helvetica, sans-serif;" ></ion-input>
-  <ion-select placeholder="Please select a trigger" interface="popover">
+  <ion-input disabled style="background-color:#FAF4EA; color: #5B6275; font-family: Arial, Helvetica, sans-serif;" ></ion-input>
+  <ion-select placeholder="Please select a trigger" interface="action-sheet">
    <ion-option *ngFor="let trigger of items; let i = index;" [value]="trigger.triggerTitle" >{{trigger.triggerTitle}}</ion-option>
   </ion-select>
 
