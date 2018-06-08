@@ -40,7 +40,7 @@ import { NativeTransitionOptions, NativePageTransitions } from '@ionic-native/na
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,{
-        backButtonText: '',
+        backButtonText: 'Back',
         mode: 'ios',
         config: {
           platforms: {

@@ -28,6 +28,7 @@ export class AddEditScrapbookPage {
 
   private userDetails : FormGroup;
   base64Image: any;
+  myDate: String = new Date().toISOString();
 
 
 

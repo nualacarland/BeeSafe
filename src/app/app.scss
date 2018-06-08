@@ -141,7 +141,6 @@ width:0px;
 }
 
   
-
     #ion-text {
         font-size: 19px;
         color: #5a6274;
@@ -190,15 +189,16 @@ width:0px;
         margin-top:13px;
     }
 
-    .hsc-logo{
-        background-image: url('../assets/imgs/hsc-logo.png');
+    .HSC-logo{
+        background-image: url('../assets/imgs/HSC-logo.png');
         background-size: cover;
         max-width: 100%;
-        height: 75px;
+        height: 80px;
         width: 183px;
         background-repeat: no-repeat;
         background-size: contain;
         margin-left: 40px;
+        // margin-top:81px;
       
 
     }
@@ -227,7 +227,18 @@ width:0px;
         font-weight: 600;
     }
     .back-button-text{
+        // display: none;
+        color: #53A9ED;
+        font-size:16px;
+        margin-left:10px;
+    }
+
+    .back-button-icon-ios{
         display: none;
+    }
+
+    .back-button-icon-md{
+        display:none;
     }
 
 

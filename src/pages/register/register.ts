@@ -86,7 +86,8 @@ export class RegisterPage {
         contact2Tel: ['', Validators.required],
         contact2Name: ['', Validators.required],
         contact3Tel: ['', Validators.required],
-        contact3Name: ['', Validators.required]
+        contact3Name: ['', Validators.required],
+        toggleSelected: ['']
       });
       
      }  
