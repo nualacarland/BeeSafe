@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { MockProvider } from '../../app/models/provider';
 // import { Refresher } from 'ionic-angular';
 
+
  
 /**
  * Generated class for the DashboardPage page.
@@ -22,8 +23,12 @@ export class DashboardPage {
 
   public quotesArray: any[] = [];
   public randomQuote: string;
+  alertEvent: boolean;
+  private _oldalertEvent;
+ 
+  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
  
       this.quotesArray.push('The more I like myself, the more others will like me.!');
       this.quotesArray.push('I am becoming better with each day.!');
@@ -316,6 +321,18 @@ export class DashboardPage {
     this.setInterval();
     this.quotesArray[Math.floor(Math.random() * this.quotesArray.length)];
     console.log('randomQuoteIs...' , this.randomQuote);
+
+    this.storage.get('alertEvent').then((value) => {
+      this._oldalertEvent = value;
+      console.log('what is the old affirmation?', value);
+      console.log('what is the old affirmation', this._oldalertEvent);
+
+      
+      })
+
+
+   
+
     
   }
 

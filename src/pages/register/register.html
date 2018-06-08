@@ -80,8 +80,8 @@
         <ion-icon name="ios-information-circle-outline" id="AffInformation" style="color:#559ad1;" tappable (click)="openAffirModal()">
         </ion-icon>
         <h4 id="noTxt">NO</h4>
-        <!-- <ion-toggle color="beesafeorange" [(ngModel)]="toggleAlert" [checked]="toggleStatus" (ionChange)="Change-toggle();"></ion-toggle> -->
-        <ion-toggle color="beesafeorange"></ion-toggle>
+        <ion-toggle color="beesafeorange" (ngModel)="alertEvent" (ionChange)="alertEventChange()"></ion-toggle>
+        <!-- <ion-toggle color="beesafeorange"></ion-toggle> -->
         <h4 id="yesTxt">YES</h4>
 
     </ion-row>

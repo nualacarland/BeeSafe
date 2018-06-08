@@ -44,7 +44,7 @@
 
 <ion-content padding>
 
- <h2 class="aff-text">{{randomQuote}}</h2>
+ <h2 class="aff-text" *ngIf="_oldalertEvent">{{randomQuote}}</h2>
 
 
   <ion-grid>

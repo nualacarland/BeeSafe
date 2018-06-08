@@ -29,6 +29,7 @@ import { AffirmationModalPage } from '../affirmation-modal/affirmation-modal';
 
 
 export class RegisterPage {
+  alertEvent: boolean;
   nav: any;
   value: any;
   
@@ -80,14 +81,15 @@ export class RegisterPage {
         pin3: ['', Validators.required],
         pin4: ['', Validators.required],
         avatars: ['', Validators.required],
-        selectedItem: ['', Validators.required],
+        // selectedItem: ['', Validators.required],
         contact1Tel: ['', Validators.required],
         contact1Name: ['', Validators.required],
         contact2Tel: ['', Validators.required],
         contact2Name: ['', Validators.required],
         contact3Tel: ['', Validators.required],
         contact3Name: ['', Validators.required],
-        toggleSelected: ['']
+        alertControl: [false]
+   
       });
       
      }  
@@ -183,6 +185,15 @@ export class RegisterPage {
 
 }   
 
+alertEventChange(){
+  this.alertEvent = this.alertEvent ? false: true;
+  console.log(this.alertEvent);
+  this.storage.set('alertEvent', this.alertEvent);
+  console.log('are affirmations saved as on or off?', this.alertEvent);
+  
+ 
+  
+}
 
   presentToast() {
     let toast = this.toastCtrl.create({

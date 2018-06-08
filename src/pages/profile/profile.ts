@@ -25,6 +25,9 @@ import { EmergencyContactModalPage } from '../emergency-contact-modal/emergency-
 })
 export class ProfilePage {
 
+  alertEvent(arg0: any, arg1: any): any {
+    throw new Error("Method not implemented.");
+  }
   private userDetails : FormGroup;
   private _oldContact1 : {
     telephone:'',
@@ -48,6 +51,8 @@ export class ProfilePage {
 
   private avatarsArray: any;
   private itemList;
+
+  private _oldalertEvent;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, 
@@ -93,7 +98,8 @@ export class ProfilePage {
               contact2Tel: [''],
               contact2Name: [''],
               contact3Tel: [''],
-              contact3Name: ['']
+              contact3Name: [''],
+              alertControl: [false]
             });
 
   }
@@ -101,6 +107,7 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
     console.log('what is the old avatar', this._oldSelectedAvatar);
+    console.log('what is the old affirmation choice?', this._oldalertEvent);
     // this.tempSetup();
     this.getOldStorage();
   }
@@ -196,6 +203,14 @@ export class ProfilePage {
             }).catch((e) => {
               console.log(e);
             });
+
+          this.storage.get('alertEvent').then((value) => {
+            this._oldalertEvent = value;
+            console.log('what is the old affirmation?', value);
+            console.log('what is the old affirmation', this._oldalertEvent);
+            this.userDetails.controls['alertControl'].setValue(this._oldalertEvent);
+      
+          })
     
   }
 
@@ -232,6 +247,9 @@ export class ProfilePage {
       telephone: this.userDetails.value.contact3Tel,
       contact_name: this.userDetails.value.contact3Name
     });
+
+    this.storage.set('alertEvent', this.alertEvent);
+    console.log('what is the affirmation?', this.alertEvent);
 
   
   }
