@@ -92,7 +92,7 @@ export class ProfilePage {
               pin2: ['', Validators.required],
               pin3: ['', Validators.required],
               pin4: ['', Validators.required],
-              avatars: ['', Validators.required],
+              avatars: ['',],
               contact1Tel: [''],
               contact1Name: [''],
               contact2Tel: [''],
@@ -106,10 +106,22 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
-    console.log('what is the old avatar', this._oldSelectedAvatar);
+    // console.log('what is the old avatar', this._oldSelectedAvatar);
     console.log('what is the old affirmation choice?', this._oldalertEvent);
     // this.tempSetup();
     this.getOldStorage();
+
+
+    this.storage.get('avatar').then((value) => {
+      this._oldSelectedAvatar = value;
+        // console.log('What is the avatar', value);
+        console.log('WHATS THIS!!!!', this._oldSelectedAvatar);
+        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar);
+
+
+          }).catch((e) => {
+            console.log(e);
+          });
   }
 
   moveFocus(nextElement) {
@@ -128,7 +140,19 @@ export class ProfilePage {
 
   showConfirmAlert(selectedRadio: any){
     console.log('what is in the form avatar value', this.userDetails.value.avatars);
+  }
 
+  showOldAvatar(selectedRadio: any){
+    this.storage.get('avatar').then((value) => {
+      this._oldSelectedAvatar = value;
+        console.log('what is this!!!!!!', value);
+        console.log('WHATS THE OLD AVATAR', this._oldSelectedAvatar);
+        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar);
+
+
+          }).catch((e) => {
+            console.log(e);
+          });
   }
 
 
