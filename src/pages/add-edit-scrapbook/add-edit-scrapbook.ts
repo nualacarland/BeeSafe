@@ -12,6 +12,7 @@ import { Camera, DestinationType } from '@ionic-native/camera';
 
 
 
+
 /**
  * Generated class for the AddEditScrapbookPage page.
  *
@@ -30,7 +31,7 @@ export class AddEditScrapbookPage {
   base64Image: any;
   myDate: String = new Date().toISOString();
 
-
+ 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, private formBuilder: FormBuilder, private storage: Storage,
               private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform, public loadingCtrl: LoadingController,

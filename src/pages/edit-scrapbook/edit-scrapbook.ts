@@ -101,8 +101,8 @@ export class EditScrapbookPage {
             }
 
        console.log('Locally Updated!');
-      //  this.navCtrl.push('ScrapbookPage');
-      this.navCtrl.pop();
+       this.navCtrl.push('ScrapbookPage');
+      // this.navCtrl.pop();
        
      });
    }

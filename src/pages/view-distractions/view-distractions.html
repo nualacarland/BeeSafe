@@ -6,7 +6,7 @@
 -->
 <ion-header>
     
-        <ion-navbar id="nav-bar">
+        <ion-navbar hideBackButton="true" id="nav-bar">
           <ion-buttons start>
               <button ion-button menuToggle left>
                   <ion-icon  name="menu"></ion-icon>
@@ -42,11 +42,15 @@
       <h2 id="distraction-title">{{distraction.distractionTitle}}</h2>
       <br>
 
-<!--      
-      <ion-row>
-              <iframe class="trustedVideoUrl" *ngIf="trustedVideoUrl" width="120" height="100" [src]="trustedVideoUrl" frameborder="0" allowfullscreen></iframe> 
-      </ion-row>
-    -->
+     <ion-item *ngIf="distraction.base64Image != null">
+        <ion-row>
+            <img [src]="distraction.base64Image" *ngIf="distraction.base64Image" width="100%" height="100%" />
+        </ion-row>
+        </ion-item> 
+
+        <!-- <ion-row>
+            <img [src]="distraction.base64Image" *ngIf="distraction.base64Image != null" style="display:inline-block;"height="100%" width="100%" />
+          </ion-row> -->
 
     <ion-item *ngIf="distraction.trustedVideoUrl != null">
         <ion-row>
@@ -65,9 +69,5 @@
     </ion-card>
   </ion-row>
 </ion-col>
-
-
-
-
 
 </ion-content>

@@ -26,7 +26,7 @@ import { toBase64String } from '@angular/compiler/src/output/source_map';
 export class AddDistractionPage {
 
   private userDetails : FormGroup;
-  base64Image: any;
+  baseImage: any;
   activeItemSliding: ItemSliding = null;
   private emojiArray: any;
   private itemList;
@@ -59,7 +59,7 @@ export class AddDistractionPage {
               distractionTitle: ['', Validators.required],
               distraction: ['', Validators.required],
               emojis: [''],
-              galleryPhoto: [''],
+              baseImage: [''],
               websiteLink: [''],
               youtubeLink: ['']
         
@@ -83,12 +83,14 @@ showConfirmAlert(selectedRadio: any){
 
 }
 
+
 saveDistractions() {
 
   var hasErrored = false;
   this.storage.get('distractions').then((val) => {
     console.log('distractions ',val);
     var tempYoutubeEmbed;
+    var tempWebsiteLink;
 
     if(this.userDetails.value.youtubeLink.includes('watch?')){
       console.log('STRING CONTAINS WATCH?');
@@ -102,16 +104,21 @@ saveDistractions() {
        hasErrored = false;
    }
 
-
+   if(this.userDetails.value.websiteLink.includes('www.')){
+    console.log('STRING CONTAINS www.');
+      tempWebsiteLink = this.userDetails.value.websiteLink.toString().replace("www.", "https://www.");
+      hasErrored = false;
+ }
 
     if(val == null){
-
 
       var newDistraction =  [new Distraction(this.userDetails.value.distractionTitle, 
         this.userDetails.value.distraction,
         this.userDetails.value.emojis,
-        this.camera.DestinationType.DATA_URL,
-        this.userDetails.value.websiteLink,tempYoutubeEmbed)];
+        // this.camera.DestinationType.DATA_URL,
+        this.userDetails.value.baseImage,
+        tempWebsiteLink,
+        tempYoutubeEmbed)];
 
         this.storage.set('emojis', this.userDetails.value.emojis);
 
@@ -123,8 +130,6 @@ saveDistractions() {
      
     } else{
       var tempDistractions: [Distraction] = val;
-
-    
 
       // var tempWebsiteLink;
       // if(this.userDetails.value.websiteLink.includes('www.')){
@@ -138,8 +143,8 @@ if(!hasErrored){
       var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
         this.userDetails.value.distraction,
         this.userDetails.value.emojis,
-        this.camera.DestinationType.DATA_URL,
-        this.userDetails.value.websiteLink,
+        this.baseImage,
+        tempWebsiteLink,
         tempYoutubeEmbed);
 
         this.storage.set('emojis', this.userDetails.value.emojis);
@@ -153,31 +158,34 @@ if(!hasErrored){
   //this.errorToast();  
   }
       console.log('this is the saved emoji', this.userDetails.value.emojis);
+      console.log('what is the image stored???????', this.userDetails.value.baseImage);
+      console.log('this.baseimage????', this.baseImage);
       console.log('locally stored!');
       this.successToast();
       this.navCtrl.pop();
    
       }
-  
   });
 
 }
 
-
-
-
-accessGallery(){
+ accessGallery(){
   this.camera.getPicture({
     sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
-    destinationType: this.camera.DestinationType.DATA_URL
+    destinationType: this.camera.DestinationType.DATA_URL,
+    mediaType: this.camera.MediaType.PICTURE
+  
    }).then((sourcePath) => {
-     this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
-     console.log('Image has been selected', this.camera.DestinationType.DATA_URL );
+     this.baseImage = 'data:image/jpeg;base64,' +sourcePath;
+    //  console.log('Image has been selected', this.camera.DestinationType.FILE_URI );
+      console.log('what is the source path', sourcePath);
+      console.log('what is this?!', this.baseImage);
+ 
 
     }, (err) => {
      console.log(err);
      console.log('error');
-   });
+   }); 
  }
 
   successToast() {

@@ -30,6 +30,7 @@ export class ViewDistractionsPage {
   private userDetails;
   private distraction;
   trustedVideoUrl: SafeResourceUrl;
+  base64Image: any;
 
   
   constructor(public navCtrl: NavController, public navParams: NavParams ,private storage: Storage,
@@ -39,7 +40,7 @@ export class ViewDistractionsPage {
       
       distractionTitle: [''],
       distraction: [''],
-      galleryPhoto: [''],
+      base64Image: [''],
       websiteLink: [''],
       youtubeLink: ['']
 

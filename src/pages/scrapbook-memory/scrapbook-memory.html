@@ -43,21 +43,24 @@
     <small id="stored-title">{{chosenMemory.scrapbookTitle}}</small>
   </ion-row>
 
+  <ion-item *ngIf="chosenMemory.galleryImg != null">
   <ion-row>
       <img [src]="chosenMemory.galleryImg" *ngIf="chosenMemory.galleryImg" width="100%" height="100%" />
   </ion-row>
+  </ion-item>
 
   <ion-item *ngIf="chosenMemory.trustedVideoUrl != null">
   <ion-row>
       <!-- <button id="youtubePlayButton" ion-button *ngIf="chosenMemory" (click)="doYoutubeLink(chosenMemory)"> <ion-icon class="icon-play" name="ios-play"></ion-icon> PLAY</button> -->
       <iframe tappable class="iFrame" *ngIf="trustedVideoUrl" width="300" height="150" [src]="trustedVideoUrl" (click)="doYoutubeLink(chosenMemory)" frameborder="0" allowfullscreen></iframe>
-   
   </ion-row>
   </ion-item> 
 
+  <ion-item *ngIf="chosenMemory.memoryInfo != null">
   <ion-row>
     <p><small id="mem-info">{{chosenMemory.memoryInfo}}</small></p>
   </ion-row>
+  </ion-item>
   
   </ion-item>
   </ion-card>

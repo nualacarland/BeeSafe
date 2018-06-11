@@ -55,7 +55,7 @@
     </div>
    
       <ion-row>
-        <small  tappable id="scrapbook-title">{{item.scrapbookTitle}}</small>
+        <small tappable id="scrapbook-title">{{item.scrapbookTitle}}</small>
       </ion-row>
   
       <ion-row>
@@ -64,8 +64,10 @@
 
 
       <ion-row>
-        <img [src]="item.galleryImg" *ngIf="item.galleryImg" style="display:inline-block;"height="100%" width="100%" />
+        <img [src]="item.galleryImg" *ngIf="item.galleryImg != null" style="display:inline-block;"height="100%" width="100%" />
       </ion-row>
+
+      <!-- height="100%" width="100%" -->
 
     </div>
       
