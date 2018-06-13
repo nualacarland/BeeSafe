@@ -41,17 +41,22 @@
       <ion-row>
             <ion-list id="list-avatars" formControlName="avatars" radio-group>
                     <ion-row>
-                    <ion-col col-2  *ngFor="let avatar of avatarsArray">
-                            <ion-item [class]="_oldSelectedAvatar == avatar.image?'item-radio-checked':'not-selected'">
+                    <ion-col col-2 *ngFor="let avatar of avatarsArray">
+                            <!-- <ion-radio class="avatar-radios">
+                                </ion-radio>              -->
+                            <ion-item [class]="_oldSelectedAvatar == avatar.image? 'item-radio-checked' : 'not-selected'">
+            
                                     <ion-radio class="avatar-radios" (ionSelect)='showConfirmAlert(avatar.image)'>
                                         </ion-radio>             
-                                    <ion-thumbnail item-start>
+                                    <ion-thumbnail item-start >
                                             <img id="ion-img-1" [src]="avatar.image">
                                     </ion-thumbnail>
-                                   
-                        </ion-item>
+                            
+                                </ion-item>
                     </ion-col>
                     </ion-row>
+
+                    <!-- [class]="_oldSelectedAvatar == avatar.image?'item-radio-checked':'not-selected'" -->
 
          
             </ion-list>

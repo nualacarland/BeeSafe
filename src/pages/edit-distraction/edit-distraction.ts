@@ -97,11 +97,13 @@ export class EditDistractionPage {
       console.log('What is the value of the distraction', val);
       this.oldDistraction = val;
       console.log('What is the value!!!!', val);
-      this.userDetails.get('distraction').setValue(this.oldDistraction[this.distractionIndex].emojis);
+      this.userDetails.get('emojis').setValue(this.oldDistraction[this.distractionIndex].emojis);
       this.userDetails.get('distractionTitle').setValue(this.oldDistraction[this.distractionIndex].distractionTitle);
       this.userDetails.get('distraction').setValue(this.oldDistraction[this.distractionIndex].distraction);
       this.userDetails.get('websiteLink').setValue(this.oldDistraction[this.distractionIndex].websiteLink);
       this.userDetails.get('youtubeLink').setValue(this.oldDistraction[this.distractionIndex].youtubeLink); 
+
+      console.log('what is the old saved emoji', this.userDetails.value.emojis);
       
   
       console.log(this.oldDistraction);
