@@ -32,7 +32,6 @@ export class AddDistractionPage {
   private itemList;
   
   
-  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
    private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 
@@ -85,7 +84,6 @@ showConfirmAlert(selectedRadio: any){
 
 
 saveDistractions() {
-
   var hasErrored = false;
   this.storage.get('distractions').then((val) => {
     console.log('distractions ',val);
@@ -125,6 +123,8 @@ saveDistractions() {
         console.log('emojis that are being saved', this.userDetails.value.emojis);
         this.storage.set('distractions', newDistraction);
         console.log('locally stored!');
+
+        console.log('What is the image that has been saved?', this.baseImage);
         this.successToast();
         this.navCtrl.pop();
      
@@ -143,7 +143,7 @@ if(!hasErrored){
       var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
         this.userDetails.value.distraction,
         this.userDetails.value.emojis,
-        this.baseImage,
+        this.userDetails.value.baseImage,
         tempWebsiteLink,
         tempYoutubeEmbed);
 

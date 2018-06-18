@@ -5,6 +5,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { Component } from '@angular/core';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { DomSanitizer } from '@angular/platform-browser';
 import { IonicPage, NavController, NavParams, ToastController, ActionSheetController, LoadingController } from 'ionic-angular';
 
 
@@ -32,14 +33,15 @@ export class EditScrapbookPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
               private formBuilder: FormBuilder, private storage: Storage,private camera: Camera, public actionsheetCtrl: ActionSheetController,
-               public platform: Platform, public loadingCtrl: LoadingController) {
+               public platform: Platform, public loadingCtrl: LoadingController, private DomSanitizer: DomSanitizer) {
 
                 this.userDetails = this.formBuilder.group({
                   scrapbookTitle: ['', Validators.required],
                   dateAdded: [''],
                   memoryInfo: [''],
                   galleryImg: [''],
-                  youtubeLink: ['']
+                  youtubeLink: [''],
+                  base64Image: [''],
                                     
                 });
 
@@ -59,6 +61,11 @@ export class EditScrapbookPage {
     this.userDetails.get('memoryInfo').setValue(this.chosenMemory.memoryInfo);
     this.userDetails.get('galleryImg').setValue(this.chosenMemory.galleryImg);
     this.userDetails.get('youtubeLink').setValue(this.chosenMemory.youtubeLink);
+    this.userDetails.get('base64Image').setValue(this.chosenMemory.base64Image);
+
+    console.log('what is the image??', this.chosenMemory.base64Image);
+    console.log('what is image?', this.base64Image);
+    console.log('what is stored?', this.chosenMemory.galleryImg);
 
   }
 
@@ -81,8 +88,9 @@ export class EditScrapbookPage {
           var storedMemory =  [new Memory(this.userDetails.value.scrapbookTitle, 
             this.userDetails.value.dateAdded,
             this.userDetails.value.memoryInfo,
-            this.userDetails.value.galleryImg,
-            this.userDetails.value.youtubeLink)];
+            this.base64Image,
+            this.userDetails.value.youtubeLink,
+            )];
     
             this.storage.set('Memory', storedMemory);
           
@@ -94,7 +102,7 @@ export class EditScrapbookPage {
             tempMemory[this.chosenIndex].scrapbookTitle = this.userDetails.value.scrapbookTitle;
             tempMemory[this.chosenIndex].dateAdded = this.userDetails.value.dateAdded;
             tempMemory[this.chosenIndex].memoryInfo = this.userDetails.value.memoryInfo;
-             tempMemory[this.chosenIndex].galleryImg = this.userDetails.value.galleryImg;
+            tempMemory[this.chosenIndex].base64Image = this.base64Image;
             tempMemory[this.chosenIndex].youtubeLink = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
             this.storage.set('Memory', tempMemory);
 

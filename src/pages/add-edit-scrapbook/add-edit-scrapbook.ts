@@ -7,7 +7,7 @@ import { Storage } from '@ionic/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ToastController } from 'ionic-angular';
 import { Platform } from 'ionic-angular/platform/platform';
-import { Camera, DestinationType } from '@ionic-native/camera';
+import { Camera, DestinationType, CameraOptions } from '@ionic-native/camera';
 
 
 
@@ -56,6 +56,13 @@ export class AddEditScrapbookPage {
               
             });
 
+
+    const options: CameraOptions = {
+      correctOrientation: true,
+      destinationType: this.camera.DestinationType.DATA_URL
+
+    }
+
   }
 
  
@@ -68,6 +75,7 @@ export class AddEditScrapbookPage {
       sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
       destinationType: this.camera.DestinationType.DATA_URL,
       mediaType: this.camera.MediaType.PICTURE
+    
     
 
       
@@ -82,7 +90,6 @@ export class AddEditScrapbookPage {
      }); 
    }
    
-
 
   saveMemory() {
     var hasErrored = false;

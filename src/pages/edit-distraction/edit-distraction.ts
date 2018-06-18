@@ -29,7 +29,7 @@ export class EditDistractionPage {
  
   private _oldDistractionTitle;
   private _oldDistractions;
-  private _oldGalleryImg;
+  private _oldBaseImage;
   private _oldWebsiteLink;
   private _oldYoutubeLink;
 
@@ -37,6 +37,7 @@ export class EditDistractionPage {
   private distractionIndex: any;
  
   private emojiArray: any;
+  baseImage: any;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, 
@@ -70,7 +71,7 @@ export class EditDistractionPage {
       emojis: [''],
       distractionTitle: [''],
       distraction: [''],
-      galleryPhoto: [''],
+      baseImage: [''],
       websiteLink: [''],
       youtubeLink: ['']
 
@@ -82,8 +83,8 @@ export class EditDistractionPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditDistractionPage');
     console.log('WHAT WAS THE TRIGGER INDEX PASSED IN', this.distractionIndex);
-
-   this.getOldStorage();
+     this.getOldStorage();
+  
   }
 
   showConfirmAlert(selectedRadio: any){
@@ -96,16 +97,23 @@ export class EditDistractionPage {
     this.storage.get('distractions').then((val) => {
       console.log('What is the value of the distraction', val);
       this.oldDistraction = val;
-      console.log('What is the value!!!!', val);
+      console.log('WHAT IS THIS!!!!!!!!!', val);
+      // this.baseImage();
       this.userDetails.get('emojis').setValue(this.oldDistraction[this.distractionIndex].emojis);
       this.userDetails.get('distractionTitle').setValue(this.oldDistraction[this.distractionIndex].distractionTitle);
       this.userDetails.get('distraction').setValue(this.oldDistraction[this.distractionIndex].distraction);
       this.userDetails.get('websiteLink').setValue(this.oldDistraction[this.distractionIndex].websiteLink);
       this.userDetails.get('youtubeLink').setValue(this.oldDistraction[this.distractionIndex].youtubeLink); 
+      this.userDetails.get('galleryPhoto').setValue(this.oldDistraction[this.distractionIndex].galleryPhoto);
+      this.userDetails.get('baseImage').setValue(this.oldDistraction[this.distractionIndex].baseImage);
 
+      // this.userDetails.get(
+
+      console.log('IS THERE A STORED IMAGE????', this.userDetails.value.baseImage);
+      console.log('IMAGE???', this.baseImage);
       console.log('what is the old saved emoji', this.userDetails.value.emojis);
       
-  
+      this.userDetails.value.baseImage,
       console.log(this.oldDistraction);
     })
   }
@@ -125,9 +133,10 @@ export class EditDistractionPage {
         tempDistraction[this.distractionIndex].distraction = this.userDetails.value.distraction;
         tempDistraction[this.distractionIndex].websiteLink = this.userDetails.value.websiteLink;
         tempDistraction[this.distractionIndex].youtubeLink = this.userDetails.value.youtubeLink;
+        tempDistraction[this.distractionIndex].galleryPhoto = this.userDetails.value.galleryPhoto;
+        tempDistraction[this.distractionIndex].baseImage = this.userDetails.value.baseImage;
         this.storage.set('distractions',tempDistraction);
         
-
 
         this.navCtrl.pop();
       })
@@ -146,7 +155,7 @@ accessGallery(){
     sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
     destinationType: this.camera.DestinationType.DATA_URL
    }).then((sourcePath) => {
-     this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
+     this.baseImage = 'data:image/jpeg;base64,' +sourcePath;
      console.log('Image has been selected', this.camera.DestinationType.DATA_URL );
 
     }, (err) => {

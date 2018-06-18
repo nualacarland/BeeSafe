@@ -1,5 +1,8 @@
 export class Distraction {
 
+  baseImage(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
   push(arg0: any): any {
     throw new Error("Method not implemented.");
   }

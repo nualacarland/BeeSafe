@@ -3,6 +3,9 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 
 export class Memory {
 
+  base64Image(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
   splice(arg0: any, arg1: any): any {
     throw new Error("Method not implemented.");
   }
