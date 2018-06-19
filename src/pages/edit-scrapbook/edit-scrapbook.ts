@@ -2,14 +2,11 @@ import { Memory } from './../../app/models/Memory';
 import { Storage } from '@ionic/storage';
 import { Platform } from 'ionic-angular/platform/platform';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Camera } from '@ionic-native/camera';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Component } from '@angular/core';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { DomSanitizer } from '@angular/platform-browser';
 import { IonicPage, NavController, NavParams, ToastController, ActionSheetController, LoadingController } from 'ionic-angular';
-
-
-
 
 
  /* Generated class for the EditScrapbookPage page.
@@ -44,6 +41,12 @@ export class EditScrapbookPage {
                   base64Image: [''],
                                     
                 });
+
+        const options: CameraOptions = {
+        correctOrientation: true,
+        destinationType: this.camera.DestinationType.DATA_URL
+    
+        }
 
   }
 

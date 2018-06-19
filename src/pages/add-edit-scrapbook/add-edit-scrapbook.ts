@@ -76,9 +76,6 @@ export class AddEditScrapbookPage {
       destinationType: this.camera.DestinationType.DATA_URL,
       mediaType: this.camera.MediaType.PICTURE
     
-    
-
-      
      }).then((sourcePath) => {
        this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
       //  console.log('Image has been selected', this.camera.DestinationType.FILE_URI );

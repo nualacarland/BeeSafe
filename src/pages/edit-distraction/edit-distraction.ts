@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheet, ActionSheetController, LoadingController, Loading } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
-import { Camera, DestinationType } from '@ionic-native/camera';
+import { Camera, DestinationType, CameraOptions } from '@ionic-native/camera';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
 
 /**
@@ -37,13 +37,13 @@ export class EditDistractionPage {
   private distractionIndex: any;
  
   private emojiArray: any;
-  baseImage: any;
+
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, 
-      private storage: Storage, private toastCtrl: ToastController, public modalCtrl: ModalController,
-    private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform,
-     public loadingCtrl: LoadingController) {
+                private storage: Storage, private toastCtrl: ToastController, public modalCtrl: ModalController,
+                private camera: Camera, public actionsheetCtrl: ActionSheetController, public platform: Platform,
+                public loadingCtrl: LoadingController) {
 
       this.emojiArray = [
         {
@@ -60,6 +60,12 @@ export class EditDistractionPage {
         }
 
       ];
+
+      const options: CameraOptions = {
+        correctOrientation: true,
+        destinationType: this.camera.DestinationType.DATA_URL
+  
+      }
     
 
         this.distractionIndex = this.navParams.get('distractionIndex');
@@ -71,7 +77,8 @@ export class EditDistractionPage {
       emojis: [''],
       distractionTitle: [''],
       distraction: [''],
-      baseImage: [''],
+      galleryPhoto: [''],
+      base64Image: [''],
       websiteLink: [''],
       youtubeLink: ['']
 
@@ -105,12 +112,12 @@ export class EditDistractionPage {
       this.userDetails.get('websiteLink').setValue(this.oldDistraction[this.distractionIndex].websiteLink);
       this.userDetails.get('youtubeLink').setValue(this.oldDistraction[this.distractionIndex].youtubeLink); 
       this.userDetails.get('galleryPhoto').setValue(this.oldDistraction[this.distractionIndex].galleryPhoto);
-      this.userDetails.get('baseImage').setValue(this.oldDistraction[this.distractionIndex].baseImage);
+      // this.userDetails.get('base64Image').setValue(this.oldDistraction[this.distractionIndex].base64Image);
 
       // this.userDetails.get(
 
-      console.log('IS THERE A STORED IMAGE????', this.userDetails.value.baseImage);
-      console.log('IMAGE???', this.baseImage);
+      console.log('IS THERE A STORED IMAGE????', this.userDetails.value.base64Image);
+      console.log('IMAGE???', this.base64Image);
       console.log('what is the old saved emoji', this.userDetails.value.emojis);
       
       this.userDetails.value.baseImage,
@@ -134,7 +141,7 @@ export class EditDistractionPage {
         tempDistraction[this.distractionIndex].websiteLink = this.userDetails.value.websiteLink;
         tempDistraction[this.distractionIndex].youtubeLink = this.userDetails.value.youtubeLink;
         tempDistraction[this.distractionIndex].galleryPhoto = this.userDetails.value.galleryPhoto;
-        tempDistraction[this.distractionIndex].baseImage = this.userDetails.value.baseImage;
+        // tempDistraction[this.distractionIndex].base64Image = this.userDetails.value.base64Image;
         this.storage.set('distractions',tempDistraction);
         
 
@@ -155,7 +162,7 @@ accessGallery(){
     sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
     destinationType: this.camera.DestinationType.DATA_URL
    }).then((sourcePath) => {
-     this.baseImage = 'data:image/jpeg;base64,' +sourcePath;
+     this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
      console.log('Image has been selected', this.camera.DestinationType.DATA_URL );
 
     }, (err) => {

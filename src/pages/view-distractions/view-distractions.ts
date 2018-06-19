@@ -10,7 +10,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 
-
 /**
  * Generated class for the ViewDistractionsPage page.
  *
@@ -30,6 +29,7 @@ export class ViewDistractionsPage {
   private userDetails;
   private distraction;
   trustedVideoUrl: SafeResourceUrl;
+
   base64Image: any;
 
   
@@ -54,6 +54,8 @@ export class ViewDistractionsPage {
     var key = "distractions";
     console.log('ionViewDidEnter DistractionsPage');
     console.log(this.items);
+
+    console.log('WHATS THE SAVED IMAGE?!', this.base64Image);
 
     this.storage.get('distractions').then((val)=>{
       console.log('What is the value of the Distractions array',val);

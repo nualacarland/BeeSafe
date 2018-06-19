@@ -4,9 +4,10 @@ import { IonicPage, NavController, NavParams, Platform, LoadingController,  Acti
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Camera, DestinationType } from '@ionic-native/camera';
+import { Camera, DestinationType, CameraOptions } from '@ionic-native/camera';
 import { Cordova } from '@ionic-native/core';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 
@@ -26,7 +27,7 @@ import { toBase64String } from '@angular/compiler/src/output/source_map';
 export class AddDistractionPage {
 
   private userDetails : FormGroup;
-  baseImage: any;
+  base64Image: any;
   activeItemSliding: ItemSliding = null;
   private emojiArray: any;
   private itemList;
@@ -35,7 +36,7 @@ export class AddDistractionPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController, 
    private formBuilder: FormBuilder, private storage: Storage, private camera: Camera,  public actionsheetCtrl: ActionSheetController, 
-   public platform: Platform, public loadingCtrl: LoadingController ) {
+   public platform: Platform, public loadingCtrl: LoadingController, private domSanitizer: DomSanitizer ) {
 
     this.emojiArray = [
             {
@@ -58,11 +59,17 @@ export class AddDistractionPage {
               distractionTitle: ['', Validators.required],
               distraction: ['', Validators.required],
               emojis: [''],
-              baseImage: [''],
+              base64Image: [''],
               websiteLink: [''],
               youtubeLink: ['']
         
             });
+
+    const options: CameraOptions = {
+    correctOrientation: true,
+    destinationType: this.camera.DestinationType.DATA_URL
+        
+            }
    
   }
 
@@ -113,8 +120,7 @@ saveDistractions() {
       var newDistraction =  [new Distraction(this.userDetails.value.distractionTitle, 
         this.userDetails.value.distraction,
         this.userDetails.value.emojis,
-        // this.camera.DestinationType.DATA_URL,
-        this.userDetails.value.baseImage,
+        this.base64Image,
         tempWebsiteLink,
         tempYoutubeEmbed)];
 
@@ -124,7 +130,7 @@ saveDistractions() {
         this.storage.set('distractions', newDistraction);
         console.log('locally stored!');
 
-        console.log('What is the image that has been saved?', this.baseImage);
+        console.log('What is the image that has been saved?', this.base64Image);
         this.successToast();
         this.navCtrl.pop();
      
@@ -142,8 +148,8 @@ saveDistractions() {
 if(!hasErrored){
       var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
         this.userDetails.value.distraction,
+        this.base64Image,
         this.userDetails.value.emojis,
-        this.userDetails.value.baseImage,
         tempWebsiteLink,
         tempYoutubeEmbed);
 
@@ -158,8 +164,8 @@ if(!hasErrored){
   //this.errorToast();  
   }
       console.log('this is the saved emoji', this.userDetails.value.emojis);
-      console.log('what is the image stored???????', this.userDetails.value.baseImage);
-      console.log('this.baseimage????', this.baseImage);
+      console.log('what is the image stored???????', this.base64Image);
+      console.log('this.baseimage????', this.base64Image);
       console.log('locally stored!');
       this.successToast();
       this.navCtrl.pop();
@@ -176,10 +182,10 @@ if(!hasErrored){
     mediaType: this.camera.MediaType.PICTURE
   
    }).then((sourcePath) => {
-     this.baseImage = 'data:image/jpeg;base64,' +sourcePath;
+     this.base64Image = 'data:image/jpeg;base64,' +sourcePath;
     //  console.log('Image has been selected', this.camera.DestinationType.FILE_URI );
       console.log('what is the source path', sourcePath);
-      console.log('what is this?!', this.baseImage);
+      console.log('what is this?!', this.base64Image);
  
 
     }, (err) => {
