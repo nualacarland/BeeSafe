@@ -4,14 +4,15 @@ page-plan-modal {
         height:24px;
         width:390px;
         color: #313745;
-        font-size:17px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
-        line-height: 24px;
+        font-size:18px;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
+        line-height: 15px;
         text-align: left;
         padding-right:82px;
         padding-left:30px;
         padding-top:29px;
         margin-left:21px;
+        font-weight: 100;
     }
     #nav-bar {
         height:75px;
@@ -21,9 +22,9 @@ page-plan-modal {
   
     #ion-title {
             height:22px;
-            font-family: 'Avenir Rounded reg', Arial, sans-serif;
+            font-family: 'Avenir Rounded Demi', Arial, sans-serif;
             font-size: 18px;
-            font-weight:700;
+            font-weight:100;
             text-align: center;
             margin-top: 27px;
             margin-bottom:26px;
@@ -47,7 +48,14 @@ page-plan-modal {
         padding-right:62px;
         padding-left:62px;
         font-size:10px;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
+    }
+
+       
+    .toolbar-title-ios{
+        margin-top:10px !important;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif !important;
+        font-weight:100 !important;
     }
     
 

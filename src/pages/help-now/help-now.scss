@@ -15,7 +15,7 @@ page-help-now {
     #text-line-2 {
         height: 22px;
         color: #313745;	
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 18px;   
         padding-top: 49px;
         margin-left: -3px;
@@ -28,9 +28,9 @@ page-help-now {
         height: 46px;
         width: 293px;	
         color: #313745;	
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 18px;	
-        font-weight:600;
+        font-weight:100;
         line-height: 23px;
         margin-top: 10px;
         margin-right:43px;
@@ -42,7 +42,7 @@ page-help-now {
         height: 21px;
         width: 297px;	
         color: rgb(246, 69, 69);
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 21px;	
         line-height: 21px;
         margin-left:28px;
@@ -55,7 +55,7 @@ page-help-now {
         height: 21px;
         width: 297px;	
         color: rgb(246, 69, 69);	
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 21px;	
         line-height: 21px;
         margin-top: 10px;
@@ -69,21 +69,21 @@ page-help-now {
        
         margin-left:33px;
         margin-bottom: 16px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         height:24px;
         color: #313745;	
         font-size:20px;
-        font-weight: 600;
+        font-weight: 100;
         line-height: 24px;
     }
     #other {
         margin-left:25px;
         margin-bottom: 16px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         height:24px;
         color: #313745;
         font-size:20px;
-        font-weight: 600;
+        font-weight: 100;
         line-height: 24px;
     }
 
@@ -101,7 +101,7 @@ page-help-now {
         padding-right: 70px;
         height: 23px;
         color: #559AD1;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
@@ -113,7 +113,7 @@ page-help-now {
         padding-right:70px;
         height: 23px;
         color: #559AD1;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
@@ -124,7 +124,7 @@ page-help-now {
         padding-right:70px;
         height: 23px;
         color: #559AD1;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
@@ -134,7 +134,7 @@ page-help-now {
     #call-link-1 {
       height: 23px;
       color: #559AD1;
-      font-family: 'Avenir Rounded demi', Arial, sans-serif;
+      font-family: 'Avenir Rounded Demi', Arial, sans-serif;
       font-size: 19px;
       font-weight: 500;
       line-height: 23px;
@@ -142,7 +142,7 @@ page-help-now {
     #call-link-2 {
         height: 23px;
         color: #559AD1;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
@@ -150,7 +150,7 @@ page-help-now {
       #call-link-3 {
         height: 23px;
         color: #559AD1;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
@@ -158,7 +158,9 @@ page-help-now {
       }
 
       .toolbar-title-ios{
-          margin-top:35px;
+          margin-top:37px !important;
+          font-family: 'Avenir Rounded Demi', Arial, sans-serif !important;
+          font-weight:100 !important;
       }
 
       .back-button.show-back-button {

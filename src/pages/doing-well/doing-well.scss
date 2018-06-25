@@ -8,7 +8,7 @@ page-doing-well {
       #help {
         height: 16px;
         color: #F57D31;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size:13px;
         margin-top:46px;
         margin-right: 14px;
@@ -22,7 +22,7 @@ page-doing-well {
 
     #ion-title {
         height:22px;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 18px;
         font-weight: 500;
         text-align: center;
@@ -31,10 +31,11 @@ page-doing-well {
     }
     
     #text-line-1 {
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         margin-top:40px;
-        font-weight:700;
+        font-weight:100;
         margin-left:50px;
+        color: #5a6274;
         // margin-right:86px;
         font-size: 21px;
     }
@@ -48,13 +49,16 @@ page-doing-well {
 
     }
     #text-line-2 {
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 21px;
         text-align: center;
+        color: #5a6274;
         margin-top:31px;
+        font-weight:100;
     }
 
 
+   
     .help-logo{
         background-image: url('../assets/imgs/icon-help-now.png');
         background-size: cover;
@@ -65,17 +69,24 @@ page-doing-well {
         background-size: contain;
         margin-left: auto;
         margin-right: auto;
-        margin-top:5px;
+        margin-top:-6px;
+        color: rgb(246, 69, 69);
     }
 
     #help {
         height: 16px;
-        color: rgb(246, 69, 69);;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        color: rgb(246, 69, 69);
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-weight:700;
         font-size:13px;
         margin-top:10px;
         margin-right: 13px;
         margin-bottom: 13px;
+    }
+
+    .toolbar-title-ios{
+        margin-top:10px !important;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif !important;
+        font-weight:100 !important;
     }
 }

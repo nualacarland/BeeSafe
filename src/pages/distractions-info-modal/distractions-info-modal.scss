@@ -4,7 +4,7 @@ page-distractions-info-modal {
         width:100%;
         color: #313745;
         font-size:16px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         line-height: 24px;
         text-align: left;
         // padding-right:42px;
@@ -12,6 +12,7 @@ page-distractions-info-modal {
         // padding-top:29px;
         // padding-bottom:24px;
         margin-left:20px;
+        font-weight: 100;
         }
      #close-btn {
         height:60px;
@@ -37,14 +38,19 @@ page-distractions-info-modal {
     #ion-title {
         height: 22px;
         color: #313745;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 18px;
         font-weight: 500;
         margin-right: 76px;
         margin-top: 30px;
         margin-bottom:26px;
     }
-
+    
+    .toolbar-title-ios{
+        margin-top:10px !important;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif !important;
+        font-weight:100 !important;
+    }
 
 
 

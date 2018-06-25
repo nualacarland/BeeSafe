@@ -5,9 +5,10 @@ page-affirmation-modal {
         // width:390px;
         color: #313745;
         font-size:20px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         line-height: 24px;
         text-align: center;
+        font-weight:100;
         // padding-right:42px;
         // padding-left:43px;
         // padding-top:29px;
@@ -20,7 +21,7 @@ page-affirmation-modal {
         // width: 250px;
         border-radius: 2px;
         background-color: #559AD1;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
     }
 
     #Close {
@@ -28,11 +29,17 @@ page-affirmation-modal {
         padding-top:150px;
         padding-right:62px;
         padding-left:62px;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
     }
     #nav-bar {
         height:75px;
         width: 100%;
+    }
+
+    .toolbar-title-ios{
+        margin-top:10px !important;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif !important;
+        font-weight:100 !important;
     }
     
 

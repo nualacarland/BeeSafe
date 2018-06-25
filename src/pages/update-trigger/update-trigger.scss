@@ -6,13 +6,14 @@ page-update-trigger {
     }
     #ion-title {
         height:22px;
-        font-family: 'Avenir Rounded reg', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-size: 18px;
         font-weight: 500;
         text-align: center;
         margin-top: 27px;
         margin-bottom:26px;
     }
+   
     .help-logo{
         background-image: url('../assets/imgs/icon-help-now.png');
         background-size: cover;
@@ -23,13 +24,14 @@ page-update-trigger {
         background-size: contain;
         margin-left: auto;
         margin-right: auto;
-        margin-top:5px;
+        margin-top:-6px;
+        color: rgb(246, 69, 69);
     }
 
     #help {
         height: 16px;
-        color: rgb(246, 69, 69);;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        color: rgb(246, 69, 69);
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-weight:700;
         font-size:13px;
         margin-top:10px;
@@ -61,7 +63,7 @@ page-update-trigger {
         width:76%;
         border-radius: 2px;
         background-color: #559AD1;
-        font-family: 'Avenir Rounded demi', Arial, sans-serif;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         font-weight: 500;
         font-size:20px;
         font-weight:500;
@@ -73,4 +75,12 @@ page-update-trigger {
     .text-input-ios{
         padding-left:15px;
     }
+
+
+    .toolbar-title-ios{
+        margin-top:10px !important;
+        font-family: 'Avenir Rounded Demi', Arial, sans-serif !important;
+        font-weight:100 !important;
+    }
+
 }
