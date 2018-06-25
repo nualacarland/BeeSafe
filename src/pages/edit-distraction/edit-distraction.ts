@@ -29,7 +29,7 @@ export class EditDistractionPage {
  
   private _oldDistractionTitle;
   private _oldDistractions;
-  private _oldBaseImage;
+  private _oldBase64Image;
   private _oldWebsiteLink;
   private _oldYoutubeLink;
 
@@ -37,6 +37,7 @@ export class EditDistractionPage {
   private distractionIndex: any;
  
   private emojiArray: any;
+
 
 
 
@@ -109,10 +110,11 @@ export class EditDistractionPage {
       this.userDetails.get('emojis').setValue(this.oldDistraction[this.distractionIndex].emojis);
       this.userDetails.get('distractionTitle').setValue(this.oldDistraction[this.distractionIndex].distractionTitle);
       this.userDetails.get('distraction').setValue(this.oldDistraction[this.distractionIndex].distraction);
+      this.userDetails.get('base64Image').setValue(this.oldDistraction[this.distractionIndex].baseImage);
       this.userDetails.get('websiteLink').setValue(this.oldDistraction[this.distractionIndex].websiteLink);
       this.userDetails.get('youtubeLink').setValue(this.oldDistraction[this.distractionIndex].youtubeLink); 
       this.userDetails.get('galleryPhoto').setValue(this.oldDistraction[this.distractionIndex].galleryPhoto);
-      // this.userDetails.get('base64Image').setValue(this.oldDistraction[this.distractionIndex].base64Image);
+
 
       // this.userDetails.get(
 
@@ -120,7 +122,7 @@ export class EditDistractionPage {
       console.log('IMAGE???', this.base64Image);
       console.log('what is the old saved emoji', this.userDetails.value.emojis);
       
-      this.userDetails.value.baseImage,
+      // this.userDetails.value.baseImage,
       console.log(this.oldDistraction);
     })
   }
@@ -141,7 +143,7 @@ export class EditDistractionPage {
         tempDistraction[this.distractionIndex].websiteLink = this.userDetails.value.websiteLink;
         tempDistraction[this.distractionIndex].youtubeLink = this.userDetails.value.youtubeLink;
         tempDistraction[this.distractionIndex].galleryPhoto = this.userDetails.value.galleryPhoto;
-        // tempDistraction[this.distractionIndex].base64Image = this.userDetails.value.base64Image;
+        tempDistraction[this.distractionIndex].base64Image = this.userDetails.value.base64Image;
         this.storage.set('distractions',tempDistraction);
         
 

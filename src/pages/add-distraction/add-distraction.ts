@@ -108,7 +108,7 @@ saveDistractions() {
        tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
        hasErrored = false;
    }
-
+  
    if(this.userDetails.value.websiteLink.includes('www.')){
     console.log('STRING CONTAINS www.');
       tempWebsiteLink = this.userDetails.value.websiteLink.toString().replace("www.", "https://www.");
@@ -145,24 +145,24 @@ saveDistractions() {
     
 
 
-if(!hasErrored){
-      var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
-        this.userDetails.value.distraction,
-        this.base64Image,
-        this.userDetails.value.emojis,
-        tempWebsiteLink,
-        tempYoutubeEmbed);
+        if(!hasErrored){
+              var newSingleDistraction : Distraction =  new Distraction(this.userDetails.value.distractionTitle, 
+                this.userDetails.value.distraction,
+                this.userDetails.value.emojis,
+                this.base64Image,
+                tempWebsiteLink,
+                tempYoutubeEmbed);
 
-        this.storage.set('emojis', this.userDetails.value.emojis);
+                this.storage.set('emojis', this.userDetails.value.emojis);
 
-      console.log('emojis that are being saved', this.userDetails.value.emojis);
-      tempDistractions.push(newSingleDistraction);
+              console.log('emojis that are being saved', this.userDetails.value.emojis);
+              tempDistractions.push(newSingleDistraction);
 
-      this.storage.set('distractions', tempDistractions);
-      
-  }else{
-  //this.errorToast();  
-  }
+              this.storage.set('distractions', tempDistractions);
+              
+          }else{
+          //this.errorToast();  
+          }
       console.log('this is the saved emoji', this.userDetails.value.emojis);
       console.log('what is the image stored???????', this.base64Image);
       console.log('this.baseimage????', this.base64Image);

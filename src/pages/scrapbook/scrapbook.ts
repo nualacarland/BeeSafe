@@ -67,7 +67,7 @@ export class ScrapbookPage {
     this.storage.get('Memory').then((val)=>{
       // console.log('What is the value of the Memory array',JSON.stringify(val));
 
-        console.log();
+        console.log(val);
         for (var _i = 0; _i < val.length; _i++) {
           var num = val[_i];
           if(val[_i].youtubeLink != ''){

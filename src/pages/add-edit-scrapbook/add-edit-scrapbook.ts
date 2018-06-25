@@ -39,11 +39,9 @@ export class AddEditScrapbookPage {
 
 
                 if(this.navParams.get('chosenIndex')){
-
                 }
 
                 if(this.navParams.get('chosenMemory')){
-
                 }
 
     this.userDetails = this.formBuilder.group({
@@ -121,6 +119,8 @@ export class AddEditScrapbookPage {
             var result = parts[parts.length - 1];
             tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
             hasErrored = false;
+        }else{
+          tempYoutubeEmbed ='';
         }
         
         if(!hasErrored){

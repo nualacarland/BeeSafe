@@ -11,7 +11,7 @@ export class Distraction {
         public distractionTitle: string,
         public distraction: string,
         public emojis: string,
-        public galleryPhoto: number,
+        public galleryPhoto: string,
         public websiteLink: string,
         public youtubeLink: string
       

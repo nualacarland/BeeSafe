@@ -66,8 +66,10 @@
   
   <ion-item no-lines id="distraction-input-gallery">
     <button ion-button full id="ion-input-gallery" type="button" style="background-color:#FAF4EA;" (click)="accessGallery()">Add photo from your gallery</button>
-    <img [src]="baseImage" *ngIf="baseImage" />
-    
+  </ion-item>
+
+  <ion-item  *ngIf="distraction">
+  <img [src]="distraction.base64Image" *ngIf="distraction.base64Image != null" />
   </ion-item>
 
  
