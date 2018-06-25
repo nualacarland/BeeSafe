@@ -34,6 +34,7 @@ export class ScrapbookPage {
   platform: any;
   private userDetails;
   base64Image: any;
+  split:any;
   
   private items = [];
 
@@ -64,6 +65,7 @@ export class ScrapbookPage {
     var key = "Memory";
     console.log('ionViewDidLoad ScrapbookPage');
 
+
     this.storage.get('Memory').then((val)=>{
       // console.log('What is the value of the Memory array',JSON.stringify(val));
 
@@ -77,7 +79,11 @@ export class ScrapbookPage {
           this.items.push(val[_i])
       }
 
+    
+
       console.log('WHAT IS THE NEW ITEMS', this.items);
+      // this.split = this.items.dateAdded.split('T');
+      // console.log('what is the date', this.split);
   });
   }
 
@@ -94,6 +100,7 @@ export class ScrapbookPage {
   gotoEditPage(item: any, index: Number){
 
     this.navCtrl.push('ScrapbookMemoryPage', { 'chosenMemory': item, 'chosenIndex' : index });
+    
   }
 
 

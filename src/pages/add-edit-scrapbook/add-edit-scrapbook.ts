@@ -91,7 +91,24 @@ export class AddEditScrapbookPage {
     this.storage.get('Memory').then((val) => {
        console.log('Memory ',val);
 
+       var tempYoutubeEmbed;
+       if(this.userDetails.value.youtubeLink.includes('watch?')){
+         console.log('STRING CONTAINS WATCH?');
+           tempYoutubeEmbed = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
+          
+           hasErrored = false;
+      }else if(this.userDetails.value.youtubeLink.includes('youtu.be')){
+          console.log('its a mobile link');
+          var parts = this.userDetails.value.youtubeLink.split("/");
+          var result = parts[parts.length - 1];
+          tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
+          hasErrored = false;
+      }else{
+        tempYoutubeEmbed ='';
+      }
+
        if(val == null){
+
    
         console.log('Memories are empty');
          var newMemory =  [new Memory(this.userDetails.value.scrapbookTitle, 
@@ -107,21 +124,8 @@ export class AddEditScrapbookPage {
          //Then select the one you want by the chosenIndex that you pass in 
          //so something like tempMemory[this.chosenIndex].title = 'new stuff from form' (this.userDetails.value.title)
          //this.storage.set('Memory',tempMemory)
-        var tempYoutubeEmbed;
-         if(this.userDetails.value.youtubeLink.includes('watch?')){
-           console.log('STRING CONTAINS WATCH?');
-             tempYoutubeEmbed = this.userDetails.value.youtubeLink.toString().replace("watch?v=", "embed/");
-            
-             hasErrored = false;
-        }else if(this.userDetails.value.youtubeLink.includes('youtu.be')){
-            console.log('its a mobile link');
-            var parts = this.userDetails.value.youtubeLink.split("/");
-            var result = parts[parts.length - 1];
-            tempYoutubeEmbed = "https://www.youtube.com/embed/"+result;
-            hasErrored = false;
-        }else{
-          tempYoutubeEmbed ='';
-        }
+       }
+      
         
         if(!hasErrored){
 
@@ -143,9 +147,6 @@ export class AddEditScrapbookPage {
             // this.errorToast();
         }
 
-   
-       }
-   
        console.log('locally stored!');
       //  this.navCtrl.push('ScrapbookPage');
       this.navCtrl.pop();
