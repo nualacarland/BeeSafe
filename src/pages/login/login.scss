@@ -94,6 +94,12 @@ page-login {
         font-size:22px;
     
     }
+
+    #btrust_logo{
+        min-width: 127px;
+        min-height: 95px;
+        margin-top:30px;
+    }
    
     #create-btn {
         display: block !important;
@@ -103,7 +109,7 @@ page-login {
         font-size: 18px;
         font-family: 'Avenir Rounded', Arial, sans-serif;
         font-weight: 22px;
-        
+        margin-bottom: -4px;
     }
 
     .button-inner{
