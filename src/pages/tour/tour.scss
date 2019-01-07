@@ -1,6 +1,6 @@
 page-tour {
 
-    #skip-btn{
+    .skip-btn{
         float:right;
         font-size:16px;
         border: -1px !important;
@@ -25,5 +25,13 @@ page-tour {
     #img-icon{
         height:150px;
         width:150px;
+    }
+
+
+    .tour-header{
+        .toolbar-background{
+
+            background-color:#fff;
+        }
     }
 }

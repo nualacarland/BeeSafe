@@ -26,8 +26,6 @@ export class DashboardPage {
   alertEvent: boolean;
   private _oldalertEvent;
  
-  
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
  
       this.quotesArray.push('The more I like myself, the more others will like me.!');
@@ -214,10 +212,6 @@ export class DashboardPage {
       
       })
 
-
-   
-
-    
   }
 
   gotoHelpNowPage(){

@@ -1,14 +1,20 @@
+<ion-header no-border>
+  <ion-toolbar class="tour-header">
+    <ion-buttons end>
+      <button ion-button clear (click)="goDashboard()" *ngIf="!showContinue">Skip</button>
+      <button ion-button clear (click)="goDashboard()" *ngIf="showContinue">Continue to App</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding>
-
-    <ion-slides pager="true" class="swipe-intro">
+    <ion-slides pager="true" class="swipe-intro" (ionSlideDidChange)="slideChanged()">
 
 
         <ion-slide style="background-color: white">
             <ion-img id="img-icon" src="assets/imgs/1.png"></ion-img>
           <h2 id="main-text">Bee Safe Plan</h2>
           <p id="p-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-          <button id="skip-btn" (click)="gotoDashboard()">Skip</button>
           <ion-img style="width:143px; margin-top:33px; height:85px;" src="assets/imgs/BHSCT-logo.png"></ion-img>
         </ion-slide>
       
@@ -16,7 +22,6 @@
             <ion-img id="img-icon" src="assets/imgs/2.png"></ion-img>
           <h2 id="main-text">Add to Scrapbook</h2>
           <p id="p-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-          <button id="skip-btn" (click)="gotoDashboard()">Skip</button>
           <ion-img style="width:143px; margin-top:33px; height:85px;" src="assets/imgs/BHSCT-logo.png"></ion-img>
         </ion-slide>
       
@@ -25,11 +30,20 @@
           <h2 id="main-text">Create your BeeSafe Plan</h2>
           <p id="p-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
           <ion-img style="width:143px; margin-top:33px; height:85px;" src="assets/imgs/BHSCT-logo.png"></ion-img>
-          
-          <button id="skip-btn" (click)="gotoDashboard()">Continue to App</button>
+
           
         </ion-slide>
+
+        
       
       </ion-slides>
 
-</ion-content>s
+
+      
+
+</ion-content>
+
+<!-- <ion-footer text-center>
+    <button class="skip-btn" (click)="goDashboard()">Continue to App</button>
+
+  </ion-footer> -->
