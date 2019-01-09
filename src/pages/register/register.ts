@@ -181,7 +181,6 @@ export class RegisterPage {
         
       this.presentToast();
       console.log('locally stored!');
-      this.navCtrl.push('LoginPage');
 
 }   
 
@@ -198,13 +197,15 @@ alertEventChange(){
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Account was created successfully',
-      duration: 3000,
+      duration: 1500,
       position: 'top',
       cssClass: "toast-success beesafe-toast",
 
     });
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');
+      this.navCtrl.push('LoginPage');
+
     });
     toast.present();
   }  
@@ -213,7 +214,7 @@ alertEventChange(){
   errorToast() {
     let toast = this.toastCtrl.create({
       message: 'Account already exists!',
-      duration: 3000,
+      duration: 1500,
       position: 'top',
       cssClass: "toast-error beesafe-toast",
     });

@@ -1,16 +1,9 @@
-import { TourPage } from './../pages/tour/tour';
-import { LoginPage } from './../pages/login/login';
-import { DashboardPage } from './../pages/dashboard/dashboard';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModalController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-// import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
-
-
 
 @Component({
   templateUrl: 'app.html'
@@ -101,18 +94,7 @@ export class MyApp {
 
   }
 
-ionViewDidLoad(){
-  this.storage.get('avatars').then((val) =>{
-    console.log('what is the value of the avatar', val);
-  
-});
 
 
-}
 
-ionViewDidEnter(){
-  this.storage.get('avatars').then((val) =>{
-    console.log('what is the value of the avatar', val);
-});
-}
 }

@@ -66,10 +66,7 @@ export class LoginPage {
   }
  
 
-  gotoLazyPage(){
 
-
-  }
 
 
 
@@ -92,28 +89,28 @@ export class LoginPage {
 
   checkPin() {
     var tempPin = this.userDetails.value.pin1 + this.userDetails.value.pin2 + this.userDetails.value.pin3 + this.userDetails.value.pin4
-    console.log(tempPin);
-    console.log(tempPin);
+    // console.log(tempPin);
+    // console.log(tempPin);
  
 
-    console.log('What is the temp pin '+ tempPin);
+    // console.log('What is the temp pin '+ tempPin);
     this.storage.get('user_pin').then((value) => {
-      console.log('What is the stored pin ', value);
+      // console.log('What is the stored pin ', value);
       
-            console.log('this is the user_pin stored', value);
+      //       console.log('this is the user_pin stored', value);
       
             if(tempPin == value){
 
               // this.storage.set('tourShown', false);
 
-              console.log('login butttpn clicked');
+              // console.log('login butttpn clicked');
               this.storage.get('tourShown').then((result) => {
-                console.log('what is result', result);
+                // console.log('what is result', result);
                 if(result){
                   this.navCtrl.setRoot('DashboardPage');
                 } else {
-                  this.navCtrl.setRoot('TourPage');
                   this.storage.set('tourShown', true);
+                  this.navCtrl.setRoot('TourPage');
                 }
               });
 

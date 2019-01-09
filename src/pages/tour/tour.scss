@@ -1,37 +1,55 @@
 page-tour {
 
-    .skip-btn{
+    // .skip-btn{
+    //     float:right;
+    //     font-size:16px;
+    //     border: -1px !important;
+    //     background-color: transparent;
+    //     margin-top: -380px;
+    //     color: #559AD1;
+    //     font-family: 'Avenir Rounded Demi';
+    // }
+
+    // #main-text{
+    //     font-size:28px;
+    //     font-family: 'Avenir Rounded Med';
+    //     // margin-top:70px;
+    // }
+
+    // #p-text{
+    //     font-size:16px;
+    //     font-family:'Avenir Rounded Demi';
+    //     font-weight:100;
+    // }
+
+    // #img-icon{
+    //     height:150px;
+    //     width:150px;
+    // }
+
+
+    // .tour-header{
+    //     .toolbar-background{
+
+    //         background-color:#fff;
+    //     }
+    // }
+
+    .tour_background{
+        background-color: #fff;
+    }
+
+    .button{
         float:right;
         font-size:16px;
-        border: -1px !important;
-        background-color: transparent;
-        margin-top: -380px;
-        color: #559AD1;
         font-family: 'Avenir Rounded Demi';
+        color: #559AD1;
+
     }
 
-    #main-text{
-        font-size:28px;
-        font-family: 'Avenir Rounded Med';
-        // margin-top:70px;
-    }
-
-    #p-text{
-        font-size:16px;
-        font-family:'Avenir Rounded Demi';
-        font-weight:100;
-    }
-
-    #img-icon{
-        height:150px;
-        width:150px;
-    }
-
-
-    .tour-header{
-        .toolbar-background{
-
-            background-color:#fff;
-        }
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+        left: 0;
+        bottom: 60px;
+        width: 100%;
     }
 }
