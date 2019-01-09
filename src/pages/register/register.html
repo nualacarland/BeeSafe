@@ -42,11 +42,11 @@
             </ion-list>
 
 
-        
+        <ion-grid>
     <ion-row>
 
         <p id="text-line">Please enter your 4-digit pin*</p>
-            <div id="pin-inputs">
+            <!-- <div id="pin-inputs"> -->
             <ion-col col->
                 <ion-item no-lines id="input-1" >
                 <ion-input type="tel" formControlName="pin1" text-center maxlength="1"  tabindex="1" (keyup)="moveFocus(b)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
@@ -71,8 +71,10 @@
                 <ion-input type="tel" formControlName="pin4" text-center maxlength="1" tabindex="4" #d style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
                 </ion-item>
             </ion-col>
-            </div>
+            <!-- </div> -->
     </ion-row>
+
+    </ion-grid>
     
 
     <ion-row>
