@@ -32,36 +32,44 @@
         <form [formGroup]="userDetails" (ngSubmit)="editLocalShit()">
 
 <p id="text-line">Please enter your email address*</p>
-  <ion-item no-lines id="password">
-  <ion-input id="ion-input-1" type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email address"></ion-input>
-  </ion-item>
-  <ion-row>
-      <p id="text-line">Select your Avatar*</p>
+    <ion-item no-lines id="password">
+    <ion-input id="ion-input-1" type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email address"></ion-input>
+    </ion-item>
+    <ion-row>
+    <p id="text-line">Select your Avatar*</p>
 
 
-      <ion-row>
-            <ion-list id="list-avatars" formControlName="avatars" radio-group>
+    <ion-row>
+            <!-- <ion-list id="list-avatars" formControlName="avatars" radio-group>
                     <ion-row>
-                    <ion-col col-2 *ngFor="let avatar of avatarsArray">
-                            <!-- <ion-radio class="avatar-radios">
-                                </ion-radio>              -->
-                            <ion-item [class]="_oldSelectedAvatar == avatar.image? 'item-radio-checked' : 'not-selected'">
-            
-                                    <ion-radio class="avatar-radios" (ionSelect)='showConfirmAlert(avatar.image)'>
-                                        </ion-radio>             
+                        <ion-col col-2 *ngFor="let avatar of avatarsArray">
+                                <ion-item id="avatar-items" [class]="_oldSelectedAvatar == avatar.image? 'item-radio-checked' : 'not-selected'">
                                     <ion-thumbnail item-start >
-                                            <img id="ion-img-1" [src]="avatar.image">
+                                        <img id="ion-img-1" [src]="avatar.image">
                                     </ion-thumbnail>
-                            
+                                    <ion-radio class="avatar-radios" value="{{avatar.image}}" (ionSelect)='showConfirmAlert(avatar.image)'>
+                                    </ion-radio>             
                                 </ion-item>
-                    </ion-col>
+                        </ion-col>
                     </ion-row>
+            </ion-list> -->
 
-                    <!-- [class]="_oldSelectedAvatar == avatar.image?'item-radio-checked':'not-selected'" -->
-
-         
-            </ion-list>
-            </ion-row>
+            <ion-list formControlName="avatars" radio-group>
+                    <ion-row>
+                      <ion-col col-2 *ngFor="let avatar of avatarsArray">
+                        <ion-item id="avatar-items" [ngClass]="_oldSelectedAvatar == avatar.image ? 'item-radio-checked' : ''">
+                          <ion-thumbnail item-start>
+                            <img id="ion-img-1" [src]="avatar.image">
+                          </ion-thumbnail>
+                          <ion-radio class="avatar-radios" value="{{avatar.image}}" (ionSelect)='showConfirmAlert(avatar.image)'>
+                          </ion-radio>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+          
+          
+                  </ion-list>
+    </ion-row>
       
   </ion-row>
   <ion-row>

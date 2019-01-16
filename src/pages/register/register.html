@@ -12,134 +12,142 @@
 </ion-header> -->
 
 <ion-content padding>
-     
-    <form [formGroup]="userDetails" (ngSubmit)="createAccount()">
-        
-    <p id="text-line">Please enter your email address*</p>
+
+  <form [formGroup]="userDetails" (ngSubmit)="createAccount()">
+
+    <p class="text-line">Please enter your email address*</p>
 
     <ion-item no-lines>
-    <ion-input clickable id="email" type="email" style="background-color:#FAF4EA;" formControlName="emailAddress" placeholder="Email Address"></ion-input>
+      <ion-input clickable id="email" type="email" style="background-color:#FAF4EA;" formControlName="emailAddress"
+        placeholder="Email Address"></ion-input>
     </ion-item>
 
     <ion-row>
-    <p id="text-line">Select your Avatar*</p>
-      
-    <ion-row>
-            <ion-list formControlName="avatars" radio-group>
-                    <ion-row>
-                    <ion-col col-2  *ngFor="let avatar of avatarsArray">
-                            <ion-item id="avatar-items">
-                                    <ion-thumbnail item-start>
-                                            <img id="ion-img-1" [src]="avatar.image">
-                                    </ion-thumbnail>
-                                    <ion-radio class="avatar-radios" value="{{avatar.image}}" (ionSelect)='showConfirmAlert(avatar.image)'>
-                                    </ion-radio>
-                        </ion-item>
-                    </ion-col>
-                    </ion-row>
+      <p class="text-line">Select your Avatar*</p>
 
-         
-            </ion-list>
+      <ion-row>
+        <ion-list formControlName="avatars" radio-group>
+          <ion-row>
+            <ion-col col-2 *ngFor="let avatar of avatarsArray">
+              <ion-item id="avatar-items">
+                <ion-thumbnail item-start>
+                  <img id="ion-img-1" [src]="avatar.image">
+                </ion-thumbnail>
+                <ion-radio class="avatar-radios" value="{{avatar.image}}" (ionSelect)='showConfirmAlert(avatar.image)'>
+                </ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
 
 
+        </ion-list>
         <ion-grid>
-    <ion-row>
+          <ion-row>
 
-        <p id="text-line">Please enter your 4-digit pin*</p>
+            <p class="text-line">Please enter your 4-digit pin*</p>
             <!-- <div id="pin-inputs"> -->
             <ion-col col->
-                <ion-item no-lines id="input-1" >
-                <ion-input type="tel" formControlName="pin1" text-center maxlength="1"  tabindex="1" (keyup)="moveFocus(b)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
-                </ion-item>
+              <ion-item no-lines id="input-1">
+                <ion-input type="tel" formControlName="pin1" text-center maxlength="1" tabindex="1" (keyup)="moveFocus(b)"
+                  style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              </ion-item>
             </ion-col>
-            
-                
+
+
             <ion-col col-3>
-                <ion-item no-lines id="input-2" >
-                <ion-input type="tel" formControlName="pin2" text-center maxlength="1"  tabindex="2" #b (keyup)="moveFocus(c)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
-                </ion-item>
+              <ion-item no-lines id="input-2">
+                <ion-input type="tel" formControlName="pin2" text-center maxlength="1" tabindex="2" #b (keyup)="moveFocus(c)"
+                  style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              </ion-item>
             </ion-col>
-        
+
             <ion-col col-3>
-                <ion-item no-lines id="input-3" >
-                <ion-input type="tel" formControlName="pin3" text-center maxlength="1"  tabindex="3" #c (keyup)="moveFocus(d)" style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
-                </ion-item>
+              <ion-item no-lines id="input-3">
+                <ion-input type="tel" formControlName="pin3" text-center maxlength="1" tabindex="3" #c (keyup)="moveFocus(d)"
+                  style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
+              </ion-item>
             </ion-col>
-                
+
             <ion-col col-3>
-                <ion-item no-lines id="input-4" >
+              <ion-item no-lines id="input-4">
                 <ion-input type="tel" formControlName="pin4" text-center maxlength="1" tabindex="4" #d style="background-color:#FAF4EA;-webkit-text-security:disc"></ion-input>
-                </ion-item>
+              </ion-item>
             </ion-col>
             <!-- </div> -->
-    </ion-row>
+          </ion-row>
 
-    </ion-grid>
-    
-
-    <ion-row>
-        <p id="text-line">Affirmations</p>
-        <ion-icon name="ios-information-circle-outline" id="AffInformation" style="color:#559ad1;" tappable (click)="openAffirModal()">
-        </ion-icon>
-        <h4 id="noTxt">NO</h4>
-        <ion-toggle color="beesafeorange" (ngModel)="alertEvent" (ionChange)="alertEventChange()"></ion-toggle>
-        <!-- <ion-toggle color="beesafeorange"></ion-toggle> -->
-        <h4 id="yesTxt">YES</h4>
-
-    </ion-row>
+        </ion-grid>
 
 
-        <p id="text-line">Emergency Contacts  
-            <ion-icon name="ios-information-circle-outline" id="EmergencyContactsInfo" style="color:#559ad1;" tappable (click)="openModal()">
-            </ion-icon>
-            </p>
-    
+        <ion-row>
+          <p class="text-line">Affirmations</p>
+          <ion-icon name="ios-information-circle-outline" id="AffInformation" style="color:#559ad1;" tappable (click)="openAffirModal()">
+          </ion-icon>
+          <h4 id="noTxt">NO</h4>
+          <ion-toggle color="beesafeorange" (ngModel)="alertEvent" (ionChange)="alertEventChange()"></ion-toggle>
+          <!-- <ion-toggle color="beesafeorange"></ion-toggle> -->
+          <h4 id="yesTxt">YES</h4>
 
-    <p id="Contact-one">EMERGENCY CONTACT ONE</p>
+        </ion-row>
 
-  
-    <ion-item no-lines id="contactName-1" >
+
+        <p class="text-line">Emergency Contacts
+          <ion-icon name="ios-information-circle-outline" id="EmergencyContactsInfo" style="color:#559ad1;" tappable
+            (click)="openModal()">
+          </ion-icon>
+        </p>
+
+
+        <p class="Contact-one">EMERGENCY CONTACT ONE</p>
+
+
+        <!-- <ion-item no-lines id="contactName-1" >
     <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" formControlName="contact1Name" placeholder="Name"></ion-input>
-    </ion-item>
-  
+    </ion-item> -->
+
+        <ion-item no-lines>
+          <ion-input clickable id="email" type="email" style="background-color:#FAF4EA;" formControlName="emailAddress"
+            placeholder="Email Address"></ion-input>
+        </ion-item>
 
 
-    <ion-item no-lines id="contactNumber-1" >
-    <ion-input id="ion-input" type="tel" style="background-color:#FAF4EA;"  placeholder="Number" formControlName="contact1Tel"></ion-input>
-    </ion-item>
 
-    <p id="Contact-two">
-        EMERGENCY CONTACT TWO
-    </p>
+        <ion-item no-lines id="contactNumber-1">
+          <ion-input id="ion-input" type="tel" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact1Tel"></ion-input>
+        </ion-item>
 
-    <ion-item no-lines id="contactName-2" >
-    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact2Name"></ion-input>
-    </ion-item>
+        <p id="Contact-two">
+          EMERGENCY CONTACT TWO
+        </p>
 
-    <ion-item no-lines id="contactNumber-2" >
-    <ion-input id="ion-input" type="tel" style="background-color:#FAF4EA;"  placeholder="Number" formControlName="contact2Tel"></ion-input>
-    </ion-item>
+        <ion-item no-lines id="contactName-2">
+          <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact2Name"></ion-input>
+        </ion-item>
 
-    <p id="Contact-Three">
-        EMERGENCY CONTACT THREE
-    </p>
+        <ion-item no-lines id="contactNumber-2">
+          <ion-input id="ion-input" type="tel" style="background-color:#FAF4EA;" placeholder="Number" formControlName="contact2Tel"></ion-input>
+        </ion-item>
 
-    <ion-item no-lines id="contactName-3" >
-    <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact3Name"></ion-input>
-    </ion-item>
+        <p id="Contact-Three">
+          EMERGENCY CONTACT THREE
+        </p>
 
-    <ion-item no-lines id="contactNumber-2" >
-    <ion-input type="tel" style="background-color:#FAF4EA;" id="ion-input" placeholder="Number" formControlName="contact3Tel"></ion-input>
-    </ion-item>
-  
+        <ion-item no-lines id="contactName-3">
+          <ion-input id="ion-input" type="text" style="background-color:#FAF4EA;" placeholder="Name" formControlName="contact3Name"></ion-input>
+        </ion-item>
 
-    <div id="CreateAccount">
-        <button ion-button color="primary" type="submit" id="create-btn">CREATE ACCOUNT</button>
+        <ion-item no-lines id="contactNumber-2">
+          <ion-input type="tel" style="background-color:#FAF4EA;" id="ion-input" placeholder="Number" formControlName="contact3Tel"></ion-input>
+        </ion-item>
+
+
+        <div id="CreateAccount">
+          <button ion-button color="primary" type="submit" id="create-btn">CREATE ACCOUNT</button>
         </div>
+      </ion-row>
     </ion-row>
-</ion-row>
-</form>
-     
+  </form>
+
 
 </ion-content>
 <!-- 

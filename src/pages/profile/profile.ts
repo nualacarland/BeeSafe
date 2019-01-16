@@ -208,11 +208,11 @@ export class ProfilePage {
             console.log(e);
           });
 
-    this.storage.get('avatar').then((value) => {
+    this.storage.get('avatars').then((value) => {
       this._oldSelectedAvatar = value;
         console.log('What is the avatar', value);
         console.log('what is the old avatar', this._oldSelectedAvatar);
-        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar);
+        this.userDetails.get('avatars').setValue(this._oldSelectedAvatar);
 
 
           }).catch((e) => {
@@ -239,20 +239,7 @@ export class ProfilePage {
   }
 
 
-  editLocalShit() { 
-
-    if(this.userDetails.value.pin1 == '' && this.userDetails.value.pin2 == '' && this.userDetails.value.pin3 == '' && this.userDetails.value.pin4 == ''){
-  
-      this.errorToast();
-    //   this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
-
-    } else {
-      this.presentToast();
-      console.log('local storage changed!');
-      console.log('new avatar', this.userDetails.value.avatars);
-      this.navCtrl.push('DashboardPage');
-    }
-
+  SaveLocalStuff(){
     this.storage.set('avatars', this.userDetails.value.avatars);
   
     this.storage.set('emailAddress', this.userDetails.value.emailAddress);
@@ -274,7 +261,23 @@ export class ProfilePage {
 
     this.storage.set('alertEvent', this.alertEvent);
     console.log('what is the affirmation?', this.alertEvent);
+  }
 
+
+  editLocalShit() { 
+
+    if(this.userDetails.value.pin1 == '' && this.userDetails.value.pin2 == '' && this.userDetails.value.pin3 == '' && this.userDetails.value.pin4 == ''){
+  
+      this.errorToast();
+    //   this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
+
+    } else {
+      this.SaveLocalStuff();
+      this.presentToast();
+      console.log('local storage changed!');
+      console.log('new avatar', this.userDetails.value.avatars);
+      this.navCtrl.push('DashboardPage');
+    }
   
   }
   
