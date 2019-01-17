@@ -57,6 +57,7 @@ page-scrapbook-memory {
 
     .card-ios{
         height: auto;
+        padding-left: 10px;
     }
 
    #stored-title{
@@ -87,6 +88,10 @@ page-scrapbook-memory {
 #mem-info{
     font-size:15px;
     margin-top:20px;
+}
+
+.item-ios{
+    padding-left:0px !important;
 }
 
     #edit-btn {
@@ -132,4 +137,7 @@ page-scrapbook-memory {
         font-family: 'Avenir Rounded Demi', Arial, sans-serif !important;
         font-weight:100 !important;
     }
-}
+
+  
+    }
+
