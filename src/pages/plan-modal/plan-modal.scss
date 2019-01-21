@@ -1,18 +1,19 @@
 page-plan-modal {
 
-    #text-line {
-        height: 24px;
-        /* width: 390px; */
+
+        #text-line {
+            height:24px;
+        width:100%;
         color: #313745;
-        font-size: 18px;
+        font-size:16px;
         font-family: 'Avenir Rounded Demi', Arial, sans-serif;
-        text-align: center;
-        padding-right: 82px;
-        padding-left: 30px;
-        padding-top: 29px;
-        font-weight: 100;
-        margin-left: 61px;
-    
+        font-weight:100;
+        line-height: 24px;
+        text-align: left;
+        padding-right:19px;
+        padding-left:43px;
+        padding-top:9px;
+        // padding-bottom:24px;
     }
     #nav-bar {
         height:75px;
