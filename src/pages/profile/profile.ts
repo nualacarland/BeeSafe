@@ -92,7 +92,7 @@ export class ProfilePage {
               pin2: ['', Validators.required],
               pin3: ['', Validators.required],
               pin4: ['', Validators.required],
-              avatars: ['',],
+              avatar: ['',],
               contact1Tel: [''],
               contact1Name: [''],
               contact2Tel: [''],
@@ -113,6 +113,7 @@ export class ProfilePage {
 
 
     this.storage.get('avatar').then((value) => {
+      console.log('AVATAR VALUES ', value);
       this._oldSelectedAvatar = value;
         // console.log('What is the avatar', value);
         console.log('WHATS THIS!!!!', this._oldSelectedAvatar);
@@ -139,7 +140,7 @@ export class ProfilePage {
   }
 
   showConfirmAlert(selectedRadio: any){
-    console.log('what is in the form avatar value', this.userDetails.value.avatars);
+    console.log('what is in the form avatar value', this.userDetails.value.avatar);
   }
 
   showOldAvatar(selectedRadio: any){
@@ -198,6 +199,7 @@ export class ProfilePage {
           });
 
                 
+
     this.storage.get('emailAddress').then((value) => {
       this._oldEmailAddress = value;
         console.log('What is the value', value);
@@ -208,11 +210,11 @@ export class ProfilePage {
             console.log(e);
           });
 
-    this.storage.get('avatars').then((value) => {
+    this.storage.get('avatar').then((value) => {
       this._oldSelectedAvatar = value;
         console.log('What is the avatar', value);
         console.log('what is the old avatar', this._oldSelectedAvatar);
-        this.userDetails.get('avatars').setValue(this._oldSelectedAvatar);
+        this.userDetails.get('avatar').setValue(this._oldSelectedAvatar);
 
 
           }).catch((e) => {
@@ -230,8 +232,8 @@ export class ProfilePage {
 
           this.storage.get('alertEvent').then((value) => {
             this._oldalertEvent = value;
-            console.log('what is the old affirmation?', value);
-            console.log('what is the old affirmation', this._oldalertEvent);
+            console.log('what is the old alert value?', value);
+            console.log('what is the old alert value', this._oldalertEvent);
             this.userDetails.controls['alertControl'].setValue(this._oldalertEvent);
       
           })
@@ -240,7 +242,7 @@ export class ProfilePage {
 
 
   SaveLocalStuff(){
-    this.storage.set('avatars', this.userDetails.value.avatars);
+    this.storage.set('avatar', this.userDetails.value.avatar);
   
     this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
@@ -259,8 +261,12 @@ export class ProfilePage {
       contact_name: this.userDetails.value.contact3Name
     });
 
-    this.storage.set('alertEvent', this.alertEvent);
-    console.log('what is the affirmation?', this.alertEvent);
+    console.log('WTF IS THE AVATAR', this.userDetails.value.avatar);
+    this.storage.get('avatar').then((value) => {
+        console.log('What is the avatar on save ?????', value);
+    });
+    this.storage.set('alertEvent', this.userDetails.value.alertControl);
+    console.log('what is the new affirmation?', this.userDetails.value.alertControl);
   }
 
 
@@ -275,7 +281,7 @@ export class ProfilePage {
       this.SaveLocalStuff();
       this.presentToast();
       console.log('local storage changed!');
-      console.log('new avatar', this.userDetails.value.avatars);
+      console.log('new avatar', this.userDetails.value.avatar);
       this.navCtrl.push('DashboardPage');
     }
   

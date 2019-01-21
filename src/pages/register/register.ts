@@ -80,7 +80,7 @@ export class RegisterPage {
         pin2: ['', Validators.required],
         pin3: ['', Validators.required],
         pin4: ['', Validators.required],
-        avatars: ['', Validators.required],
+        avatar: ['', Validators.required],
         // selectedItem: ['', Validators.required],
         contact1Tel: ['', Validators.required],
         contact1Name: ['', Validators.required],
@@ -131,7 +131,7 @@ export class RegisterPage {
   }
 
   showConfirmAlert(selectedRadio: any){
-    console.log('what is in the form avatar value', this.userDetails.value.avatars);
+    console.log('what is in the form avatar value', this.userDetails.value.avatar);
    
   }
 
@@ -161,7 +161,7 @@ export class RegisterPage {
     
         this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
-        this.storage.set('avatar', this.userDetails.value.avatars);
+        this.storage.set('avatar', this.userDetails.value.avatar);
         
         this.storage.set('emergency1', {
           telephone: this.userDetails.value.contact1Tel,

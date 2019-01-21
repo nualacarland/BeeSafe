@@ -1,17 +1,18 @@
 page-plan-modal {
 
     #text-line {
-        height:24px;
-        width:390px;
+        height: 24px;
+        /* width: 390px; */
         color: #313745;
-        font-size:18px;
+        font-size: 18px;
         font-family: 'Avenir Rounded Demi', Arial, sans-serif;
         text-align: center;
-        padding-right:82px;
-        padding-left:30px;
-        padding-top:29px;
-        margin-left:21px;
+        padding-right: 82px;
+        padding-left: 30px;
+        padding-top: 29px;
         font-weight: 100;
+        margin-left: 61px;
+    
     }
     #nav-bar {
         height:75px;
@@ -57,5 +58,15 @@ page-plan-modal {
         font-weight:100 !important;
     }
     
+
+    ion-img.img-loaded img {
+        display: block;
+        height: 25px !important;
+        /* margin-top: 2px; */
+        }
+
+
+
+  
 
 }

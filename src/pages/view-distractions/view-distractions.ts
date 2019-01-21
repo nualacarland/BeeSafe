@@ -55,7 +55,6 @@ export class ViewDistractionsPage {
     console.log('ionViewDidEnter DistractionsPage');
     console.log(this.items);
 
-    console.log('WHATS THE SAVED IMAGE?!', this.base64Image);
 
     this.storage.get('distractions').then((val)=>{
       console.log('What is the value of the Distractions array',val);
@@ -63,13 +62,16 @@ export class ViewDistractionsPage {
         console.log();
         for (var _i = 0; _i < val.length; _i++) {
           var num = val[_i];
-          if(val[_i].youtubeLink != ''){
+          if(val[_i].youtubeLink != '' && val[_i].hasOwnProperty('youtubeLink')){
             val[_i].trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(val[_i].youtubeLink);
           }
           this.items.push(val[_i])
       }
 
       console.log('WHAT IS THE NEW ITEMS', this.items);
+
+      // console.log('WHATS THE SAVED IMAGE?!', this.base64Image);
+      // console.log('whats the image', this.userDetails.value.galleryPhoto);
   });
   }
 

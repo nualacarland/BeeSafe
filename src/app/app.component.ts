@@ -13,7 +13,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = 'LoginPage';
-  private avatars;
+  private avatar;
   private avatarsArray: any;
   pages: Array<{title: string, component: any}>;
 
@@ -50,7 +50,7 @@ export class MyApp {
 
 
     this.storage.get('avatar').then((value) => {
-      this.avatars = value;
+      this.avatar = value;
         console.log('What is the chosen avatar', value);
     });
 
