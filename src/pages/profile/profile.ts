@@ -261,7 +261,7 @@ export class ProfilePage {
       contact_name: this.userDetails.value.contact3Name
     });
 
-    console.log('WTF IS THE AVATAR', this.userDetails.value.avatar);
+    // console.log('WTF IS THE AVATAR', this.userDetails.value.avatar);
     this.storage.get('avatar').then((value) => {
         console.log('What is the avatar on save ?????', value);
     });
