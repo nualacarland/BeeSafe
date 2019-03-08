@@ -75,7 +75,7 @@ export class RegisterPage {
 
       this.userDetails = this.formBuilder.group({
 
-        emailAddress: ['', Validators.required],
+        emailAddress: [''],
         pin1: ['', Validators.required],
         pin2: ['', Validators.required],
         pin3: ['', Validators.required],
