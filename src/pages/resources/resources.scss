@@ -84,13 +84,14 @@ page-resources {
     #important-num-1 {
         margin-top:15px;
         margin-left:30px;
-        margin-bottom: 0px;
+        margin-bottom:10px;
         font-family: 'Avenir Rounded Med', Arial, sans-serif;
         height:24px;
         color: #313745;
         font-size:16px;
         font-weight: 500;
         line-height: 24px;
+        
     }
       
     #call-link-1 {
@@ -106,6 +107,14 @@ page-resources {
         width: 101%;
         margin-left: 30px;
         text-decoration: none;
+        padding-left:28px;
+        background-image: url('../assets/imgs/phone.svg');
+        background-repeat: no-repeat;
+        background-size:16px;
+        background-position: center left;
+        display:inline-block;
+        margin-bottom:20px;
+
     }
  
       .text-weblink{
@@ -116,6 +125,11 @@ page-resources {
         clear: both;
         margin-left: 30px;
         font-family: 'Avenir Rounded Demi', Arial, sans-serif;
+        padding-left:28px;
+        background-image: url('../assets/imgs/comp.svg');
+        background-repeat: no-repeat;
+        background-size:16px;
+        background-position: center left;
       }
   
       #opacity-img{

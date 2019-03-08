@@ -88,10 +88,10 @@ export class ProfilePage {
     this.userDetails = this.formBuilder.group({
       
               emailAddress: [''],
-              pin1: ['', Validators.required],
-              pin2: ['', Validators.required],
-              pin3: ['', Validators.required],
-              pin4: ['', Validators.required],
+              pin1: [''],
+              pin2: [''],
+              pin3: [''],
+              pin4: [''],
               avatar: ['',],
               contact1Tel: [''],
               contact1Name: [''],
@@ -246,6 +246,7 @@ export class ProfilePage {
   
     this.storage.set('emailAddress', this.userDetails.value.emailAddress);
 
+    this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4);
 
     this.storage.set('emergency1', {
       telephone: this.userDetails.value.contact1Tel,
@@ -261,6 +262,8 @@ export class ProfilePage {
       contact_name: this.userDetails.value.contact3Name
     });
 
+
+
     // console.log('WTF IS THE AVATAR', this.userDetails.value.avatar);
     this.storage.get('avatar').then((value) => {
         console.log('What is the avatar on save ?????', value);
@@ -272,34 +275,34 @@ export class ProfilePage {
 
   editLocalShit() { 
 
-    if(this.userDetails.value.pin1 == '' && this.userDetails.value.pin2 == '' && this.userDetails.value.pin3 == '' && this.userDetails.value.pin4 == ''){
+    // if(this.userDetails.value.pin1 == '' && this.userDetails.value.pin2 == '' && this.userDetails.value.pin3 == '' && this.userDetails.value.pin4 == ''){
   
-      this.errorToast();
-    //   this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
+    //   this.errorToast();
+    // //   this.storage.set('user_pin', this.userDetails.value.pin1 + this.userDetails.value.pin2 +this.userDetails.value.pin3 +this.userDetails.value.pin4); 
 
-    } else {
+    // } else {
       this.SaveLocalStuff();
       this.presentToast();
       console.log('local storage changed!');
       console.log('new avatar', this.userDetails.value.avatar);
       this.navCtrl.push('DashboardPage');
-    }
+    
   
   }
   
 
-errorToast() {
-  let toast = this.toastCtrl.create({
-    message: 'Please enter Pin',
-    duration: 2000,
-    position: 'top',
-    cssClass: 'toast-error',
-  });
-  toast.onDidDismiss(() => {
-    console.log('Dismissed toast');
-  });
-  toast.present();
-} 
+// errorToast() {
+//   let toast = this.toastCtrl.create({
+//     message: 'Please enter Pin',
+//     duration: 2000,
+//     position: 'top',
+//     cssClass: 'toast-error',
+//   });
+//   toast.onDidDismiss(() => {
+//     console.log('Dismissed toast');
+//   });
+//   toast.present();
+// } 
 
 
 presentToast() {
