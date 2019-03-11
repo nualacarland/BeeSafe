@@ -94,7 +94,7 @@ errorToast() {
 
 presentToast() {
 let toast = this.toastCtrl.create({
-  message: 'Profile Successfully Changed!',
+  message: 'Trigger Changed Successfully!',
   duration: 2000,
   position: 'top',
   cssClass: "toast-success",
@@ -109,5 +109,8 @@ toast.present();
   
 
 }
+
+
+
 
 
