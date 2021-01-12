@@ -126,6 +126,8 @@ export class AddEditScrapbookPage {
          //this.storage.set('Memory',tempMemory)
        }
       
+
+       
         
         if(!hasErrored){
 
